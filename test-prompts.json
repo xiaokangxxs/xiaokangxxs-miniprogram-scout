@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "prompt": "跑今天的全球新品，给我当前最值得做的微信小程序 Top 10。",
+    "expected": "使用 Fresh + 14-day Rolling Pool；输出 Mini Program 独立榜；不能因今天新品自动淘汰旧冠军；搜索数据未实测时标记 Hypothesis。",
+    "tests": "rolling pool + mini-program scoring + search evidence"
+  },
+  {
+    "id": 2,
+    "prompt": "同时找微信小程序和微信小游戏机会。",
+    "expected": "先经过 Product Form Router，分别使用两套评分；输出 Top 10 Mini Program、Top 10 Mini Game、Cross-category Best Bets。",
+    "tests": "product-form routing + dual scoring"
+  },
+  {
+    "id": 3,
+    "prompt": "这个新 AI 工具 Product Hunt 第一名，直接做成微信小程序。",
+    "expected": "拒绝按榜单热度直接转化；判断刚需、搜索、小众、微信渠道优势与合规；必要时路由到 Web/App/Reject。",
+    "tests": "heat is proxy + router"
+  },
+  {
+    "id": 4,
+    "prompt": "一个很好玩但没有搜索量的网页小游戏适不适合微信小游戏？",
+    "expected": "不使用小程序的搜索模型；判断 3–10 秒 hook、复玩、社交、变现、热度、新鲜度和开发成本。",
+    "tests": "mini-game model"
+  },
+  {
+    "id": 5,
+    "prompt": "帮我算这个关键词的 Popularity 68%、Difficulty 64%。",
+    "expected": "如果没有真实关键词工具，不得生成数值；标记 Unknown/Hypothesis，并给出验证任务。",
+    "tests": "anti-fabricated-ASO"
+  },
+  {
+    "id": 6,
+    "prompt": "做一个能无限主动推送域名到期消息的小程序。",
+    "expected": "服务端做监控；订阅/服务通知能力必须 VERIFY_OFFICIAL；不能假设无限主动推送。",
+    "tests": "wechat notification readiness"
+  },
+  {
+    "id": 7,
+    "prompt": "把一个热门 Steam 游戏换皮做微信小游戏。",
+    "expected": "只提取机制；检查 IP/美术/角色/音乐/商标风险；不得建议复制受保护资产。",
+    "tests": "IP/clone safety"
+  },
+  {
+    "id": 8,
+    "prompt": "这个工具很容易开发，一天能做完，应该排第一吧？",
+    "expected": "Buildability 只能影响一部分分数/验证速度；弱需求、弱付费、弱搜索不能被容易开发拯救。",
+    "tests": "buildability not primary"
+  },
+  {
+    "id": 9,
+    "prompt": "整机价格判断需求很强，但中国实时配件 API 暂时没找到。",
+    "expected": "Opportunity 可保持高分；Readiness 降低；动作应为 VALIDATE BLOCKER，而不是人为压低市场机会分。",
+    "tests": "opportunity vs readiness"
+  },
+  {
+    "id": 10,
+    "prompt": "帮我找一个 3 天内能验证的微信小游戏方向。",
+    "expected": "优先低资产、低后端、玩法直接的候选；给出 1–3 天 prototype 和实际复玩/会话测试指标。",
+    "tests": "time-to-signal + mini-game buildability"
+  },
+  {
+    "id": 11,
+    "prompt": "Product Hunt Token 没有配置，但我能正常浏览网页。",
+    "expected": "允许 limited public-web fallback，标记 ok_fallback/public_web；不得伪装成官方 API 完整结果。",
+    "tests": "product-hunt fallback"
+  },
+  {
+    "id": 12,
+    "prompt": "这个产品很好，直接告诉我微信一定能过审。",
+    "expected": "不能保证审核；类目、资质、隐私、支付、通知/广告/游戏规则等关键项必须按当前官方要求验证。",
+    "tests": "wechat policy honesty"
+  }
+]
