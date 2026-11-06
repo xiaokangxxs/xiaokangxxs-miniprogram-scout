@@ -1,221 +1,147 @@
-# xiaokangxxs-miniprogram-scout — Universal Single-File Instruction
+# xiaokangxxs-miniprogram-scout — Universal Instruction
 
-Version: **1.2.0**
+Version: **1.3.0**
 
-## North Star
+## Goal
 
-Find WeChat Mini Program opportunities optimized for:
+Scout both:
 
-> **值得做 × 高频搜索 × 刚需 × 小众**
+- WeChat Mini Program opportunities
+- WeChat Mini Game opportunities
 
-Do not rank “easy to build” above “worth building”.
+First route product form. Do not use one score model for both.
 
-## Sources
+## Mini Program model
 
-Discover from:
+Score 100:
 
-- Product Hunt — API preferred, public-web fallback disclosed
-- Hacker News — Show HN / Ask HN
-- Neeed
-- GitHub official search/API
-- BetaList
-- Indie Hackers feed when available
-- optional Reddit/G2 for validation
+- Search demand 20
+- Rigid need 20
+- Niche wedge 15
+- Monetization 10
+- WeChat native fit 10
+- Trend heat 8
+- Freshness 5
+- Buildability 10
+- Product leverage 2
 
-Do not fabricate missing source data.
+## Mini Game model
 
-## Rolling discovery
+Score 100:
 
-Do not return only today's products.
+- Instant hook 20
+- Replayability 15
+- WeChat social/viral loop 15
+- Monetization fit 15
+- Trend heat 10
+- Freshness/novel mechanic 10
+- Buildability 10
+- Competition gap 5
 
-Maintain conceptually:
+## Trend
 
-- Fresh Pool: 24–72h
-- Rolling Pool: 14 days
-- Champion Board: Top 20
+Heat is momentum, not one snapshot.
 
-New candidates challenge old champions.
+Prefer:
+- rank velocity
+- player/review/comment growth
+- cross-source convergence
+- multiple similar products/mechanics appearing
+- sustained attention
 
-Cluster similar products into one opportunity theme.
+## Freshness
 
-## Opportunity Score — 100
+Track:
+- launch freshness
+- mechanic freshness
+- China/WeChat freshness
 
-Primary ranking:
+## Buildability
 
-- Search Demand & Intent — 25
-- Rigid Need / Pain — 25
-- Niche Wedge — 20
-- Value & Monetization — 15
-- WeChat Native Fit — 10
-- Product Leverage — 5
+Track:
+- POC time
+- asset burden
+- backend/data/API burden
+- moderation/live-ops burden
+- model cost
+- engine fit
 
-Search + rigid need + niche = 70%.
+Easy does not override weak demand/fun.
 
-### Search rules
+## Discovery sources
 
-Separate:
+Products:
+Product Hunt, HN, Neeed, GitHub, BetaList, Indie Hackers, optional Reddit/G2.
 
-- market search frequency
-- user trigger frequency
-- search intent strength
+Games:
+itch.io, Poki, Steam, CrazyGames, game jams/prototypes.
 
-If no real keyword/ASO/WeChat/Baidu/search tool is queried:
+## WeChat policy gate
 
-- never claim high-frequency search as Observed;
-- use Search Hypothesis;
-- Top 3 must include a real keyword validation task.
+Before BUILD NOW / BUILD PROTOTYPE verify current official requirements:
 
-Hard downgrades:
+Mini Program:
+- subject/category/qualifications
+- filing
+- privacy
+- payment/virtual goods
+- subscription/service messages
+- declared category vs actual service
 
-- no natural Chinese core query → normally max 69
-- mainly recommendation/feed discovery → normally max 74
-- weak pain / nice-to-have → normally max 69
-- mass-market giant battlefield → normally max 69
-- tiny one-off feature with no payer/repeat value → normally max 64
+Mini Game:
+- game category
+- game qualification/publication requirements
+- ads eligibility
+- virtual payment
+- content/IP
+- package/performance/engine
+- social/share compliance
 
-## Product-vs-feature test
+Do not hard-code stale limits.
 
-Ask:
+## Readiness
 
-1. Would users search for this independently?
-2. Is there meaningful cost if unsolved?
-3. Is there a clear payer?
-4. Is it more than a small feature of Office/WPS/WeChat/browser?
-5. Is there repeated value or a defensible workflow?
+Separate from Opportunity.
 
-If mostly “no”, downgrade.
+Mini Program readiness:
+data/API, WeChat capability, compliance, platform dependency, implementation.
 
-## Rigid need
+Mini Game readiness:
+qualification/publication, ads/payment, performance, content/IP/review, implementation/assets/live ops.
 
-High-value needs usually:
+## Confidence
 
-- make money
-- save money
-- avoid loss
-- save substantial time
-- reduce repeated errors
-- replace expensive/manual work
+Use Observed / Proxy / Estimate / Unknown.
 
-Novelty alone is not enough.
+Never fabricate:
+search volume, ASO, revenue, downloads, retention, player counts, platform eligibility.
 
-## Niche
+## Rolling pools
 
-Prefer specific groups/scenarios:
+Maintain separate 14-day pools:
 
-- profession
-- lifecycle event
-- repeated workflow
-- specialist tool
+- Mini Program Champion Board
+- Mini Game Champion Board
 
-Avoid generic “for everyone” products, social networks, marketplaces and giant-platform clones.
+Freshness does not reset champions.
 
-## Readiness Score — 100
+## Deeper questions
 
-Separate from Opportunity:
+For each serious candidate ask:
 
-- China data/API — 25
-- WeChat capability — 25
-- compliance/privacy — 20
-- platform dependency — 15
-- MVP implementation — 15
+1. First 1,000 users from where?
+2. Correct retention shape?
+3. Monetization-platform fit?
+4. What is defensible?
+5. Fastest falsification test?
+6. IP/clone risk?
+7. Current WeChat review blocker?
 
-Low readiness means “validate blocker”, not “bad opportunity”.
+## Default output
 
-## Confidence — 100
-
-- problem evidence — 30
-- search evidence — 30
-- monetization evidence — 25
-- independent corroboration — 15
-
-Labels:
-
-- High: 80+
-- Medium: 60–79
-- Low: <60
-
-## Ranking
-
-Rank by:
-
-1. Opportunity
-2. Confidence
-3. Readiness
-
-Never rank by readiness alone.
-
-## Recommendation
-
-- 🔥 BUILD NOW — Opportunity ≥85, Readiness ≥70, Confidence ≥60 and critical search evidence sufficiently validated
-- 🧪 VALIDATE BLOCKER — Opportunity ≥85 but blocker/search/data uncertainty remains
-- ✅ VALIDATE — Opportunity 75–84
-- 👀 WATCH — Opportunity 65–74
-- ❌ REJECT — Opportunity <65 or prohibited
-
-## Evidence
-
-Every claim is:
-
-- Observed
-- Proxy
-- Estimate
-- Unknown
-
-Never invent search volume, Popularity, Difficulty, revenue, downloads or retention.
-
-## Output
-
-Always return:
-
-1. source status
-2. Fresh Pool
-3. Rolling Pool/bootstrap status
-4. retained champions/new entrants
-5. Top 10 overall
-6. Top 3 Mini PRD
-7. rejected/dropped candidates
-8. keyword/data/WeChat validation tasks
-
-Top 10 fields:
-
-- opportunity theme
-- supporting products
-- Chinese search terms
-- search status
-- rigid-need reason
-- niche segment
-- cost of inaction
-- paid validation
-- Opportunity / Readiness / Confidence
-- recommendation
-- blocker
-
-Top 3 Mini PRD additionally includes:
-
-- exact JTBD
-- search moment
-- keyword hypotheses
-- real keyword validation task
-- current workaround
-- P0 MVP
-- WeChat-specific advantage
-- data/API dependencies
-- monetization
-- AI necessity
-- cheapest validation
-- kill criteria
-
-## AI
-
-Do not force AI.
-
-AI is core only when removal materially worsens the experience.
-
-## Credentials
-
-Prefer secret store/environment variables:
-
-- `PRODUCTHUNT_TOKEN`
-- `GITHUB_TOKEN`
-
-Never write real secrets to repository files or reports.
+1. Source status
+2. Top 10 Mini Programs
+3. Top 10 Mini Games
+4. Cross-category Top 5 Best Bets
+5. Policy blockers
+6. Validation queue
