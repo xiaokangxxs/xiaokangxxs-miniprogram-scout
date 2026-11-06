@@ -1,0 +1,67 @@
+name: Export Skill Package
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/package-export.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout latest main
+        uses: actions/checkout@v4
+
+      - name: Prepare package
+        shell: bash
+        run: |
+          set -euo pipefail
+          PKG="xiaokangxxs-miniprogram-scout-v1.3.2-with-latest-results"
+          rm -rf "$PKG"
+          mkdir -p "$PKG"
+          shopt -s dotglob
+          for item in *; do
+            if [ "$item" = "$PKG" ] || [ "$item" = ".git" ]; then
+              continue
+            fi
+            cp -R "$item" "$PKG/"
+          done
+          cat > "$PKG/PACKAGE_INFO.md" <<'EOF'
+          # Package Info
+
+          Package: xiaokangxxs-miniprogram-scout v1.3.2 + latest Scout results
+          Packaged from: GitHub main branch
+          Run date: 2026-11-06
+
+          Included:
+          - complete Skill repository snapshot
+          - docs/LATEST_RUN.md (latest Top 10 Mini Program / Top 10 Mini Game / Cross-category Top 5)
+          - README visuals and examples
+          - scoring/routing/evidence/WeChat constraints
+          - evals, smoke tests, CI and security checks
+
+          Start here:
+          1. README.md
+          2. SKILL.md
+          3. docs/LATEST_RUN.md
+
+          Install:
+          npx skills add xiaokangxxs/xiaokangxxs-miniprogram-scout
+          EOF
+
+      - name: Build ZIP
+        shell: bash
+        run: |
+          zip -qr xiaokangxxs-miniprogram-scout-v1.3.2-with-latest-results.zip xiaokangxxs-miniprogram-scout-v1.3.2-with-latest-results
+
+      - name: Upload ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: xiaokangxxs-miniprogram-scout-v1.3.2-with-latest-results
+          path: xiaokangxxs-miniprogram-scout-v1.3.2-with-latest-results.zip
+          if-no-files-found: error
+          retention-days: 7
