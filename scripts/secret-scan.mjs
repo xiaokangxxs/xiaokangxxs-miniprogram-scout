@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 import fs from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-const root = path.resolve(new URL("..", import.meta.url).pathname);
+const root = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const ignoredDirs = new Set([".git", "node_modules", ".cache", "tmp", "temp"]);
 const textExts = new Set([
   ".md", ".txt", ".json", ".yml", ".yaml", ".cff", ".js", ".mjs", ".ts", ".sh", ".env", ""
