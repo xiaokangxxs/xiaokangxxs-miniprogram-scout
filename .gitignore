@@ -1,0 +1,24 @@
+# Secrets / local environment
+.env
+.env.*
+!.env.example
+*.secret
+*.secrets
+secrets.*
+credentials.local.*
+source_credentials.local.*
+
+# Common editor / OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Runtime caches / generated local reports
+.cache/
+tmp/
+temp/
+reports/private/
+
+# Logs
+*.log
