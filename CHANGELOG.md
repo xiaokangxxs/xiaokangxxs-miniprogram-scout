@@ -1,5 +1,31 @@
 # Changelog
 
+## 1.3.2 — 2026-11-06
+
+### Visual documentation
+
+- Added a GitHub-rendered hero workflow visual.
+- Added dual-engine scoring visual.
+- Added dated latest-run result preview.
+- Added `docs/LATEST_RUN.md` with a real 2026-11-06 Scout run, Top 10 Mini Programs, Top 10 Mini Games and Top 3 requirement conversions.
+
+### Installation accuracy
+
+- Clarified that this repository is not published to npm.
+- `npx` downloads the public `skills` CLI, which then fetches the Skill directly from GitHub.
+- Documented current Skills CLI Node.js requirement (22.20+ as of 2026-11-06).
+- Documented `DISABLE_TELEMETRY=1` opt-out.
+- Marked repository `package.json` as private to prevent accidental npm publishing.
+
+### Repository metadata
+
+- Added richer visual assets suitable for README/social-preview reuse.
+- Kept recommended About/Topics/Social Preview values documented because the current GitHub connector exposes repository content writes but no repository-metadata mutation action.
+
+### Behavior
+
+- Core v1.3 dual-engine opportunity logic is unchanged.
+
 ## 1.3.1 — 2026-11-06
 
 ### Open-source usability
