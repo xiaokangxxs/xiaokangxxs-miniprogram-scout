@@ -1,105 +1,178 @@
+<sub>🌐 <b>中文</b> · <a href="README.en.md">English</a></sub>
+
+<div align="center">
+
 # xiaokangxxs-miniprogram-scout
 
-> **微信小程序 + 微信小游戏机会侦察 Skill**
+> **从全球新品与游戏机制里，找出真正值得做的微信小程序 / 微信小游戏机会。**
 
-**Version: 1.3.0**
+[![Version](https://img.shields.io/badge/version-1.3.1-blue.svg)](VERSION)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Agent-Agnostic](https://img.shields.io/badge/Agent-Agnostic-blueviolet.svg)](docs/INSTALL.md)
+[![WeChat](https://img.shields.io/badge/WeChat-Mini%20Program%20%2B%20Mini%20Game-07C160.svg)](SKILL.md)
 
-这个 Skill 的目标不再只是“海外产品 → 小程序”。
+<br>
 
-它现在会先判断一个机会最适合：
+**不是 Product Hunt 翻译器，也不是“看到热门产品就抄成小程序”。**
 
-- 微信小程序
-- 微信小游戏
-- Web / App / Desktop
-- 或直接放弃
+它会先找信号，再判断需求，再路由产品形态，再看微信官方限制，最后才给出值得验证的需求。
 
-然后分别使用不同的机会模型。
+<br>
 
-## 核心理念
+```bash
+npx skills add xiaokangxxs/xiaokangxxs-miniprogram-scout
+```
+
+支持完整 Skill 的 Agent 直接装仓库；不支持目录 Skill 的 Agent 可使用 `UNIVERSAL_SINGLE_FILE.md`。
+
+[30 秒上手](#30-秒上手) · [它能做什么](#它能做什么) · [怎么判断机会](#两套独立机会模型) · [数据源](#数据源) · [安装](#安装) · [安全](SECURITY.md)
+
+</div>
+
+---
+
+## 先看一句话
+
+你说：
+
+```text
+用 xiaokangxxs-miniprogram-scout 跑今天的全球新品和游戏机制，
+结合最近 14 天候选池，给我：
+1. Top 10 微信小程序机会
+2. Top 10 微信小游戏机会
+3. Cross-category Top 5 Best Bets
+重点看：值得做、刚需/强乐趣、小众、最新、最火、最好开发。
+```
+
+Skill 应该给你的不是“今天有什么新品”，而是：
+
+> **现在什么值得做、为什么值得做、为什么适合微信、最快怎么验证、最大的阻塞是什么。**
+
+---
+
+## 为什么做这个 Skill
+
+海外每天都会出现大量新产品、新工具、新游戏和新玩法。
+
+问题从来不是：
+
+> “哪里还能看到更多榜单？”
+
+而是：
+
+> **“这些东西里，哪一个值得我在中国重新做？应该做成微信小程序、微信小游戏，还是根本不该做？”**
+
+单看某一个榜单很容易误判：
+
+- Product Hunt #1 可能只是开发者基础设施；
+- GitHub Stars 不等于用户愿意付钱；
+- 一个海外 SaaS 能成立，不代表微信小程序是正确形态；
+- “今天很火”可能只有一天；
+- “很好开发”可能只是一个没人专门搜索的小功能；
+- 一个小游戏搜索量不高，不代表它不是好游戏；
+- 微信能写出来，不等于类目、资质、隐私、支付、广告或审核能过。
+
+所以这个 Skill 把这些问题拆开处理。
+
+---
+
+## 它能做什么
+
+| 能力 | 交付 |
+|---|---|
+| 全球新品发现 | Product Hunt、HN、GitHub、Neeed、BetaList、Indie Hackers 等 |
+| 小游戏机制发现 | itch.io、Poki、Steam、CrazyGames、Game Jam / Browser Prototype |
+| 14 天滚动候选池 | 新品挑战旧冠军，不会每天把榜单清零 |
+| Product Form Router | 自动判断小程序 / 小游戏 / Web / App / Desktop / Reject |
+| 微信小程序机会评分 | 搜索、刚需、小众、商业价值、微信适配、热度、新鲜度、开发杠杆 |
+| 微信小游戏机会评分 | 3–10 秒 Hook、复玩、社交、变现、热度、新玩法、开发成本 |
+| Evidence First | Observed / Proxy / Estimate / Unknown |
+| 微信可上线性检查 | 类目、资质、备案、隐私、支付、通知、广告、游戏规则、性能、IP |
+| 需求转化 | Top 10 榜单 + Top 3 Mini PRD + Best Bets |
+| 快速验证设计 | 第一批 1000 用户、Time-to-Signal、Kill Criteria |
+
+---
+
+## 30 秒上手
+
+### 1. 安装
+
+```bash
+npx skills add xiaokangxxs/xiaokangxxs-miniprogram-scout
+```
+
+如果当前 Agent 不支持 Skills CLI：
+
+```bash
+git clone https://github.com/xiaokangxxs/xiaokangxxs-miniprogram-scout.git
+```
+
+或者直接导入：
+
+```text
+UNIVERSAL_SINGLE_FILE.md
+```
+
+详细兼容方式见 [docs/INSTALL.md](docs/INSTALL.md)。
+
+### 2. 可选：配置凭证
+
+优先使用 Agent 自带 Secret Store。
+
+本地环境可以：
+
+```bash
+cp .env.example .env
+```
+
+支持：
+
+```text
+PRODUCTHUNT_TOKEN
+GITHUB_TOKEN
+```
+
+Product Hunt 没 Token、但 Agent 可以正常浏览网页时，允许用有限的 Public Web fallback；必须明确标记，不能假装是官方 API 完整结果。
+
+### 3. 运行
+
+```text
+帮我跑今天的数据。
+小程序和小游戏分开评估，
+再从两个榜里挑 5 个最值得先实验的方向。
+```
+
+---
+
+## 两套独立机会模型
 
 ### 微信小程序
 
-重点找：
+小程序首先是**任务/服务型产品**。
 
-> **值得做 + 会主动搜索 + 刚需 + 小众 + 有热度 + 足够新 + 小团队能快速验证**
-
-### 微信小游戏
-
-重点找：
-
-> **3–10 秒懂玩法 + 想再来一局 + 微信社交传播自然 + 能广告/合规付费 + 正在升温 + 开发成本可控**
-
-**小程序和小游戏不共用一套评分。**
-
----
-
-## 为什么 V1.3 更合理
-
-V1.2 已经解决了：
-
-> “容易做”不能排在“值得做”前面。
-
-V1.3 继续解决：
-
-> “搜索型工具”和“游戏型产品”不能用同一套逻辑。
-
-并把你强调的几个因素全部纳入：
-
-- 最新
-- 最火
-- 最好开发
-- 高频搜索
-- 刚需
-- 小众
-- 商业化
-- 微信官方限制
-
----
-
-## Product Form Router
-
-每个机会先路由：
-
-```text
-WECHAT_MINIPROGRAM
-WECHAT_MINIGAME
-WEB_APP
-NATIVE_APP
-DESKTOP
-REJECT
-```
-
-如果核心价值是完成任务 → 小程序。
-
-如果核心价值是玩、挑战、竞争、重复体验 → 小游戏。
-
-如果微信没有渠道/体验优势，不强行塞进微信。
-
----
-
-## 微信小程序评分 — 100
+100 分模型：
 
 | 维度 | 权重 |
 |---|---:|
 | 搜索需求与意图 | 20 |
 | 刚需 / 痛点 | 20 |
 | 小众切口 | 15 |
-| 商业价值 | 10 |
+| 商业价值 / 付费 | 10 |
 | 微信原生适配 | 10 |
 | 热度 / Momentum | 8 |
 | 最新 / 新鲜度 | 5 |
 | 最好开发 / Buildability | 10 |
 | 产品杠杆 | 2 |
 
-这里：
+核心偏好：
 
-**搜索 + 刚需 + 小众仍是最大头。**
+> **值得做 + 会主动搜索 + 刚需 + 小众 + 有热度 + 足够新 + 小团队能快速验证。**
 
-但“最新、最火、最好开发”现在会真正影响排序。
+### 微信小游戏
 
----
+小游戏首先是**玩、挑战、竞争、重复体验**。
 
-## 微信小游戏评分 — 100
+100 分模型：
 
 | 维度 | 权重 |
 |---|---:|
@@ -112,283 +185,431 @@ REJECT
 | 开发 / 素材杠杆 | 10 |
 | 竞争空位 | 5 |
 
-小游戏不会因为“搜索量不高”被错杀。
+核心问题：
 
-小游戏真正要问：
+> **3 秒能不能懂？玩完会不会再来一局？能不能自然分享/排行？变现会不会毁掉体验？**
 
-> **好不好玩？会不会再来一局？能不能自然分享/排行？变现会不会破坏体验？**
+小程序和小游戏**不能用一套评分模型**。
 
 ---
 
-## 最新、最火、最好开发怎么判断
+## Product Form Router
 
-### 最新
+每个候选先判断应该是什么：
 
-不是单看发布日期。
+```text
+全球产品 / 游戏 / 用户问题
+          │
+          ▼
+  Product Form Router
+          │
+ ┌────────┼────────┬──────────┐
+ ▼        ▼        ▼          ▼
+小程序    小游戏   Web/App    Reject
+```
 
-区分：
+如果微信没有明显的渠道、交互或场景优势，就不强行“微信化”。
 
-- 产品发布日期
-- 玩法/机制新鲜度
-- 中国市场新鲜度
-- 微信生态新鲜度
+详细规则见 [references/platform_router.md](references/platform_router.md)。
 
-### 最火
+---
 
-优先看“动量”而不是单点热度：
+## 最新、最火、最好开发都怎么算
 
-- 榜单上升
-- 玩家/评论/Stars 增长
-- 多源同时出现
-- 同一赛道突然出现多款产品
-- 热度是否持续超过一天
+### 最新 Freshness
 
-### 最好开发
+不是只看发布时间：
+
+- 产品发布日期；
+- 玩法/行为新鲜度；
+- 中国市场新鲜度；
+- 微信生态新鲜度。
+
+一个国外三年前成立的模式，如果在微信生态仍然存在明显空位，仍可能是新机会。
+
+### 最火 Trend Momentum
+
+不迷信单点榜单：
+
+- 排名变化；
+- 评论/评价/Stars/玩家增长；
+- 多源同时出现；
+- 同一需求/机制突然出现多款产品；
+- 热度能否持续。
+
+热度是 **Proxy**，不是收入。
+
+### 最好开发 Buildability
 
 看：
 
-- 1–3 天能否做 POC
-- 是否 2D / 轻 3D
-- 素材量
-- 后端复杂度
-- API/数据依赖
-- AI 调用成本
-- UGC 审核成本
-- 长期运营/内容生产成本
+- 1–3 天能否做 POC；
+- 个人开发者还是团队；
+- 2D / 轻 3D / 重 3D；
+- 素材量；
+- 后端复杂度；
+- 数据/API 依赖；
+- AI 成本；
+- UGC 审核；
+- 长期运营 / LiveOps。
+
+**容易做只能提高验证效率，不能拯救弱需求。**
 
 ---
 
-## 更深层的 6 个判断
+## 14 天 Rolling Pool：不是“今日新品榜”
 
-### 1. 首批 1000 用户从哪里来
+默认维护两套候选池：
 
-小程序：
-
-- 微信搜索
-- 群聊/好友分享
-- 二维码
-- 私域
-- 线下场景
-- 工作流入口
-
-小游戏：
-
-- 群挑战
-- 排行榜
-- 成绩分享
-- 游戏短视频
-- 广告投放
-- 交叉推广
-
-没有增长路径的产品，即使功能好，也会降级。
-
-### 2. 留存形态
-
-不是所有产品都追求日活。
-
-区分：
-
-- 任务型低频高价值
-- 工作流高频
-- 周期型
-- 季节型
-- 小游戏单局复玩
-- 小游戏成长留存
-
-### 3. 变现和微信平台是否匹配
-
-小程序要看：
-
-- 按次
-- 订阅
-- B2B
-- 服务支付
-- 广告是否真的有流量基础
-
-小游戏要看：
-
-- IAA
-- 激励视频
-- 插屏
-- IAP / 混合
-- 当前主体/资质/支付规则
-
-### 4. 防御性
-
-看：
-
-- 工作流沉淀
-- 用户数据
-- 专业模板
-- 模型/数据积累
-- 渠道
-- 行业资源
-- 社交关系
-- 内容生产能力
-
-### 5. Time-to-Signal
-
-优先能快速验证的机会。
-
-小程序：
-
-- Landing Page
-- 关键词广告
-- 人工服务 MVP
-- 20 个目标用户访谈
-- Fake-door 付费
-
-小游戏：
-
-- 1–3 天玩法 Demo
-- 50–200 局试玩
-- 复玩率
-- 单局时长
-- 广告接受度
-
-### 6. IP / Clone 风险
-
-可以学习：
-
-- JTBD
-- 玩法机制
-- 商业模型
-
-不要复制：
-
-- 品牌
-- 美术
-- 角色
-- 音乐
-- 文案
-- 受保护内容
-
----
-
-## 微信官方限制检查
-
-V1.3 新增：
-
-`references/wechat_official_constraints.md`
-
-正式推荐前必须检查当前微信官方要求。
-
-### 微信小程序
-
-至少看：
-
-- 主体
-- 服务类目
-- 类目资质
-- 备案
-- 隐私声明和授权
-- 支付
-- 虚拟商品
-- 订阅/服务通知
-- 功能与类目是否一致
-
-### 微信小游戏
-
-额外看：
-
-- 游戏类目
-- 游戏相关资质/备案/出版要求
-- 广告资格
-- 虚拟支付
-- 内容审核
-- IP
-- 包体/分包/远程资源
-- 引擎性能
-- 低端安卓
-- 社交分享是否合规
-
-**这些规则会变化，因此 Skill 不把易过期的数字写死，最终以上线时微信官方文档/公众平台后台为准。**
-
----
-
-## 数据源
-
-### 小程序机会
-
-- Product Hunt
-- Hacker News
-- Neeed
-- GitHub
-- BetaList
-- Indie Hackers
-- optional Reddit / G2
-
-### 小游戏机会
-
-新增：
-
-- itch.io New & Popular
-- Poki
-- Steam 新品/趋势
-- CrazyGames
-- game jams / browser prototypes
-
-因为 Product Hunt 并不是发现小游戏机制的最佳来源。
-
----
-
-## 默认输出
-
-每次运行：
-
-### Top 10 微信小程序
-
-### Top 10 微信小游戏
-
-### Cross-category Top 5 Best Bets
-
-跨类别 Top 5 会告诉你：
-
-- 为什么是小程序/小游戏
-- 为什么现在值得做
-- 为什么适合微信
-- 最快怎么验证
-- 最大阻塞是什么
-
----
-
-## 14 天滚动冠军池
+```text
+24–72h Fresh Pool
+        ↓
+14-day Rolling Pool
+        ↓
+Champion Board
+        ↓
+今天新品挑战旧冠军
+        ↓
+当前真正最强 Top 10
+```
 
 分别维护：
 
 - Mini Program Champion Board
 - Mini Game Champion Board
 
-不会因为今天来了新品，就把昨天真正优秀的机会清空。
+所以昨天真正优秀的“房源 AI 修图”不会因为今天来了 30 个 Agent 产品就自动消失。
+
+同一赛道多个产品会聚合成一个机会主题，避免 Top 10 被同类产品刷屏。
+
+---
+
+## Evidence First
+
+所有重要结论必须属于以下一种：
+
+| 类型 | 含义 |
+|---|---|
+| **Observed** | 官方 API / 官网 / 定价页直接看到 |
+| **Proxy** | votes、stars、comments、reviews、rank 等间接信号 |
+| **Estimate** | 基于证据做的产品判断 |
+| **Unknown** | 没有可靠数据 |
+
+禁止：
+
+```text
+Product Hunt 300 votes = 月收入 3 万
+GitHub 5000 stars = 5000 付费用户
+100 reviews = 100 个活跃客户
+```
+
+没有真实关键词工具时：
+
+```text
+ASO真实数据：未验证
+Search Frequency：Hypothesis
+```
+
+不能编造 Popularity、Difficulty、微信指数、搜索量。
+
+---
+
+## 微信官方限制不是“最后提醒”
+
+一个产品市场机会很高，不代表现在就能上线。
+
+Skill 会把：
+
+> **值不值得做**
+
+和：
+
+> **现在能不能在微信上线**
+
+分开。
+
+重点检查：
+
+### 小程序
+
+- 主体；
+- 服务类目；
+- 类目资质；
+- 备案；
+- 隐私与授权；
+- 支付 / 虚拟内容；
+- 订阅/服务通知；
+- 实际功能是否和申报类目一致。
+
+### 小游戏
+
+额外看：
+
+- 游戏类目；
+- 游戏相关资格 / 备案 / 出版要求；
+- 广告资格；
+- 虚拟支付；
+- IP / 内容审核；
+- 包体、分包、远程资源；
+- 引擎与低端机性能；
+- 社交分享规则。
+
+微信规则会变化，因此易过期的限制**不写死**；正式 BUILD / LAUNCH 前，以当前微信官方文档和公众平台后台为准。
+
+详见 [references/wechat_official_constraints.md](references/wechat_official_constraints.md)。
+
+---
+
+## 数据源
+
+### 产品 / 小程序机会
+
+- Product Hunt
+- Hacker News / Show HN / Ask HN
+- Neeed
+- GitHub
+- BetaList
+- Indie Hackers
+- optional Reddit / G2
+
+### 游戏 / 小游戏机会
+
+- itch.io New & Popular
+- Poki
+- Steam
+- CrazyGames
+- Game Jam / Browser Prototypes
+
+完整来源、凭证、fallback 和证据规则见 [references/source_registry.md](references/source_registry.md)。
+
+---
+
+## 默认交付
+
+一次标准运行输出：
+
+### Top 10 微信小程序机会
+
+包含：
+
+- 核心搜索词；
+- 刚需理由；
+- 小众人群；
+- 最新 / 热度 / 开发成本；
+- Opportunity / Readiness / Confidence；
+- 第一批 1000 用户假设；
+- 微信官方阻塞项；
+- 最快验证方式。
+
+### Top 10 微信小游戏机会
+
+包含：
+
+- 核心机制；
+- 3–10 秒 Hook；
+- 复玩循环；
+- 微信社交循环；
+- IAA / IAP / Hybrid；
+- 最新 / 热度 / 开发成本；
+- Prototype 计划；
+- 游戏官方规则阻塞项。
+
+### Cross-category Top 5 Best Bets
+
+回答：
+
+> **如果现在只能做 5 个实验，优先做什么？**
+
+---
+
+## 示例
+
+仓库自带一份脱敏示例报告：
+
+👉 [docs/EXAMPLE_REPORT.md](docs/EXAMPLE_REPORT.md)
+
+它用于展示结构，不代表当天实时榜单。
+
+你也可以直接运行：
+
+```text
+用这个 Skill 分析这个海外产品是否适合中国微信生态：<URL>
+```
+
+或者：
+
+```text
+读取我给你的 CSV / JSON / HTML 产品榜单，
+跳过抓取，从机会聚类和评分开始。
+```
+
+---
+
+## 安装后先自检
+
+这个仓库不是只有一个 `SKILL.md`。
+
+完整运行依赖：
+
+```text
+references/
+assets/
+docs/
+evals/
+scripts/
+```
+
+如果你 clone 了仓库或准备二次发布，建议运行：
+
+```bash
+npm run check
+```
+
+不需要安装 npm 依赖。
+
+它会检查：
+
+- 核心文件是否完整；
+- 版本号是否一致；
+- SKILL frontmatter；
+- 关键引用文件是否存在；
+- 常见 Token / Secret 是否误提交。
+
+也可以单独执行：
+
+```bash
+npm run validate
+npm run scan:secrets
+```
+
+---
+
+## 仓库结构
+
+```text
+xiaokangxxs-miniprogram-scout/
+├── SKILL.md
+├── UNIVERSAL_SINGLE_FILE.md
+├── README.md
+├── README.en.md
+├── VERSION
+├── package.json
+├── .env.example
+├── LICENSE
+├── ATTRIBUTION.md
+├── CITATION.cff
+├── SECURITY.md
+├── CONTRIBUTING.md
+├── CHANGELOG.md
+├── test-prompts.json
+├── references/
+│   ├── master_prompt_v3_4.md
+│   ├── platform_router.md
+│   ├── scoring_model.md
+│   ├── rolling_candidate_pool.md
+│   ├── source_registry.md
+│   ├── evidence_rules.md
+│   ├── china_feasibility_gate.md
+│   ├── wechat_official_constraints.md
+│   └── output_schema.md
+├── assets/
+├── docs/
+├── evals/
+├── scripts/
+└── .github/
+```
+
+架构说明见 [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)。
+
+---
+
+## Star 趋势
+
+<p align="center">
+  <a href="https://star-history.com/#xiaokangxxs/xiaokangxxs-miniprogram-scout&Date">
+    <img src="https://api.star-history.com/svg?repos=xiaokangxxs/xiaokangxxs-miniprogram-scout&type=Date" alt="Star History" width="75%">
+  </a>
+</p>
+
+---
+
+## 文档入口
+
+- 📦 [安装与 Agent 兼容](docs/INSTALL.md)
+- 🧠 [架构与工作流](docs/ARCHITECTURE.md)
+- 📊 [脱敏示例报告](docs/EXAMPLE_REPORT.md)
+- ❓ [FAQ](docs/FAQ.md)
+- 🚢 [Release Checklist](docs/RELEASE_CHECKLIST.md)
+- 🔐 [Security & Data Flow](SECURITY.md)
+- 🤝 [Contributing](CONTRIBUTING.md)
 
 ---
 
 ## 安全
 
-真实 Token 永远不写入仓库。
+这个仓库**没有自己的云后端、没有遥测、没有作者控制的数据采集服务器**。
 
-支持：
+Skill 本身主要是 Markdown 规则；真正的网络请求由你正在使用的 Agent / Browser / HTTP / Connector 工具执行。
+
+仓库里的本地脚本：
 
 ```text
-PRODUCTHUNT_TOKEN
-GITHUB_TOKEN
+scripts/validate-skill.mjs
+scripts/secret-scan.mjs
 ```
 
-通过 Agent Secret Store / 环境变量提供。
+只读取本地仓库文件，不联网。
+
+详细网络目的地、凭证边界和数据流见 [SECURITY.md](SECURITY.md)。
 
 ---
 
-## License
+## Contributing
 
-MIT License
+欢迎贡献：
+
+- 新产品/游戏数据源；
+- 更可靠的中国需求/关键词验证；
+- 微信官方规则更新；
+- 新的评分纠错案例；
+- Agent 兼容适配；
+- Mini Program / Mini Game evals。
+
+提交 PR 前：
+
+```bash
+npm run check
+```
+
+详见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
+---
+
+## License & Attribution
+
+MIT License。
 
 ```text
 Copyright (c) 2026 xiaokangxxs
 ```
 
-二次使用建议注明：
+你可以自由使用、修改、分发和商用。复制或分发本项目或其重要部分时，需要保留 MIT License 要求的版权与许可证声明。
+
+二次开发 / 公开分享时也推荐注明：
 
 ```text
 Based on xiaokangxxs-miniprogram-scout by xiaokangxxs.
 Source: github.com/xiaokangxxs/xiaokangxxs-miniprogram-scout
 ```
+
+详见 [ATTRIBUTION.md](ATTRIBUTION.md) 和 [CITATION.cff](CITATION.cff)。
+
+---
+
+## Disclaimer
+
+这个 Skill 是产品研究与机会决策工具。
+
+**热度不是收入，评分不是市场事实，Search Hypothesis 不是搜索量事实，BUILD NOW 也不是微信审核保证。**
+
+正式投入开发前仍应完成真实用户、关键词、数据/API、微信官方规则、合规与付费验证。
