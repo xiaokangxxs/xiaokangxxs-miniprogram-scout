@@ -1,170 +1,263 @@
-# Opportunity / Readiness / Confidence Model
+# Dual Opportunity Scoring Model
 
-Version: 1.2.0
+Version: 1.3.0
 
-V1.2 separates **“值不值得做”** from **“现在能不能做”**.
+Mini Programs and Mini Games use different score models.
 
-Do not combine them into one effective score.
-
----
-
-## A. Opportunity Score — 0–100
-
-This is the primary ranking score.
-
-### 1. Search Demand & Intent — 25
-
-Ask whether users actively search for the problem/solution.
-
-Score using:
-
-- natural Chinese core keyword exists — 5
-- market-level search frequency hypothesis/evidence — 8
-- strong intent close to action/payment — 6
-- long-tail keyword cluster potential — 3
-- recurring/seasonal search stability — 3
-
-Important:
-
-- `market_search_frequency` and `user_trigger_frequency` are separate.
-- Real keyword/ASO/WeChat/Baidu data is Observed only when an actual tool is queried.
-- Without a real keyword tool, score is an Estimate and Top 3 must include keyword validation.
-
-### 2. Rigid Need / Pain — 25
-
-High score when not solving causes:
-
-- direct financial loss / missed revenue — up to 8
-- clear urgency or deadline — up to 5
-- repeated manual work / high time cost — up to 5
-- meaningful error/risk reduction — up to 4
-- visible workaround behavior — up to 3
-
-### 3. Niche Wedge / Competitive Whitespace — 20
-
-High score when:
-
-- target group is concrete and narrow — 6
-- problem is too niche for giants to deeply optimize — 5
-- existing alternatives validate demand but remain inconvenient/expensive — 4
-- China/WeChat creates a unique local wedge — 3
-- does not require network effects or a giant marketplace — 2
-
-### 4. Value & Monetization — 15
-
-- existing paid competitors / paid workaround — 5
-- payer is explicit — 4
-- value maps to money/time/risk — 4
-- repeat purchase/subscription/usage-based path exists — 2
-
-### 5. WeChat Native Fit — 10
-
-- search/share/scan/chat entry lowers friction — 4
-- use-and-go flow is natural — 3
-- WeChat context gives a specific local advantage — 3
-
-A product being technically possible in a Mini Program is not enough.
-
-### 6. Product Leverage — 5
-
-- automation/AI meaningfully reduces manual effort — 3
-- P0 can deliver the core JTBD without becoming a platform — 2
-
-AI is not required.
+Never compare a utility and a game using the same behavioral assumptions.
 
 ---
 
-## Opportunity hard gates
+# A. WeChat Mini Program Opportunity Score — 100
 
-Apply after scoring:
+## 1. Search Demand & Intent — 20
+
+- natural Chinese core query — 4
+- market search frequency / recurring demand — 6
+- strong action/payment intent — 5
+- long-tail keyword cluster — 3
+- recurring/seasonal stability — 2
+
+Without a real keyword tool, treat frequency as hypothesis.
+
+## 2. Rigid Need / Pain — 20
+
+- money/revenue impact — 6
+- urgency/deadline — 4
+- time/manual-work cost — 4
+- error/risk reduction — 3
+- visible workaround behavior — 3
+
+## 3. Niche Wedge / Competitive Whitespace — 15
+
+- specific target segment — 5
+- giant platforms under-serve it — 4
+- paid alternatives prove demand — 3
+- China/WeChat wedge — 3
+
+## 4. Value & Monetization — 10
+
+- payer explicit — 3
+- observed paid alternatives — 3
+- value maps to money/time/risk — 3
+- repeat/usage/subscription path — 1
+
+## 5. WeChat Native Fit — 10
+
+- search/share/QR/chat entry lowers friction — 4
+- use-and-go flow — 3
+- private-domain/offline/workflow advantage — 3
+
+## 6. Trend Momentum / Heat — 8
+
+Use Proxy evidence:
+
+- multi-source convergence;
+- ranking velocity;
+- review/comment/star growth;
+- multiple products emerging around the same job;
+- sustained attention.
+
+Do not equate heat with revenue.
+
+## 7. Freshness / Novelty — 5
+
+Separate:
+
+- product launch freshness;
+- behavior/mechanic freshness;
+- China-market freshness.
+
+A mature old category can still score when the China/WeChat wedge is new.
+
+## 8. Buildability / Solo-Dev Leverage — 10
+
+Evaluate:
+
+- POC speed;
+- backend/API complexity;
+- data dependencies;
+- content/asset burden;
+- ops/moderation;
+- model cost;
+- team size.
+
+Easy buildability can break ties; it cannot rescue weak demand.
+
+## 9. Product Leverage — 2
+
+Automation/AI/workflow advantage.
+
+---
+
+## Mini Program hard gates
 
 - no natural Chinese search query → normally max 69
-- discovery mainly depends on feed/recommendation rather than active search → normally max 74
-- weak pain / nice-to-have only → normally max 69
-- broad mass-market / giant core battlefield → normally max 69
-- clearly a tiny one-off feature with no payer or repeated value → normally max 64
-- strong B2B low-frequency but high-loss use cases may remain high on pain/value, but Search Demand must stay honest
+- weak pain / nice-to-have → normally max 69
+- broad giant-platform battlefield → normally max 69
+- tiny one-off feature with no payer/repeat value → normally max 64
+- no plausible WeChat acquisition/distribution loop → normally max 74
 
 ---
 
-## B. Readiness Score — 0–100
+# B. WeChat Mini Game Opportunity Score — 100
 
-Readiness answers **“现在能不能做”**, not “值不值得做”.
+Search is NOT the primary signal.
 
-### 1. China data/API availability — 25
-### 2. WeChat capability/architecture — 25
-### 3. Compliance/privacy readiness — 20
-### 4. Third-party dependency stability — 15
-### 5. MVP implementation cost/complexity — 15
+## 1. Instant Hook / Fun Clarity — 20
 
-Suggested interpretation:
+Can a player understand why it is fun within roughly 3–10 seconds?
 
-- 85–100: Ready
-- 70–84: Mostly ready
-- 50–69: Validate blocker first
-- <50: Blocked / redesign
+Score:
 
-A high Opportunity + low Readiness result is **not** a bad idea. It is a high-value opportunity with a pre-build validation task.
+- mechanic immediately readable — 6
+- first interaction feels rewarding — 5
+- low instruction burden — 4
+- strong visual/physical feedback — 5
 
----
+## 2. Replayability / Retention Loop — 15
 
-## C. Confidence — 0–100
+- another-round desire — 5
+- mastery/skill/progression — 4
+- session variety — 3
+- return trigger — 3
 
-Confidence measures evidence quality.
+## 3. WeChat Social / Viral Loop — 15
 
-### Problem evidence — 30
+- ranking/competition naturally fits — 4
+- friend/group comparison — 4
+- shareable result/moment — 3
+- revival/invite/team loop without abusive inducement — 2
+- spectator/clip potential — 2
 
-Paid products, repeated discussions, clear user workaround behavior.
+## 4. Monetization Fit — 15
 
-### Search evidence — 30
+- rewarded video fits naturally — 5
+- interstitial/banner does not destroy play — 3
+- IAP/hybrid potential where compliant — 4
+- payer/value loop is understandable — 3
 
-Highest confidence comes from actual keyword/ASO/search tools. Search-intent reasoning without real data is weaker evidence.
+## 5. Trend Momentum / Heat — 10
 
-### Monetization evidence — 25
+- current browser/mobile/Steam/itch/Poki mechanic momentum;
+- player/review growth;
+- cross-platform copy/variation activity;
+- social clip momentum.
 
-Observed pricing, paid tiers, disclosed business/customer evidence.
+## 6. Freshness / Novel Mechanic — 10
 
-### Independent corroboration — 15
+- mechanic novelty — 4
+- theme/visual novelty — 2
+- China/WeChat freshness — 4
 
-Multiple independent sources / competitors / communities.
+Do not copy protected IP/assets.
 
-Labels:
+## 7. Buildability / Asset Leverage — 10
 
-- 80–100: High
-- 60–79: Medium
-- <60: Low
+- 1–3 day playable prototype possible — 3
+- 2D/simple 3D asset burden — 2
+- low live-service/content burden — 2
+- engine/runtime fit — 2
+- low backend dependency — 1
 
----
+## 8. Niche / Competition Gap — 5
 
-## Final recommendation
-
-Rank primarily by **Opportunity Score**.
-
-Tie-breakers:
-
-1. Confidence
-2. Readiness
-
-Actions:
-
-- **🔥 BUILD NOW** — Opportunity ≥85, Readiness ≥70, Confidence ≥60, and no unresolved critical keyword claim.
-- **🧪 VALIDATE BLOCKER** — Opportunity ≥85 but Readiness <70 or a critical search/data/platform assumption is still unverified.
-- **✅ VALIDATE** — Opportunity 75–84.
-- **👀 WATCH** — Opportunity 65–74.
-- **❌ REJECT** — Opportunity <65 or hard prohibition.
-
-Do not flatten multiple high-value candidates into the same score because of one YELLOW gate.
+Prefer a clear twist over a red-ocean clone.
 
 ---
 
-## Search-first preference
+## Mini Game hard gates
 
-When two products are otherwise similar, prefer the one with:
+- no clear fun mechanic → max 59
+- requires long tutorial before fun → normally max 69
+- no replay/retention loop → normally max 69
+- monetization depends on prohibited/unclear payment with no IAA fallback → no BUILD NOW
+- relies on copied brand/IP/assets → REJECT or redesign
+- platform/content/policy blocker → readiness blocked
 
-1. clearer high-intent Chinese search terms;
-2. more frequent market search demand;
-3. stronger “must solve now” trigger;
-4. narrower user segment;
-5. stronger paid validation.
+---
 
-This is the primary preference of this Skill.
+# C. Readiness Score — 100
+
+Readiness is separate from market/game opportunity.
+
+## Mini Program readiness
+
+- China data/API — 25
+- WeChat capabilities — 25
+- compliance/privacy — 20
+- platform dependency — 15
+- implementation/ops — 15
+
+## Mini Game readiness
+
+- game category/qualification/publication — 20
+- ads/payment monetization eligibility — 20
+- package/performance/engine fit — 20
+- content/IP/review risk — 20
+- implementation/assets/live ops — 20
+
+Interpretation:
+
+- 85–100 Ready
+- 70–84 Mostly Ready
+- 50–69 Validate Blocker
+- <50 Blocked / Redesign
+
+---
+
+# D. Confidence — 100
+
+For Mini Programs:
+
+- problem evidence — 25
+- search evidence — 25
+- monetization evidence — 20
+- independent corroboration — 15
+- trend evidence — 15
+
+For Mini Games:
+
+- mechanic/fun evidence — 25
+- player/retention proxy evidence — 20
+- monetization evidence — 20
+- trend evidence — 20
+- independent cross-platform corroboration — 15
+
+---
+
+# E. Recommendation
+
+## Mini Program
+
+- 🔥 BUILD NOW — Opportunity ≥85, Readiness ≥70, Confidence ≥60, critical search/platform assumptions verified enough
+- 🧪 VALIDATE BLOCKER — Opportunity ≥85 but a key blocker remains
+- ✅ VALIDATE — Opportunity 75–84
+- 👀 WATCH — Opportunity 65–74
+- ❌ REJECT — Opportunity <65 / prohibited
+
+## Mini Game
+
+- 🎮 BUILD PROTOTYPE — Opportunity ≥85, Readiness ≥65, Confidence ≥55
+- 🧪 TEST MECHANIC — Opportunity ≥75 with low confidence or retention/monetization unknown
+- 👀 WATCH TREND — Opportunity 65–74
+- ❌ REJECT — Opportunity <65 / prohibited / no fun loop
+
+For games, a 1–3 day prototype retention test is often more valuable than desk analysis.
+
+---
+
+# F. Cross-category Best Bets
+
+Do not merge raw scores mechanically.
+
+When producing Cross-category Top 5, compare:
+
+- size/quality of opportunity;
+- confidence;
+- speed to validation;
+- expected monetization path;
+- platform readiness;
+- user's team/resources.
+
+Label why each is a Mini Program or Mini Game.
