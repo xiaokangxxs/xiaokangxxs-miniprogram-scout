@@ -1,76 +1,77 @@
 # Rolling Candidate Pool
 
-Version: 1.2.0
+Version: 1.3.0
 
-## Why
+## Pools
 
-The Skill must find the **best current opportunities**, not merely the newest products today.
+Maintain two parallel opportunity pools:
 
-A strong candidate discovered yesterday should not disappear because ten weaker products launched today.
+### Mini Program Pool
 
-## Three pools
+- Fresh: 24–72h
+- Rolling: 14 days
+- Champion Board: Top 20
 
-### Fresh Pool
+### Mini Game Pool
 
-- Default: latest 24 hours.
-- Expand to 72 hours when sparse.
-- Used only for discovery.
+- Fresh: 24–72h
+- Rolling: 14 days
+- Champion Board: Top 20
 
-### Rolling Pool
+Do not compare utilities and games as if they were the same product type.
 
-- Default window: 14 days.
-- Contains all serious candidates discovered during the window.
-- New evidence can refresh `last_seen_at`.
-- Same product/domain is deduplicated.
-- Same underlying opportunity from different products is clustered into one opportunity theme.
+## Freshness
 
-### Champion Board
+Freshness is a score factor, not the ranking itself.
 
-- Keep the strongest 20 opportunity themes.
-- Re-score champions when new evidence appears.
-- New candidates must beat incumbents on Opportunity Score, not freshness.
+Track:
 
-## Opportunity theme clustering
+- product/game launch date;
+- first-seen date;
+- last-seen date;
+- trend acceleration;
+- China-market novelty.
 
-Examples:
+## Heat refresh
 
-- ReSnapHome + other virtual staging/photo tools → `房源照片 AI 美化`
-- Multiple AI visibility trackers → `AI 搜索品牌曝光检测`
+When a candidate remains in the Rolling Pool, refresh heat evidence when possible:
 
-Do not allow one trend with five similar products to occupy five Top 10 slots.
+- ranking movement;
+- star/review/player/comment growth;
+- cross-source mentions;
+- new competing products;
+- sustained vs one-day spike.
+
+## Theme/mechanic clustering
+
+Mini Program:
+cluster by underlying JTBD.
+
+Mini Game:
+cluster by core mechanic + loop, not only theme/art style.
+
+Example:
+
+- several scratch-card incrementals → one `scratch/incremental` mechanic opportunity;
+- several obstacle prank platformers → one `trap platformer` opportunity.
+
+## Champion behavior
+
+New candidates challenge old champions.
+
+Do not drop an incumbent just because it is not new.
+
+Output:
+
+- new entrants;
+- retained champions;
+- heat-up candidates;
+- cooling candidates;
+- dropped candidates;
+- reason for movement.
 
 ## Persistence
 
-If the host Agent supports persistent storage, keep a local/private runtime state outside the public Skill repository.
+Use host storage/private runtime state when available.
 
-If persistent state is unavailable:
-
-1. use the current conversation/history when available;
-2. include a machine-readable Champion Board in every report;
-3. on the next run, accept the previous report/JSON as input.
-
-Never commit users' runtime candidate pools or secrets into the public Skill repository.
-
-## Aging
-
-Freshness is evidence, not value.
-
-- Age alone does not reduce Opportunity Score.
-- After 14 days without new evidence, move non-champions to archive/watch.
-- Champions can remain up to 30 days if still clearly superior, but must be revalidated.
-- Repeated independent signals reset/extend `last_seen_at`.
-
-## Daily run behavior
-
-1. Fetch Fresh Pool.
-2. Load prior Rolling Pool/Champion Board when available.
-3. Deduplicate products.
-4. Cluster into opportunity themes.
-5. Enrich new themes and any champion challenged by a new theme.
-6. Score Opportunity / Readiness / Confidence.
-7. Rank all eligible rolling candidates.
-8. Output:
-   - new entrants;
-   - retained champions;
-   - dropped candidates and why;
-   - Top 10 overall, not Top 10 newest.
+Do not commit runtime candidate pools, user data or secrets into the public repository.
