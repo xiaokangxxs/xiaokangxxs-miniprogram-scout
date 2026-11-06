@@ -1,281 +1,274 @@
 ---
 name: xiaokangxxs-miniprogram-scout
-description: Discover current products from Product Hunt, Hacker News, GitHub, Neeed, BetaList, Indie Hackers and optional Reddit/G2, then identify China-feasible WeChat Mini Program opportunities optimized for high-frequency search intent, rigid need, niche user segments and clear value. Use for daily product scouting, overseas-product-to-China adaptation, mini-program opportunity discovery, or turning product leaderboards into requirements.
+description: Discover current global product and game signals, route each opportunity to WeChat Mini Program, WeChat Mini Game, Web/App/Desktop, and rank the strongest China-feasible opportunities using demand, niche, trend, freshness, buildability, monetization and current WeChat platform constraints.
 ---
 
 # xiaokangxxs-miniprogram-scout
 
-Version: **1.2.0**
+Version: **1.3.0**
 
-> Global Product → Searchable Rigid-Niche WeChat Mini Program Scout
+> WeChat Mini Program + Mini Game Opportunity Intelligence
 
 ## Mission
 
-Find the **best current opportunities**, not merely today's newest products.
+Find opportunities that are simultaneously:
 
-Primary preference:
+> **值得做 + 有明确需求/玩法入口 + 刚需/强乐趣 + 小众可切入 + 最新/有热度 + 开发杠杆高 + 适合微信生态**
 
-> **值得做 × 高频搜索 × 刚需 × 小众**
+Do not optimize for only one dimension.
 
-The Skill must not confuse:
+## Workflow
 
-- easy to build
-with
-- worth building.
-
-## Required workflow
-
-1. Capability + credential check
-2. Current multi-source acquisition
-3. Load/construct Rolling Candidate Pool
-4. Normalize + deduplicate products
-5. Cluster products into opportunity themes
-6. Evidence enrichment
-7. Opportunity Score
-8. Readiness + Confidence
-9. Mini Program conversion
-10. Top 10 overall + Top 3 Mini PRD + rejected/downranked reasons
+1. Capability / credential check
+2. Multi-source fresh discovery
+3. Load 14-day Rolling Pools
+4. Normalize / deduplicate
+5. Route product form
+6. Cluster into JTBD themes or game-mechanic themes
+7. Enrich evidence
+8. Score with the correct model
+9. Verify WeChat official constraints
+10. Output separate Mini Program and Mini Game boards
+11. Output Cross-category Top 5 Best Bets
 
 Read:
 
-- `references/source_registry.md`
-- `references/master_prompt_v3_3.md`
+- `references/platform_router.md`
+- `references/master_prompt_v3_4.md`
 - `references/scoring_model.md`
 - `references/rolling_candidate_pool.md`
+- `references/wechat_official_constraints.md`
+- `references/source_registry.md`
 - `references/evidence_rules.md`
-- `references/china_feasibility_gate.md`
 - `references/output_schema.md`
 - `references/auth_and_secrets.md`
 
-## Phase 1 — capability and credentials
+## Discovery
 
-Detect browser/search/API/shell/MCP capabilities.
+### Product / utility sources
 
-If no network exists, never pretend to fetch current data. Accept user-provided JSON/CSV/HTML/URLs and continue from normalization.
+- Product Hunt
+- Hacker News / Show HN / Ask HN
+- Neeed
+- GitHub
+- BetaList
+- Indie Hackers
+- optional Reddit / G2
 
-Product Hunt:
+### Game / mechanic sources
 
-- API mode preferred when `PRODUCTHUNT_TOKEN` is safely available.
-- Public-web fallback is allowed for limited discovery when normal browsing exists.
-- Fallback must be labeled `ok_fallback / public_web`.
-- Never expose/store real tokens.
+- itch.io New & Popular
+- Poki trending/top
+- Steam public trend/new-release signals
+- CrazyGames when reachable
+- public game-jam/prototype signals
 
-GitHub:
+Product Hunt is not enough for Mini Game scouting.
 
-- official REST/search connector first;
-- `GITHUB_TOKEN` only when volume/rate limits require it.
+## Product Form Router
 
-Reddit/G2 remain optional validation sources.
+Before scoring, route to:
 
-## Phase 2 — fresh discovery
+- WECHAT_MINIPROGRAM
+- WECHAT_MINIGAME
+- WEB_APP
+- NATIVE_APP
+- DESKTOP
+- REJECT
 
-Default sources:
+Never force every product into WeChat.
 
-1. Product Hunt
-2. Hacker News — Show HN + Ask HN
-3. Neeed Directory
-4. GitHub official search/API
-5. BetaList
-6. Indie Hackers unofficial feed when reachable
+Mini Program = task/service first.
+Mini Game = play/fun/challenge first.
 
-Default fresh window: 24h; expand to 72h if sparse.
+## Mini Program score
 
-Freshness is a discovery signal only. It must not replace market value.
+Use the Mini Program model:
 
-## Phase 3 — Rolling Candidate Pool
-
-Use `references/rolling_candidate_pool.md`.
-
-Default:
-
-- Fresh Pool: 24–72h
-- Rolling Pool: 14 days
-- Champion Board: Top 20
-
-New products challenge old champions. Do not reset the opportunity leaderboard every day.
-
-If persistent state is unavailable, use prior conversation/report when available. Otherwise clearly state that this run is bootstrap mode and output reusable Champion Board data.
-
-## Phase 4 — normalize + deduplicate
-
-Deduplicate by normalized domain, product name and strong semantic identity.
-
-Aggregate cross-source signals.
-
-Do not let five nearly identical overseas products occupy five opportunity slots.
-
-## Phase 5 — cluster into opportunity themes
-
-Convert products into underlying opportunity themes.
-
-Examples:
-
-- multiple virtual staging/photo products → `房源照片 AI 美化`
-- multiple AI visibility trackers → `AI 搜索品牌曝光检测`
-
-Score opportunity themes, not launch pages.
-
-## Phase 6 — evidence enrichment
-
-For each serious candidate collect evidence for:
-
-- exact user/job
-- search moment
-- Chinese core keyword
-- market search frequency
-- user trigger frequency
-- cost of inaction
-- existing workaround
-- paid alternatives
-- payer
-- narrow target segment
-- giant/platform competition
-- China data/API dependency
-- WeChat-specific advantage
-- compliance/platform risk
-
-Votes/stars/comments remain Proxy, never revenue.
-
-## Phase 7 — Opportunity Score
-
-Apply `master_prompt_v3_3.md` and `scoring_model.md`.
-
-Opportunity Score is 100:
-
-- Search Demand & Intent — 25
-- Rigid Need / Pain — 25
-- Niche Wedge — 20
-- Value & Monetization — 15
+- Search Demand & Intent — 20
+- Rigid Need / Pain — 20
+- Niche Wedge — 15
+- Value & Monetization — 10
 - WeChat Native Fit — 10
-- Product Leverage — 5
+- Trend Momentum / Heat — 8
+- Freshness / Novelty — 5
+- Buildability / Solo-Dev Leverage — 10
+- Product Leverage — 2
 
-### Hard preference
+Search/need/niche remain primary, but latest/hot/easy-to-build now matter.
 
-Search + rigid need + niche = 70% of the score.
+Without a real keyword tool, search frequency is a hypothesis, not fact.
 
-### Search honesty
+## Mini Game score
 
-If no actual keyword/ASO/WeChat/Baidu/search tool was queried:
+Use the Mini Game model:
 
-- do not call `高频搜索` Observed;
-- label it `Search Hypothesis`;
-- Top 3 must include real keyword validation as a P0 task.
+- Instant Hook / Fun Clarity — 20
+- Replayability / Retention — 15
+- WeChat Social / Viral Loop — 15
+- Monetization Fit — 15
+- Trend Momentum / Heat — 10
+- Freshness / Novel Mechanic — 10
+- Buildability / Asset Leverage — 10
+- Niche / Competition Gap — 5
 
-### Product-vs-feature check
+Do not penalize a good game because people do not search for it like a utility.
 
-Heavily downgrade a candidate that is:
+For games, prioritize a fast prototype and actual play data over desk analysis.
 
-- one-off low-value;
-- easily absorbed by Office/WPS/WeChat/browser;
-- unlikely to be searched repeatedly;
-- has no independent payer;
-- has no meaningful product expansion path.
+## Latest / Hot / Easy
 
-## Phase 8 — Readiness + Confidence
+Track separately:
 
-Readiness answers “现在能不能做”:
+### Freshness
+- launch age
+- mechanic novelty
+- China/WeChat novelty
 
-- China data/API — 25
-- WeChat capability — 25
-- compliance/privacy — 20
-- platform dependency — 15
-- MVP implementation — 15
+### Heat
+- ranking velocity
+- comments/reviews/player growth
+- cross-source convergence
+- multiple products around one job/mechanic
+- sustained vs one-day spike
 
-Do not use Readiness as the primary ranking score.
+### Buildability
+- prototype time
+- asset burden
+- backend burden
+- API/data dependencies
+- content/moderation/live-ops burden
+- model cost
+- engine/runtime fit
 
-Confidence answers “我们有多确定”:
+Easy development may break ties but cannot rescue weak demand or weak fun.
 
-- problem evidence — 30
-- search evidence — 30
-- monetization evidence — 25
-- independent corroboration — 15
+## Readiness
 
-Rank:
+Score platform readiness separately.
 
-1. Opportunity
-2. Confidence
-3. Readiness
+For Mini Programs:
+- China data/API
+- WeChat capability
+- privacy/compliance
+- upstream platform stability
+- implementation/ops
 
-## Phase 9 — recommendation
+For Mini Games:
+- category/qualification/publication
+- ads/payment eligibility
+- package/performance/engine fit
+- content/IP/review risk
+- implementation/assets/live ops
 
-- **🔥 BUILD NOW** — Opportunity ≥85, Readiness ≥70, Confidence ≥60, no unresolved critical search claim.
-- **🧪 VALIDATE BLOCKER** — Opportunity ≥85 but readiness/search/data/platform blocker remains.
-- **✅ VALIDATE** — Opportunity 75–84.
-- **👀 WATCH** — Opportunity 65–74.
-- **❌ REJECT** — Opportunity <65 or prohibited.
+## WeChat official constraints
 
-A 90-point opportunity with a data blocker remains a 90-point opportunity. It becomes `VALIDATE BLOCKER`, not an artificial 79.
+Before BUILD NOW / BUILD PROTOTYPE, check current official rules.
 
-## Phase 10 — Mini Program conversion
+At minimum verify when relevant:
 
-For Top 10 output:
+- subject and service category
+- required qualifications
+- filing/record requirements
+- privacy declarations/consent
+- payment / virtual goods
+- subscription/service notifications
+- Mini Game category
+- game publication/qualification requirements
+- advertising eligibility
+- virtual payment
+- package/subpackage/performance
+- social/share compliance
+- IP/content review
 
-- opportunity theme
-- supporting products/sources
-- Chinese core search terms
-- search frequency status: Observed/Hypothesis/Unknown
-- rigid-need reason
-- narrow target segment
-- cost of inaction
-- paid validation
+Do not hard-code stale platform limits. Current official docs/backend win.
+
+## Deeper analysis
+
+Every serious candidate must answer:
+
+### Distribution
+How do the first 1,000 users arrive?
+
+### Retention
+What is the correct retention shape for this product?
+
+### Monetization-platform fit
+Does the business model actually fit WeChat rules and user behavior?
+
+### Defensibility
+What remains after competitors copy the feature/mechanic?
+
+### Time-to-signal
+What is the fastest experiment that could disprove the opportunity?
+
+### IP risk
+Extract the job/mechanic; never copy protected brand/assets/music/characters/content.
+
+## Rolling pools
+
+Maintain two 14-day pools:
+
+- Mini Program Rolling Pool + Champion Board
+- Mini Game Rolling Pool + Champion Board
+
+New launches challenge incumbents; freshness does not reset the board.
+
+## Default output
+
+### 1. Source status
+
+### 2. Top 10 WeChat Mini Program Opportunities
+
+For each:
+- opportunity
+- supporting products
+- keywords/search status
+- rigid need
+- niche
+- freshness
+- heat
+- buildability
 - Opportunity
 - Readiness
 - Confidence
-- recommendation
+- action
+- official-policy blocker
+
+### 3. Top 10 WeChat Mini Game Opportunities
+
+For each:
+- core mechanic
+- inspiration sources
+- 3–10 second hook
+- replay loop
+- social loop
+- monetization
+- freshness
+- heat
+- buildability
+- Opportunity
+- Readiness
+- Confidence
+- action
+- official-policy blocker
+
+### 4. Cross-category Top 5 Best Bets
+
+Explain:
+- why Mini Program or Mini Game
+- why now
+- why WeChat
+- fastest validation
 - main blocker
 
-For Top 3 add Mini PRD:
+## Evidence
 
-- target segment
-- exact JTBD
-- search moment
-- keyword hypotheses
-- real keyword validation task
-- existing workaround
-- P0 MVP
-- why WeChat is better
-- data/API dependencies
-- monetization
-- AI necessity
-- readiness blockers
-- cheapest validation
-- kill criteria
-
-## Final report
-
-Always report:
-
-1. source status
-2. Fresh Pool count
-3. Rolling Pool / bootstrap status
-4. retained champions vs new entrants
-5. Top 10 overall, not Top 10 newest
-6. Top 3 Mini PRD
-7. notable dropped/rejected candidates
-8. evidence gaps
-9. keyword validation tasks
-
-## Evidence rules
-
-Every business claim must be:
+Every claim must be:
 
 - Observed
 - Proxy
 - Estimate
 - Unknown
 
-Never fabricate:
-
-- ASO Popularity
-- Difficulty
-- WeChat Index
-- search volume
-- revenue
-- downloads
-- retention
-- Chinese data availability
-- WeChat capability
-
-## Output language
-
-Default to the user's language. Chinese users receive Simplified Chinese while preserving original product names and source links.
+Never fabricate search volume, ASO metrics, revenue, downloads, retention, platform permissions or qualification status.
