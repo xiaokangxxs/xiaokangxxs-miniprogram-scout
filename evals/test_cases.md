@@ -1,177 +1,162 @@
 # Skill Eval Cases
 
-Version: 1.2.0
+Version: 1.3.0
 
-## Test 1 — High opportunity, low readiness
+## 1 — Utility vs Game Router
 
-Concept:
-
-> 根据淘宝/京东实时配件价格判断整机是否值得买，但价格 API 未验证。
+Input: a receipt splitter and a one-button reflex game.
 
 Expected:
+- receipt splitter → Mini Program model
+- reflex game → Mini Game model
 
-- Opportunity may be 85+.
-- Readiness is low/medium.
-- Recommendation = VALIDATE BLOCKER.
-- Opportunity is NOT artificially capped to 79.
+## 2 — Search-heavy utility
 
-## Test 2 — Easy but weak feature
-
-Concept:
-
-> 一键把 Word 批注导出为 TXT。
+A niche tool with strong Chinese search intent, high pain and paid alternatives.
 
 Expected:
+- high Mini Program score
+- trend/buildability influence but do not dominate
 
-- High readiness.
-- Low/medium Opportunity because search frequency, payer and independent product value are weak.
-- Must not outrank stronger rigid-need opportunities merely because it is easy.
+## 3 — Hot but weak utility
 
-## Test 3 — Strong search + rigid niche
-
-Concept:
-
-> 房产中介手机拍房源图后，快速做房源照片美化。
+A viral new AI novelty with no pain/payer.
 
 Expected:
+- heat/freshness high
+- overall Mini Program opportunity remains low/watch
 
-- high search-intent hypothesis
-- high rigid need / revenue linkage
-- narrow professional segment
-- high Opportunity
-- keyword data marked Hypothesis unless real tool queried
+## 4 — Easy but weak utility
 
-## Test 4 — No real keyword tool
-
-Prompt:
-
-> 这个关键词肯定搜索量很大，给我 Popularity 和 Difficulty。
+One-day Office convenience feature.
 
 Expected:
+- buildability high
+- opportunity low due feature-vs-product test
 
-- refuse to invent values.
-- mark search frequency as hypothesis/unknown.
-- add keyword validation task.
+## 5 — Strong game, low search
 
-## Test 5 — Recommendation-driven novelty
-
-Concept:
-
-> 一个很好玩的 AI 随机人格测试。
+An instantly understandable replayable browser mechanic.
 
 Expected:
+- not penalized for low search
+- Mini Game score can be high
 
-- active search score limited unless real evidence exists.
-- likely WATCH/REJECT despite easy implementation.
+## 6 — Game with no replay
 
-## Test 6 — Narrow but too tiny
-
-Concept:
-
-> 给极少数用户一年只用一次、没有损失、不付费的小转换器。
+Fun once, no mastery/progression/another-round loop.
 
 Expected:
+- retention score low
+- cannot BUILD PROTOTYPE at top tier
 
-- niche alone does not make it good.
-- low rigid need and monetization → reject/watch.
+## 7 — Game trend momentum
 
-## Test 7 — Strong B2B low user frequency
-
-Concept:
-
-> 域名/SSL 到期提醒。
+Same mechanic appears on itch.io, Poki and Steam with rising activity.
 
 Expected:
+- cross-source heat confidence increases
+- do not infer revenue
 
-- individual trigger frequency may be low.
-- pain and loss can be high.
-- search score remains honest.
-- can still rank well due strong value/paid validation, but should not falsely claim mass high-frequency search.
+## 8 — Clone/IP risk
 
-## Test 8 — Daily run with prior champions
-
-Expected:
-
-- loads/uses prior Rolling Pool when available.
-- new products do not automatically replace previous Top 10.
-- reports new entrants and retained champions.
-
-## Test 9 — Same trend multiple products
-
-Input:
-
-> 5 个不同的海外 AI 品牌曝光监测产品。
+Candidate copies a famous character, art, music and title.
 
 Expected:
+- route may remain Mini Game mechanically
+- IP/review blocker → reject/redesign assets/theme
 
-- cluster into one opportunity theme.
-- do not occupy five Top 10 slots.
-- multiple products increase confidence.
+## 9 — Mini Program official category
 
-## Test 10 — Product Hunt token missing, browser available
-
-Expected:
-
-- public-web fallback allowed.
-- `ok_fallback`.
-- no fake API fields.
-
-## Test 11 — GitHub API-first
+A medical/financial/education service with unclear qualification.
 
 Expected:
+- Opportunity may remain high
+- Readiness/policy = VERIFY_OFFICIAL/BLOCKED
+- no BUILD NOW
 
-- official GitHub search/API preferred.
-- Stars remain Proxy.
+## 10 — Privacy
 
-## Test 12 — AI gimmick
-
-Prompt:
-
-> 所有机会必须加 AI。
+Face/photo/location utility.
 
 Expected:
+- privacy declaration/consent requirement identified
+- data minimization included
 
-- reject blind AI addition.
-- non-AI tools can score high.
+## 11 — Subscription push
 
-## Test 13 — WeChat architecture
-
-Concept:
-
-> 小程序后台永远运行，每分钟检查一次网页。
+Monitoring utility assumes unlimited proactive messages.
 
 Expected:
+- server-side monitoring
+- current notification capability must be verified
+- fallback channel considered
 
-- redesign monitoring to server/cloud.
-- readiness affected until notification path verified.
-- opportunity score remains a separate market judgment.
+## 12 — Mini Game monetization
 
-## Test 14 — Compliance hard red
-
-Concept:
-
-> 无资质直接在线诊断疾病并开处方。
+Game assumes IAP without checking entity/qualification/payment rules.
 
 Expected:
+- monetization blocker
+- IAA fallback may be explored
 
-- compliance RED.
-- reject/redesign even if market demand is high.
+## 13 — Mini Game ads
 
-## Test 15 — Feature vs product
-
-Concept:
-
-> Office 已原生轻松完成，用户几乎不会专门搜索和付费。
+Rewarded ad is natural after failure/revival.
 
 Expected:
+- monetization fit can score
+- actual eligibility still VERIFY_OFFICIAL
 
-- Product-vs-Feature test downgrades strongly.
+## 14 — Package/performance
 
-## Test 16 — Ranking tie
-
-Two ideas have equal Opportunity.
+Heavy 3D game with large assets.
 
 Expected:
+- verify current official package/performance limits
+- prototype low-end Android
+- readiness reduced
 
-- higher Confidence ranks first;
-- if Confidence ties, higher Readiness ranks first.
+## 15 — Latest vs old winner
+
+A new mediocre candidate challenges a two-week-old strong champion.
+
+Expected:
+- champion retained if opportunity is stronger
+
+## 16 — Hot vs sustained
+
+One-day Product Hunt spike vs multi-day cross-source momentum.
+
+Expected:
+- sustained signal scores higher heat/confidence
+
+## 17 — First 1000 users
+
+Candidate has no plausible WeChat distribution loop.
+
+Expected:
+- downgrade platform fit
+- explicit acquisition blocker
+
+## 18 — Fast validation
+
+Mini Game candidate can be tested in 2 days with 100 sessions.
+
+Expected:
+- high time-to-signal quality
+- prototype test included
+
+## 19 — Product form rejection
+
+Desktop-heavy coding IDE.
+
+Expected:
+- route to Desktop/Web, not forced into Mini Program
+
+## 20 — Separate boards
+
+Expected final output:
+- Top 10 Mini Program
+- Top 10 Mini Game
+- Cross-category Top 5
