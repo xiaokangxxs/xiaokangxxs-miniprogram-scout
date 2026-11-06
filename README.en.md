@@ -6,7 +6,7 @@
 
 > **Global product & game signals → WeChat opportunity intelligence**
 
-[![Version](https://img.shields.io/badge/version-1.3.1-blue.svg)](VERSION)
+[![Version](https://img.shields.io/badge/version-1.3.2-blue.svg)](VERSION)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Agent Skill](https://img.shields.io/badge/Agent-Skill-blueviolet.svg)](SKILL.md)
 [![WeChat](https://img.shields.io/badge/WeChat-Mini%20Program%20%2B%20Mini%20Game-07C160.svg)](README.md)
@@ -20,6 +20,20 @@ npx skills add xiaokangxxs/xiaokangxxs-miniprogram-scout
 [Quick Start](#quick-start) · [What it does](#what-it-does) · [Scoring](#two-separate-opportunity-engines) · [Sources](#data-sources) · [Security](SECURITY.md)
 
 </div>
+
+<p align="center">
+  <img src="assets/readme/hero.svg" alt="xiaokangxxs-miniprogram-scout workflow" width="100%">
+</p>
+
+---
+
+## Output preview
+
+<p align="center">
+  <img src="assets/readme/latest-run-2026-11-06.svg" alt="Latest Scout run preview" width="100%">
+</p>
+
+See the full dated run: [docs/LATEST_RUN.md](docs/LATEST_RUN.md).
 
 ---
 
@@ -53,6 +67,16 @@ It does **not** blindly translate Product Hunt launches. It combines multi-sourc
 ```bash
 npx skills add xiaokangxxs/xiaokangxxs-miniprogram-scout
 ```
+
+Non-interactive:
+
+```bash
+npx skills add xiaokangxxs/xiaokangxxs-miniprogram-scout --yes
+```
+
+This repository itself is **not an npm package**. `npx` downloads the public `skills` CLI from npm; the CLI then installs this Skill directly from GitHub. No npm publish is required for this repository.
+
+As of 2026-11-06, the current `skills` CLI requires Node.js 22.20+. The git-clone fallback below does not depend on the CLI. skills.sh indexing is not required for installation; the official ecosystem can discover repositories through anonymous CLI installation telemetry. Set `DISABLE_TELEMETRY=1` to opt out.
 
 If your Agent/runtime does not support Skills CLI:
 
@@ -90,6 +114,10 @@ Supported variables:
 No real credential is stored in this repository.
 
 ## Two separate opportunity engines
+
+<p align="center">
+  <img src="assets/readme/scoring.svg" alt="Mini Program and Mini Game scoring models" width="100%">
+</p>
 
 Mini Programs and Mini Games are not scored with the same assumptions.
 
@@ -166,7 +194,7 @@ See [references/wechat_official_constraints.md](references/wechat_official_const
 
 ## Repository self-check
 
-Requires Node.js 18+ and no dependencies:
+The repository self-check scripts require Node.js 18+ and no dependencies. This is separate from the current Skills CLI requirement (Node.js 22.20+ as of 2026-11-06):
 
 ```bash
 npm run check
@@ -184,6 +212,7 @@ It validates:
 
 - [Installation & Agent compatibility](docs/INSTALL.md)
 - [Architecture](docs/ARCHITECTURE.md)
+- [Latest real Scout run](docs/LATEST_RUN.md)
 - [Example report](docs/EXAMPLE_REPORT.md)
 - [FAQ](docs/FAQ.md)
 - [Release checklist](docs/RELEASE_CHECKLIST.md)
