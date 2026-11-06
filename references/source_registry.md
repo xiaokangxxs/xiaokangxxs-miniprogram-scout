@@ -1,192 +1,169 @@
 # Source Registry
 
-Version: 1.1.0  
-Last verified: 2026-11-06
+Version: 1.3.0  
+Last reviewed: 2026-11-06
 
-Use official APIs/feeds first. If a source changes, prefer its current documentation over this registry.
+Use official APIs/feeds first. Public-web/third-party sources must be labeled honestly.
 
-## 1. Product Hunt — PRIMARY / TWO MODES
+# A. Product / Mini Program discovery
 
-Purpose: daily product leaderboard and launch discovery.
+## Product Hunt
 
-### Mode A — Official API (preferred when a token is available)
+Primary product-launch source.
 
-- API: `https://api.producthunt.com/v2/api/graphql`
-- Docs: `https://www.producthunt.com/v2/docs`
-- Auth: access token required.
-- Suggested secret name: `PRODUCTHUNT_TOKEN`
-- Developer token is available for simple scripts according to Product Hunt docs.
-- Typical query arguments: `first`, `order`, `postedAfter`, `postedBefore`, `featured`.
-- Useful fields: `id`, `name`, `tagline`, `description`, `url`, `website`, `votesCount`, `commentsCount`, `dailyRank`, `featuredAt`, `createdAt`, `topics`.
-- Default order: `RANKING` for a date window; use `VOTES` only when explicitly analyzing votes.
+- API: https://api.producthunt.com/v2/api/graphql
+- Docs: https://www.producthunt.com/v2/docs
+- Secret: `PRODUCTHUNT_TOKEN`
+- API mode preferred.
+- Public-web fallback allowed for limited discovery when safe token injection is unavailable.
+- Mark fallback `ok_fallback / public_web`.
+- Never fabricate API-only fields.
+- Verify current commercial-use terms before production/business use.
 
-Example GraphQL shape (adapt field availability to current docs):
+## Hacker News
 
-```graphql
-query DailyProducts($after: DateTime!, $before: DateTime!) {
-  posts(first: 30, order: RANKING, postedAfter: $after, postedBefore: $before) {
-    nodes {
-      id
-      name
-      tagline
-      description
-      url
-      website
-      votesCount
-      commentsCount
-      dailyRank
-      createdAt
-      featuredAt
-      topics(first: 10) { nodes { name } }
-    }
-  }
-}
-```
+- Official API: https://hacker-news.firebaseio.com/v0/
+- Show HN: product discovery.
+- Ask HN: pain/problem signals.
+- No key.
 
-HTTP header:
+## Neeed
 
-```text
-Authorization: Bearer <PRODUCTHUNT_TOKEN>
-Content-Type: application/json
-```
+- Read API/RSS when available.
+- Verify endpoint availability at runtime.
+- Good for micro-SaaS and narrow tools.
 
-Product Hunt currently states that its API must not be used for commercial purposes by default; business/commercial use requires contacting Product Hunt. Product Hunt also asks for attribution.
+## GitHub
 
-### Mode B — Public-web fallback (when token injection is unavailable)
+Use official repository search/API/connected GitHub tool first.
 
-If the host Agent has a normal browser/search capability but cannot safely inject `PRODUCTHUNT_TOKEN`, it may read the publicly visible Product Hunt Today/Launch pages as a **limited discovery fallback**.
+Useful discovery concepts:
 
-Rules:
+- `created:`
+- `pushed:`
+- `stars:`
+- topics/language
 
-- use normal public browsing/search, not bulk crawling or access-control bypass;
-- mark `source_type=public_web_fallback` and `source_mode=public_web`;
-- only record fields actually visible/verified on the public page;
-- metrics not visible are `Unknown`, not guessed;
-- do not claim API coverage/completeness;
-- if the user specifically requires API-exact ranking/fields, request `PRODUCTHUNT_TOKEN` and use Mode A;
-- respect Product Hunt's current terms/robots/access restrictions at runtime.
+Stars/forks/activity are Proxy signals, never revenue.
 
-With a successful public fallback, status is `ok_fallback`, not `pending_auth`. Record `api_auth_available=false` separately.
+## BetaList
 
-## 2. Hacker News — PRIMARY / NO KEY
+Use current public/RSS launch data when reachable.
 
-- Official API docs: `https://github.com/HackerNews/API`
-- Base: `https://hacker-news.firebaseio.com/v0/`
-- Auth: none.
-- Product discovery endpoints:
-  - `/showstories.json` — newest Show HN IDs, up to documented source limits.
-  - `/askstories.json` — Ask HN pain/problem signals.
-  - `/topstories.json`, `/beststories.json`, `/newstories.json` — supplemental signals.
-  - `/item/<id>.json` — details.
+## Indie Hackers
 
-Use Show HN mainly for products. Use Ask HN mainly for pain/problem signals.
+Third-party RSS may be used as auxiliary evidence only when current/reachable. Label unofficial.
 
-Useful fields: `id`, `title`, `url`, `score`, `descendants`, `time`, `text`, `by`.
+## Reddit
 
-## 3. Neeed Directory — PRIMARY / NO KEY
+Optional demand validation only with approved/compliant access.
 
-- Docs: `https://neeed.directory/docs/api`
-- Base: `https://neeed.directory/api/v1`
-- Auth: no key/sign-in for read APIs when currently available.
-- Useful endpoints may include:
-  - `/products?limit=50`
-  - `/search?q=<term>&limit=50`
-  - `/categories`
-  - `/products/{slug}`
-- RSS: `https://neeed.directory/feed.xml`
-- MCP: `https://neeed.directory/api/mcp`
+## G2
 
-Useful fields include name, punchline, description, website, category, tags, pricing_model, product_type, featured, listed_at.
+Optional competitor/review validation according to available entitlement.
 
-Verify endpoint availability at runtime.
+# B. Mini Game discovery
 
-## 4. GitHub — PRIMARY / REST API FIRST
+Mini Game scouting needs different sources because Product Hunt alone is not representative of game mechanics.
 
-- Search docs: `https://docs.github.com/en/rest/search/search`
-- Rate-limit docs: `https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api`
-- Auth: public data can work without auth; token recommended for repeat/high-volume runs.
-- Suggested secret name: `GITHUB_TOKEN`
+## itch.io — Primary game-mechanic discovery
 
-### Required acquisition preference
+Public pages:
 
-When the Agent has HTTP/curl/API capability, use the **official GitHub REST Search API directly** instead of a generic web search engine.
+- https://itch.io/games/new-and-popular
+- https://itch.io/games/new-and-popular/released
 
-Use generic web search only as a last-resort discovery fallback and label it `public_web_fallback`, because search engines are not reliable for complete `created:` / `pushed:` repository windows.
+Use for:
 
-Example repository query ideas:
+- new mechanics;
+- browser-playable prototypes;
+- game-jam/indie experimentation;
+- paid-price signals where visible.
 
-```text
-created:YYYY-MM-DD..YYYY-MM-DD stars:>=5 archived:false
-pushed:>=YYYY-MM-DD stars:>=20 archived:false
-```
+Fields such as price/rank are Observed when visible. Popularity is a platform Proxy.
 
-Recommended REST pattern:
+## Poki — Primary browser-game heat reference
 
-```text
-GET https://api.github.com/search/repositories?q=<encoded-query>&sort=stars&order=desc&per_page=30
-Accept: application/vnd.github+json
-X-GitHub-Api-Version: <current supported version if host uses one>
-Authorization: Bearer <GITHUB_TOKEN>   # only when configured
-```
+- https://poki.com/
 
-Rate-limit behavior:
+Use visible trending/top lists and game pages as Proxy evidence for:
 
-- unauthenticated general REST requests are currently documented at 60/hour, while authenticated user requests are generally higher;
-- search endpoints have their own more restrictive/custom limits;
-- inspect `x-ratelimit-*`, `retry-after`, and 403/429 responses;
-- back off rather than hammering/retrying;
-- request `GITHUB_TOKEN` only when needed for volume or rate limits.
+- instantly understandable mechanics;
+- mobile/browser suitability;
+- replayable casual loops.
 
-Use stars/forks/activity only as discovery/traction proxies. Inspect README/homepage/product site for product purpose. Exclude libraries/framework internals when looking for end-user products unless a clearly productizable workflow exists.
+Do not treat Poki rank as WeChat Mini Game market size.
 
-## 5. BetaList — PRIMARY-OPTIONAL / RSS
+## Steam — Trend and monetization reference
 
-- Purpose: early startup/product launches.
-- A third-party-monitored RSS feed has previously been observed at:
-  `http://feeds.feedburner.com/BetaList`
-- Auth: none for RSS.
-- Reliability: feed availability/provenance may change; verify at runtime.
+Use current Steam public store/search pages and reliable current player/trend sources where accessible.
 
-Do not claim the feed is an official API. If unavailable, mark the source unavailable rather than scraping around blocks.
+Useful for:
 
-## 6. Indie Hackers — PRIMARY-OPTIONAL / UNOFFICIAL FEED
+- newly popular mechanics;
+- pricing;
+- user-review evidence;
+- simulator/idle/roguelike/puzzle trend discovery.
 
-- Purpose: indie product launches and maker discussions.
-- Third-party RSS service previously observed: `https://ihrss.io/`
-  with feeds such as `/newest`, `/featured`, and top-period feeds.
-- Auth: generally none.
-- Reliability: unofficial/third-party; verify at runtime and label all results `unofficial_feed`.
+A PC game is not automatically Mini-Game-suitable. Extract only portable core mechanics.
 
-If unavailable or stale, skip it. Never represent it as an official Indie Hackers API.
+## CrazyGames — Optional browser-game signal
 
-## 7. Reddit — OPTIONAL DEMAND SIGNAL / ACCESS SENSITIVE
+Use public New/Popular/Trending pages when accessible.
 
-- Purpose: user pain, recurring questions, workaround behavior, willingness-to-pay language.
-- Official policy: `https://support.reddithelp.com/hc/en-us/articles/14945211791892-Developer-Platform-Accessing-Reddit-Data`
-- API/data access may require application/review/approval.
-- Commercial use requires the permissions/contract required by current Reddit policy.
+Purpose:
 
-Do not bypass API restrictions with scraping. If approved access is unavailable, skip Reddit and disclose the gap.
+- browser-friendly mechanic;
+- session length;
+- mobile control simplicity;
+- casual trend.
 
-## 8. G2 — OPTIONAL VALIDATION / SUBSCRIPTION OR ACCESS MAY BE REQUIRED
+## Game jams / public prototypes — Optional novelty signal
 
-- Docs: `https://documentation.g2.com/docs/g2-api`
-- MCP docs: `https://documentation.g2.com/docs/g2-mcp-server`
-- Purpose: product catalog, reviews, competitive intelligence, buyer-intent data where entitled.
-- Access: may require an active G2 subscription and specific entitlements.
+itch.io jams and public prototypes can reveal novel mechanics before commercial saturation.
 
-Use review/market data as validation evidence. Never infer competitor revenue simply from review counts.
+Novelty alone is Low Confidence until corroborated by play/traction evidence.
 
-## Fallback policy
+# C. Cross-source trend momentum
 
-For each source, prefer:
+`heat` should prefer multiple signals:
+
+- ranking growth;
+- player/review/comment velocity;
+- cross-source convergence;
+- repeated independent products using the same job/mechanic;
+- persistence beyond launch day.
+
+Do not use one-day launch rank as the only evidence.
+
+# D. WeChat-specific validation sources
+
+Before final recommendation, verify current WeChat platform requirements through official documentation/backend:
+
+- https://developers.weixin.qq.com/miniprogram/product/
+- https://developers.weixin.qq.com/miniprogram/product/material/
+- https://developers.weixin.qq.com/miniprogram/product/record/record_guidelines.html
+- https://developers.weixin.qq.com/miniprogram/dev/framework/user-privacy/
+- https://developers.weixin.qq.com/minigame/dev/guide/
+
+Do not use old blog posts as the final authority for current platform limits.
+
+# E. Source fallback policy
+
+Prefer:
 
 1. Official API/MCP
-2. Official RSS/feed
-3. Public page via normal browser/search **when permitted and suitable for limited discovery**
-4. Clearly labeled third-party feed when terms/provenance permit
-5. User-provided export
+2. Official feed
+3. Public page via normal browser where permitted
+4. Clearly labeled third-party source
+5. User export
 
-Never silently replace a blocked official source with unauthorized scraping.
+Never bypass access controls.
 
-Every fallback must record `source_mode`, `source_type`, data completeness limitations, and any missing fields.
+Every fallback must record:
+
+- `source_type`
+- `source_mode`
+- `source_status`
+- completeness limitations
+- fetch timestamp
