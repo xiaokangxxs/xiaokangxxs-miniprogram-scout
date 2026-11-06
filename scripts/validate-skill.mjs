@@ -35,7 +35,11 @@ const required = [
   "references/rolling_candidate_pool.md",
   "assets/report_template.md",
   "evals/test_cases.md",
-  "test-prompts.json"
+  "test-prompts.json",
+  "docs/LATEST_RUN.md",
+  "assets/readme/hero.svg",
+  "assets/readme/scoring.svg",
+  "assets/readme/latest-run-2026-11-06.svg"
 ];
 
 const errors = [];
