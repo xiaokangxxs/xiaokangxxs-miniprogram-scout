@@ -1,146 +1,177 @@
 # Skill Eval Cases
 
-Version: 1.1.0
+Version: 1.2.0
 
-Use these to test the skill after importing into an Agent.
+## Test 1 — High opportunity, low readiness
 
-## Test 1 — Missing Product Hunt token, browser available
+Concept:
+
+> 根据淘宝/京东实时配件价格判断整机是否值得买，但价格 API 未验证。
+
+Expected:
+
+- Opportunity may be 85+.
+- Readiness is low/medium.
+- Recommendation = VALIDATE BLOCKER.
+- Opportunity is NOT artificially capped to 79.
+
+## Test 2 — Easy but weak feature
+
+Concept:
+
+> 一键把 Word 批注导出为 TXT。
+
+Expected:
+
+- High readiness.
+- Low/medium Opportunity because search frequency, payer and independent product value are weak.
+- Must not outrank stronger rigid-need opportunities merely because it is easy.
+
+## Test 3 — Strong search + rigid niche
+
+Concept:
+
+> 房产中介手机拍房源图后，快速做房源照片美化。
+
+Expected:
+
+- high search-intent hypothesis
+- high rigid need / revenue linkage
+- narrow professional segment
+- high Opportunity
+- keyword data marked Hypothesis unless real tool queried
+
+## Test 4 — No real keyword tool
 
 Prompt:
 
-> 帮我看今天全球有哪些产品值得转成微信小程序。
+> 这个关键词肯定搜索量很大，给我 Popularity 和 Difficulty。
 
 Expected:
 
-- Skill triggers.
-- Agent recognizes Product Hunt API token is missing.
-- Agent explains `PRODUCTHUNT_TOKEN` for API mode.
-- If normal public browsing is available, it uses Product Hunt public-web fallback for limited discovery.
-- Product Hunt is `ok_fallback`, not falsely reported as API success.
-- API-only/hidden metrics remain Unknown.
-- No fake Product Hunt records.
+- refuse to invent values.
+- mark search frequency as hypothesis/unknown.
+- add keyword validation task.
 
-## Test 2 — Missing Product Hunt token, no browser/API access
+## Test 5 — Recommendation-driven novelty
 
-Expected:
+Concept:
 
-- Product Hunt is `pending_auth` or unavailable.
-- Agent may continue no-auth sources if possible.
-- Never fabricates Product Hunt entries.
-
-## Test 3 — Current daily scan
-
-Prompt:
-
-> 用这个 skill 抓今天的榜单，给我 Top 10 微信小程序机会。
+> 一个很好玩的 AI 随机人格测试。
 
 Expected:
 
-- Fetches multiple sources, not only Product Hunt.
-- Deduplicates cross-source products.
-- Reports source status, mode and record counts.
-- Does not invent ASO/revenue.
-- Ranks by effective Mini Program opportunity score, not raw popularity.
+- active search score limited unless real evidence exists.
+- likely WATCH/REJECT despite easy implementation.
 
-## Test 4 — GitHub API-first behavior
+## Test 6 — Narrow but too tiny
 
-Prompt:
+Concept:
 
-> 把今天 GitHub 新出现的产品也算进去。
+> 给极少数用户一年只用一次、没有损失、不付费的小转换器。
 
 Expected:
 
-- If HTTP/API capability exists, uses official GitHub REST repository search.
-- Generic web search is not the primary GitHub acquisition mechanism.
-- Stars are Proxy, never revenue.
-- Handles rate-limit headers/403/429; requests `GITHUB_TOKEN` only if needed.
+- niche alone does not make it good.
+- low rigid need and monetization → reject/watch.
 
-## Test 5 — AI gimmick
+## Test 7 — Strong B2B low user frequency
 
-Prompt:
+Concept:
 
-> 所有机会都必须加 AI。
+> 域名/SSL 到期提醒。
 
 Expected:
 
-- Skill refuses to blindly add AI.
-- Explains AI is core only when removal materially worsens the experience.
+- individual trigger frequency may be low.
+- pain and loss can be high.
+- search score remains honest.
+- can still rank well due strong value/paid validation, but should not falsely claim mass high-frequency search.
 
-## Test 6 — Weak novelty product
-
-Input product:
-
-> A fun novelty site with launch buzz but no clear user job or payer.
+## Test 8 — Daily run with prior champions
 
 Expected:
 
-- Low search-intent / monetization score.
-- Observe/reject rather than forced PRD.
+- loads/uses prior Rolling Pool when available.
+- new products do not automatically replace previous Top 10.
+- reports new entrants and retained champions.
 
-## Test 7 — Paid validation but unknown revenue
+## Test 9 — Same trend multiple products
 
 Input:
 
-> A product with a public $9/month plan and many reviews, but no revenue disclosure.
+> 5 个不同的海外 AI 品牌曝光监测产品。
 
 Expected:
 
-- Pricing = Observed.
-- Reviews = Proxy.
-- Revenue = Unknown.
-- No MRR inference from review count.
+- cluster into one opportunity theme.
+- do not occupy five Top 10 slots.
+- multiple products increase confidence.
 
-## Test 8 — Reddit without approved access
-
-Expected:
-
-- Reddit skipped/marked missing access.
-- No scrape-around behavior.
-
-## Test 9 — China data dependency gate
-
-Input concept:
-
-> 用 AI 分析淘宝/京东整机并根据实时配件价格判断是否值得买，但还没有任何已验证的价格数据 API。
+## Test 10 — Product Hunt token missing, browser available
 
 Expected:
 
-- Base product score may be high.
-- `data_dependency=YELLOW` (or RED if access is proven unavailable).
-- Effective score capped at <=79 until a compliant, fresh Chinese price source is verified.
-- Output explicitly lists data verification as a pre-build requirement.
+- public-web fallback allowed.
+- `ok_fallback`.
+- no fake API fields.
 
-## Test 10 — WeChat capability gate
-
-Input concept:
-
-> 小程序必须在手机后台 24 小时持续运行并每分钟检查一次状态，然后无限次主动推送微信通知。
+## Test 11 — GitHub API-first
 
 Expected:
 
-- Agent does not assume this is supported.
-- Marks `wechat_capability=RED` or redesigns to server/cloud monitoring plus permitted notification paths.
-- Mini Program recommendation is capped/rejected unless architecture changes.
+- official GitHub search/API preferred.
+- Stars remain Proxy.
 
-## Test 11 — Compliance gate
+## Test 12 — AI gimmick
 
-Input concept:
+Prompt:
 
-> 一个无需任何资质即可直接在线诊断疾病并开药的小程序。
-
-Expected:
-
-- `compliance=RED`.
-- Rejects/redesigns; high launch popularity cannot override this gate.
-
-## Test 12 — Non-AI reminder tool
-
-Input concept:
-
-> 域名和 SSL 到期提醒。
+> 所有机会必须加 AI。
 
 Expected:
 
-- AI is unnecessary.
-- Server/cloud scheduled checks are distinguished from Mini Program foreground execution.
-- WeChat notification capability/permission is flagged for current-doc verification if used.
+- reject blind AI addition.
+- non-AI tools can score high.
+
+## Test 13 — WeChat architecture
+
+Concept:
+
+> 小程序后台永远运行，每分钟检查一次网页。
+
+Expected:
+
+- redesign monitoring to server/cloud.
+- readiness affected until notification path verified.
+- opportunity score remains a separate market judgment.
+
+## Test 14 — Compliance hard red
+
+Concept:
+
+> 无资质直接在线诊断疾病并开处方。
+
+Expected:
+
+- compliance RED.
+- reject/redesign even if market demand is high.
+
+## Test 15 — Feature vs product
+
+Concept:
+
+> Office 已原生轻松完成，用户几乎不会专门搜索和付费。
+
+Expected:
+
+- Product-vs-Feature test downgrades strongly.
+
+## Test 16 — Ranking tie
+
+Two ideas have equal Opportunity.
+
+Expected:
+
+- higher Confidence ranks first;
+- if Confidence ties, higher Readiness ranks first.
