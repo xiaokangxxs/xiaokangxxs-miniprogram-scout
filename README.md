@@ -1,538 +1,487 @@
 # xiaokangxxs-miniprogram-scout
 
-> Global Product → China-Feasible WeChat Mini Program Scout
+> **值得做 × 高频搜索 × 刚需 × 小众** 的微信小程序机会侦察 Skill
 
-**Version: 1.1.0**
+**Version: 1.2.0**
 
-`xiaokangxxs-miniprogram-scout` 是一个面向任意 Agent 的通用 Skill。它不是简单把 Product Hunt 榜单翻译成中文，而是从全球新品与真实需求信号中发现机会，经过多源去重、证据分级、商业验证、中国落地门槛和微信能力校验后，把真正值得做的方向转化为微信小程序需求。
+`xiaokangxxs-miniprogram-scout` 是一个平台无关的 Agent Skill。它从 Product Hunt、Hacker News、GitHub、Neeed、BetaList、Indie Hackers 等全球新品/需求源寻找信号，但目标不是“翻译海外榜单”，而是找到真正适合中国微信小程序的机会。
 
-它重点回答一个问题：
+## 核心目标
 
-> **“这个海外产品为什么值得在中国重新做一次，而且为什么应该做成微信小程序？”**
+优先寻找：
 
----
+> **用户会主动搜索、需求足够刚、目标人群足够窄、能产生明确价值，而且值得单独做成产品的小程序。**
 
-## 为什么需要这个 Skill
+V1.2 特别修正了一个常见误区：
 
-单看 Product Hunt、GitHub Stars 或 Hacker News 热度，很容易得到错误结论：
+> **容易做 ≠ 值得做。**
 
-- 热门产品可能只是开发者基础设施，不适合普通微信用户；
-- 海外需求成立，不代表中国有可用的数据源；
-- 有网页/API 能力，不代表微信小程序端可以直接实现；
-- 点赞、Stars、评论数不是收入；
-- “加一个 AI”不等于产品成立；
-- 国外订阅产品存在，不等于国内用户愿意为同一形态付费；
-- 某个方向看起来新，不等于用户会主动搜索它。
-
-因此，本 Skill 把“发现新品”和“判断是否值得做成中国微信小程序”拆成两个独立问题。
+一个很容易开发的小功能，不应该因为数据简单、合规轻、微信能做，就排在一个商业价值明显更高但需要先验证数据源的机会前面。
 
 ---
 
-## 核心工作流
+## V1.2 的三维判断
 
-```text
-全球产品/需求信号
-        │
-        ▼
-Product Hunt / Hacker News / Neeed / GitHub
-BetaList / Indie Hackers / 可选 Reddit / G2
-        │
-        ▼
-标准化 + 跨来源去重
-        │
-        ▼
-证据补全
-Observed / Proxy / Estimate / Unknown
-        │
-        ▼
-专业产品机会评分（Raw Score / 100）
-        │
-        ▼
-China Feasibility Gate
-中国数据 / 微信能力 / 合规 / 平台依赖
-        │
-        ▼
-Effective Score
-        │
-        ├── < 60   淘汰/换产品形态
-        ├── 60–69 观察
-        ├── 70–79 值得验证
-        └── 80+   优先做
-        │
-        ▼
-Top 10 微信小程序机会
-        │
-        ▼
-Top 3 Mini PRD
-```
+### 1. Opportunity Score — 值不值得做
 
----
+这是**第一排序依据**。
 
-## 默认数据源
+100 分：
 
-| 数据源 | 用途 | 凭证策略 |
-|---|---|---|
-| Product Hunt | 当日新品发现 | 官方 API 优先；需要 `PRODUCTHUNT_TOKEN`；无 Token 但有浏览器时允许公开网页降级模式 |
-| Hacker News | Show HN 新品、Ask HN 痛点 | 官方 API，无需 Token |
-| Neeed Directory | 小型 SaaS / 工具新品 | API/RSS，运行时验证可用性 |
-| GitHub | 新项目、开源趋势 | REST Search API 优先；Token 可选，限流时再请求 |
-| BetaList | 早期创业产品 | RSS，运行时验证 |
-| Indie Hackers | 独立开发者产品信号 | 第三方 RSS，仅作为辅助信号 |
-| Reddit | 用户痛点、需求验证 | 可选；仅在合规 API 权限可用时启用 |
-| G2 | 竞品、评论、商业验证 | 可选；按账户/订阅权限启用 |
+| 维度 | 权重 |
+|---|---:|
+| 搜索需求与意图 | **25** |
+| 刚需 / 痛点 | **25** |
+| 小众切口 / 竞争空位 | **20** |
+| 商业价值 / 付费 | 15 |
+| 微信原生适配 | 10 |
+| 产品杠杆 | 5 |
 
-Skill 不会因为某个数据源不可用就伪造数据。不可用的数据源会被明确标记为 `pending_auth`、`blocked`、`rate_limited`、`ok_fallback` 等状态，然后继续处理其他来源。
+也就是说：
 
----
+**搜索 + 刚需 + 小众 = 70%**
 
-## Token / API Key 怎么处理
+这就是本 Skill 的核心偏好。
 
-Skill **不会要求把真实 Token 写进仓库**。
+### 2. Readiness Score — 现在能不能做
 
-推荐使用 Agent 的 Secret Store、环境变量或安全凭证注入：
+单独判断：
 
-```text
-PRODUCTHUNT_TOKEN=<your token>
-GITHUB_TOKEN=<optional>
-```
+- 中国数据/API
+- 微信能力
+- 合规/隐私
+- 第三方平台依赖
+- MVP 实现复杂度
 
-如果缺少必须的 Token，Agent 应主动告诉用户：
-
-1. 为什么需要；
-2. 去哪里申请；
-3. 用什么环境变量名提供；
-4. 不要把 Token 写进 `SKILL.md`、README、示例配置或 Git 历史。
-
-仓库内的 `assets/source_credentials.example.yaml` 仅包含占位符。
-
-详见：`references/auth_and_secrets.md`
-
----
-
-## Product Hunt 的双通道策略
-
-V1.1 增加了 Product Hunt 的双通道：
-
-### 1. API Mode
-
-优先方式。适合支持 HTTP/API 调用并能安全注入 `PRODUCTHUNT_TOKEN` 的 Agent。
-
-### 2. Public Web Fallback
-
-如果没有 Token，但 Agent 有正常浏览能力，可以读取公开 Launch 页面做**有限发现**。
-
-这时必须明确标记：
-
-```text
-source_status = ok_fallback
-source_mode   = public_web
-```
-
-并说明 API 独有字段、完整性和排序一致性可能无法保证。
-
-**禁止把 Public Web 结果伪装成 API 返回。**
-
----
-
-## GitHub 数据策略
-
-GitHub 不依赖普通搜索引擎来做“今日新仓库榜”。
-
-只要 Agent 具备 HTTP/API 能力，就应优先使用官方 REST Search API，例如按：
-
-- `created:`
-- `pushed:`
-- `stars:`
-- language / topic
-
-筛选新项目。
-
-无 Token 可低配额运行；达到限流后再提示用户配置 `GITHUB_TOKEN`。
-
----
-
-## Evidence First：证据分级
-
-任何关键结论都必须归为以下四种之一：
-
-| 类型 | 含义 | 示例 |
-|---|---|---|
-| **Observed** | 官方页面/API/公开数据直接看到 | 官方价格、Product Hunt 排名、GitHub Stars |
-| **Proxy** | 间接信号 | 评论数、Votes、Stars、Review 数量 |
-| **Estimate** | 模型基于证据做的判断 | 中国付费意愿可能中等、MVP 约 2–4 周 |
-| **Unknown** | 无可靠证据 | 未获得真实收入、未接入 ASO 工具 |
-
-尤其禁止：
-
-```text
-Product Hunt 300 votes ≠ 月收入 3 万
-GitHub 5k stars       ≠ 5k 付费用户
-G2 100 reviews        ≠ 100 个活跃客户
-```
-
-ASO Popularity / Difficulty、微信指数、下载量、收入等如果没有真实数据工具，就必须写 `Unknown`，不能生成“看起来像真的”数字。
-
-详见：`references/evidence_rules.md`
-
----
-
-## 100 分机会评分
-
-Raw Opportunity Score 仍保持 100 分制，用于判断“产品本身是不是好机会”。
-
-核心维度包括：
-
-- 搜索/发现意图
-- 用户痛点强度
-- 已有付费验证
-- 微信小程序形态匹配度
-- 商业化能力
-- 中国市场竞争空位
-- MVP 可行性
-- AI / 自动化杠杆
-
-具体权重以 `references/scoring_model.md` 为准。
-
-### 为什么 Raw Score 还不够
-
-一个海外产品可能 Raw Score = 88，但如果它必须依赖一个中国无法合法、稳定获得的数据源，就不应该被直接判定为“优先做”。
-
-因此 V1.1 增加了 `Effective Score`。
-
----
-
-## China Feasibility Gate
-
-每个进入正式筛选的候选都必须额外经过四个门槛：
-
-### 1. Data Dependency
-
-中国环境需要的数据/API 是否可获得？
+Readiness 低，不代表机会差。
 
 例如：
 
-- 公开数据：GREEN
-- 需要进一步确认平台接口：YELLOW
-- 必须违规爬取或没有可持续数据源：RED
+```text
+PC 整机值不值
+Opportunity: 90
+Readiness: 55
 
-### 2. WeChat Capability
+结论：
+高价值机会，但先验证国内实时配件价格数据源。
+```
 
-核心体验是否适合微信小程序？
+而不是把它粗暴改成 79 分。
+
+### 3. Confidence — 我们有多确定
+
+判断证据强度：
+
+- 真实问题证据
+- 搜索证据
+- 付费证据
+- 多源独立佐证
+
+---
+
+## 为什么“高频搜索”非常重要
+
+这里的“高频”不是要求同一个用户每天使用。
+
+Skill 会区分：
+
+- **Market Search Frequency**：整个目标市场多久有人搜索这个问题；
+- **User Trigger Frequency**：单个用户多久遇到一次；
+- **Search Intent Strength**：搜的时候是不是马上要解决。
 
 例如：
 
-- 拍照、上传、OCR、轻量表单：通常 GREEN
-- 后台持续运行、系统级能力：需要服务端拆分或 POC
-- 小程序能力无法承担核心价值：RED
+- “房产照片美化”可能单个中介频繁遇到；
+- “域名到期提醒”单个用户频率低，但 B2B 避损价值很高；
+- “AI 随机人格测试”可能传播强，但不一定有持续主动搜索需求。
 
-### 3. Compliance
+### 关键词数据绝不编造
 
-是否涉及中国法律、行业许可、隐私、生物信息、医疗、金融等额外要求？
+如果没有真实 ASO / 微信 / 百度 / 关键词工具：
 
-### 4. Platform Dependency
+Skill 只能写：
 
-产品是否过度依赖淘宝、京东、抖音、小红书、微信外部平台的非稳定接口或平台政策？
+```text
+Search Hypothesis: High / Medium / Low
+ASO真实数据：未验证
+```
 
-### Score Cap
+不能伪造：
 
-V1.1 默认规则：
+- Popularity
+- Difficulty
+- 微信指数
+- 搜索量
 
-- 存在关键未解决 `YELLOW`：通常最高只能到 **79**；
-- 核心数据源或微信能力为 `RED`：通常最高 **59**，或建议改成 Web/App/Desktop；
-- 合规不可行：直接淘汰。
+而且 **Top 3 必须附真实关键词验证任务**。
 
-详见：`references/china_feasibility_gate.md`
+---
+
+## 什么叫“刚需”
+
+优先寻找“不解决就会有明显代价”的问题：
+
+- 损失收入
+- 错过成交/机会
+- 花更多钱
+- 浪费大量时间
+- 重复人工操作
+- 容易出错
+- 有截止时间
+- 用户已经在用 Excel、截图、提醒、人工服务、复杂 SaaS 凑合解决
+
+“挺方便”“挺好玩”“AI 很酷”不算刚需。
+
+---
+
+## 什么叫“小众”
+
+小众不是没人用。
+
+理想状态是：
+
+> **人群具体、问题很痛、巨头不愿专门深做。**
+
+例如：
+
+- 房产中介
+- 眼镜店
+- 项目经理
+- 外贸营销代理商
+- 老师
+- 站长
+- 聚餐/旅行分账
+- 招投标/审阅流程
+
+避免：
+
+- 所有人都需要的泛工具
+- 大型社交
+- Marketplace
+- 内容平台
+- 巨头核心能力平替
+
+---
+
+## Product vs Feature Test
+
+V1.2 新增“这是产品还是功能？”检查。
+
+如果一个方向：
+
+- 一年只用一两次；
+- 不解决也没什么损失；
+- Office/WPS/微信已经差不多能做；
+- 用户不愿单独付钱；
+- 几乎没人主动搜索；
+- 没有扩展路径；
+
+那么即使它只要一天就能开发出来，也不能排高。
+
+---
+
+## 14 天 Rolling Candidate Pool
+
+旧版本容易出现：
+
+> 昨天的冠军，因为今天来了十个新品，就消失了。
+
+V1.2 改成：
+
+```text
+Fresh Pool：24–72h 新品
+        ↓
+Rolling Pool：最近 14 天候选
+        ↓
+Champion Board：当前最强 Top 20
+        ↓
+新产品挑战旧冠军
+        ↓
+Top 10 Overall
+```
+
+所以输出不再是：
+
+**“今天最新的 10 个产品”**
+
+而是：
+
+**“当前最值得做的 10 个机会”。**
+
+同一赛道多个产品会聚合成一个机会主题，例如：
+
+```text
+多个虚拟软装/房产修图工具
+→ 房源照片 AI 美化
+```
+
+不会用 5 个相似海外产品占 5 个 Top 10 名额。
+
+---
+
+## 推荐状态
+
+最终不再只有一个混合分数。
+
+### 🔥 BUILD NOW
+
+- Opportunity ≥ 85
+- Readiness ≥ 70
+- Confidence ≥ 60
+- 关键搜索假设已经有足够验证
+
+### 🧪 VALIDATE BLOCKER
+
+Opportunity ≥ 85，但：
+
+- 数据/API 未验证
+- 搜索量未验证
+- 微信能力未验证
+- 平台依赖需要确认
+
+这是：
+
+> **好机会，先解决一个阻塞项。**
+
+### ✅ VALIDATE
+
+Opportunity 75–84。
+
+### 👀 WATCH
+
+Opportunity 65–74。
+
+### ❌ REJECT
+
+Opportunity <65 或存在无法接受的硬红线。
+
+---
+
+## 数据源
+
+| Source | Purpose |
+|---|---|
+| Product Hunt | 新产品发现 |
+| Hacker News / Show HN | 新产品 |
+| Ask HN | 用户问题/痛点 |
+| GitHub | 新开源产品/工具 |
+| Neeed | 小型 SaaS/工具 |
+| BetaList | 早期产品 |
+| Indie Hackers | 独立开发者信号 |
+| Reddit | 可选需求验证 |
+| G2 | 可选竞品/付费验证 |
+
+Product Hunt：
+
+- 有 `PRODUCTHUNT_TOKEN` → 官方 API
+- 无 Token 但能正常浏览 → Public Web fallback
+- fallback 必须明确标记，不冒充 API
+
+GitHub：
+
+- 官方 API / Connector first
+- `GITHUB_TOKEN` 只在限流/高频任务需要时请求
+
+---
+
+## Evidence First
+
+所有关键事实必须标记为：
+
+- **Observed**：官方/一手看到
+- **Proxy**：Stars、Votes、评论等间接信号
+- **Estimate**：模型判断
+- **Unknown**：没有可靠数据
+
+禁止：
+
+```text
+300 Product Hunt votes = 月收入 3 万
+5000 GitHub stars = 5000 付费用户
+100 reviews = 100 活跃客户
+```
 
 ---
 
 ## AI 原则
 
-Skill 不会强行给所有产品加 AI。
+AI 不是默认卖点。
 
-只有 AI 能显著改善以下至少一项时，才认为 AI 有必要：
+只有 AI 明显改善：
 
-- 质量
-- 速度
-- 成本
-- 个性化
+- 图片/音频/文本理解
 - 自动化
-- 对图片、文本、语音等非结构化输入的理解
+- 质量
+- 个性化
+- 人工成本
 
-判断方式很简单：
+才进入核心。
 
-> **去掉 AI 后，这个产品的核心体验是否明显变差？**
+判断：
 
-如果答案是否定的，就把 AI 标记为 `optional` 或 `unnecessary`。
+> **去掉 AI 后，核心体验是否明显变差？**
+
+如果否，AI 就是辅助或不需要。
 
 ---
 
-## 什么产品会被优先筛出来
-
-更偏好：
-
-- 单一任务明确；
-- 用户会主动搜索；
-- 小而美；
-- 能明显省时间、省钱、提高收入或降低损失；
-- 已经存在付费替代品；
-- 在微信里“用完即走”比独立 App 更自然；
-- 1–3 个核心页面就可以验证价值；
-- 不需要先拥有百万用户才能成立。
-
-例如：
+## 标准运行流程
 
 ```text
-“帮房产中介 30 秒处理一张房源照片”
+多源抓新品
+    ↓
+Fresh Pool
+    ↓
+合并上次 Rolling Pool
+    ↓
+跨源去重
+    ↓
+按“机会主题”聚类
+    ↓
+搜索 / 刚需 / 小众 / 付费证据
+    ↓
+Opportunity Score
+    ↓
+Readiness Score
+    ↓
+Confidence
+    ↓
+Top 10 Overall
+    ↓
+Top 3 Mini PRD
 ```
-
-通常比：
-
-```text
-“做一个 AI 驱动的房地产超级平台”
-```
-
-更符合本 Skill 的目标。
 
 ---
 
-## 什么产品会被降级或淘汰
+## Top 10 输出
 
-典型包括：
+每个机会至少包含：
 
-- 大型社交网络；
-- 双边 marketplace；
-- 依赖强网络效应；
-- 巨头已经完全覆盖且没有细分切口；
-- 必须拥有大量专有数据才能启动；
-- 依赖违规/不稳定爬虫；
-- 微信端无法实现核心能力；
-- 只是“XX + AI”概念包装；
-- 没有明确付费对象或价值闭环；
-- 只有榜单热度，没有真实问题证据。
+- 机会主题
+- 支撑海外产品
+- 中文核心搜索词
+- 搜索频率状态
+- 刚需理由
+- 小众目标人群
+- 不解决的代价
+- 付费验证
+- Opportunity Score
+- Readiness Score
+- Confidence
+- Recommendation
+- 最大阻塞项
 
----
+## Top 3 Mini PRD
 
-## 最终输出
+额外包含：
 
-一次标准运行至少返回：
-
-1. 数据源状态表；
-2. 抓取数量 → 去重数量 → 正式评分数量；
-3. China Feasibility Gate 统计；
-4. Top 10 微信小程序机会；
-5. Top 3 Mini PRD；
-6. 被淘汰/降级项目及原因；
-7. 尚未验证的数据、微信能力和合规项。
-
-### Top 3 Mini PRD 包含
-
-- 中国用户定位
-- 单一 JTBD
-- 触发场景 / 用户搜索词
-- 3 个小程序名称候选
-- 一句话卖点
+- 精确 JTBD
+- 搜索时刻
+- 核心词 + 长尾词
+- 真实关键词验证任务
+- 当前替代方案
 - P0 MVP
-- 页面与核心流程
-- 输入 / 输出 / 数据依赖
-- 中国数据源状态
-- 微信能力验证项
+- 微信入口优势
+- 中国数据/API
 - 商业模式
 - AI 必要性
-- 合规与平台风险
-- 最便宜验证方法
+- Readiness 阻塞
+- 最低成本验证
 - Kill Criteria
 
 ---
 
-## 快速开始
+## 快速使用
 
-### Agent 支持 Skill 目录
+### 支持 Skill 目录的 Agent
 
-把整个目录放到 Agent 的 Skill / Rules / Knowledge 目录，然后让 Agent 加载：
+导入整个仓库。
 
-```text
-xiaokangxxs-miniprogram-scout/
-```
-
-运行示例：
+调用：
 
 ```text
-使用 xiaokangxxs-miniprogram-scout，获取今天全球新品和需求信号，
-筛选最适合中国微信小程序的 Top 10，给 Top 3 生成 Mini PRD。
-严格区分 Observed / Proxy / Estimate / Unknown。
+使用 xiaokangxxs-miniprogram-scout，
+结合最近 14 天候选池和今天新产品，
+找当前最值得做的微信小程序 Top 10。
+重点优先：高频搜索、刚需、小众。
 ```
 
-### Agent 不支持 Skill 目录
+### 不支持 Skill 目录
 
 直接导入：
 
+`UNIVERSAL_SINGLE_FILE.md`
+
+---
+
+## 目录
+
 ```text
+SKILL.md
 UNIVERSAL_SINGLE_FILE.md
-```
+README.md
+VERSION
+CHANGELOG.md
+LICENSE
+ATTRIBUTION.md
 
-作为 System Prompt / Project Instruction / Knowledge File 使用。
+references/
+  master_prompt_v3_3.md
+  scoring_model.md
+  rolling_candidate_pool.md
+  china_feasibility_gate.md
+  evidence_rules.md
+  source_registry.md
+  output_schema.md
+  auth_and_secrets.md
+
+assets/
+  report_template.md
+  source_credentials.example.yaml
+
+docs/
+  EXAMPLE_REPORT.md
+
+evals/
+  test_cases.md
+```
 
 ---
 
-## 常用调用方式
+## Security
 
-### 今日机会榜
+真实 Token/API Key 永远不要提交进仓库。
+
+推荐：
 
 ```text
-使用 xiaokangxxs-miniprogram-scout 跑今天的数据，给我 Top 10。
+PRODUCTHUNT_TOKEN
+GITHUB_TOKEN
 ```
 
-### 只找高付费方向
-
-```text
-只保留明确存在付费竞品，而且用户可以通过它赚钱、省钱或降低损失的方向。
-```
-
-### 只找个人开发者 MVP
-
-```text
-只保留一个开发者 2–4 周可以做出 MVP 的方向，排除重运营和强网络效应。
-```
-
-### 分析指定海外产品
-
-```text
-用 xiaokangxxs-miniprogram-scout 分析这个产品是否值得转成中国微信小程序：<URL>
-```
-
-### 批量分析现有榜单
-
-```text
-读取我提供的 JSON/CSV/HTML 产品榜单，跳过数据抓取，从去重和机会评分开始。
-```
-
----
-
-## 目录结构
-
-```text
-xiaokangxxs-miniprogram-scout/
-├── SKILL.md
-├── README.md
-├── CHANGELOG.md
-├── CONTRIBUTING.md
-├── SECURITY.md
-├── VERSION
-├── .gitignore
-├── UNIVERSAL_SINGLE_FILE.md
-├── docs/
-│   └── EXAMPLE_REPORT.md
-├── references/
-│   ├── auth_and_secrets.md
-│   ├── source_registry.md
-│   ├── evidence_rules.md
-│   ├── china_feasibility_gate.md
-│   ├── scoring_model.md
-│   ├── output_schema.md
-│   └── master_prompt_v3_2.md
-├── assets/
-│   ├── source_credentials.example.yaml
-│   └── report_template.md
-└── evals/
-    └── test_cases.md
-```
-
----
-
-## Agent 兼容设计
-
-这个仓库故意不绑定单一 Agent 产品。
-
-核心规则全部是 Markdown：
-
-- 支持标准 Skill 目录的 Agent：读取 `SKILL.md` + `references/`；
-- 只支持单文件 Instruction 的 Agent：使用 `UNIVERSAL_SINGLE_FILE.md`；
-- 支持工具调用的 Agent：按 source registry 调 API；
-- 只能联网浏览的 Agent：允许有限 fallback，并强制披露数据模式；
-- 完全离线的 Agent：用户提供 JSON/CSV/HTML 后从 Phase 3 开始。
-
----
-
-## 安全原则
-
-- 不提交真实 Token/API Key；
-- 不回显 Secret；
-- 不把用户 Token 写进生成的报告；
-- 不绕过明确的访问限制；
-- 不使用“能爬到”替代“允许使用”；
-- 第三方服务条款在正式运行前应再次确认；
-- 不把模型估计伪装成真实商业数据。
-
-详见 `SECURITY.md`。
-
----
-
-## 示例
-
-仓库提供一份**脱敏示例报告**：
-
-`docs/EXAMPLE_REPORT.md`
-
-它用于说明报告结构与判断方式，**不是固定榜单，也不代表运行当天的实时数据**。
-
----
-
-## 版本
-
-当前版本：**v1.1.0**
-
-主要变化：
-
-- Product Hunt API + public-web fallback；
-- GitHub REST Search API first；
-- 新增 China Feasibility Gate；
-- 新增 Raw Score → Effective Score；
-- 增加中国数据源、微信能力、合规和平台依赖判断；
-- Master Prompt 升级到 V3.2；
-- evals 扩展至 12 个测试场景。
-
-完整记录见 `CHANGELOG.md`。
-
----
-
-## Contributing
-
-欢迎提交：
-
-- 新的数据源适配；
-- 更可靠的中国数据源验证方法；
-- 微信小程序能力约束更新；
-- 评分模型改进；
-- Agent 兼容性适配；
-- eval 测试案例。
-
-提交前请阅读 `CONTRIBUTING.md`。
+通过 Agent Secret Store / 环境变量提供。
 
 ---
 
 ## License & Attribution
 
-本项目采用 **MIT License** 开源。你可以自由使用、修改、分发和商用。
-
-按照 MIT License，复制或分发本项目或其重要部分时，需要保留版权声明与许可证文本：
+MIT License.
 
 ```text
 Copyright (c) 2026 xiaokangxxs
 ```
 
-如果你基于本项目进行二次开发、打包、分发或公开分享，推荐同时在 README、文档或 Credits 中注明来源：
+二次开发/公开分享建议注明：
 
 ```text
 Based on xiaokangxxs-miniprogram-scout by xiaokangxxs.
 Source: github.com/xiaokangxxs/xiaokangxxs-miniprogram-scout
 ```
 
-详见 `LICENSE` 与 `ATTRIBUTION.md`。
-
 ---
 
 ## Disclaimer
 
-本项目用于产品研究、机会筛选和需求分析，不保证任何方向一定盈利，也不替代法律、平台政策、数据授权、市场调研或真实用户验证。
+这个 Skill 用来提高产品筛选质量，不保证任何项目一定盈利。
 
-**榜单热度不是商业结果；模型评分不是市场事实；最终上线前必须完成真实验证。**
+**搜索假设不是搜索量事实；评分不是市场事实；最终上线前仍需真实关键词、用户、数据、合规和付费验证。**
