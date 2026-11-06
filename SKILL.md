@@ -1,225 +1,281 @@
 ---
 name: xiaokangxxs-miniprogram-scout
-description: Discover current products from Product Hunt, Hacker News, GitHub, Neeed, BetaList, Indie Hackers and optional Reddit/G2, then validate and convert the strongest overseas product ideas into small, searchable, monetizable and China-feasible WeChat Mini Program opportunities. Use for daily product scouting, overseas-product-to-China adaptation, mini-program idea discovery, or turning product leaderboards into requirements.
+description: Discover current products from Product Hunt, Hacker News, GitHub, Neeed, BetaList, Indie Hackers and optional Reddit/G2, then identify China-feasible WeChat Mini Program opportunities optimized for high-frequency search intent, rigid need, niche user segments and clear value. Use for daily product scouting, overseas-product-to-China adaptation, mini-program opportunity discovery, or turning product leaderboards into requirements.
 ---
 
 # xiaokangxxs-miniprogram-scout
 
-Version: **1.1.0**
+Version: **1.2.0**
 
-> Global Product → China-Feasible WeChat Mini Program Scout
+> Global Product → Searchable Rigid-Niche WeChat Mini Program Scout
 
 ## Mission
 
-Find current products and problem signals from multiple global sources, merge duplicate signals, verify evidence, and convert only the strongest **and actually buildable in China/WeChat** opportunities into realistic WeChat Mini Program concepts.
+Find the **best current opportunities**, not merely today's newest products.
 
-This skill is evidence-first. Never fabricate rankings, ASO scores, revenue, downloads, user counts, pricing, reviews, API results, Chinese data availability, or WeChat platform capabilities.
+Primary preference:
+
+> **值得做 × 高频搜索 × 刚需 × 小众**
+
+The Skill must not confuse:
+
+- easy to build
+with
+- worth building.
 
 ## Required workflow
 
-Always execute these phases in order:
+1. Capability + credential check
+2. Current multi-source acquisition
+3. Load/construct Rolling Candidate Pool
+4. Normalize + deduplicate products
+5. Cluster products into opportunity themes
+6. Evidence enrichment
+7. Opportunity Score
+8. Readiness + Confidence
+9. Mini Program conversion
+10. Top 10 overall + Top 3 Mini PRD + rejected/downranked reasons
 
-1. **Capability and credential check**
-2. **Current multi-source acquisition**
-3. **Normalize + deduplicate**
-4. **Evidence enrichment**
-5. **China Feasibility Gate**
-6. **Professional opportunity screening + scoring**
-7. **Mini Program requirement conversion**
-8. **Ranking + rejection reasons + evidence disclosure**
+Read:
 
-Read these supporting files before the relevant phase:
+- `references/source_registry.md`
+- `references/master_prompt_v3_3.md`
+- `references/scoring_model.md`
+- `references/rolling_candidate_pool.md`
+- `references/evidence_rules.md`
+- `references/china_feasibility_gate.md`
+- `references/output_schema.md`
+- `references/auth_and_secrets.md`
 
-- `references/source_registry.md` — source endpoints, auth rules, source modes and fallbacks.
-- `references/master_prompt_v3_2.md` — professional product/market evaluation rules (content version V3.2).
-- `references/evidence_rules.md` — evidence grading and anti-hallucination rules.
-- `references/china_feasibility_gate.md` — China data, WeChat capability, compliance, platform-dependency gate.
-- `references/scoring_model.md` — 100-point base score plus effective-score caps.
-- `references/output_schema.md` — normalized data model and final report structure.
-- `references/auth_and_secrets.md` — how to request and protect API keys/tokens.
+## Phase 1 — capability and credentials
 
-## Phase 1 — Capability and credential check
+Detect browser/search/API/shell/MCP capabilities.
 
-Detect whether the current Agent has one or more of:
+If no network exists, never pretend to fetch current data. Accept user-provided JSON/CSV/HTML/URLs and continue from normalization.
 
-- web search/browser;
-- generic HTTP GET/POST;
-- shell/curl/PowerShell;
-- MCP/API connectors.
+Product Hunt:
 
-If the Agent has no network capability, do not pretend to fetch current data. Ask the user to provide exported JSON/CSV/HTML, URLs, or copied leaderboard data, then continue from Phase 3.
+- API mode preferred when `PRODUCTHUNT_TOKEN` is safely available.
+- Public-web fallback is allowed for limited discovery when normal browsing exists.
+- Fallback must be labeled `ok_fallback / public_web`.
+- Never expose/store real tokens.
 
-### Product Hunt credential/fallback behavior
+GitHub:
 
-Product Hunt's official API requires an access token. Prefer API mode when `PRODUCTHUNT_TOKEN` is safely available.
+- official REST/search connector first;
+- `GITHUB_TOKEN` only when volume/rate limits require it.
 
-If the token is not available:
+Reddit/G2 remain optional validation sources.
 
-1. Explain that Product Hunt API v2 requires an access token and that a developer token can be created from Product Hunt's API dashboard.
-2. Prefer the host Agent's secret store/environment variable `PRODUCTHUNT_TOKEN`; never require committing it to files.
-3. **If the Agent has a normal public browser/search capability, it may continue with Product Hunt public-web fallback** for limited launch discovery, following `source_registry.md`.
-4. Mark that source `ok_fallback`, `source_mode=public_web`, and disclose that API-only fields/completeness are unavailable.
-5. If neither API auth nor public browsing is possible, mark `pending_auth` and continue other sources.
+## Phase 2 — fresh discovery
 
-GitHub public data can be fetched without authentication at lower limits. When HTTP/API tools are available, use GitHub REST Search API directly. Ask for `GITHUB_TOKEN` only when volume/rate limits require it.
+Default sources:
 
-Optional Reddit/G2 access is requested only when enabled/needed and compliant access exists.
+1. Product Hunt
+2. Hacker News — Show HN + Ask HN
+3. Neeed Directory
+4. GitHub official search/API
+5. BetaList
+6. Indie Hackers unofficial feed when reachable
 
-## Phase 2 — Current multi-source acquisition
+Default fresh window: 24h; expand to 72h if sparse.
 
-Default discovery sources:
+Freshness is a discovery signal only. It must not replace market value.
 
-1. Product Hunt — API mode or disclosed public-web fallback.
-2. Hacker News — Show HN + Ask HN; Top/Best supplemental.
-3. Neeed Directory — newest listings.
-4. GitHub — official REST Search API first; web fallback only when API tools are unavailable.
-5. BetaList — RSS when reachable.
-6. Indie Hackers — third-party RSS only when reachable; label unofficial.
+## Phase 3 — Rolling Candidate Pool
 
-Optional validation sources:
+Use `references/rolling_candidate_pool.md`.
 
-7. Reddit — pain/problem signal only when approved access/terms permit.
-8. G2 — product/review/competitive validation where entitled.
-9. Competitor/pricing/product pages — pricing and product evidence, not invented revenue evidence.
+Default:
 
-### Default time window
+- Fresh Pool: 24–72h
+- Rolling Pool: 14 days
+- Champion Board: Top 20
 
-Use the requested period. Otherwise use latest **24 hours**. If sparse, widen to **72 hours** and disclose it.
+New products challenge old champions. Do not reset the opportunity leaderboard every day.
 
-### Default limits
+If persistent state is unavailable, use prior conversation/report when available. Otherwise clearly state that this run is bootstrap mode and output reusable Champion Board data.
 
-Aim for 15–30 candidate records per primary source before deduplication, subject to source limits. Do not exhaust APIs unnecessarily.
+## Phase 4 — normalize + deduplicate
 
-### Source failure behavior
+Deduplicate by normalized domain, product name and strong semantic identity.
 
-If unavailable, blocked, rate-limited, stale, or missing credentials:
+Aggregate cross-source signals.
 
-- record `source_status`, `source_mode`, and reason;
-- continue other sources;
-- never synthesize missing leaderboard entries;
-- never scrape around explicit access blocks when an official API/feed exists.
+Do not let five nearly identical overseas products occupy five opportunity slots.
 
-## Phase 3 — Normalize and deduplicate
+## Phase 5 — cluster into opportunity themes
 
-Map every record to `references/output_schema.md`.
+Convert products into underlying opportunity themes.
 
-Deduplicate primarily by:
+Examples:
 
-1. normalized product website domain;
-2. normalized product name;
-3. strong semantic match only as fallback.
+- multiple virtual staging/photo products → `房源照片 AI 美化`
+- multiple AI visibility trackers → `AI 搜索品牌曝光检测`
 
-When a product appears on multiple sources, aggregate `source_signals[]`; do not double count it.
+Score opportunity themes, not launch pages.
 
-Keep launch date, directory-listing date, repository date, and fetch date separate.
+## Phase 6 — evidence enrichment
 
-## Phase 4 — Evidence enrichment
+For each serious candidate collect evidence for:
 
-For each candidate worth screening, collect enough evidence to answer:
+- exact user/job
+- search moment
+- Chinese core keyword
+- market search frequency
+- user trigger frequency
+- cost of inaction
+- existing workaround
+- paid alternatives
+- payer
+- narrow target segment
+- giant/platform competition
+- China data/API dependency
+- WeChat-specific advantage
+- compliance/platform risk
 
-- exact job/problem and target user;
-- recurring/searchable pain vs novelty;
-- existing paid alternatives and 2–3 competitor prices where public;
-- traction beyond one launch metric;
-- Chinese search intent and local wedge;
-- Chinese data/API dependencies;
-- whether the required WeChat capabilities are realistic;
-- compliance/platform-dependency risks;
-- monetization path.
+Votes/stars/comments remain Proxy, never revenue.
 
-When current web access exists, inspect official product/pricing pages for top candidates. Votes/stars are never revenue.
+## Phase 7 — Opportunity Score
 
-## Phase 5 — China Feasibility Gate
+Apply `master_prompt_v3_3.md` and `scoring_model.md`.
 
-Read `references/china_feasibility_gate.md` and classify every serious candidate:
+Opportunity Score is 100:
 
-- China data/external dependency: GREEN/YELLOW/RED
-- WeChat capability fit: GREEN/YELLOW/RED
-- China compliance/regulation: GREEN/YELLOW/RED
-- Third-party platform concentration: GREEN/YELLOW/RED
+- Search Demand & Intent — 25
+- Rigid Need / Pain — 25
+- Niche Wedge — 20
+- Value & Monetization — 15
+- WeChat Native Fit — 10
+- Product Leverage — 5
 
-Do not bury these as generic risks.
+### Hard preference
 
-Key behavior:
+Search + rigid need + niche = 70% of the score.
 
-- unresolved material YELLOW normally caps effective score at 79;
-- core data or WeChat RED caps at 59 or requires a different product form;
-- prohibited/unobtainable compliance RED rejects the opportunity.
+### Search honesty
 
-When a current WeChat limit materially affects feasibility, verify current official documentation or require a POC instead of relying on remembered limits.
+If no actual keyword/ASO/WeChat/Baidu/search tool was queried:
 
-## Phase 6 — Professional opportunity screening + scoring
+- do not call `高频搜索` Observed;
+- label it `Search Hypothesis`;
+- Top 3 must include real keyword validation as a P0 task.
 
-Apply `references/master_prompt_v3_2.md` and `references/scoring_model.md`.
+### Product-vs-feature check
 
-### Hard rejection / downgrade rules
+Heavily downgrade a candidate that is:
 
-Reject or heavily downgrade when:
+- one-off low-value;
+- easily absorbed by Office/WPS/WeChat/browser;
+- unlikely to be searched repeatedly;
+- has no independent payer;
+- has no meaningful product expansion path.
 
-- no clear Chinese search phrase/discoverable intent;
-- broad social/network/marketplace/content platform with heavy network effects;
-- dominant Chinese platform already owns the core job with no niche wedge;
-- MVP requires large proprietary data, expensive hardware, regulated license or large operations;
-- required Chinese data/API cannot be legally/reliably obtained;
-- core value depends on unsupported Mini Program behavior;
-- concept is merely “add AI”;
-- no plausible payer/value path;
-- evidence is too weak to distinguish real need from launch novelty.
+## Phase 8 — Readiness + Confidence
 
-### AI rule
+Readiness answers “现在能不能做”:
 
-Do not force AI. AI must materially improve quality, speed, cost, personalization, automation, or unstructured-input understanding. If removing AI barely changes value, AI is optional.
+- China data/API — 25
+- WeChat capability — 25
+- compliance/privacy — 20
+- platform dependency — 15
+- MVP implementation — 15
 
-## Phase 7 — Convert to WeChat Mini Program requirements
+Do not use Readiness as the primary ranking score.
 
-For all candidates with **effective score >=70**, produce a concise conversion card.
+Confidence answers “我们有多确定”:
 
-For Top 3, produce a mini PRD containing:
+- problem evidence — 30
+- search evidence — 30
+- monetization evidence — 25
+- independent corroboration — 15
 
-- Chinese positioning and target user;
-- one JTBD;
-- trigger scenario/search intent;
-- 3 names and one-line value proposition;
-- P0 MVP only;
-- core flow/screens;
-- data/input/output dependencies and Chinese data source status;
-- WeChat capability validations required before build;
-- monetization;
-- AI required/optional/unnecessary;
-- compliance/platform risks;
-- cheapest validation and kill criteria.
+Rank:
 
-Keep the MVP narrow.
+1. Opportunity
+2. Confidence
+3. Readiness
 
-## Phase 8 — Final ranking and disclosure
+## Phase 9 — recommendation
 
-Return:
+- **🔥 BUILD NOW** — Opportunity ≥85, Readiness ≥70, Confidence ≥60, no unresolved critical search claim.
+- **🧪 VALIDATE BLOCKER** — Opportunity ≥85 but readiness/search/data/platform blocker remains.
+- **✅ VALIDATE** — Opportunity 75–84.
+- **👀 WATCH** — Opportunity 65–74.
+- **❌ REJECT** — Opportunity <65 or prohibited.
 
-1. source acquisition status summary including `mode`;
-2. raw → deduplicated → scored counts;
-3. China Feasibility YELLOW/RED counts;
-4. ranked Top 10 by **effective score**;
-5. Top 3 mini PRDs;
-6. notable rejected/downranked products and reasons;
-7. evidence gaps and manual/technical validations required next.
+A 90-point opportunity with a data blocker remains a 90-point opportunity. It becomes `VALIDATE BLOCKER`, not an artificial 79.
 
-Every quantitative/business claim must be one of:
+## Phase 10 — Mini Program conversion
 
-- **Observed** — directly fetched/officially published;
-- **Proxy** — indirect signal such as votes/stars/reviews/comments/rank;
-- **Estimate** — model judgment with assumptions;
-- **Unknown** — no reliable evidence.
+For Top 10 output:
 
-Never present Proxy/Estimate as Observed.
+- opportunity theme
+- supporting products/sources
+- Chinese core search terms
+- search frequency status: Observed/Hypothesis/Unknown
+- rigid-need reason
+- narrow target segment
+- cost of inaction
+- paid validation
+- Opportunity
+- Readiness
+- Confidence
+- recommendation
+- main blocker
+
+For Top 3 add Mini PRD:
+
+- target segment
+- exact JTBD
+- search moment
+- keyword hypotheses
+- real keyword validation task
+- existing workaround
+- P0 MVP
+- why WeChat is better
+- data/API dependencies
+- monetization
+- AI necessity
+- readiness blockers
+- cheapest validation
+- kill criteria
+
+## Final report
+
+Always report:
+
+1. source status
+2. Fresh Pool count
+3. Rolling Pool / bootstrap status
+4. retained champions vs new entrants
+5. Top 10 overall, not Top 10 newest
+6. Top 3 Mini PRD
+7. notable dropped/rejected candidates
+8. evidence gaps
+9. keyword validation tasks
+
+## Evidence rules
+
+Every business claim must be:
+
+- Observed
+- Proxy
+- Estimate
+- Unknown
+
+Never fabricate:
+
+- ASO Popularity
+- Difficulty
+- WeChat Index
+- search volume
+- revenue
+- downloads
+- retention
+- Chinese data availability
+- WeChat capability
 
 ## Output language
 
-Default to the user's language. For Chinese users, use Simplified Chinese while preserving original product names/source links.
-
-## Important constraints
-
-- Respect terms, rate limits, robots/access rules, API licensing and commercial-use restrictions.
-- Do not expose/store full API keys/tokens.
-- Do not store secrets in this skill directory.
-- Do not call unavailable tools by invented names; adapt to the host Agent.
-- Do not claim a source, data dependency, or WeChat capability was verified unless it actually was in the current run.
+Default to the user's language. Chinese users receive Simplified Chinese while preserving original product names and source links.
