@@ -6,7 +6,7 @@
 
 > **从全球新品与游戏机制里，找出真正值得做的微信小程序 / 微信小游戏机会。**
 
-[![Version](https://img.shields.io/badge/version-1.3.1-blue.svg)](VERSION)
+[![Version](https://img.shields.io/badge/version-1.3.2-blue.svg)](VERSION)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Agent-Agnostic](https://img.shields.io/badge/Agent-Agnostic-blueviolet.svg)](docs/INSTALL.md)
 [![WeChat](https://img.shields.io/badge/WeChat-Mini%20Program%20%2B%20Mini%20Game-07C160.svg)](SKILL.md)
@@ -28,6 +28,24 @@ npx skills add xiaokangxxs/xiaokangxxs-miniprogram-scout
 [30 秒上手](#30-秒上手) · [它能做什么](#它能做什么) · [怎么判断机会](#两套独立机会模型) · [数据源](#数据源) · [安装](#安装) · [安全](SECURITY.md)
 
 </div>
+
+<p align="center">
+  <img src="assets/readme/hero.svg" alt="xiaokangxxs-miniprogram-scout workflow" width="100%">
+</p>
+
+---
+
+## 效果预览
+
+这不是一个“只讲规则”的 Skill。仓库会保留**脱敏示例**和**最新一次真实 Scout Run**，让你能直接看到它最后会产出什么。
+
+<p align="center">
+  <img src="assets/readme/latest-run-2026-11-06.svg" alt="2026-11-06 latest scout run" width="100%">
+</p>
+
+👉 [查看 2026-11-06 完整运行结果、Top 10 与 Top 3 需求转化](docs/LATEST_RUN.md)
+
+> 最新运行结果是带日期的快照；第二天再次运行时，Fresh Pool 和热度信号可能变化，但 14 天 Rolling Pool 不会被清空。
 
 ---
 
@@ -97,9 +115,35 @@ Skill 应该给你的不是“今天有什么新品”，而是：
 
 ### 1. 安装
 
+推荐用官方 open agent skills CLI：
+
 ```bash
 npx skills add xiaokangxxs/xiaokangxxs-miniprogram-scout
 ```
+
+自动化/不想交互选择时：
+
+```bash
+npx skills add xiaokangxxs/xiaokangxxs-miniprogram-scout --yes
+```
+
+**这里不是把本仓库发布到 npm。**
+
+实际链路是：
+
+```text
+npx
+  ↓ 从 npm 临时获取 skills CLI
+skills CLI
+  ↓ 直接读取 GitHub owner/repo
+xiaokangxxs/xiaokangxxs-miniprogram-scout
+  ↓ 安装 SKILL.md + references/assets/docs...
+你的 Agent
+```
+
+所以你的 Skill **无需发布成 npm package，也能通过 npx 安装**。截至 2026-11-06，官方 `skills` CLI 当前要求 Node.js 22.20+；Node 较旧时直接用下面的 git clone fallback 即可。
+
+> skills.sh 榜单不是安装前提。官方说明是：用户通过 `npx skills add owner/repo` 安装后，匿名安装遥测会用于自动发现/排行。若不希望 CLI 发送匿名安装遥测，可设置 `DISABLE_TELEMETRY=1`。
 
 如果当前 Agent 不支持 Skills CLI：
 
@@ -145,6 +189,10 @@ Product Hunt 没 Token、但 Agent 可以正常浏览网页时，允许用有限
 ---
 
 ## 两套独立机会模型
+
+<p align="center">
+  <img src="assets/readme/scoring.svg" alt="Mini Program and Mini Game scoring models" width="100%">
+</p>
 
 ### 微信小程序
 
@@ -430,6 +478,10 @@ Skill 会把：
 
 它用于展示结构，不代表当天实时榜单。
 
+最新一轮真实运行快照：
+
+👉 [docs/LATEST_RUN.md](docs/LATEST_RUN.md)
+
 你也可以直接运行：
 
 ```text
@@ -537,7 +589,8 @@ xiaokangxxs-miniprogram-scout/
 
 - 📦 [安装与 Agent 兼容](docs/INSTALL.md)
 - 🧠 [架构与工作流](docs/ARCHITECTURE.md)
-- 📊 [脱敏示例报告](docs/EXAMPLE_REPORT.md)
+- 📊 [最新 Scout Run](docs/LATEST_RUN.md)
+- 🧪 [脱敏示例报告](docs/EXAMPLE_REPORT.md)
 - ❓ [FAQ](docs/FAQ.md)
 - 🚢 [Release Checklist](docs/RELEASE_CHECKLIST.md)
 - 🔐 [Security & Data Flow](SECURITY.md)
