@@ -1,6 +1,6 @@
 # xiaokangxxs-miniprogram-scout — Universal Instruction
 
-Version: **1.3.0**
+Version: **1.3.1**
 
 ## Goal
 
