@@ -1,6 +1,6 @@
 {
   "name": "xiaokangxxs-miniprogram-scout",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "Agent-agnostic skill for scouting and converting global product/game signals into China-feasible WeChat Mini Program and Mini Game opportunities.",
   "license": "MIT",
   "author": "xiaokangxxs",
@@ -34,5 +34,9 @@
     "validate": "node scripts/validate-skill.mjs",
     "scan:secrets": "node scripts/secret-scan.mjs",
     "check": "npm run validate && npm run scan:secrets"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=18"
   }
 }
