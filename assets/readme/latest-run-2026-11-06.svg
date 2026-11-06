@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760">
+  <defs>
+    <linearGradient id="b" x1="0" x2="1"><stop stop-color="#eef6ff"/><stop offset="1" stop-color="#effcf5"/></linearGradient>
+    <filter id="s"><feDropShadow dx="0" dy="8" stdDeviation="14" flood-opacity=".10"/></filter>
+  </defs>
+  <rect width="1280" height="760" rx="28" fill="url(#b)"/>
+  <text x="64" y="70" font-size="34" font-weight="700" fill="#132238" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">Latest run preview · 2026-11-06</text>
+  <text x="64" y="105" font-size="17" fill="#64748b" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">14-day Rolling Pool + fresh web signals · scores are Scout estimates, not market facts</text>
+
+  <g filter="url(#s)">
+    <rect x="64" y="145" width="552" height="540" rx="24" fill="#fff"/>
+    <rect x="664" y="145" width="552" height="540" rx="24" fill="#fff"/>
+  </g>
+
+  <text x="96" y="195" font-size="24" font-weight="700" fill="#0969da" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">Top Mini Programs</text>
+  <text x="696" y="195" font-size="24" font-weight="700" fill="#1a7f37" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">Top Mini Games</text>
+
+  <g font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+    <g>
+      <circle cx="112" cy="254" r="20" fill="#0969da"/><text x="112" y="261" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">1</text>
+      <text x="148" y="250" font-size="20" font-weight="700" fill="#172033">房源照片 AI 美化</text><text x="148" y="278" font-size="15" fill="#64748b">成熟付费验证 + 手机/微信工作流天然</text>
+      <rect x="520" y="236" width="66" height="34" rx="17" fill="#e8f2ff"/><text x="553" y="258" text-anchor="middle" font-size="16" font-weight="700" fill="#0969da">90</text>
+
+      <circle cx="112" cy="338" r="20" fill="#0969da"/><text x="112" y="345" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">2</text>
+      <text x="148" y="334" font-size="20" font-weight="700" fill="#172033">整机值不值</text><text x="148" y="362" font-size="15" fill="#64748b">Show HN 106 / 73 · 高购买意图</text>
+      <rect x="520" y="320" width="66" height="34" rx="17" fill="#e8f2ff"/><text x="553" y="342" text-anchor="middle" font-size="16" font-weight="700" fill="#0969da">89</text>
+
+      <circle cx="112" cy="422" r="20" fill="#0969da"/><text x="112" y="429" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">3</text>
+      <text x="148" y="418" font-size="20" font-weight="700" fill="#172033">域名 / SSL 到期管家</text><text x="148" y="446" font-size="15" fill="#64748b">B2B 高损失刚需 · 数据链路干净</text>
+      <rect x="520" y="404" width="66" height="34" rx="17" fill="#e8f2ff"/><text x="553" y="426" text-anchor="middle" font-size="16" font-weight="700" fill="#0969da">86</text>
+
+      <text x="96" y="510" font-size="15" font-weight="700" fill="#64748b">NEXT</text>
+      <text x="96" y="544" font-size="17" fill="#334155">4 · 网站安全体检  83</text>
+      <text x="96" y="578" font-size="17" fill="#334155">5 · 小票 AA 助手  82</text>
+      <text x="96" y="612" font-size="17" fill="#334155">6 · 诈骗截图核验  82</text>
+      <text x="96" y="646" font-size="15" fill="#64748b">Full Top 10 → docs/LATEST_RUN.md</text>
+    </g>
+
+    <g>
+      <circle cx="712" cy="254" r="20" fill="#1a7f37"/><text x="712" y="261" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">1</text>
+      <text x="748" y="250" font-size="20" font-weight="700" fill="#172033">反套路陷阱闯关</text><text x="748" y="278" font-size="15" fill="#64748b">Level Devil 当前 Poki Top Trending #1</text>
+      <rect x="1120" y="236" width="66" height="34" rx="17" fill="#e9f8ef"/><text x="1153" y="258" text-anchor="middle" font-size="16" font-weight="700" fill="#1a7f37">91</text>
+
+      <circle cx="712" cy="338" r="20" fill="#1a7f37"/><text x="712" y="345" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">2</text>
+      <text x="748" y="334" font-size="20" font-weight="700" fill="#172033">指尖扎根成长</text><text x="748" y="362" font-size="15" fill="#64748b">Root to Core · 单指 · 竖屏 · Incremental</text>
+      <rect x="1120" y="320" width="66" height="34" rx="17" fill="#e9f8ef"/><text x="1153" y="342" text-anchor="middle" font-size="16" font-weight="700" fill="#1a7f37">88</text>
+
+      <circle cx="712" cy="422" r="20" fill="#1a7f37"/><text x="712" y="429" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">3</text>
+      <text x="748" y="418" font-size="20" font-weight="700" fill="#172033">刮擦收集增量</text><text x="748" y="446" font-size="15" fill="#64748b">Scritchy Scratchy 4.7 / 5 · 897 ratings</text>
+      <rect x="1120" y="404" width="66" height="34" rx="17" fill="#e9f8ef"/><text x="1153" y="426" text-anchor="middle" font-size="16" font-weight="700" fill="#1a7f37">87</text>
+
+      <text x="696" y="510" font-size="15" font-weight="700" fill="#64748b">NEXT</text>
+      <text x="696" y="544" font-size="17" fill="#334155">4 · 物理拆塔炮击  86</text>
+      <text x="696" y="578" font-size="17" fill="#334155">5 · 荒诞无限成长  84</text>
+      <text x="696" y="612" font-size="17" fill="#334155">6 · 物理平衡驾驶  83</text>
+      <text x="696" y="646" font-size="15" fill="#64748b">Full Top 10 → docs/LATEST_RUN.md</text>
+    </g>
+  </g>
+
+  <text x="640" y="724" text-anchor="middle" font-size="16" fill="#64748b" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">Search volume was not measured by a real China keyword tool in this run; keyword frequency remains Hypothesis.</text>
+</svg>
