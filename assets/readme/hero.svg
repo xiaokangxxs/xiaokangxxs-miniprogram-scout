@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="620" viewBox="0 0 1280 620">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="0.55" stop-color="#0d2440"/>
+      <stop offset="1" stop-color="#0a3a35"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#58a6ff"/>
+      <stop offset="1" stop-color="#3ddc97"/>
+    </linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="10" stdDeviation="16" flood-opacity=".28"/></filter>
+  </defs>
+  <rect width="1280" height="620" rx="28" fill="url(#bg)"/>
+  <circle cx="1130" cy="85" r="150" fill="#2f81f7" opacity=".12"/>
+  <circle cx="100" cy="560" r="190" fill="#2ea043" opacity=".10"/>
+
+  <text x="70" y="92" fill="#ffffff" font-size="38" font-weight="700" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">Global signals → WeChat opportunities</text>
+  <text x="70" y="132" fill="#9fb3c8" font-size="21" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">不是追榜单，而是找真正值得做、值得快速验证的微信产品。</text>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="205" width="320" height="260" rx="24" fill="#0f1f33" stroke="#2b4565"/>
+    <rect x="480" y="205" width="320" height="260" rx="24" fill="#0f1f33" stroke="#2b4565"/>
+    <rect x="890" y="205" width="320" height="260" rx="24" fill="#0f1f33" stroke="#2b4565"/>
+  </g>
+
+  <text x="98" y="253" fill="#58a6ff" font-size="18" font-weight="700" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">01 · DISCOVER</text>
+  <text x="98" y="300" fill="#fff" font-size="28" font-weight="700" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">全球信号池</text>
+  <text x="98" y="340" fill="#b7c6d8" font-size="18" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">Product Hunt · HN · GitHub</text>
+  <text x="98" y="374" fill="#b7c6d8" font-size="18" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">BetaList · itch.io · Poki</text>
+  <text x="98" y="408" fill="#b7c6d8" font-size="18" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">CrazyGames · Steam …</text>
+
+  <text x="508" y="253" fill="#c084fc" font-size="18" font-weight="700" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">02 · DECIDE</text>
+  <text x="508" y="300" fill="#fff" font-size="28" font-weight="700" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">双引擎判断</text>
+  <text x="508" y="342" fill="#b7c6d8" font-size="18" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">小程序：搜索 · 刚需 · 小众</text>
+  <text x="508" y="376" fill="#b7c6d8" font-size="18" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">小游戏：Hook · 复玩 · 社交</text>
+  <text x="508" y="410" fill="#b7c6d8" font-size="18" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">再叠加 热度 · 新鲜度 · 开发成本</text>
+
+  <text x="918" y="253" fill="#3ddc97" font-size="18" font-weight="700" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">03 · CONVERT</text>
+  <text x="918" y="300" fill="#fff" font-size="28" font-weight="700" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">需求转化</text>
+  <text x="918" y="342" fill="#b7c6d8" font-size="18" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">Top 10 Mini Program</text>
+  <text x="918" y="376" fill="#b7c6d8" font-size="18" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">Top 10 Mini Game</text>
+  <text x="918" y="410" fill="#b7c6d8" font-size="18" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">Top 3 PRD · Best Bets · Kill Criteria</text>
+
+  <path d="M405 335 H460" stroke="url(#accent)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M815 335 H870" stroke="url(#accent)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M450 325 l18 10 -18 10" fill="#58a6ff"/>
+  <path d="M860 325 l18 10 -18 10" fill="#3ddc97"/>
+
+  <rect x="70" y="520" width="1140" height="52" rx="16" fill="#ffffff" opacity=".06"/>
+  <text x="640" y="553" text-anchor="middle" fill="#dce7f2" font-size="18" font-weight="600" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">Observed / Proxy / Estimate / Unknown · Opportunity ≠ Readiness · 当前微信官方规则优先</text>
+</svg>
