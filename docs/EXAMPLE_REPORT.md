@@ -1,58 +1,60 @@
-# Example Report — v1.2.0
+# Example Report — v1.3.0
 
-> Sanitized structure example. Not a live leaderboard.
+> Sanitized structure example, not live rankings.
 
-## Top opportunities
+## Top Mini Program Opportunities
 
-| Rank | Opportunity | Search | Need | Niche | Opportunity | Readiness | Confidence | Action |
-|---:|---|---|---|---|---:|---:|---|---|
-| 1 | 房源照片 AI 美化 | Hypothesis: High | High | 房产中介 | 91 | 82 | High | 🔥 BUILD NOW* |
-| 2 | 域名/SSL 到期管家 | Hypothesis: Medium | High | 站长/Agency | 87 | 94 | High | 🧪/🔥 |
-| 3 | 小票 AA 助手 | Hypothesis: High | Medium/High | 聚餐/旅行 | 85 | 90 | Medium | 🧪 VALIDATE |
-| 4 | PC 整机值不值 | Hypothesis: High | High | DIY/购机用户 | 90 | 55 | High | 🧪 VALIDATE BLOCKER |
-| 5 | 文档批注导出 | Hypothesis: Low/Medium | Medium | 审阅用户 | 66 | 95 | Medium | 👀 WATCH |
+| Rank | Opportunity | Search | Need | Niche | Fresh | Heat | Build | Opp. | Ready | Conf. | Action |
+|---:|---|---|---|---|---|---|---|---:|---:|---|---|
+| 1 | 房源照片 AI 美化 | Hypothesis: High | High | 房产中介 | Medium | High | High | 91 | 82 | High | 🔥 |
+| 2 | 域名/SSL 到期管家 | Hypothesis: Medium | High | 站长/Agency | Medium | Medium | High | 87 | 94 | High | 🔥/🧪 |
+| 3 | PC 整机值不值 | Hypothesis: High | High | DIY购机 | High | High | Medium | 90 | 55 | High | 🧪 |
 
-`*` 如果没有真实关键词工具，所谓“High”仍是 Search Hypothesis；在正式 BUILD NOW 前先完成关键词真实验证。
+PC Deal Check remains a high Opportunity even when China pricing data is unverified. It becomes `VALIDATE BLOCKER`, not a fake lower market score.
 
-## Why PC Deal Check does not disappear
+## Top Mini Game Opportunities
 
-Its Opportunity remains 90 because the demand may be strong.
+| Rank | Mechanic | Hook | Replay | Social | Monetization | Fresh | Heat | Build | Opp. | Ready | Conf. | Action |
+|---:|---|---|---|---|---|---|---|---|---:|---:|---|---|
+| 1 | 单指节奏躲避 + 反转陷阱 | 3s | High | Medium | IAA | High | High | High | 89 | 78 | Medium | 🎮 |
+| 2 | 抓挠/刮卡式增量 | 2s | High | Low/Medium | IAA/IAP | High | High | High | 86 | 82 | Medium | 🎮 |
+| 3 | 群聊比分猜拳/反应挑战 | 2s | Medium | High | IAA | Medium | Medium | High | 82 | 86 | Medium | 🧪 |
 
-Its Readiness is 55 because Chinese real-time component pricing data has not been verified.
+Game scores do not depend primarily on search volume.
 
-Correct conclusion:
+## Official WeChat policy check
 
-> 高价值机会，先验证数据源。
+For each top candidate show:
 
-Incorrect conclusion:
+- product form
+- category
+- qualification
+- privacy
+- payment
+- notification
+- ads
+- game publication/qualification
+- performance/package
+- content/IP
+- review risk
 
-> 因为数据源没验证，所以这个机会只能算 79 分。
+Anything not verified is `VERIFY_OFFICIAL`, never assumed GREEN.
 
-## Why document export does not outrank it
+## Cross-category Best Bets
 
-Document export may be easy to build, but:
+Explain why one opportunity is a Mini Program and another is a Mini Game.
 
-- search may be lower;
-- pain may be weaker;
-- payer/repeat value may be weaker;
-- it may be a feature rather than a standalone product.
+Do not compare raw scores mechanically; include:
 
-Therefore high Readiness does not equal high Opportunity.
+- confidence
+- validation speed
+- monetization path
+- platform readiness
+- team/resource fit
 
-## Rolling Pool
+## Evidence labels
 
-Example:
-
-- retained champion: 房源照片 AI 美化
-- retained champion: 域名/SSL 到期管家
-- new entrant: AI 搜索品牌曝光
-- dropped: generic AI novelty tool
-
-Daily freshness never automatically resets the ranking.
-
-## Evidence
-
-- Real keyword metrics not queried → Search Hypothesis only.
-- Paid pricing pages can be Observed.
-- Votes/stars are Proxy.
-- Revenue without disclosure remains Unknown.
+- Observed
+- Proxy
+- Estimate
+- Unknown
