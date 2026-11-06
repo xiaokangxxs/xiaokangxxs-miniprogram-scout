@@ -1,91 +1,69 @@
-# China Feasibility Gate — Readiness Model
+# China / WeChat Readiness Gate
 
-Version: 1.2.0
+Version: 1.3.0
 
-The China Feasibility Gate answers:
+This gate answers:
 
-> **“这个机会现在能不能可靠地在中国 / 微信小程序环境落地？”**
+> **“这个机会现在能不能可靠地在中国 + 微信生态上线？”**
 
-It no longer changes the core Opportunity Score merely because something needs validation.
+It never replaces Opportunity Score.
 
-A great opportunity can have low Readiness.
+## Mini Program Readiness
 
----
+Score:
 
-## Gate A — China data / external dependency
+- China data/API — 25
+- WeChat capability — 25
+- privacy/compliance — 20
+- third-party dependency — 15
+- implementation/ops — 15
 
-- GREEN — user-provided, public/open, officially licensed, or stable authorized API/data source.
-- YELLOW — access/cost/freshness/coverage/licensing still needs proof.
-- RED — core value requires prohibited, unavailable, or inherently unstable data access.
+Check current official WeChat requirements for category, qualifications, filing, privacy, payment and notification when relevant.
 
-Readiness contribution: 0–25.
+## Mini Game Readiness
 
-## Gate B — WeChat capability / architecture
+Score:
 
-- GREEN — core flow is supported by documented Mini Program + server/cloud architecture.
-- YELLOW — current limits/permissions/notification/file/3D/streaming behavior need docs/POC verification.
-- RED — core JTBD fundamentally requires an unsupported Mini Program behavior.
+- category/qualification/publication — 20
+- ads/payment eligibility — 20
+- package/performance/engine fit — 20
+- content/IP/review risk — 20
+- implementation/assets/live ops — 20
 
-Important:
+Check current official WeChat requirements before BUILD PROTOTYPE becomes BUILD/LAUNCH.
 
-- long-running monitoring/scheduling should normally run server-side;
-- Mini Program is the interaction/config/result surface;
-- do not assume unlimited proactive notifications or permanent background execution;
-- verify current official WeChat documentation when the limit matters.
+## Status
 
-Readiness contribution: 0–25.
+- 85–100: Ready
+- 70–84: Mostly Ready
+- 50–69: Validate Blocker
+- <50: Blocked / Redesign
 
-## Gate C — China compliance / privacy
+## Important principle
 
-- GREEN — ordinary utility with manageable privacy/security obligations.
-- YELLOW — sensitive personal information, face/health/location/minors/industry rules require explicit review.
-- RED — planned MVP requires prohibited behavior or unrealistic license/qualification.
-
-Readiness contribution: 0–20.
-
-## Gate D — Third-party dependency stability
-
-- GREEN — product survives one upstream provider changing.
-- YELLOW — one major external dependency needs a fallback/contract/API strategy.
-- RED — the whole product depends on fragile/undocumented behavior.
-
-Readiness contribution: 0–15.
-
-## Gate E — MVP implementation readiness
-
-Evaluate:
-
-- model/API cost;
-- backend complexity;
-- operational burden;
-- data pipeline;
-- performance;
-- manual review requirement.
-
-Readiness contribution: 0–15.
-
----
-
-## Hard blockers
-
-RED does not automatically mean the **opportunity is bad**.
-
-Instead:
-
-- Opportunity remains the market/value judgment.
-- Readiness becomes low.
-- Recommendation becomes `VALIDATE BLOCKER`, `REDESIGN`, or `BLOCKED`.
-
-Only a compliance/prohibited RED with no realistic alternative should result in direct rejection.
+A high-value idea can have low Readiness.
 
 Example:
 
 ```text
-PC 整机值不值
 Opportunity: 90
 Readiness: 55
-Reason: reliable Chinese real-time component pricing data not yet verified
-Action: validate authorized data source before build
+Action: VALIDATE BLOCKER
 ```
 
-This is preferable to artificially changing the opportunity to 79.
+Do not rewrite a 90-point market opportunity into 79 just because one data/API or platform condition is unresolved.
+
+## Hard blockers
+
+- prohibited/illegal activity
+- no viable platform category
+- impossible qualification path
+- copied/protected IP that cannot be licensed/redesigned
+- core experience fundamentally unsupported on WeChat
+- monetization model with no compliant route and no fallback
+
+Hard blockers prevent BUILD NOW / launch, but should be documented separately from demand/game-quality analysis.
+
+For detailed current platform checks, read:
+
+`references/wechat_official_constraints.md`
