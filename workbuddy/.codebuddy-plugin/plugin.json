@@ -1,0 +1,186 @@
+{
+  "name": "wechat-opportunity-scout-team",
+  "expertType": "team",
+  "version": "1.0.0",
+  "description": "A multi-agent team that turns global product and game signals into evidence-based WeChat Mini Program and Mini Game opportunities.",
+  "author": {
+    "name": "xiaokangxxs",
+    "email": "xiaokangxxs@users.noreply.github.com"
+  },
+  "agents": [
+    "./agents/wechat-opportunity-scout-team-lead.md",
+    "./agents/global-product-scout.md",
+    "./agents/game-mechanic-scout.md",
+    "./agents/china-demand-analyst.md",
+    "./agents/mini-program-strategist.md",
+    "./agents/mini-game-designer.md",
+    "./agents/wechat-readiness-auditor.md"
+  ],
+  "agentName": "wechat-opportunity-scout-team-lead",
+  "teamInfo": {
+    "leadAgent": "wechat-opportunity-scout-team-lead",
+    "memberAgents": [
+      "global-product-scout",
+      "game-mechanic-scout",
+      "china-demand-analyst",
+      "mini-program-strategist",
+      "mini-game-designer",
+      "wechat-readiness-auditor"
+    ]
+  },
+  "skills": [
+    "./skills/xiaokangxxs-miniprogram-scout"
+  ],
+  "homepage": "https://github.com/xiaokangxxs/xiaokangxxs-miniprogram-scout",
+  "license": "MIT",
+  "keywords": [
+    "wechat",
+    "mini-program",
+    "mini-game",
+    "product-discovery",
+    "market-research",
+    "game-mechanics",
+    "china",
+    "opportunity-scouting"
+  ],
+  "displayName": {
+    "zh": "微信机会侦察专家团",
+    "en": "WeChat Opportunity Scout Team"
+  },
+  "profession": {
+    "zh": "微信机会侦察专家团",
+    "en": "WeChat Opportunity Scout Team"
+  },
+  "displayDescription": {
+    "zh": "从全球新品与游戏机制中筛选高价值机会，协作评估需求、热度、开发成本与微信上线可行性，并输出验证方案。",
+    "en": "A specialist team that discovers global product and game signals, evaluates China demand and WeChat readiness, then converts the best opportunities into testable plans."
+  },
+  "avatar": "avatars/team.png",
+  "categoryId": "01-ProductDesign",
+  "defaultInitPrompt": {
+    "zh": "跑今天的全球新品和游戏机制，结合最近14天候选池，给我小程序Top10、小游戏Top10和Best Bets。",
+    "en": "Scan today's global product and game signals, merge the last 14 days, and give me Mini Program Top 10, Mini Game Top 10 and Best Bets."
+  },
+  "plugin": "wechat-opportunity-scout-team",
+  "tags": [
+    {
+      "zh": "微信机会侦察",
+      "en": "WeChat Opportunity Scouting"
+    },
+    {
+      "zh": "小程序产品",
+      "en": "Mini Program Strategy"
+    },
+    {
+      "zh": "小游戏玩法",
+      "en": "Mini Game Design"
+    }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "跑今天的全球新品和游戏机制，结合最近14天候选池，给我小程序Top10、小游戏Top10和Best Bets。",
+      "en": "Scan today's global product and game signals, merge the last 14 days, and give me Mini Program Top 10, Mini Game Top 10 and Best Bets."
+    },
+    {
+      "zh": "分析这个海外产品或游戏是否适合转成微信小程序或小游戏，并给出最快验证方案。",
+      "en": "Analyze whether this overseas product or game should become a WeChat Mini Program or Mini Game and give me the fastest validation plan."
+    },
+    {
+      "zh": "只看3天内能验证的机会，优先小众、刚需/强乐趣、最新、最火、最好开发。",
+      "en": "Only show opportunities that can be validated within 3 days, prioritizing niche, hard need/strong fun, freshness, heat and buildability."
+    }
+  ],
+  "members": [
+    {
+      "id": "wechat-opportunity-scout-team-lead",
+      "name": {
+        "zh": "凌策",
+        "en": "Atlas"
+      },
+      "profession": {
+        "zh": "微信机会侦察总策划",
+        "en": "Opportunity Scout Lead"
+      },
+      "avatar": "avatars/team-lead.png",
+      "role": "lead"
+    },
+    {
+      "id": "global-product-scout",
+      "name": {
+        "zh": "闻新",
+        "en": "Nova"
+      },
+      "profession": {
+        "zh": "全球新品侦察员",
+        "en": "Global Product Scout"
+      },
+      "avatar": "avatars/global-product-scout.png",
+      "role": "member"
+    },
+    {
+      "id": "game-mechanic-scout",
+      "name": {
+        "zh": "弈野",
+        "en": "Pixel"
+      },
+      "profession": {
+        "zh": "游戏机制侦察员",
+        "en": "Game Mechanic Scout"
+      },
+      "avatar": "avatars/game-mechanic-scout.png",
+      "role": "member"
+    },
+    {
+      "id": "china-demand-analyst",
+      "name": {
+        "zh": "知需",
+        "en": "Mira"
+      },
+      "profession": {
+        "zh": "中国需求分析师",
+        "en": "China Demand Analyst"
+      },
+      "avatar": "avatars/china-demand-analyst.png",
+      "role": "member"
+    },
+    {
+      "id": "mini-program-strategist",
+      "name": {
+        "zh": "程策",
+        "en": "Mini"
+      },
+      "profession": {
+        "zh": "微信小程序策略师",
+        "en": "Mini Program Strategist"
+      },
+      "avatar": "avatars/mini-program-strategist.png",
+      "role": "member"
+    },
+    {
+      "id": "mini-game-designer",
+      "name": {
+        "zh": "游策",
+        "en": "Arc"
+      },
+      "profession": {
+        "zh": "微信小游戏玩法设计师",
+        "en": "Mini Game Designer"
+      },
+      "avatar": "avatars/mini-game-designer.png",
+      "role": "member"
+    },
+    {
+      "id": "wechat-readiness-auditor",
+      "name": {
+        "zh": "守界",
+        "en": "Gate"
+      },
+      "profession": {
+        "zh": "微信合规与证据审计师",
+        "en": "WeChat Readiness Auditor"
+      },
+      "avatar": "avatars/wechat-readiness-auditor.png",
+      "role": "member"
+    }
+  ]
+}
