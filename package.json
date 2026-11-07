@@ -1,7 +1,7 @@
 {
   "name": "xiaokangxxs-miniprogram-scout",
-  "version": "1.4.0",
-  "description": "Agent-agnostic skill for scouting global product/game signals or productizing user-provided ideas into China-feasible WeChat Mini Program and Mini Game opportunities.",
+  "version": "1.5.0",
+  "description": "Agent-agnostic skill for scouting or productizing WeChat opportunities with auditable scoring, red-team review, rights/risk checks, validation experiments and persistent trend memory.",
   "license": "MIT",
   "author": "xiaokangxxs",
   "homepage": "https://github.com/xiaokangxxs/xiaokangxxs-miniprogram-scout",
@@ -20,7 +20,11 @@
     "china",
     "product-strategy",
     "jtbd",
-    "idea-validation"
+    "idea-validation",
+    "evidence-quality",
+    "red-team",
+    "validation",
+    "rolling-pool"
   ],
   "files": [
     "SKILL.md",
@@ -37,11 +41,13 @@
   "scripts": {
     "validate": "node scripts/validate-skill.mjs",
     "scan:secrets": "node scripts/secret-scan.mjs",
-    "check": "npm run validate && npm run validate:workbuddy && npm run scan:secrets",
+    "check": "npm run validate && npm run validate:pool && npm run validate:workbuddy && npm run scan:secrets",
     "validate:workbuddy": "node scripts/validate-workbuddy-team.mjs",
     "generate:workbuddy-avatars": "node scripts/generate-workbuddy-avatars.mjs",
     "sync:workbuddy": "node scripts/sync-workbuddy-skill.mjs",
-    "build:workbuddy": "node scripts/build-workbuddy-package.mjs"
+    "build:workbuddy": "node scripts/build-workbuddy-package.mjs",
+    "validate:pool": "node scripts/rolling-pool.mjs validate",
+    "merge:pool": "node scripts/rolling-pool.mjs merge"
   },
   "private": true,
   "engines": {
