@@ -1,6 +1,6 @@
 # China / WeChat Readiness Gate
 
-Version: 1.3.0
+Version: 1.5.0
 
 This gate answers:
 
@@ -67,3 +67,27 @@ Hard blockers prevent BUILD NOW / launch, but should be documented separately fr
 For detailed current platform checks, read:
 
 `references/wechat_official_constraints.md`
+
+
+## Rights & Risk integration
+
+Before BUILD NOW / BUILD PROTOTYPE, also run:
+
+`references/rights_and_risk_gate.md`
+
+Separate:
+
+- market Opportunity;
+- WeChat platform Readiness;
+- content/data Rights;
+- sensitive-domain regulatory risk.
+
+A rights blocker should normally reduce Readiness or force VALIDATE BLOCKER / REDESIGN, not erase proven demand.
+
+## China Demand integration
+
+For Mini Program demand claims, use:
+
+`references/china_demand_validator.md`
+
+If China demand is only inferred from overseas popularity, Confidence should reflect that weakness.
