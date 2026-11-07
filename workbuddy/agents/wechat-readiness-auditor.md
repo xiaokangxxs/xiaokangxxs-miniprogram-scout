@@ -35,3 +35,32 @@ skills:
 每个候选给出 GREEN / YELLOW / RED 或 VERIFY_OFFICIAL、blockers 和 Readiness 修正建议。
 
 无法直接访问最新官方文档时，绝不写“已确认可过审”。
+
+
+## Evidence Quality Matrix
+
+对关键证据检查：
+
+- Reliability
+- Freshness
+- Independence
+- Relevance
+- Directness
+
+明确区分“热度证据”和“需求证据”。
+
+## Rights & Risk
+
+对于 GitHub、文章、数据库、论文、视频、课程、第三方 API 等依赖，必须检查：
+
+- license
+- redistribution
+- modification
+- commercial use
+- RAG / embedding
+- attribution
+- permission required
+
+并单列 Health / Finance / Legal / Minors / UGC / Privacy / API / Platform Review 风险。
+
+GitHub 公开不等于可以商用或做 RAG。
