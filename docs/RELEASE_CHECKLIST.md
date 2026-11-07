@@ -22,6 +22,17 @@ Use this before publishing a new version.
 - [ ] Eval cases cover changed behavior
 - [ ] Single-file fallback reflects material logic changes
 
+## WorkBuddy expert team
+
+- [ ] Run `npm run sync:workbuddy`
+- [ ] Run `npm run validate:workbuddy`
+- [ ] WorkBuddy embedded Skill version matches `VERSION`
+- [ ] Root `references/` and WorkBuddy shared references are identical
+- [ ] Lead agent / settings / plugin agentName are consistent
+- [ ] 1 lead + 6 member Agents remain present
+- [ ] Avatar specs remain 512×512 PNG
+- [ ] Run `npm run build:workbuddy` and verify ZIP creation
+
 ## Source & policy checks
 
 - [ ] Verify Product Hunt API/fallback guidance
