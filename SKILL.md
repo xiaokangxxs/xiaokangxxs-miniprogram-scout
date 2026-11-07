@@ -5,7 +5,7 @@ description: Discover current global product and game signals, route each opport
 
 # xiaokangxxs-miniprogram-scout
 
-Version: **1.3.2**
+Version: **1.3.3**
 
 > WeChat Mini Program + Mini Game Opportunity Intelligence
 
