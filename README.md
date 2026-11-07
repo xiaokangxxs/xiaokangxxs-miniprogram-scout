@@ -40,10 +40,10 @@ npx skills add xiaokangxxs/xiaokangxxs-miniprogram-scout
 这不是一个“只讲规则”的 Skill。仓库会保留**脱敏示例**和**最新一次真实 Scout Run**，让你能直接看到它最后会产出什么。
 
 <p align="center">
-  <img src="assets/readme/latest-run-2026-11-06.svg" alt="2026-11-06 latest scout run" width="100%">
+  <img src="assets/readme/latest-run-2026-11-07.svg" alt="2026-11-07 v1.5 latest scout run" width="100%">
 </p>
 
-👉 [查看 2026-11-06 完整运行结果、Top 10 与 Top 3 需求转化](docs/LATEST_RUN.md)
+👉 [查看 2026-11-07 v1.5 完整运行结果、Top 10、Score Breakdown、Red Team 与 Validation OS](docs/LATEST_RUN.md)
 
 > 最新运行结果是带日期的快照；第二天再次运行时，Fresh Pool 和热度信号可能变化，但 14 天 Rolling Pool 不会被清空。
 
@@ -222,7 +222,7 @@ Product Form Router
 
 👉 [进入 workbuddy/ 专家团目录](workbuddy/README.md)
 
-专家团不是 7 个重复人设，而是把完整流程拆成：
+专家团不是 8 个重复人设，而是把完整流程拆成：
 
 ```text
 凌策 / Atlas        团长：调度、冲突裁决、最终榜单
@@ -231,7 +231,8 @@ Product Form Router
 知需 / Mira         中国需求分析
 程策 / Mini         微信小程序策略
 游策 / Arc          微信小游戏玩法设计
-守界 / Gate         微信合规与证据审计
+守界 / Gate         微信合规、证据质量与 Rights & Risk
+逆审 / Skeptic      反方审查、Fatal Assumption、Red Team
 ```
 
 默认全量流程：
