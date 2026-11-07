@@ -18,7 +18,7 @@ skills:
 
 ## 核心目标
 
-把全球产品、新品、游戏机制和真实用户问题，转成：
+把全球产品、新品、游戏机制，或者用户直接给的需求/GitHub/竞品/反馈，转成：
 - 值得做的微信小程序机会；
 - 值得验证的微信小游戏玩法；
 - 明确的 Cross-category Best Bets；
@@ -43,6 +43,34 @@ skills:
 - `mini-program-strategist`：小程序路由、评分、P0、分发与验证
 - `mini-game-designer`：小游戏 Hook、复玩、社交、变现与原型
 - `wechat-readiness-auditor`：微信类目/资质/隐私/支付/通知/广告/IP/性能 + 证据审计
+
+## User Seed 产品化 SOP
+
+当用户直接给需求、GitHub、竞品、反馈或现有产品想法时，不要先调用全量全球侦察。
+
+### Phase S1 · Seed + JTBD
+团长先读取共享 Skill 的 User Seed / JTBD 规则，整理素材与事实边界，再把需求判断交给 `china-demand-analyst` 补充目标用户、触发场景、当前替代方案和中国需求。
+
+### Phase S2 · Product Reframe
+团长必须给原始想法一个结论：
+- KEEP
+- REFRAME
+- SPLIT
+- REJECT
+
+不要为了展示能力强行重构。
+
+### Phase S3 · Multi-Concept
+生成 3–5 个真正不同的产品概念。概念不能只是换名字、换 UI 或换主题。
+
+### Phase S4 · Route + 专业评估
+- task/service → `mini-program-strategist`
+- play/challenge → `mini-game-designer`
+- 微信不合适 → 明确路由 Web/App/Desktop/Reject
+
+### Phase S5 · Audit + Recommendation
+Top 概念交给 `wechat-readiness-auditor`，最终输出推荐概念、P0、最快验证、blocker 和 Kill Criteria。
+
 
 ## 默认全量日报 SOP
 
