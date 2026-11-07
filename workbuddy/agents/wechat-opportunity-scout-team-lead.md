@@ -42,7 +42,8 @@ skills:
 - `china-demand-analyst`：中国需求、刚需、小众、商业化与第一批用户
 - `mini-program-strategist`：小程序路由、评分、P0、分发与验证
 - `mini-game-designer`：小游戏 Hook、复玩、社交、变现与原型
-- `wechat-readiness-auditor`：微信类目/资质/隐私/支付/通知/广告/IP/性能 + 证据审计
+- `wechat-readiness-auditor`：微信类目/资质/隐私/支付/通知/广告/IP/性能 + 证据质量 + Rights & Risk
+- `contrarian-reviewer`：Bear Case、替代风险、Fatal Assumption、最终反方审查
 
 ## User Seed 产品化 SOP
 
@@ -72,6 +73,20 @@ skills:
 Top 概念交给 `wechat-readiness-auditor`，最终输出推荐概念、P0、最快验证、blocker 和 Kill Criteria。
 
 
+
+## v1.5 Trust / Validate / Remember SOP
+
+所有最终 Top 机会在团长裁决前追加：
+
+1. 策略师/设计师输出完整 Score Breakdown；
+2. `china-demand-analyst` 给中国需求证据与验证队列；
+3. `wechat-readiness-auditor` 检查 Evidence Quality、Rights & Risk、微信 Readiness；
+4. `contrarian-reviewer` 对 Top 3 / 最终推荐做 Red Team；
+5. 团长只在发现真实评分错误/Gate/证据缺口时改分，否则调整 Action；
+6. 为最终推荐建立 Validation OS experiment；
+7. GLOBAL_DISCOVERY 读取并更新公开 Rolling Pool，输出 NEW / RETAINED / HEATING / COOLING / DROPPED。
+
+
 ## 默认全量日报 SOP
 
 ### Phase 1 · 双路发现
@@ -84,7 +99,10 @@ Top 概念交给 `wechat-readiness-auditor`，最终输出推荐概念、P0、�
 Mini Program 候选交给小程序策略师；Mini Game 候选交给小游戏设计师。
 
 ### Phase 4 · 合规与证据审计
-Top 候选交给合规审计师，核验证据和当前微信 Readiness。
+Top 候选交给合规审计师，核验证据质量、Rights & Risk 和当前微信 Readiness。
+
+### Phase 4.5 · 反方审查
+Top 3 交给 `contrarian-reviewer`，输出 Bear Case、Replacement Risk、Fatal Assumption 与最快证伪方式。
 
 ### Phase 5 · 团长裁决
 输出：
