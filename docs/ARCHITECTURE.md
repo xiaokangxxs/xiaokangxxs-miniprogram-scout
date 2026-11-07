@@ -1,99 +1,92 @@
 # Architecture
 
-Version: 1.4.0
+Version: 1.5.0
 
-The repository is an **instruction Skill**, not a hosted SaaS backend. Network activity is performed by the host Agent/tooling according to the rules in `SKILL.md`.
+The repository is an instruction Skill plus a small zero-dependency state utility.
 
 ## High-level flow
 
 ```mermaid
 flowchart TD
-    A1[Global product & game sources] --> B[Input Router]
-    A2[User idea / GitHub / links / feedback / files] --> B
+    A1[Global signals] --> B[Input Router]
+    A2[User Seed] --> B
 
-    B -->|GLOBAL_DISCOVERY| C[Fresh discovery + Rolling Pools]
-    B -->|USER_SEED| D[Seed normalization + provenance]
+    B -->|GLOBAL_DISCOVERY| C[Persistent Rolling Pool + Fresh Discovery]
+    B -->|USER_SEED| D[JTBD → Reframe → 3–5 Concepts]
 
-    C --> E[Cluster into opportunity themes]
-    D --> F[JTBD Extraction]
-    F --> G[Product Reframe]
-    G --> H[3–5 Product Concepts]
+    C --> E[Product Form Router]
+    D --> E
 
-    E --> I[Product Form Router]
-    H --> I
+    E --> F[Mini Program Engine]
+    E --> G[Mini Game Engine]
+    E --> H[Web/App/Desktop/Reject]
 
-    I -->|Task / utility| J[Mini Program opportunity engine]
-    I -->|Play / challenge| K[Mini Game opportunity engine]
-    I -->|Wrong fit| L[Web / App / Desktop / Reject]
+    F --> I[Score Explainability]
+    G --> I
 
-    J --> M[Opportunity Score]
-    K --> N[Game Opportunity Score]
-    M --> O[Readiness + Confidence]
-    N --> O
-    O --> P[WeChat policy checks]
-    P --> Q[Recommendation / boards]
-    Q --> R[P0 + validation + Kill Criteria]
+    I --> J[Evidence Quality Matrix]
+    J --> K[China Demand Validator]
+    K --> L[Rights & Risk Gate]
+    L --> M[WeChat Readiness]
+    M --> N[Contrarian Reviewer]
+    N --> O[Final Verdict]
+    O --> P[Validation OS]
+    P --> Q[Learning / Rolling Memory]
 ```
 
-## Core layers
+## Layers
 
-### 1. Input layer
-Defined by `references/user_seed_mode.md`.
+### Input / Productization
+- User Seed Mode
+- JTBD Extraction
+- Product Reframe
+- Multi-Concept Generation
 
-Two entry paths:
-- GLOBAL_DISCOVERY
-- USER_SEED
+### Discovery / Memory
+- Source Registry
+- `data/rolling_pool.json`
+- `scripts/rolling-pool.mjs`
 
-### 2. Discovery layer
-Defined by `references/source_registry.md`.
+### Decision
+- Product Form Router
+- Mini Program / Mini Game scoring
+- Score Explainability
 
-### 3. Productization layer
-Defined by:
-- `references/jtbd_extraction.md`
-- `references/product_reframe.md`
-- `references/multi_concept_generation.md`
+### Trust
+- Evidence Quality Matrix
+- China Demand Validator
+- Rights & Risk Gate
+- WeChat Readiness
+- Contrarian Reviewer
 
-This layer prevents premature solution lock-in.
+### Learning
+- Validation OS
+- score history
+- Champion movement
 
-### 4. Rolling-memory layer
-Defined by `references/rolling_candidate_pool.md`.
+## Persistent-state boundary
 
-Used primarily for GLOBAL_DISCOVERY.
+The public Rolling Pool may contain only public market signals.
 
-### 5. Product Form Router
-Defined by `references/platform_router.md`.
-
-The router receives opportunity themes or productized concepts, not blindly the raw user wording.
-
-### 6. Opportunity engines
-Defined by `references/scoring_model.md`.
-
-v1.4.0 keeps the v1.3 Mini Program and Mini Game weights unchanged.
-
-### 7. Evidence layer
-Defined by `references/evidence_rules.md`.
-
-Observed / Proxy / Estimate / Unknown remain mandatory.
-
-### 8. WeChat readiness layer
-Defined by:
-- `references/china_feasibility_gate.md`
-- `references/wechat_official_constraints.md`
-
-### 9. Requirement-conversion layer
-Defined by `references/output_schema.md` and `assets/report_template.md`.
+It must never contain:
+- user-private seeds;
+- personal data;
+- private files;
+- tokens/cookies/credentials.
 
 ## Design principle
 
-The Skill separates questions that are often incorrectly merged:
+Keep these questions separate:
 
-1. What problem/job is actually present?
-2. Is the user's original product definition correct?
-3. What other product concepts can solve the same job?
-4. What product form fits?
-5. Is this worth building?
-6. Is it hot/new?
-7. Is it easy to validate?
-8. Is it launchable on WeChat?
-
-A strong answer is allowed to reject the user's original solution while preserving the underlying opportunity.
+1. What is the real JTBD?
+2. Is the proposed product definition correct?
+3. What alternative concepts exist?
+4. Which product form fits?
+5. How strong is the opportunity?
+6. Why does each score component deserve that score?
+7. How good is the evidence?
+8. Does China demand exist?
+9. Do we have the right to use the content/data?
+10. What would a skeptic say?
+11. What experiment could kill the idea quickly?
+12. What did we learn over time?
