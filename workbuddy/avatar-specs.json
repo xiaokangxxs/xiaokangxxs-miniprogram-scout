@@ -1,0 +1,62 @@
+{
+  "size": 512,
+  "format": "png",
+  "avatars": {
+    "team.png": {
+      "background": [
+        "#103757",
+        "#126e62"
+      ],
+      "icon": "radar"
+    },
+    "team-lead.png": {
+      "background": [
+        "#143c64",
+        "#2d69c8"
+      ],
+      "icon": "compass"
+    },
+    "global-product-scout.png": {
+      "background": [
+        "#3c3773",
+        "#6e50b4"
+      ],
+      "icon": "spark"
+    },
+    "game-mechanic-scout.png": {
+      "background": [
+        "#144b4b",
+        "#1e917d"
+      ],
+      "icon": "gamepad"
+    },
+    "china-demand-analyst.png": {
+      "background": [
+        "#5a4119",
+        "#c88723"
+      ],
+      "icon": "search"
+    },
+    "mini-program-strategist.png": {
+      "background": [
+        "#19416e",
+        "#2d7dc8"
+      ],
+      "icon": "grid"
+    },
+    "mini-game-designer.png": {
+      "background": [
+        "#552864",
+        "#9b46af"
+      ],
+      "icon": "joystick"
+    },
+    "wechat-readiness-auditor.png": {
+      "background": [
+        "#5a302a",
+        "#b44b41"
+      ],
+      "icon": "shield"
+    }
+  }
+}
