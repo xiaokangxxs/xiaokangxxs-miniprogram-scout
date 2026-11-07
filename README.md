@@ -4,9 +4,9 @@
 
 # xiaokangxxs-miniprogram-scout
 
-> **从全球新品与游戏机制里，找出真正值得做的微信小程序 / 微信小游戏机会。**
+> **从全球新品、游戏机制，或者你直接给的需求 / GitHub / 竞品素材里，找出真正值得做的微信产品机会。**
 
-[![Version](https://img.shields.io/badge/version-1.3.3-blue.svg)](VERSION)
+[![Version](https://img.shields.io/badge/version-1.4.0-blue.svg)](VERSION)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Agent-Agnostic](https://img.shields.io/badge/Agent-Agnostic-blueviolet.svg)](docs/INSTALL.md)
 [![WeChat](https://img.shields.io/badge/WeChat-Mini%20Program%20%2B%20Mini%20Game-07C160.svg)](SKILL.md)
@@ -15,7 +15,7 @@
 
 **不是 Product Hunt 翻译器，也不是“看到热门产品就抄成小程序”。**
 
-它会先找信号，再判断需求，再路由产品形态，再看微信官方限制，最后才给出值得验证的需求。
+它既能主动找全球信号，也能直接吃你给的需求、GitHub、竞品和反馈；先提取 JTBD、必要时重构产品定义、生成多个方案，再路由产品形态、评分并检查微信限制。
 
 <br>
 
@@ -99,6 +99,10 @@ Skill 应该给你的不是“今天有什么新品”，而是：
 | 能力 | 交付 |
 |---|---|
 | 全球新品发现 | Product Hunt、HN、GitHub、Neeed、BetaList、Indie Hackers 等 |
+| User Seed Mode | 直接接收需求描述、GitHub、竞品、用户反馈、文件/导出数据 |
+| JTBD Extraction | 从“想做什么”还原成“谁在什么场景下真正要解决什么问题” |
+| Product Reframe | 对原始想法给 KEEP / REFRAME / SPLIT / REJECT，不盲从产品定义 |
+| Multi-concept Generation | 同一组素材生成 3–5 个真正不同的产品概念，再分别路由和评分 |
 | 小游戏机制发现 | itch.io、Poki、Steam、CrazyGames、Game Jam / Browser Prototype |
 | 14 天滚动候选池 | 新品挑战旧冠军，不会每天把榜单清零 |
 | Product Form Router | 自动判断小程序 / 小游戏 / Web / App / Desktop / Reject |
@@ -108,6 +112,59 @@ Skill 应该给你的不是“今天有什么新品”，而是：
 | 微信可上线性检查 | 类目、资质、备案、隐私、支付、通知、广告、游戏规则、性能、IP |
 | 需求转化 | Top 10 榜单 + Top 3 Mini PRD + Best Bets |
 | 快速验证设计 | 第一批 1000 用户、Time-to-Signal、Kill Criteria |
+
+---
+
+## v1.4 · 从“机会侦察”升级到“产品化判断”
+
+除了“今天有什么值得做”，现在也可以直接把你的原始需求丢给 Skill。
+
+例如：
+
+```text
+我有 7 个 GitHub 开源项目，都是生活/健康/做饭/投资/关系/成长指南。
+我想把它们做成一个指南集合小程序，帮我判断。
+```
+
+v1.4 不会直接顺着“指南集合”往下画功能，而会先跑：
+
+```text
+用户素材
+  ↓
+User Seed Mode
+  ↓
+JTBD Extraction
+  ↓
+Product Reframe
+  ├─ KEEP
+  ├─ REFRAME
+  ├─ SPLIT
+  └─ REJECT
+  ↓
+生成 3–5 个真正不同的 Product Concepts
+  ↓
+Product Form Router
+  ↓
+小程序 / 小游戏双引擎评分
+  ↓
+推荐一个最值得验证的方向
+```
+
+默认会告诉你：
+
+- 原始产品定义哪里对、哪里弱；
+- 用户真正的触发场景和 JTBD；
+- 3–5 个不同产品方案，而不是换名字；
+- 每个方案更适合小程序、小游戏、Web、App 还是 Reject；
+- 最强方案的 Opportunity / Readiness / Confidence；
+- P0、最快验证和 Kill Criteria。
+
+详细规则：
+
+- [User Seed Mode](references/user_seed_mode.md)
+- [JTBD Extraction](references/jtbd_extraction.md)
+- [Product Reframe](references/product_reframe.md)
+- [Multi-Concept Generation](references/multi_concept_generation.md)
 
 ---
 
@@ -595,7 +652,11 @@ xiaokangxxs-miniprogram-scout/
 ├── CHANGELOG.md
 ├── test-prompts.json
 ├── references/
-│   ├── master_prompt_v3_4.md
+│   ├── master_prompt_v3_5.md
+│   ├── user_seed_mode.md
+│   ├── jtbd_extraction.md
+│   ├── product_reframe.md
+│   ├── multi_concept_generation.md
 │   ├── platform_router.md
 │   ├── scoring_model.md
 │   ├── rolling_candidate_pool.md
@@ -631,6 +692,7 @@ xiaokangxxs-miniprogram-scout/
 - 📦 [安装与 Agent 兼容](docs/INSTALL.md)
 - 👥 [WorkBuddy 专家团](workbuddy/README.md)
 - 🧠 [架构与工作流](docs/ARCHITECTURE.md)
+- 🖼️ [v1.4 Social Preview 源图](assets/readme/social-preview-v1.4.svg)
 - 📊 [最新 Scout Run](docs/LATEST_RUN.md)
 - 🧪 [脱敏示例报告](docs/EXAMPLE_REPORT.md)
 - ❓ [FAQ](docs/FAQ.md)
