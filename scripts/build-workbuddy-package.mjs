@@ -32,9 +32,9 @@ const front=`---
 name: xiaokangxxs-miniprogram-scout
 display_name: 微信小程序与小游戏机会侦察
 display_name_en: WeChat Opportunity Scout
-description: 发现全球产品与游戏机制信号，路由并评分中国可落地的微信小程序、小游戏及其他产品形态机会
-description_zh: 从全球新品和游戏机制中筛选值得做、可验证、适合微信生态的小程序与小游戏机会
-description_en: Discover global product and game signals and convert the strongest China-feasible opportunities into testable WeChat Mini Program and Mini Game concepts.
+description: 侦察全球产品/游戏信号，或将用户给定需求与素材产品化，并路由评分中国可落地的微信小程序、小游戏及其他产品形态机会
+description_zh: 从全球信号或用户给定需求中提取 JTBD、重构产品、生成多方案，并筛选值得做且适合微信生态的机会
+description_en: Scout global signals or productize user-provided ideas into testable China-feasible WeChat Mini Program and Mini Game opportunities.
 version: ${version}
 author: "xiaokangxxs"
 ---
