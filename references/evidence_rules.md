@@ -1,6 +1,6 @@
 # Evidence Rules
 
-Version: 1.1.0
+Version: 1.5.0
 
 ## Four evidence labels
 
@@ -125,3 +125,36 @@ Always keep separate:
 - fetch date.
 
 A directory's `listed_at` is not automatically the original product launch date.
+
+
+## Evidence Quality Matrix
+
+For important evidence, also evaluate:
+
+- reliability;
+- freshness;
+- independence;
+- relevance;
+- directness.
+
+See `references/evidence_quality_matrix.md`.
+
+Do not collapse this into one fake-precise number.
+
+## Popularity vs demand
+
+Always distinguish:
+
+- popularity evidence: stars, votes, views, likes, rank;
+- demand evidence: search behavior, paid alternatives, workarounds, interviews, purchase intent, conversion.
+
+Popularity may increase trend confidence but does not prove demand.
+
+## Contradictory evidence
+
+When strong sources disagree:
+
+- show the conflict;
+- prefer direct/fresh/independent evidence;
+- reduce Confidence when unresolved;
+- do not average the disagreement away.
