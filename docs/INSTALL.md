@@ -169,6 +169,7 @@ If your machine has an older Node version and you do not want to upgrade, use th
 
 ```bash
 npm run validate
+npm run validate:pool
 npm run validate:workbuddy
 npm run scan:secrets
 npm run check
