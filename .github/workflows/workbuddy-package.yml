@@ -45,10 +45,14 @@ jobs:
           unzip -l dist/wechat-opportunity-scout-team-workbuddy.zip
           test -f dist/wechat-opportunity-scout-team-workbuddy.zip
 
+      - name: Read WorkBuddy package version
+        id: workbuddy_meta
+        run: echo "version=$(node -p "require('./workbuddy/.codebuddy-plugin/plugin.json').version")" >> "$GITHUB_OUTPUT"
+
       - name: Upload WorkBuddy ZIP
         uses: actions/upload-artifact@v4
         with:
-          name: wechat-opportunity-scout-team-workbuddy-v1.0.0
+          name: wechat-opportunity-scout-team-workbuddy-v${{ steps.workbuddy_meta.outputs.version }}
           path: dist/wechat-opportunity-scout-team-workbuddy.zip
           if-no-files-found: error
           retention-days: 14
