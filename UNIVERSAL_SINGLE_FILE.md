@@ -1,217 +1,173 @@
 # xiaokangxxs-miniprogram-scout — Universal Instruction
 
-Version: **1.4.0**
+Version: **1.5.0**
 
 ## Goal
 
-Discover **or derive**:
+Discover or derive WeChat Mini Program / Mini Game opportunities and make the decision:
 
-- WeChat Mini Program opportunities
-- WeChat Mini Game opportunities
+**auditable + challengeable + testable + persistent**.
 
-Two entry modes:
+Entry modes:
 
 - GLOBAL_DISCOVERY
 - USER_SEED
 
-Do not use one score model for Mini Programs and Mini Games.
+## USER_SEED
 
-## USER_SEED productization
+1. normalize provenance;
+2. extract JTBD;
+3. KEEP / REFRAME / SPLIT / REJECT;
+4. generate 3–5 materially different concepts;
+5. route each serious concept;
+6. score the strongest;
+7. run explainability, evidence quality, demand, rights/risk and red-team checks;
+8. recommend one;
+9. define P0 + validation + Kill Criteria.
 
-When the user supplies an idea, requirement, repositories, links, feedback or files:
+## GLOBAL_DISCOVERY
 
-1. normalize the seed and provenance;
-2. extract the underlying JTBD/problem;
-3. compare the original solution against the JTBD;
-4. return KEEP / REFRAME / SPLIT / REJECT;
-5. generate 3–5 materially different concepts;
-6. route each serious concept;
-7. score the strongest 2–3;
-8. recommend one concept with P0, validation and Kill Criteria.
+1. load `data/rolling_pool.json`;
+2. discover fresh sources;
+3. merge stable opportunity IDs;
+4. maintain Fresh <=72h, Rolling <=14d, Top20 Champions;
+5. route/score;
+6. explain scores;
+7. red-team Top 3;
+8. output movement;
+9. persist updated public pool when possible.
 
-Do not force a global scan before understanding a useful seed.
+## Scoring weights
 
-Do not create cosmetic concept variants.
+Mini Program:
+20 Search + 20 Need + 15 Niche + 10 Monetization + 10 WeChat Fit + 8 Heat + 5 Freshness + 10 Buildability + 2 Leverage.
 
-## JTBD
+Mini Game:
+20 Hook + 15 Replay + 15 Social + 15 Monetization + 10 Heat + 10 Freshness + 10 Buildability + 5 Gap.
 
-Extract:
+Weights remain unchanged.
 
-- target user
-- trigger
-- struggling moment
-- desired outcome
-- current workaround
-- cost of inaction
-- frequency / urgency
-- constraints
+## Score Explainability
 
-Describe the outcome, not the implementation.
+For serious candidates expose:
 
-## Product Reframe
+- component breakdown;
+- evidence;
+- assumptions;
+- why-not-higher;
+- gates/caps;
+- final score.
 
-The Skill may explicitly say:
-
-> This problem is worth solving, but the current product definition is weak.
-
-Verdict:
-
-- KEEP
-- REFRAME
-- SPLIT
-- REJECT
-
-## Product Form Router
-
-Route to:
-
-- WECHAT_MINIPROGRAM
-- WECHAT_MINIGAME
-- WEB_APP
-- NATIVE_APP
-- DESKTOP
-- REJECT
-
-Mini Program = task/service.
-Mini Game = play/fun/challenge.
-
-## Mini Program model
-
-Score 100:
-
-- Search demand 20
-- Rigid need 20
-- Niche wedge 15
-- Monetization 10
-- WeChat native fit 10
-- Trend heat 8
-- Freshness 5
-- Buildability 10
-- Product leverage 2
-
-## Mini Game model
-
-Score 100:
-
-- Instant hook 20
-- Replayability 15
-- WeChat social/viral loop 15
-- Monetization fit 15
-- Trend heat 10
-- Freshness/novel mechanic 10
-- Buildability 10
-- Competition gap 5
+No hidden bonus.
 
 ## Evidence
 
-Use:
+Labels:
 
 - Observed
 - Proxy
 - Estimate
 - Unknown
+- USER_CLAIM / USER_PROVIDED where relevant.
 
-User claims are not automatically Observed.
+Assess important evidence on:
 
-Never fabricate search volume, ASO, revenue, downloads, retention, player counts, platform eligibility.
+- reliability
+- freshness
+- independence
+- relevance
+- directness
 
-## Trend
+Popularity ≠ demand.
 
-Heat is momentum, not one snapshot.
+## China Demand
 
-Prefer:
-- rank velocity
-- player/review/comment growth
-- cross-source convergence
-- multiple similar products/mechanics
-- sustained attention
+If real China keyword/platform data is unavailable:
 
-## Buildability
+- Search Frequency = HYPOTHESIS;
+- generate specific validation queries/channels;
+- define what would raise/lower Confidence;
+- never fabricate volume.
 
-Track:
-- POC time
-- asset burden
-- backend/data/API burden
-- moderation/live-ops burden
-- model cost
-- engine fit
+## Rights & Risk
 
-Easy does not override weak demand/fun.
+Check:
 
-## Discovery sources
+- license
+- redistribution
+- modification
+- commercial use
+- RAG / embedding
+- attribution
+- permission
 
-Products:
-Product Hunt, HN, Neeed, GitHub, BetaList, Indie Hackers, optional Reddit/G2.
+Also classify health / finance / legal / minors / UGC / privacy / third-party API / platform risks.
 
-Games:
-itch.io, Poki, Steam, CrazyGames, game jams/prototypes.
+## Contrarian Review
 
-## WeChat policy gate
+For Top 3 / recommended / BUILD candidates:
 
-Before BUILD NOW / BUILD PROTOTYPE verify current official requirements:
+- Bear Case
+- generic AI replacement risk
+- giant-platform replacement
+- distribution failure
+- retention failure
+- monetization failure
+- dependency/platform failure
+- copyability
+- one Fatal Assumption
 
-Mini Program:
-- subject/category/qualifications
-- filing
-- privacy
-- payment/virtual goods
-- subscription/service messages
-- declared category vs actual service
+Only change scores for a real scoring/evidence/gate correction.
 
-Mini Game:
-- game category
-- qualification/publication requirements
-- ads eligibility
-- virtual payment
-- content/IP
-- package/performance/engine
-- social/share compliance
+## Validation OS
 
-Do not hard-code stale limits.
+Every serious recommendation includes:
 
-## Readiness
+- hypothesis
+- riskiest assumption
+- method
+- metric
+- success threshold
+- kill threshold
+- result status
+- decision
+- learning
 
-Separate from Opportunity.
+## Persistent Rolling Pool
 
-## Rolling pools
+Canonical state:
 
-GLOBAL_DISCOVERY maintains separate rolling pools:
+`data/rolling_pool.json`
 
-- Mini Program Champion Board
-- Mini Game Champion Board
+Public market signals only. Never store user data or secrets.
 
-Freshness does not reset champions.
+If persistence fails, mark DEGRADED and do not fabricate historical comparisons.
 
-## Deeper questions
+## Output — GLOBAL_DISCOVERY
 
-For each serious candidate ask:
+- source status
+- rolling-pool status
+- Top10 Mini Programs
+- Top10 Mini Games
+- Cross-category Top5
+- Top3 score breakdowns
+- Top3 red-team
+- China demand / Rights / WeChat blockers
+- validation experiments
+- champion movement
 
-1. First 1,000 users from where?
-2. Correct retention shape?
-3. Monetization-platform fit?
-4. What is defensible?
-5. Fastest falsification test?
-6. IP/clone risk?
-7. Current WeChat review blocker?
+## Output — USER_SEED
 
-## Default output — GLOBAL_DISCOVERY
-
-1. Source status
-2. Top 10 Mini Programs
-3. Top 10 Mini Games
-4. Cross-category Top 5 Best Bets
-5. Policy blockers
-6. Validation queue
-
-## Default output — USER_SEED
-
-1. Seed interpretation
-2. JTBD
-3. Original idea verdict
-4. 3–5 concepts
-5. Route for each
-6. Scored shortlist
-7. Recommended concept
-8. P0
-9. Fastest validation
-10. Blockers / Kill Criteria
+- provenance
+- JTBD
+- Reframe
+- 3–5 concepts
+- route
+- scored shortlist + explainability
+- China demand
+- Rights & Risk
+- red-team
+- recommendation
+- P0
+- validation experiment
+- Kill Criteria
