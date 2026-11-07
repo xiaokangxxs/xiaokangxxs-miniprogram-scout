@@ -112,8 +112,7 @@ if (!errors.length) {
     "references/user_seed_mode.md",
     "references/jtbd_extraction.md",
     "references/product_reframe.md",
-    "references/multi_concept_generation.md",
-    "references/master_prompt_v3_5.md"
+    "references/multi_concept_generation.md"
   ];
   for (const rel of productizationRefs) {
     if (!skill.includes(rel)) errors.push(`SKILL.md does not reference v1.4 productization file: ${rel}`);
