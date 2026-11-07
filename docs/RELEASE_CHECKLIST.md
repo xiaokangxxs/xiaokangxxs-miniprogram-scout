@@ -38,6 +38,19 @@ Use this before publishing a new version.
 - [ ] Avatar specs remain 512×512 PNG
 - [ ] Run `npm run build:workbuddy` and verify ZIP creation
 
+## v1.5 trust / validation / memory
+
+- [ ] Score Explainability is present for serious candidates
+- [ ] Evidence Quality does not confuse popularity with demand
+- [ ] China Demand Validator never fabricates search volume
+- [ ] Rights & Risk checks content/data licenses and RAG rights
+- [ ] Contrarian Reviewer identifies a Fatal Assumption
+- [ ] Validation OS includes success + kill thresholds
+- [ ] `npm run validate:pool` passes
+- [ ] Rolling Pool contains public market signals only
+- [ ] WorkBuddy has 1 lead + 7 members including Contrarian Reviewer
+- [ ] WorkBuddy shared data/references match root Skill
+
 ## Source & policy checks
 
 - [ ] Verify Product Hunt API/fallback guidance
