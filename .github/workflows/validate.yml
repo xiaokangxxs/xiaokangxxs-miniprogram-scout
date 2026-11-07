@@ -25,5 +25,8 @@ jobs:
       - name: Validate Skill
         run: npm run validate
 
+      - name: Validate WorkBuddy Expert Team
+        run: npm run validate:workbuddy
+
       - name: Scan for committed secrets
         run: npm run scan:secrets
