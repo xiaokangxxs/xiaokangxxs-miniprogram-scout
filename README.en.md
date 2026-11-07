@@ -6,7 +6,7 @@
 
 > **Global product & game signals → WeChat opportunity intelligence**
 
-[![Version](https://img.shields.io/badge/version-1.3.2-blue.svg)](VERSION)
+[![Version](https://img.shields.io/badge/version-1.3.3-blue.svg)](VERSION)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Agent Skill](https://img.shields.io/badge/Agent-Skill-blueviolet.svg)](SKILL.md)
 [![WeChat](https://img.shields.io/badge/WeChat-Mini%20Program%20%2B%20Mini%20Game-07C160.svg)](README.md)
@@ -59,6 +59,32 @@ It does **not** blindly translate Product Hunt launches. It combines multi-sourc
 | Rolling opportunity pool | 14-day pool + champion board, so good ideas do not disappear tomorrow |
 | WeChat readiness | Category, qualification, privacy, payment, notifications, ads, game publication, performance |
 | Requirement conversion | Top 10 boards + Top 3 Mini PRDs + Cross-category Best Bets |
+
+## WorkBuddy expert team
+
+The repository now includes a **WorkBuddy multi-agent expert-team edition** in [`workbuddy/`](workbuddy/README.md).
+
+It uses one lead plus six specialists:
+
+- Atlas — team lead / final ranking
+- Nova — global product discovery
+- Pixel — game-mechanic discovery
+- Mira — China demand analysis
+- Mini — WeChat Mini Program strategy
+- Arc — WeChat Mini Game design
+- Gate — WeChat readiness & evidence audit
+
+Build a WorkBuddy-ready ZIP:
+
+```bash
+npm run sync:workbuddy
+npm run validate:workbuddy
+npm run build:workbuddy
+```
+
+Output: `dist/wechat-opportunity-scout-team-workbuddy.zip`.
+
+The WorkBuddy team shares the same Scout Skill; repository validation checks for drift between the root Skill and the embedded WorkBuddy copy.
 
 ## Quick start
 
@@ -211,6 +237,7 @@ It validates:
 ## Documentation
 
 - [Installation & Agent compatibility](docs/INSTALL.md)
+- [WorkBuddy expert team](workbuddy/README.md)
 - [Architecture](docs/ARCHITECTURE.md)
 - [Latest real Scout run](docs/LATEST_RUN.md)
 - [Example report](docs/EXAMPLE_REPORT.md)
