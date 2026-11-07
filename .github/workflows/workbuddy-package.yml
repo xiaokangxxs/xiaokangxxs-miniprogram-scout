@@ -1,0 +1,50 @@
+name: Build WorkBuddy Package
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "workbuddy/**"
+      - "scripts/*workbuddy*.mjs"
+      - "SKILL.md"
+      - "VERSION"
+      - "references/**"
+      - "assets/report_template.md"
+      - "assets/source_credentials.example.yaml"
+      - "docs/LATEST_RUN.md"
+      - ".github/workflows/workbuddy-package.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Validate repository and expert team
+        run: npm run check
+
+      - name: Build WorkBuddy ZIP
+        run: npm run build:workbuddy
+
+      - name: Inspect package
+        run: |
+          unzip -l dist/wechat-opportunity-scout-team-workbuddy.zip
+          test -f dist/wechat-opportunity-scout-team-workbuddy.zip
+
+      - name: Upload WorkBuddy ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: wechat-opportunity-scout-team-workbuddy-v1.0.0
+          path: dist/wechat-opportunity-scout-team-workbuddy.zip
+          if-no-files-found: error
+          retention-days: 14
