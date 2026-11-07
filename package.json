@@ -36,7 +36,8 @@
     "scripts",
     "test-prompts.json",
     ".env.example",
-    "workbuddy"
+    "workbuddy",
+    "data"
   ],
   "scripts": {
     "validate": "node scripts/validate-skill.mjs",
