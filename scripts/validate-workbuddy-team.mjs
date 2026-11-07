@@ -15,7 +15,9 @@ const required=[
   "workbuddy/README.md",
   "workbuddy/UPLOAD_CHECKLIST.md",
   "workbuddy/avatar-specs.json",
-  "workbuddy/skills/xiaokangxxs-miniprogram-scout/SKILL.md"
+  "workbuddy/skills/xiaokangxxs-miniprogram-scout/SKILL.md",
+  "workbuddy/skills/xiaokangxxs-miniprogram-scout/data/rolling_pool.json",
+  "workbuddy/skills/xiaokangxxs-miniprogram-scout/data/rolling_pool.schema.json"
 ];
 for(const p of required) if(!exists(p)) errors.push(`Missing: ${p}`);
 
@@ -56,6 +58,11 @@ if(!errors.length){
 
   const wbSkill=read("workbuddy/skills/xiaokangxxs-miniprogram-scout/SKILL.md");
   if(!wbSkill.includes(`version: ${version}`)) errors.push(`WorkBuddy Skill version not synced to ${version}`);
+
+  const wbPool="workbuddy/skills/xiaokangxxs-miniprogram-scout/data/rolling_pool.json";
+  const wbPoolSchema="workbuddy/skills/xiaokangxxs-miniprogram-scout/data/rolling_pool.schema.json";
+  if(read(wbPool)!==read("data/rolling_pool.json")) errors.push("WorkBuddy rolling pool drift");
+  if(read(wbPoolSchema)!==read("data/rolling_pool.schema.json")) errors.push("WorkBuddy rolling pool schema drift");
 
   const referenceNames=fs.readdirSync(path.join(root,"references")).filter(x=>x.endsWith(".md"));
   for(const name of referenceNames){
