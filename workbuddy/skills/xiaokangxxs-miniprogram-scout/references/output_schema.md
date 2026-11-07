@@ -1,6 +1,57 @@
 # Canonical Data and Report Schema
 
-Version: 1.3.0
+Version: 1.4.0
+
+## Input context
+
+```yaml
+input_context:
+  mode: GLOBAL_DISCOVERY|USER_SEED
+  seed_types: []
+  seed_items:
+    - value: "..."
+      provenance: OBSERVED|USER_CLAIM|USER_PROVIDED|PROXY|UNKNOWN
+      verified: true|false
+```
+
+## User Seed productization
+
+When `mode=USER_SEED`:
+
+```yaml
+problem:
+  target_user: "..."
+  trigger: "..."
+  struggling_moment: "..."
+  desired_outcome: "..."
+  current_workaround: "..."
+  cost_of_inaction: "..."
+  frequency: HIGH|MEDIUM|LOW|UNKNOWN
+  urgency: HIGH|MEDIUM|LOW|UNKNOWN
+  constraints: []
+
+jtbd:
+  statement: "..."
+  confidence: HIGH|MEDIUM|LOW
+
+product_reframe:
+  original_idea: "..."
+  verdict: KEEP|REFRAME|SPLIT|REJECT
+  reframed_product: "..."
+  reason: "..."
+
+concepts:
+  - concept_id: C1
+    name: "..."
+    target_user: "..."
+    trigger: "..."
+    core_value: "..."
+    interaction: "..."
+    monetization_hypothesis: "..."
+    distribution_hypothesis: "..."
+    product_form_candidate: "..."
+    why_distinct: "..."
+```
 
 ## Opportunity theme
 
@@ -10,7 +61,7 @@ opportunity_name: "..."
 supporting_products: []
 first_seen_at: "ISO-8601"
 last_seen_at: "ISO-8601"
-freshness_status: fresh|rolling|champion
+freshness_status: fresh|rolling|champion|user_seed
 product_form:
   primary: WECHAT_MINIPROGRAM|WECHAT_MINIGAME|WEB_APP|NATIVE_APP|DESKTOP|REJECT
   alternatives: []
@@ -98,50 +149,22 @@ confidence_label: High|Medium|Low
 recommendation: "..."
 ```
 
-## Default final report
+## Default final report — GLOBAL_DISCOVERY
 
-Return separate boards:
+- Top 10 Mini Program Opportunities
+- Top 10 Mini Game Opportunities
+- Cross-category Top 5 Best Bets
 
-### Top 10 Mini Program Opportunities
+## Default final report — USER_SEED
 
-Fields:
-
-- rank
-- opportunity
-- supporting products
-- core keywords
-- search status
-- rigid need
-- niche segment
-- freshness
-- heat
-- buildability
-- Opportunity
-- Readiness
-- Confidence
-- action
-- official-policy blocker
-
-### Top 10 Mini Game Opportunities
-
-Fields:
-
-- rank
-- opportunity/mechanic
-- inspiration sources
-- 3–10 second hook
-- replay loop
-- social loop
-- monetization
-- freshness
-- heat
-- buildability
-- Opportunity
-- Readiness
-- Confidence
-- action
-- official-policy blocker
-
-### Cross-category Top 5 Best Bets
-
-Explain why each belongs to Mini Program or Mini Game and what should be validated first.
+- seed interpretation/provenance
+- problem model / JTBD
+- original idea verdict
+- 3–5 concepts
+- route for each concept
+- scored shortlist
+- recommended concept
+- P0
+- fastest validation
+- blockers
+- Kill Criteria
