@@ -38,3 +38,18 @@ Top 候选必须给出：
 - Kill Criteria
 
 “容易开发”不能拯救弱需求；“很热”不能拯救没有微信渠道优势的 SaaS。
+
+
+## Score Explainability
+
+Top 候选不能只给最终分数。
+
+逐项说明：
+
+- component score / max
+- evidence
+- assumption
+- why not higher
+- hard gate / cap
+
+不得使用模型里不存在的隐藏 bonus。

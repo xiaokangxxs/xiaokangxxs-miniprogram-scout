@@ -1,8 +1,8 @@
 {
   "name": "wechat-opportunity-scout-team",
   "expertType": "team",
-  "version": "1.1.0",
-  "description": "A multi-agent team that scouts global signals or productizes user-provided ideas into evidence-based WeChat Mini Program and Mini Game opportunities.",
+  "version": "1.2.0",
+  "description": "A multi-agent WeChat opportunity team with productization, auditable scoring, China-demand validation, rights/risk checks, red-team review and persistent trend memory.",
   "author": {
     "name": "xiaokangxxs",
     "email": "xiaokangxxs@users.noreply.github.com"
@@ -14,7 +14,8 @@
     "./agents/china-demand-analyst.md",
     "./agents/mini-program-strategist.md",
     "./agents/mini-game-designer.md",
-    "./agents/wechat-readiness-auditor.md"
+    "./agents/wechat-readiness-auditor.md",
+    "./agents/contrarian-reviewer.md"
   ],
   "agentName": "wechat-opportunity-scout-team-lead",
   "teamInfo": {
@@ -25,7 +26,8 @@
       "china-demand-analyst",
       "mini-program-strategist",
       "mini-game-designer",
-      "wechat-readiness-auditor"
+      "wechat-readiness-auditor",
+      "contrarian-reviewer"
     ]
   },
   "skills": [
@@ -52,8 +54,8 @@
     "en": "WeChat Opportunity Scout Team"
   },
   "displayDescription": {
-    "zh": "既能侦察全球新品与游戏机制，也能把用户给定需求/GitHub/竞品素材提炼为 JTBD、重构产品定义、生成多方案并协作评估微信机会。",
-    "en": "A specialist team that scouts global signals or productizes user-provided ideas through JTBD extraction, reframing, multi-concept generation and WeChat opportunity evaluation."
+    "zh": "全球侦察或用户需求产品化后，通过可解释评分、中国需求验证、版权/合规审计、反方审查与历史趋势记忆，协作筛选最值得验证的微信小程序和小游戏机会。",
+    "en": "A specialist team that scouts or productizes opportunities, then applies explainable scoring, China-demand validation, rights/risk audits, red-team review and persistent trend memory."
   },
   "avatar": "avatars/team.png",
   "categoryId": "01-ProductDesign",
@@ -86,8 +88,8 @@
       "en": "I will give you a requirement, repositories or competitor links. Extract the JTBD, reframe the product, generate 3–5 concepts and recommend the strongest WeChat opportunity."
     },
     {
-      "zh": "只看3天内能验证的机会，优先小众、刚需/强乐趣、最新、最火、最好开发。",
-      "en": "Only show opportunities that can be validated within 3 days, prioritizing niche, hard need/strong fun, freshness, heat and buildability."
+      "zh": "把当前最强的3个机会做完整审计：逐项解释分数、检查证据质量和版权风险、做反方审查，并给每个机会一个可证伪实验。",
+      "en": "Audit the current top 3 opportunities: explain each score, assess evidence quality and rights risk, red-team each idea, and define a falsifiable experiment."
     }
   ],
   "members": [
@@ -180,6 +182,19 @@
         "en": "WeChat Readiness Auditor"
       },
       "avatar": "avatars/wechat-readiness-auditor.png",
+      "role": "member"
+    },
+    {
+      "id": "contrarian-reviewer",
+      "name": {
+        "zh": "逆审",
+        "en": "Skeptic"
+      },
+      "profession": {
+        "zh": "反方审查师",
+        "en": "Contrarian Reviewer"
+      },
+      "avatar": "avatars/contrarian-reviewer.png",
       "role": "member"
     }
   ]

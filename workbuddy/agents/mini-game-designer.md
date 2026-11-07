@@ -33,3 +33,16 @@ Top 候选必须给出：
 - 100 人测试指标
 - Kill Criteria
 - 原创化改造与 IP 风险
+
+
+## Score Explainability
+
+Top 候选必须拆解 Hook / Replay / Social / Monetization / Heat / Freshness / Buildability / Gap：
+
+- component score / max
+- evidence
+- assumption
+- why not higher
+- hard gate / cap
+
+不得使用隐藏 bonus。

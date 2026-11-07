@@ -1,6 +1,6 @@
 # Dual Opportunity Scoring Model
 
-Version: 1.3.0
+Version: 1.5.0
 
 Mini Programs and Mini Games use different score models.
 
@@ -261,3 +261,25 @@ When producing Cross-category Top 5, compare:
 - user's team/resources.
 
 Label why each is a Mini Program or Mini Game.
+
+
+---
+
+# G. Score Explainability
+
+Every serious score must follow `references/score_explainability.md`.
+
+For Top 3 / recommended concepts expose:
+
+- component score;
+- supporting evidence;
+- assumptions;
+- why-not-higher;
+- hard gates/caps;
+- final score.
+
+Do not introduce hidden bonus/penalty weights.
+
+Evidence Quality, China Demand, Rights & Risk and Contrarian Review may change a published score only when they expose a real scoring mistake, missing gate, blocker or evidence weakness.
+
+Otherwise change Confidence / Readiness / recommended action instead.

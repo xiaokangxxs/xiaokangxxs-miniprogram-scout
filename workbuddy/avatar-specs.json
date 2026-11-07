@@ -57,6 +57,13 @@
         "#b44b41"
       ],
       "icon": "shield"
+    },
+    "contrarian-reviewer.png": {
+      "background": [
+        "#3f374e",
+        "#7b5a9e"
+      ],
+      "icon": "search"
     }
   }
 }

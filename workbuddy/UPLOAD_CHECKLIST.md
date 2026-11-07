@@ -15,7 +15,7 @@
 
 - Expert Type：`team`
 - 团长：1
-- 成员：6
+- 成员：7
 - 共享 Skill：1
 - Quick Prompts：3
 - Tags：3
@@ -43,3 +43,14 @@
 - 私有候选池
 - 用户隐私数据
 - 带真实凭证的截图
+
+
+## v1.2 / v1.5 checks
+
+- WorkBuddy Expert Team version: 1.2.0
+- 1 lead + 7 specialist members
+- Contrarian Reviewer present
+- Shared Skill version follows root VERSION
+- Shared references have no drift
+- Shared Rolling Pool data/schema have no drift
+- Public Rolling Pool must not contain user-private data or secrets

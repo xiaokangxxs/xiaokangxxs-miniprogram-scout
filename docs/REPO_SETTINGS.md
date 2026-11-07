@@ -1,24 +1,20 @@
 # Recommended GitHub Repository Settings
 
-The current GitHub connector can edit repository files but cannot update the repository's **About / Topics / Social Preview** metadata. Use the values below in GitHub → repository → gear icon next to About.
+The GitHub connector can edit repository files but not the repository's About / Topics / Social Preview UI metadata.
 
 ## Description
 
 Recommended English:
 
 ```text
-Agent Skill for scouting global signals or productizing your own ideas into evidence-based WeChat Mini Program and Mini Game opportunities.
+WeChat opportunity decision Agent Skill: discovery + productization + explainable scoring + red-team validation + persistent trend memory.
 ```
 
-Short Chinese alternative:
+Recommended Chinese:
 
 ```text
-微信产品机会决策 Skill：全球侦察 + 用户需求产品化 + 小程序/小游戏双引擎评估。
+微信产品机会决策 Skill：全球侦察 / 用户需求产品化 / 可解释评分 / 反方审查 / 验证闭环 / 14天趋势记忆。
 ```
-
-## Website
-
-Leave empty unless a dedicated project site/demo is published later.
 
 ## Topics
 
@@ -32,36 +28,44 @@ product-discovery
 product-strategy
 jtbd
 idea-validation
-product-hunt
-hacker-news
+evidence-based
+red-team
 market-research
+rolling-pool
 china
 ai-agent
 skills
 ```
 
-## Social preview
+## Social Preview
 
-v1.4 recommended visual:
+Use the v1.5 raster preview generated from the preferred blue/white glossy layout.
 
-- repository name: `xiaokangxxs-miniprogram-scout`
-- headline: `From Discovery to Productization`
-- flow: `Signals / User Seed → JTBD → Reframe → Concepts → WeChat`
-- small labels: `Mini Program` · `Mini Game` · `Evidence First`
+Repository source asset:
 
-Source asset:
+`assets/readme/social-preview-v1.5.svg`
 
-`assets/readme/social-preview-v1.4.svg`
+Recommended upload:
+- 1280×640
+- PNG or JPG
+- under GitHub upload size limit
+- no secrets / real tokens
 
-GitHub Social Preview upload normally needs a raster image. Export this SVG to a 1280×640 PNG/JPG before manual upload.
+Manual path:
 
-Avoid API keys, real daily ranking results or third-party logos.
+`Repository → Settings → General / Social preview → Edit → Upload an image`
 
-## Features to enable
+## About
+
+Open the gear icon beside About and update:
+- Description
+- Topics
+- Website only if a real project site exists
+
+## Features
 
 Recommended:
 - Issues: ON
 - Actions: ON
 - Discussions: optional
-- Wiki: OFF unless documentation grows beyond `docs/`
-- Sponsorships: optional
+- Wiki: OFF unless docs move out of `docs/`

@@ -2,165 +2,106 @@
 name: xiaokangxxs-miniprogram-scout
 display_name: 微信小程序与小游戏机会侦察
 display_name_en: WeChat Opportunity Scout
-description: 侦察全球产品/游戏信号，或将用户给定需求与素材产品化，并路由评分中国可落地的微信小程序、小游戏及其他产品形态机会
-description_zh: 从全球信号或用户给定需求中提取 JTBD、重构产品、生成多方案，并筛选值得做且适合微信生态的机会
-description_en: Scout global signals or productize user-provided ideas into testable China-feasible WeChat Mini Program and Mini Game opportunities.
-version: 1.4.0
+description: 全球机会侦察或用户需求产品化，并通过可解释评分、证据质量、风险审计、反方审查、验证实验与趋势记忆筛选微信小程序/小游戏机会
+description_zh: 从全球信号或用户需求出发，经过 JTBD、产品重构、可解释评分、证据/版权风险、反方审查、验证与趋势记忆，筛选值得做的微信机会
+description_en: Scout or productize opportunities with explainable scoring, evidence quality, rights/risk checks, red-team review, validation experiments and persistent trend memory.
+version: 1.5.0
 author: "xiaokangxxs"
 ---
 
 
 # xiaokangxxs-miniprogram-scout
 
-Version: **1.4.0**
+Version: **1.5.0**
 
-> WeChat Opportunity Intelligence · From Discovery to Productization
+> WeChat Opportunity Intelligence · Trust, Validate & Remember
 
 ## Mission
 
-Find **or derive** opportunities that are simultaneously:
+Find **or derive** opportunities that are:
 
 > **值得做 + 有明确需求/玩法入口 + 刚需/强乐趣 + 小众可切入 + 最新/有热度 + 开发杠杆高 + 适合微信生态**
 
-The Skill has two entry paths:
+Then make the answer:
 
-- **GLOBAL_DISCOVERY** — scout the market.
-- **USER_SEED** — start from the user's idea, requirement, GitHub repositories, product links, feedback or files.
+> **可解释 + 可反驳 + 可验证 + 可记忆**
 
-Do not optimize for only one dimension.
+## Entry modes
 
-## Workflow
+- **GLOBAL_DISCOVERY** — scout public product/game signals.
+- **USER_SEED** — start from the user's idea, requirements, GitHub repositories, competitor links, feedback or files.
 
-### A. Global discovery
+## Core workflow
+
+### GLOBAL_DISCOVERY
 
 1. Capability / credential check
-2. Multi-source fresh discovery
-3. Load Rolling Pools
-4. Normalize / deduplicate
-5. Cluster into JTBD themes or game-mechanic themes
-6. Product Form Router
-7. Score with the correct model
-8. Verify WeChat constraints
-9. Output separate boards + Best Bets
+2. Load `data/rolling_pool.json`
+3. Multi-source fresh discovery
+4. Normalize / deduplicate / stable opportunity IDs
+5. Merge Fresh + Rolling + Champions
+6. Cluster into JTBD/mechanic themes
+7. Product Form Router
+8. Dual scoring
+9. Explain scores / assess evidence
+10. China demand / Rights & Risk / WeChat readiness
+11. Contrarian review
+12. Final boards + validation experiments
+13. Persist public Rolling Pool when write access is available
 
-### B. User Seed productization
+### USER_SEED
 
-1. Detect User Seed input
-2. Normalize seed provenance
-3. Extract JTBD / problem model
+1. Detect User Seed
+2. Normalize provenance
+3. Extract JTBD
 4. Product Reframe: KEEP / REFRAME / SPLIT / REJECT
 5. Generate 3–5 materially different concepts
-6. Product Form Router for each concept
-7. Score the strongest concepts
-8. Readiness / Confidence / WeChat constraints
-9. Recommend one concept
-10. P0 + fastest validation + blockers + Kill Criteria
+6. Product Form Router
+7. Score strongest concepts
+8. Explain scores / assess evidence
+9. China demand / Rights & Risk / WeChat readiness
+10. Contrarian review
+11. Recommend one concept
+12. P0 + Validation OS + Kill Criteria
 
-Read:
+## Read these references
 
-- `references/master_prompt_v3_5.md`
+- `references/master_prompt_v3_6.md`
 - `references/user_seed_mode.md`
 - `references/jtbd_extraction.md`
 - `references/product_reframe.md`
 - `references/multi_concept_generation.md`
 - `references/platform_router.md`
 - `references/scoring_model.md`
+- `references/score_explainability.md`
+- `references/evidence_rules.md`
+- `references/evidence_quality_matrix.md`
+- `references/china_demand_validator.md`
+- `references/rights_and_risk_gate.md`
+- `references/china_feasibility_gate.md`
+- `references/contrarian_reviewer.md`
+- `references/validation_os.md`
 - `references/rolling_candidate_pool.md`
 - `references/wechat_official_constraints.md`
 - `references/source_registry.md`
-- `references/evidence_rules.md`
 - `references/output_schema.md`
 - `references/auth_and_secrets.md`
 
-## User Seed Mode
+## Productization rules
 
-When the user already supplies meaningful material, do not force a global scan before understanding it.
+USER_SEED must:
 
-Supported seeds include:
+- extract target user, trigger, desired outcome, workaround and cost of inaction;
+- challenge solution anchoring;
+- return KEEP / REFRAME / SPLIT / REJECT;
+- generate 3–5 materially different concepts;
+- keep the original idea as a control when useful.
 
-- raw requirements / ideas;
-- one or more GitHub repositories;
-- competitor/product URLs;
-- user feedback/interview notes;
-- screenshots/files/exports;
-- existing planned products.
-
-User-provided claims are not automatically Observed.
-
-## JTBD Extraction
-
-Before scoring a user-provided solution, extract:
-
-- target user;
-- trigger;
-- struggling moment;
-- desired outcome;
-- current workaround;
-- cost of inaction;
-- frequency / urgency;
-- constraints.
-
-A good JTBD describes the outcome, not the implementation.
-
-## Product Reframe
-
-Every serious User Seed evaluation should choose:
-
-- KEEP
-- REFRAME
-- SPLIT
-- REJECT
-
-The Skill is explicitly allowed to say:
-
-> "这个需求值得做，但你现在定义的产品形态不对。"
-
-Do not reframe only to sound clever.
-
-## Multi-Concept Generation
-
-Generate 3–5 materially different concepts before committing to one solution.
-
-Concepts must differ in meaningful dimensions such as:
-
-- target segment;
-- trigger;
-- workflow;
-- interaction;
-- monetization;
-- distribution;
-- product form;
-- AI/data leverage.
-
-Do not generate five cosmetic variants.
-
-Keep the original idea as a control when useful.
-
-## Discovery
-
-### Product / utility sources
-
-- Product Hunt
-- Hacker News / Show HN / Ask HN
-- Neeed
-- GitHub
-- BetaList
-- Indie Hackers
-- optional Reddit / G2
-
-### Game / mechanic sources
-
-- itch.io New & Popular
-- Poki trending/top
-- Steam public trend/new-release signals
-- CrazyGames
-- public game-jam/prototype signals
-
-Product Hunt is not enough for Mini Game scouting.
+Do not create cosmetic concept variants.
 
 ## Product Form Router
 
-Route serious concepts to:
+Route to:
 
 - WECHAT_MINIPROGRAM
 - WECHAT_MINIGAME
@@ -169,151 +110,161 @@ Route serious concepts to:
 - DESKTOP
 - REJECT
 
-Never force every opportunity into WeChat.
-
 Mini Program = task/service first.
 Mini Game = play/fun/challenge first.
 
-## Mini Program score
+Gamification does not automatically make a utility a Mini Game.
 
-Use the unchanged v1.3 Mini Program model:
+## Scoring
 
+v1.5 keeps the existing v1.3 scoring weights unchanged.
+
+### Mini Program — 100
 - Search Demand & Intent — 20
 - Rigid Need / Pain — 20
 - Niche Wedge — 15
 - Value & Monetization — 10
 - WeChat Native Fit — 10
-- Trend Momentum / Heat — 8
-- Freshness / Novelty — 5
-- Buildability / Solo-Dev Leverage — 10
+- Trend Heat — 8
+- Freshness — 5
+- Buildability — 10
 - Product Leverage — 2
 
-Without a real keyword tool, search frequency is a hypothesis, not fact.
-
-## Mini Game score
-
-Use the unchanged v1.3 Mini Game model:
-
-- Instant Hook / Fun Clarity — 20
-- Replayability / Retention Loop — 15
-- WeChat Social / Viral Loop — 15
+### Mini Game — 100
+- Instant Hook — 20
+- Replayability — 15
+- WeChat Social/Viral — 15
 - Monetization Fit — 15
-- Trend Momentum / Heat — 10
-- Freshness / Novel Mechanic — 10
-- Buildability / Asset Leverage — 10
-- Niche / Competition Gap — 5
+- Trend Heat — 10
+- Freshness — 10
+- Buildability — 10
+- Competition Gap — 5
 
-Do not penalize a good game because people do not search for it like a utility.
+## Score Explainability
 
-## Latest / Hot / Easy
+Every serious score must show:
 
-Track separately:
+- component breakdown;
+- supporting evidence;
+- assumptions;
+- why-not-higher;
+- gates/caps;
+- final score.
 
-### Freshness
-- launch age
-- mechanic novelty
-- China/WeChat novelty
+No hidden bonus weight.
 
-### Heat
-- ranking velocity
-- comments/reviews/player growth
-- cross-source convergence
-- repeated independent products around one job/mechanic
-- sustained vs one-day spike
+## Evidence Quality
 
-### Buildability
-- prototype time
-- asset burden
-- backend burden
-- API/data dependencies
-- content/moderation/live-ops burden
-- model cost
-- engine/runtime fit
-
-Easy development may break ties but cannot rescue weak demand or weak fun.
-
-## Readiness
-
-Score platform readiness separately from Opportunity.
-
-For Mini Programs:
-- China data/API
-- WeChat capability
-- privacy/compliance
-- upstream dependency
-- implementation/ops
-
-For Mini Games:
-- category/qualification/publication
-- ads/payment eligibility
-- package/performance/engine fit
-- content/IP/review risk
-- implementation/assets/live ops
-
-## Deeper analysis
-
-Every serious candidate/concept must answer:
-
-### Distribution
-How do the first 1,000 users arrive?
-
-### Retention
-What is the correct retention shape?
-
-### Monetization-platform fit
-Does the model fit WeChat rules and user behavior?
-
-### Defensibility
-What remains after competitors copy the feature/mechanic?
-
-### Time-to-signal
-What is the fastest experiment that could disprove it?
-
-### IP risk
-Extract the job/mechanic; never copy protected brand/assets/music/characters/content.
-
-## Rolling pools
-
-For GLOBAL_DISCOVERY, maintain separate rolling pools:
-
-- Mini Program Rolling Pool + Champion Board
-- Mini Game Rolling Pool + Champion Board
-
-Freshness does not reset champions.
-
-USER_SEED concepts may enter a rolling pool later only when the host intentionally persists them.
-
-## Evidence
-
-Every material claim must be:
+Every material claim must remain:
 
 - Observed
 - Proxy
 - Estimate
 - Unknown
 
-User-provided claims remain USER_CLAIM/USER_PROVIDED until independently verified where verification matters.
+User-provided claims remain USER_CLAIM / USER_PROVIDED until independently verified where material.
 
-Never fabricate search volume, ASO metrics, revenue, downloads, retention, platform permissions or qualification status.
+Important evidence should also be assessed for:
+
+- reliability
+- freshness
+- independence
+- relevance
+- directness
+
+## China Demand Validator
+
+Without a real Chinese keyword/data source:
+
+- Search Frequency = HYPOTHESIS;
+- generate concrete China validation queries;
+- specify channels and success/failure signals;
+- do not invent volume.
+
+## Rights & Risk
+
+Check rights for material external dependencies:
+
+- license
+- redistribution
+- modification
+- commercial use
+- RAG/embedding
+- attribution
+- permission
+
+Also classify health, finance, legal, minors, UGC, privacy, API and platform-review risks.
+
+## Contrarian Reviewer
+
+Red-team:
+
+- GLOBAL_DISCOVERY Top 3;
+- USER_SEED recommended concept;
+- BUILD NOW / BUILD PROTOTYPE candidates.
+
+Always identify a Bear Case and one Fatal Assumption.
+
+Do not downscore merely because criticism exists; change scores only for a real scoring/evidence/gate error.
+
+## Validation OS
+
+Every serious recommendation must contain a structured experiment:
+
+- hypothesis
+- riskiest assumption
+- method
+- metric
+- success threshold
+- kill threshold
+- result status
+- decision
+- learning
+
+## Real Rolling Pool
+
+Canonical public state:
+
+`data/rolling_pool.json`
+
+Only public market signals may be persisted.
+
+Never store user data, private seed material, cookies, tokens or credentials.
+
+If persistence fails, mark it DEGRADED and continue without inventing historical comparisons.
+
+## Readiness
+
+Opportunity is not Readiness.
+
+Check current WeChat official requirements before BUILD/LAUNCH.
+
+A high Opportunity can remain high while Rights, platform or data blockers lower Readiness.
 
 ## Default output — GLOBAL_DISCOVERY
 
 1. Source status
-2. Top 10 WeChat Mini Program Opportunities
-3. Top 10 WeChat Mini Game Opportunities
-4. Cross-category Top 5 Best Bets
-5. Policy blockers
-6. Validation queue
+2. Rolling Pool status
+3. Top 10 Mini Programs
+4. Top 10 Mini Games
+5. Cross-category Top 5
+6. Full score breakdown for Top 3
+7. Contrarian review for Top 3
+8. China demand / Rights / policy blockers
+9. Structured validation experiments
+10. Champion movement
 
 ## Default output — USER_SEED
 
-1. Input interpretation / provenance
-2. Problem / JTBD
-3. Original idea verdict
-4. 3–5 product concepts
-5. Product-form route for each
-6. Scored shortlist
-7. Recommended concept
-8. P0
-9. Fastest validation
-10. Main blockers + Kill Criteria
+1. Seed interpretation / provenance
+2. JTBD
+3. Reframe verdict
+4. 3–5 concepts
+5. Route
+6. Scored shortlist with explainability
+7. China demand + Rights & Risk
+8. Contrarian review
+9. Recommended concept
+10. P0
+11. Validation experiment
+12. Kill Criteria

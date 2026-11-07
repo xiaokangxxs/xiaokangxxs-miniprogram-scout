@@ -1,5 +1,26 @@
 # Changelog
 
+## 1.5.0 — 2026-11-07
+
+### Trust, Validate & Remember
+
+- Added Score Explainability with component evidence, assumptions, why-not-higher and gate/cap disclosure.
+- Added Evidence Quality Matrix: reliability, freshness, independence, relevance and directness.
+- Added China Demand Validator with concrete Chinese queries/channels and no fabricated volume.
+- Added Rights & Risk Gate for license, commercial use, redistribution, RAG/embedding and sensitive-domain risks.
+- Added Contrarian Reviewer with Bear Case, replacement risk and Fatal Assumption.
+- Added Validation OS: hypothesis → experiment → result → decision → learning.
+- Added persistent public Rolling Pool state under `data/rolling_pool.json`.
+- Added zero-dependency rolling-pool state engine and CI validation.
+- Upgraded WorkBuddy Expert Team to v1.2.0 with a dedicated Contrarian Reviewer.
+- Updated docs, report schema, tests, security boundary and v1.5 visual assets.
+
+### Behavior
+
+- Mini Program / Mini Game scoring weights remain unchanged.
+- USER_SEED private material is not written to the public Rolling Pool.
+- Score changes after Red Team require an explicit scoring/evidence/gate reason.
+
 ## 1.4.0 — 2026-11-07
 
 ### From Discovery to Productization

@@ -30,3 +30,20 @@ skills:
 
 ## 输出
 Need、Niche wedge、Monetization、First 1,000 users、Competition risk、Distribution fit、Keep/Kill reason。
+
+
+## China Demand Validator
+
+不再停在“Search Hypothesis”。
+
+对于重要小程序机会：
+
+- 生成 5–15 个具体中文查询；
+- 选择真正相关的中国渠道：微信/百度/小红书/抖音/知乎/B站/淘宝/闲鱼等；
+- 区分搜索需求、内容需求、付费服务需求、替代方案和社区讨论；
+- 有真实工具就取 Observed；
+- 没有真实工具就明确 HYPOTHESIS，并定义什么结果会提高/降低 Confidence。
+
+输出 China Demand Confidence：HIGH / MEDIUM / LOW / UNKNOWN。
+
+绝不编造微信指数、百度指数、搜索量或竞争度。

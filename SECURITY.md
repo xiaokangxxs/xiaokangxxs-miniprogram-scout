@@ -174,3 +174,27 @@ Please open an Issue only for non-sensitive discussion.
 If the concern includes an exposed credential, revoke/rotate it immediately before any public discussion.
 
 A mismatch between this document and repository behavior should be treated as a bug.
+
+
+## Public Rolling Pool boundary
+
+v1.5 adds `data/rolling_pool.json` for persistent GLOBAL_DISCOVERY market-state.
+
+Allowed:
+- public opportunity IDs/names;
+- public source URLs/summaries;
+- model scores and public trend history.
+
+Forbidden:
+- user-private requirements;
+- private uploads/exports;
+- personal data;
+- interview transcripts that are not public;
+- API tokens;
+- cookies;
+- credentials;
+- private connector data.
+
+USER_SEED material must remain runtime/private unless the user explicitly chooses to publish it.
+
+The pool validator fails if the required public-state privacy marker is missing.

@@ -1,6 +1,6 @@
 # Skill Eval Cases
 
-Version: 1.4.0
+Version: 1.5.0
 
 ## 1 — Utility vs Game Router
 
@@ -199,3 +199,26 @@ Expected:
 - 3–5 concepts differ materially by workflow/segment/form/distribution
 - cosmetic naming variations are rejected
 - strongest 2–3 receive deep scoring
+
+
+## 25 — Explainable score
+Expected: component scores, evidence, assumptions, why-not-higher, gates, no hidden weight.
+
+## 26 — Rights/RAG blocker
+Input: public repository with restrictive/custom content license.
+Expected: GitHub-public != reusable; explicit RAG/commercial/redistribution checks.
+
+## 27 — Contrarian red team
+Expected: Bear Case + Fatal Assumption + test; score changes only when justified.
+
+## 28 — China demand without keyword API
+Expected: concrete queries/channels; Search Frequency=HYPOTHESIS; no fake volume.
+
+## 29 — Rolling Pool persistence
+Expected: stable opportunity IDs, 72h Fresh, 14d Rolling, Top20 Champions, movement labels.
+
+## 30 — Validation learning loop
+Expected: experiment schema + result/decision/learning fields.
+
+## 31 — Popularity is not demand
+Expected: evidence-quality dimensions and reduced Confidence when directness is low.

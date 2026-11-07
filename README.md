@@ -4,9 +4,9 @@
 
 # xiaokangxxs-miniprogram-scout
 
-> **从全球新品、游戏机制，或者你直接给的需求 / GitHub / 竞品素材里，找出真正值得做的微信产品机会。**
+> **发现或产品化微信机会，并让每个结论可解释、可反驳、可验证、可记忆。**
 
-[![Version](https://img.shields.io/badge/version-1.4.0-blue.svg)](VERSION)
+[![Version](https://img.shields.io/badge/version-1.5.0-blue.svg)](VERSION)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Agent-Agnostic](https://img.shields.io/badge/Agent-Agnostic-blueviolet.svg)](docs/INSTALL.md)
 [![WeChat](https://img.shields.io/badge/WeChat-Mini%20Program%20%2B%20Mini%20Game-07C160.svg)](SKILL.md)
@@ -112,6 +112,54 @@ Skill 应该给你的不是“今天有什么新品”，而是：
 | 微信可上线性检查 | 类目、资质、备案、隐私、支付、通知、广告、游戏规则、性能、IP |
 | 需求转化 | Top 10 榜单 + Top 3 Mini PRD + Best Bets |
 | 快速验证设计 | 第一批 1000 用户、Time-to-Signal、Kill Criteria |
+
+---
+
+## v1.5 · Trust, Validate & Remember
+
+v1.4 解决“**到底应该做什么产品**”。
+
+v1.5 继续解决：
+
+> **为什么相信这个分数？最可能错在哪里？版权/中国需求是否成立？验证以后能不能留下真实学习？**
+
+新增 7 项能力：
+
+| 能力 | 作用 |
+|---|---|
+| Score Explainability | 每项分数都给证据、假设、为什么不更高、Gate/Cap |
+| Evidence Quality Matrix | 评估可靠性、新鲜度、独立性、相关性、直接性 |
+| China Demand Validator | 从 Search Hypothesis 进入可执行的中国需求验证 |
+| Rights & Risk Gate | License、商用、转载、RAG/Embedding、健康/金融/法律等 |
+| Contrarian Reviewer | Bear Case、替代风险、Fatal Assumption、Red Team |
+| Validation OS | Hypothesis → Experiment → Result → Decision → Learning |
+| Real Rolling Pool | 真实持久化 Fresh / 14-day Rolling / Top20 Champion + 历史变化 |
+
+决策链路现在是：
+
+```text
+发现 / User Seed
+      ↓
+JTBD / Reframe / Concepts
+      ↓
+双评分引擎
+      ↓
+Score Explainability
+      ↓
+Evidence Quality
+      ↓
+China Demand + Rights & Risk
+      ↓
+Contrarian Reviewer
+      ↓
+Final Verdict
+      ↓
+Validation OS
+      ↓
+Rolling Memory / Learning
+```
+
+评分权重**没有改变**，避免破坏历史可比性。
 
 ---
 
@@ -402,7 +450,7 @@ Product Hunt 没 Token、但 Agent 可以正常浏览网页时，允许用有限
 
 ---
 
-## 14 天 Rolling Pool：不是“今日新品榜”
+## 真实 14 天 Rolling Pool：不是“今日新品榜”
 
 默认维护两套候选池：
 
@@ -423,9 +471,48 @@ Champion Board
 - Mini Program Champion Board
 - Mini Game Champion Board
 
+v1.5 开始，状态真实持久化在：
+
+`data/rolling_pool.json`
+
+并由 `scripts/rolling-pool.mjs` 校验/合并。只允许保存公开市场信号，禁止写入用户私有需求、文件、Token、Cookie 或凭据。
+
 所以昨天真正优秀的“房源 AI 修图”不会因为今天来了 30 个 Agent 产品就自动消失。
 
 同一赛道多个产品会聚合成一个机会主题，避免 Top 10 被同类产品刷屏。
+
+---
+
+## Trust the Score
+
+### Score Explainability
+
+Top 3 / 推荐概念会拆解每个评分组件：
+
+- 得分 / 满分
+- Evidence
+- Assumption
+- Why not higher
+- Hard Gate / Cap
+
+不允许隐藏 bonus。
+
+### Contrarian Review
+
+最终推荐必须回答：
+
+- 为什么不做？
+- 为什么用户直接用通用 AI / 巨头 / 手工方案？
+- 第一批用户为什么可能来不了？
+- 哪个假设错了整个项目最可能死亡？
+
+并给出 Fatal Assumption 的最快证伪实验。
+
+### Rights & Risk
+
+GitHub 公开 ≠ 可以商用/RAG。
+
+会检查 License、转载、修改、商用、RAG/Embedding、署名、授权，以及健康/金融/法律/隐私等风险。
 
 ---
 
@@ -559,6 +646,18 @@ Skill 会把：
 - Prototype 计划；
 - 游戏官方规则阻塞项。
 
+### v1.5 额外交付
+
+Top 3 / 最终推荐额外包含：
+
+- 完整 Score Breakdown；
+- Evidence Quality；
+- China Demand Confidence / 验证查询；
+- Rights & Risk；
+- Bear Case / Fatal Assumption；
+- Validation OS 实验；
+- 日报 NEW / RETAINED / HEATING / COOLING / DROPPED。
+
 ### Cross-category Top 5 Best Bets
 
 回答：
@@ -628,6 +727,7 @@ npm run check
 
 ```bash
 npm run validate
+npm run validate:pool
 npm run scan:secrets
 ```
 
@@ -652,13 +752,19 @@ xiaokangxxs-miniprogram-scout/
 ├── CHANGELOG.md
 ├── test-prompts.json
 ├── references/
-│   ├── master_prompt_v3_5.md
+│   ├── master_prompt_v3_6.md
 │   ├── user_seed_mode.md
 │   ├── jtbd_extraction.md
 │   ├── product_reframe.md
 │   ├── multi_concept_generation.md
 │   ├── platform_router.md
 │   ├── scoring_model.md
+│   ├── score_explainability.md
+│   ├── evidence_quality_matrix.md
+│   ├── china_demand_validator.md
+│   ├── rights_and_risk_gate.md
+│   ├── contrarian_reviewer.md
+│   ├── validation_os.md
 │   ├── rolling_candidate_pool.md
 │   ├── source_registry.md
 │   ├── evidence_rules.md
@@ -666,6 +772,9 @@ xiaokangxxs-miniprogram-scout/
 │   ├── wechat_official_constraints.md
 │   └── output_schema.md
 ├── assets/
+├── data/
+│   ├── rolling_pool.json
+│   └── rolling_pool.schema.json
 ├── docs/
 ├── evals/
 ├── scripts/
@@ -692,7 +801,7 @@ xiaokangxxs-miniprogram-scout/
 - 📦 [安装与 Agent 兼容](docs/INSTALL.md)
 - 👥 [WorkBuddy 专家团](workbuddy/README.md)
 - 🧠 [架构与工作流](docs/ARCHITECTURE.md)
-- 🖼️ [v1.4 Social Preview 源图](assets/readme/social-preview-v1.4.svg)
+- 🖼️ [v1.5 Social Preview 源图](assets/readme/social-preview-v1.5.svg)
 - 📊 [最新 Scout Run](docs/LATEST_RUN.md)
 - 🧪 [脱敏示例报告](docs/EXAMPLE_REPORT.md)
 - ❓ [FAQ](docs/FAQ.md)
@@ -715,6 +824,7 @@ scripts/validate-skill.mjs
 scripts/validate-workbuddy-team.mjs
 scripts/generate-workbuddy-avatars.mjs
 scripts/build-workbuddy-package.mjs
+scripts/rolling-pool.mjs
 scripts/secret-scan.mjs
 ```
 

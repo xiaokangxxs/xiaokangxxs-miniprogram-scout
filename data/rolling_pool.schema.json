@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "xiaokangxxs-miniprogram-scout rolling pool",
+  "type": "object",
+  "required": ["schema_version","skill_version","status","privacy","mini_program","mini_game","history"],
+  "properties": {
+    "schema_version": {"type":"string"},
+    "skill_version": {"type":"string"},
+    "updated_at": {"type":["string","null"]},
+    "updated_by": {"type":["string","null"]},
+    "status": {"type":"string"},
+    "privacy": {"const":"PUBLIC_MARKET_SIGNALS_ONLY"},
+    "mini_program": {"$ref":"#/$defs/pool"},
+    "mini_game": {"$ref":"#/$defs/pool"},
+    "history": {"type":"array","items":{"type":"object"}},
+    "notes": {"type":"array","items":{"type":"string"}}
+  },
+  "$defs": {
+    "candidate": {
+      "type":"object",
+      "required":["opportunity_id","name","product_form","first_seen_at","last_seen_at","opportunity_score","readiness_score","confidence_score"],
+      "properties":{
+        "opportunity_id":{"type":"string"},
+        "name":{"type":"string"},
+        "product_form":{"enum":["WECHAT_MINIPROGRAM","WECHAT_MINIGAME"]},
+        "first_seen_at":{"type":"string"},
+        "last_seen_at":{"type":"string"},
+        "opportunity_score":{"type":"number","minimum":0,"maximum":100},
+        "readiness_score":{"type":"number","minimum":0,"maximum":100},
+        "confidence_score":{"type":"number","minimum":0,"maximum":100},
+        "heat_status":{"enum":["HEATING","STABLE","COOLING","UNKNOWN"]},
+        "sources":{"type":"array"},
+        "score_history":{"type":"array"},
+        "latest_change_reason":{"type":["string","null"]}
+      }
+    },
+    "pool": {
+      "type":"object",
+      "required":["fresh","rolling","champions"],
+      "properties":{
+        "fresh":{"type":"array","items":{"$ref":"#/$defs/candidate"}},
+        "rolling":{"type":"array","items":{"$ref":"#/$defs/candidate"}},
+        "champions":{"type":"array","maxItems":20,"items":{"$ref":"#/$defs/candidate"}}
+      }
+    }
+  }
+}

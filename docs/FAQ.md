@@ -91,3 +91,38 @@ If the original concept already expresses the JTBD well, it should use KEEP.
 No.
 
 v1.4 adds a productization layer **before** the existing Product Form Router and dual scoring engines.
+
+
+## Why did an Opportunity score get this exact number?
+
+v1.5 requires Score Explainability for serious candidates.
+
+The answer should expose:
+- component score;
+- evidence;
+- assumptions;
+- why-not-higher;
+- gates/caps;
+- final score.
+
+There is no hidden evidence bonus.
+
+## Does a public GitHub repository mean I can use its content commercially or for RAG?
+
+No.
+
+v1.5 adds Rights & Risk checks for license, redistribution, modification, commercial use, attribution, RAG/embedding and explicit permission.
+
+## What happens when the Skill loves an idea too much?
+
+Top recommendations go through Contrarian Review.
+
+The reviewer must produce a Bear Case and one Fatal Assumption with a fastest falsification test.
+
+## Is the Rolling Pool real now?
+
+Yes.
+
+Public GLOBAL_DISCOVERY state lives in `data/rolling_pool.json` and is validated by `scripts/rolling-pool.mjs`.
+
+Only public market signals belong there. USER_SEED private material must not be persisted.

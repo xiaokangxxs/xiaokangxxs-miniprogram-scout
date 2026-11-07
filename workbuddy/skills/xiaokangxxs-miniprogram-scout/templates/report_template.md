@@ -1,113 +1,132 @@
 # WeChat Opportunity Report
 
 Skill: xiaokangxxs-miniprogram-scout  
-Version: 1.4.0
+Version: 1.5.0
 
-## 0. Input Mode
+## 0. Input Mode / Source Status
 
 - Mode: GLOBAL_DISCOVERY | USER_SEED
-- Seed types:
+- Source status:
+- Rolling Pool persistence: ACTIVE | DEGRADED | N/A
 - Assumptions:
-- Provenance / verification notes:
+- Provenance:
 
-## 1A. User Seed Productization
+## 1. Productization
 
-Use this section only for USER_SEED.
+For USER_SEED:
 
-### Problem / JTBD
+### JTBD
+- Target user
+- Trigger
+- Desired outcome
+- Current workaround
+- Cost of inaction
+- Frequency / urgency
 
-- Target user:
-- Trigger:
-- Struggling moment:
-- Desired outcome:
-- Current workaround:
-- Cost of inaction:
-- Frequency / urgency:
-- JTBD statement:
+### Reframe
+- Original idea
+- KEEP / REFRAME / SPLIT / REJECT
+- Reframed product
+- Why
 
-### Product Reframe
+### Concepts
+| Concept | User | Trigger | Product Form | Core Value | Why Distinct |
+|---|---|---|---|---|---|
 
-- Original idea:
-- Verdict: KEEP | REFRAME | SPLIT | REJECT
-- Reframed product:
-- Why:
+## 2. Opportunity Boards
 
-### 3–5 Concepts
+### Mini Program
+| # | Opportunity | Search/Need/Niche | Opp. | Ready | Conf. | Heat | Action |
+|---:|---|---|---:|---:|---:|---|---|
 
-| Concept | Target | Trigger | Product Form | Core Value | Why Distinct | Status |
-|---|---|---|---|---|---|---|
+### Mini Game
+| # | Mechanic | Hook/Replay/Social | Opp. | Ready | Conf. | Heat | Action |
+|---:|---|---|---:|---:|---:|---|---|
 
-Then fully score only the strongest serious concepts.
+## 3. Score Explainability — Top 3 / Recommended
 
-## 1B. Source Status
+For each:
 
-Use for GLOBAL_DISCOVERY or enrichment.
+| Component | Score | Max | Evidence | Assumption | Why not higher |
+|---|---:|---:|---|---|---|
 
-### Product sources
-| Source | Status | Mode | Records | Notes |
-|---|---|---|---:|---|
+- Raw score:
+- Gates/caps:
+- Final Opportunity:
+- Readiness:
+- Confidence:
 
-### Game sources
-| Source | Status | Mode | Records | Notes |
-|---|---|---|---:|---|
+## 4. Evidence Quality
 
-## 2. Rolling Pools
+- Strongest evidence:
+- Weakest assumptions:
+- Conflicts:
+- Missing evidence:
+- Overall quality:
+
+## 5. China Demand
+
+- Search status:
+- Core validation queries:
+- Chinese channels:
+- Paid-service evidence:
+- Workaround evidence:
+- China Demand Confidence:
+- Next validation actions:
+
+## 6. Rights & Risk
+
+- Content/data dependencies:
+- License:
+- Commercial use:
+- Redistribution:
+- RAG / embedding:
+- Attribution:
+- Permission tasks:
+- Sensitive domains:
+- Gate status:
+
+## 7. Contrarian Review
+
+- Bull Case:
+- Bear Case:
+- Replacement risk:
+- Distribution failure:
+- Retention failure:
+- Monetization failure:
+- Dependency/platform risk:
+- Copyability:
+- Fatal Assumption:
+- Verdict after Red Team:
+
+## 8. Validation OS
+
+- Hypothesis:
+- Riskiest assumption:
+- Method:
+- Target segment:
+- Sample:
+- Metric:
+- Success threshold:
+- Kill threshold:
+- Current result:
+- Decision:
+- Learning:
+
+## 9. Rolling Pool / Champion Movement
 
 For GLOBAL_DISCOVERY:
 
-- Mini Program Fresh:
-- Mini Program Rolling:
-- Mini Program Champions:
-- Mini Game Fresh:
-- Mini Game Rolling:
-- Mini Game Champions:
+- NEW
+- RETAINED
+- HEATING
+- COOLING
+- DROPPED
 
-## 3. Top / Shortlist WeChat Mini Programs
-
-| Rank | Opportunity | Search | Need | Niche | Fresh | Heat | Buildability | Opp. | Ready | Conf. | Action |
-|---:|---|---|---|---|---|---|---|---:|---:|---|---|
-
-## 4. Top / Shortlist WeChat Mini Games
-
-| Rank | Mechanic | Hook | Replay | Social | Monetization | Fresh | Heat | Buildability | Opp. | Ready | Conf. | Action |
-|---:|---|---|---|---|---|---|---|---|---:|---:|---|---|
-
-## 5. Cross-category Best Bets / Recommended Concept
-
-For each:
-- Product form
-- Why now
-- Why WeChat
-- Opportunity / Readiness / Confidence
-- First 1000 users
-- Fastest test
-- Main blocker
-
-## 6. P0 + Validation
+## 10. P0 / Next Action
 
 - P0:
 - Not in P0:
 - Fastest falsification:
-- Sample / test:
-- Success signal:
+- Main blocker:
 - Kill Criteria:
-
-## 7. WeChat Official Policy Checklist
-
-- category
-- qualification
-- filing
-- privacy
-- payment
-- notification
-- ads
-- game publication/qualification
-- package/performance
-- IP/content review
-
-## 8. Evidence Disclosure
-
-- Observed
-- Proxy
-- Estimate
-- Unknown

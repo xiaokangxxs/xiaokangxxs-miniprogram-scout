@@ -15,7 +15,9 @@ const required=[
   "workbuddy/README.md",
   "workbuddy/UPLOAD_CHECKLIST.md",
   "workbuddy/avatar-specs.json",
-  "workbuddy/skills/xiaokangxxs-miniprogram-scout/SKILL.md"
+  "workbuddy/skills/xiaokangxxs-miniprogram-scout/SKILL.md",
+  "workbuddy/skills/xiaokangxxs-miniprogram-scout/data/rolling_pool.json",
+  "workbuddy/skills/xiaokangxxs-miniprogram-scout/data/rolling_pool.schema.json"
 ];
 for(const p of required) if(!exists(p)) errors.push(`Missing: ${p}`);
 
@@ -30,7 +32,7 @@ if(!errors.length){
   if(settings.agent!==plugin.agentName) errors.push("settings.agent != agentName");
   if(plugin.quickPrompts?.length!==3) errors.push("quickPrompts must contain 3 items");
   if(plugin.tags?.length!==3) errors.push("tags must contain 3 items");
-  if(plugin.members?.length!==7) errors.push("members must contain 1 lead + 6 members");
+  if(plugin.members?.length!==8) errors.push("members must contain 1 lead + 7 members");
 
   const ids=new Set();
   for(const rel of plugin.agents||[]){
@@ -56,6 +58,11 @@ if(!errors.length){
 
   const wbSkill=read("workbuddy/skills/xiaokangxxs-miniprogram-scout/SKILL.md");
   if(!wbSkill.includes(`version: ${version}`)) errors.push(`WorkBuddy Skill version not synced to ${version}`);
+
+  const wbPool="workbuddy/skills/xiaokangxxs-miniprogram-scout/data/rolling_pool.json";
+  const wbPoolSchema="workbuddy/skills/xiaokangxxs-miniprogram-scout/data/rolling_pool.schema.json";
+  if(read(wbPool)!==read("data/rolling_pool.json")) errors.push("WorkBuddy rolling pool drift");
+  if(read(wbPoolSchema)!==read("data/rolling_pool.schema.json")) errors.push("WorkBuddy rolling pool schema drift");
 
   const referenceNames=fs.readdirSync(path.join(root,"references")).filter(x=>x.endsWith(".md"));
   for(const name of referenceNames){

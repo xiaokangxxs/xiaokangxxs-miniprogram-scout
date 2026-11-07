@@ -6,7 +6,7 @@
 
 > **Global signals or your own idea / repositories / feedback → WeChat opportunity intelligence**
 
-[![Version](https://img.shields.io/badge/version-1.4.0-blue.svg)](VERSION)
+[![Version](https://img.shields.io/badge/version-1.5.0-blue.svg)](VERSION)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Agent Skill](https://img.shields.io/badge/Agent-Skill-blueviolet.svg)](SKILL.md)
 [![WeChat](https://img.shields.io/badge/WeChat-Mini%20Program%20%2B%20Mini%20Game-07C160.svg)](README.md)
@@ -59,6 +59,33 @@ It does **not** blindly translate Product Hunt launches. It combines multi-sourc
 | Rolling opportunity pool | 14-day pool + champion board, so good ideas do not disappear tomorrow |
 | WeChat readiness | Category, qualification, privacy, payment, notifications, ads, game publication, performance |
 | Requirement conversion | Top 10 boards + Top 3 Mini PRDs + Cross-category Best Bets |
+
+## v1.5 · Trust, Validate & Remember
+
+v1.5 adds an auditable decision layer after discovery/productization:
+
+- Score Explainability
+- Evidence Quality Matrix
+- China Demand Validator
+- Rights & Risk Gate
+- Contrarian Reviewer
+- Validation OS
+- Persistent 14-day Rolling Pool / Champion history
+
+```text
+Score
+→ Explain
+→ Audit evidence
+→ Validate China demand
+→ Rights/Risk
+→ Red Team
+→ Experiment
+→ Learn / Remember
+```
+
+The Mini Program and Mini Game scoring weights remain unchanged.
+
+---
 
 ## v1.4 · From discovery to productization
 
