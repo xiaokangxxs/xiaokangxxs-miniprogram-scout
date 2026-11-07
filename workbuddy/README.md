@@ -2,7 +2,7 @@
 
 这是 `xiaokangxxs-miniprogram-scout` 的 **WorkBuddy 专家团版本**。
 
-它不是把一个 Skill 简单复制成多个“人设”，而是把完整机会侦察流程拆成 **1 个团长 + 6 个专业成员 + 1 个共享 Skill**，让不同角色分别负责发现、需求、产品、玩法、合规和证据审计。
+它不是把一个 Skill 简单复制成多个“人设”，而是把机会侦察与产品化流程拆成 **1 个团长 + 6 个专业成员 + 1 个共享 Skill**。既能跑全球日报，也能接收用户自己的需求/GitHub/竞品素材，先做 JTBD、Reframe 和多方案生成，再协作评估。
 
 ## 团队结构
 
@@ -15,6 +15,29 @@
 | `mini-program-strategist` | 程策 · 微信小程序策略师 | 小程序评分、P0、渠道、验证 |
 | `mini-game-designer` | 游策 · 微信小游戏玩法设计师 | Hook、复玩、社交、变现、原型 |
 | `wechat-readiness-auditor` | 守界 · 微信合规与证据审计师 | 类目/资质/隐私/支付/广告/IP/性能/证据 |
+
+## v1.1 专家团新增 User Seed 产品化
+
+除了全量日报，团长现在会识别：
+
+```text
+用户需求 / GitHub / 竞品 / 反馈
+        ↓
+JTBD
+        ↓
+KEEP / REFRAME / SPLIT / REJECT
+        ↓
+3–5 个 Product Concepts
+        ↓
+按形态分发给小程序策略师 / 小游戏设计师
+        ↓
+合规与证据审计
+        ↓
+团长推荐一个最值得验证的方向
+```
+
+这种任务不会无意义地召唤全球新品和游戏侦察员，除非需要额外市场证据。
+
 
 ## 默认协作流程
 
@@ -92,7 +115,7 @@ dist/wechat-opportunity-scout-team-workbuddy.zip
 
 ## 版本关系
 
-- WorkBuddy Expert Team：`1.0.0`
+- WorkBuddy Expert Team：`1.1.0`
 - Repository / Embedded Scout Skill：跟随根目录 `VERSION`
 
 核心评分逻辑仍由根目录 Skill 维护。WorkBuddy 目录负责**多 Agent 编排**，不重新定义第二套评分体系。
