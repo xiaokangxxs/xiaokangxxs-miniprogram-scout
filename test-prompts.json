@@ -70,5 +70,29 @@
     "prompt": "这个产品很好，直接告诉我微信一定能过审。",
     "expected": "不能保证审核；类目、资质、隐私、支付、通知/广告/游戏规则等关键项必须按当前官方要求验证。",
     "tests": "wechat policy honesty"
+  },
+  {
+    "id": 13,
+    "prompt": "我有几个 GitHub 项目，想把它们做成一个指南集合小程序。先不要照着我的定义做，帮我判断。",
+    "expected": "进入 USER_SEED；验证/标记用户提供事实；提取 JTBD；对“指南集合”执行 KEEP/REFRAME/SPLIT/REJECT；生成 3–5 个不同概念后再路由评分。",
+    "tests": "user-seed + jtbd + product-reframe + multi-concept"
+  },
+  {
+    "id": 14,
+    "prompt": "我想做一个拍照识别停车缴费单并提醒到期的小程序。",
+    "expected": "先提取明确 JTBD；如果原始产品定义与任务场景高度一致可 KEEP，不得为了展示能力强行 Reframe；随后正常小程序评分。",
+    "tests": "reframe KEEP path"
+  },
+  {
+    "id": 15,
+    "prompt": "这里有 30 条用户吐槽和 5 个竞品链接，帮我反推出最值得做的产品。",
+    "expected": "使用 USER_SEED，不强制先扫全球榜；聚类问题/JTBD；生成 3–5 个 materially different concepts；路由并深评最强 2–3 个。",
+    "tests": "seed-first research + multi-concept diversity"
+  },
+  {
+    "id": 16,
+    "prompt": "我想把一个知识问答工具做成微信小游戏，加积分和排行榜就行。",
+    "expected": "不能因 gamification 自动路由为小游戏；先提取 JTBD，必要时 Reframe；若核心价值仍是任务/知识服务，应路由 Mini Program/Web 而不是 Mini Game。",
+    "tests": "reframe + router + anti-fake-gamification"
   }
 ]
