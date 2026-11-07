@@ -1,5 +1,22 @@
 # Changelog
 
+## 1.3.3 — 2026-11-07
+
+### WorkBuddy expert team
+
+- Added a dedicated `workbuddy/` integration directory.
+- Added a 1-lead + 6-specialist expert-team architecture.
+- Added WorkBuddy plugin/settings metadata and specialist Agent definitions.
+- Added a WorkBuddy-compatible shared Scout Skill package.
+- Added zero-dependency 512×512 avatar generation.
+- Added `sync:workbuddy`, `validate:workbuddy` and `build:workbuddy` maintenance commands.
+- Added drift checks so the embedded WorkBuddy Skill/references stay aligned with the root Skill.
+- Added WorkBuddy installation/build documentation.
+
+### Behavior
+
+- Core Mini Program / Mini Game scoring weights are unchanged.
+
 ## 1.3.2 — 2026-11-06
 
 ### Visual documentation
