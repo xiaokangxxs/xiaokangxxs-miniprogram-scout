@@ -74,7 +74,9 @@ Real Rolling Pool / Champion Movement
                 ├─ Phase 3：双引擎评分
 小游戏设计 ─────┘
         ↓
-微信合规 + Evidence 审计
+微信合规 + Evidence / Rights 审计
+        ↓
+反方审查 / Fatal Assumption
         ↓
 团长裁决
         ↓

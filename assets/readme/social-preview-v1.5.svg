@@ -1,60 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640">
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="620" viewBox="0 0 1280 620">
 <defs>
-  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f9fcff"/><stop offset=".55" stop-color="#e7f3ff"/><stop offset="1" stop-color="#cfe6ff"/></linearGradient>
-  <linearGradient id="blue" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#1668e8"/><stop offset="1" stop-color="#4d8cff"/></linearGradient>
-  <linearGradient id="green" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#05a84b"/><stop offset="1" stop-color="#28c86b"/></linearGradient>
-  <filter id="s"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#2563a9" flood-opacity=".16"/></filter>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fbfdff"/><stop offset=".55" stop-color="#eaf5ff"/><stop offset="1" stop-color="#d5eaff"/></linearGradient>
+  <linearGradient id="blue" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#1267e8"/><stop offset="1" stop-color="#4a8cff"/></linearGradient>
+  <linearGradient id="green" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#08a84c"/><stop offset="1" stop-color="#30c96d"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#1f5b9d" flood-opacity=".14"/></filter>
 </defs>
-<rect width="1280" height="640" fill="url(#bg)"/>
-<path d="M900 0h380v220c-120 52-225 68-380 30z" fill="#5aa2ff" opacity=".22"/>
-<path d="M0 510c210-52 330 44 520 10s260-82 410-42 213 75 350 43v119H0z" fill="#fff" opacity=".75"/>
-
+<rect width="1280" height="620" fill="url(#bg)"/>
+<path d="M900 0H1280V170C1160 215 1045 232 900 210Z" fill="#62a7ff" opacity=".20"/>
+<path d="M0 490C170 440 310 515 485 488S770 430 930 476 1130 520 1280 470V620H0Z" fill="#fff" opacity=".76"/>
 <g font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
-<circle cx="55" cy="48" r="25" fill="#0c1e39"/><text x="55" y="57" text-anchor="middle" fill="#fff" font-size="26" font-weight="900">G</text>
-<text x="92" y="57" fill="#0d2343" font-size="27" font-weight="800">xiaokangxxs/xiaokangxxs-miniprogram-scout</text>
-<rect x="730" y="24" width="120" height="48" rx="24" fill="url(#blue)"/><text x="790" y="56" text-anchor="middle" fill="#fff" font-size="25" font-weight="800">v1.5.0</text>
+  <text x="54" y="64" fill="#0d2343" font-size="34" font-weight="900">微信产品机会决策 Agent Skill</text>
+  <text x="54" y="104" fill="#1267e8" font-size="22" font-weight="850">发现 → 产品化 → 可解释 → 反方审查 → 验证 → 记忆</text>
+  <rect x="1092" y="36" width="126" height="44" rx="22" fill="url(#blue)"/><text x="1155" y="65" text-anchor="middle" fill="#fff" font-size="20" font-weight="850">v1.5.0</text>
 
-<text x="42" y="132" fill="#0d2343" font-size="42" font-weight="900">微信产品机会决策 Agent Skill</text>
-<text x="42" y="174" fill="#1668e8" font-size="24" font-weight="800">发现 → 产品化 → 可解释 → 反方审查 → 验证 → 记忆</text>
+  <g filter="url(#shadow)">
+    <rect x="54" y="140" width="444" height="318" rx="26" fill="#fff" stroke="#c8def7" stroke-width="2"/>
+    <rect x="530" y="126" width="292" height="348" rx="38" fill="#fff" stroke="#2c92ef" stroke-width="6"/>
+    <rect x="854" y="126" width="372" height="348" rx="38" fill="#fff" stroke="#7858f1" stroke-width="6"/>
+  </g>
 
-<g filter="url(#s)">
-<rect x="42" y="210" width="500" height="270" rx="28" fill="#fff" stroke="#c7def8" stroke-width="2"/>
-</g>
-<text x="68" y="245" fill="#1668e8" font-size="15" font-weight="800">GLOBAL DISCOVERY / USER SEED</text>
-<g font-size="18" font-weight="750" fill="#16304f">
-  <rect x="67" y="268" width="206" height="50" rx="15" fill="#eef6ff"/><text x="86" y="299">① JTBD / Productize</text>
-  <rect x="305" y="268" width="206" height="50" rx="15" fill="#f3efff"/><text x="324" y="299">② Dual Scoring</text>
-  <rect x="67" y="335" width="206" height="50" rx="15" fill="#fff6e8"/><text x="86" y="366">③ Evidence / Rights</text>
-  <rect x="305" y="335" width="206" height="50" rx="15" fill="#eefaf3"/><text x="324" y="366">④ Red Team</text>
-  <rect x="67" y="402" width="206" height="50" rx="15" fill="#eef6ff"/><text x="86" y="433">⑤ Validation OS</text>
-  <rect x="305" y="402" width="206" height="50" rx="15" fill="#eefaf3"/><text x="324" y="433">⑥ Rolling Memory</text>
-</g>
+  <text x="82" y="182" fill="#1267e8" font-size="16" font-weight="850">GLOBAL DISCOVERY / USER SEED</text>
+  <g font-size="17" font-weight="800" fill="#16304f">
+    <rect x="82" y="208" width="184" height="52" rx="14" fill="#eef6ff"/><text x="99" y="241">① JTBD / Productize</text>
+    <rect x="286" y="208" width="184" height="52" rx="14" fill="#f5efff"/><text x="303" y="241">② Dual Scoring</text>
+    <rect x="82" y="278" width="184" height="52" rx="14" fill="#fff5e8"/><text x="99" y="311">③ Evidence / Rights</text>
+    <rect x="286" y="278" width="184" height="52" rx="14" fill="#eefaf3"/><text x="303" y="311">④ Red Team</text>
+    <rect x="82" y="348" width="184" height="52" rx="14" fill="#eef6ff"/><text x="99" y="381">⑤ Validation OS</text>
+    <rect x="286" y="348" width="184" height="52" rx="14" fill="#eefaf3"/><text x="303" y="381">⑥ Rolling Memory</text>
+  </g>
 
-<g filter="url(#s)">
-<rect x="578" y="112" width="302" height="390" rx="42" fill="#fefefe" stroke="#46a5ff" stroke-width="7"/>
-<rect x="900" y="92" width="328" height="410" rx="44" fill="#fefefe" stroke="#795cff" stroke-width="7"/>
-</g>
-<rect x="664" y="128" width="130" height="18" rx="9" fill="#0d1c32"/>
-<rect x="999" y="108" width="130" height="18" rx="9" fill="#0d1c32"/>
-<text x="604" y="180" fill="#0d2343" font-size="22" font-weight="850">机会评分解释</text>
-<text x="928" y="160" fill="#0d2343" font-size="22" font-weight="850">反方审查 + 验证</text>
+  <rect x="617" y="142" width="118" height="16" rx="8" fill="#0d1e34"/>
+  <text x="558" y="198" fill="#0d2343" font-size="22" font-weight="850">机会评分解释</text>
+  <g font-size="13.5" fill="#284866">
+    <rect x="558" y="220" width="236" height="54" rx="14" fill="#f1f7ff"/><text x="575" y="242" font-weight="850">Search / Need / Niche</text><text x="575" y="262">分数 · 证据 · 假设 · 为什么不更高</text>
+    <rect x="558" y="286" width="236" height="54" rx="14" fill="#f1f7ff"/><text x="575" y="308" font-weight="850">Evidence Quality</text><text x="575" y="328">可靠 · 新鲜 · 独立 · 直接</text>
+    <rect x="558" y="352" width="236" height="54" rx="14" fill="#fff5e8"/><text x="575" y="374" font-weight="850">Rights &amp; Risk</text><text x="575" y="394">版权 · RAG · 商用 · 合规</text>
+    <rect x="558" y="418" width="236" height="40" rx="13" fill="#eefaf3"/><text x="575" y="443" font-weight="850">China Demand · Confidence</text>
+  </g>
 
-<g font-size="14" fill="#284866">
-<rect x="603" y="202" width="250" height="58" rx="15" fill="#f2f8ff"/><text x="620" y="225" font-weight="800">Search / Need / Niche</text><text x="620" y="248">分数 · 证据 · 假设 · 为什么不更高</text>
-<rect x="603" y="272" width="250" height="58" rx="15" fill="#f2f8ff"/><text x="620" y="295" font-weight="800">Evidence Quality</text><text x="620" y="318">可靠 · 新鲜 · 独立 · 直接</text>
-<rect x="603" y="342" width="250" height="58" rx="15" fill="#fff6e8"/><text x="620" y="365" font-weight="800">Rights &amp; Risk</text><text x="620" y="388">版权 · RAG · 商用 · 合规</text>
-<rect x="603" y="412" width="250" height="58" rx="15" fill="#eefaf3"/><text x="620" y="435" font-weight="800">China Demand</text><text x="620" y="458">真实需求 / 验证查询 / Confidence</text>
+  <rect x="981" y="142" width="118" height="16" rx="8" fill="#0d1e34"/>
+  <text x="884" y="198" fill="#0d2343" font-size="22" font-weight="850">反方审查 + 验证</text>
+  <g font-size="14" fill="#284866">
+    <rect x="884" y="220" width="312" height="64" rx="15" fill="#f5f0ff"/><text x="902" y="244" font-weight="850">Bear Case</text><text x="902" y="266">为什么不做？谁会替代你？</text>
+    <rect x="884" y="296" width="312" height="64" rx="15" fill="#fff1ee"/><text x="902" y="320" font-weight="850">Fatal Assumption</text><text x="902" y="342">哪一个假设错了，项目最可能死亡？</text>
+    <rect x="884" y="372" width="312" height="54" rx="15" fill="#eefaf3"/><text x="902" y="395" font-weight="850">Validation OS</text><text x="902" y="416">Success / Kill / Decision / Learning</text>
+    <rect x="884" y="438" width="312" height="36" rx="13" fill="url(#green)"/><text x="1040" y="462" text-anchor="middle" fill="#fff" font-size="15" font-weight="900">NEW · HEATING · COOLING</text>
+  </g>
 
-<rect x="926" y="184" width="276" height="72" rx="16" fill="#f5f1ff"/><text x="944" y="208" font-weight="800">Bear Case</text><text x="944" y="231">为什么不做？谁会替代你？</text>
-<rect x="926" y="270" width="276" height="72" rx="16" fill="#fff2ef"/><text x="944" y="294" font-weight="800">Fatal Assumption</text><text x="944" y="317">哪一个假设错了项目就死？</text>
-<rect x="926" y="356" width="276" height="72" rx="16" fill="#eefaf3"/><text x="944" y="380" font-weight="800">Validation OS</text><text x="944" y="403">Success / Kill / Decision / Learning</text>
-<rect x="926" y="442" width="276" height="42" rx="14" fill="url(#green)"/><text x="1064" y="469" text-anchor="middle" fill="#fff" font-size="17" font-weight="850">NEW · HEATING · COOLING</text>
-</g>
-
-<rect x="0" y="542" width="1280" height="98" fill="url(#blue)"/>
-<g fill="#fff" font-size="17" font-weight="800">
-<text x="68" y="582">✓ 可解释评分</text><text x="264" y="582">✓ 证据质量</text><text x="450" y="582">✓ 中国需求验证</text><text x="680" y="582">✓ 版权与风险</text><text x="892" y="582">✓ 反方审查</text><text x="1060" y="582">✓ 14天机会记忆</text>
-</g>
-<text x="640" y="617" text-anchor="middle" fill="#dbeaff" font-size="14">Opportunity ≠ Readiness · Popularity ≠ Demand · Prediction → Experiment → Learning</text>
+  <rect x="34" y="516" width="1212" height="72" rx="24" fill="url(#blue)"/>
+  <g fill="#fff" font-size="15.5" font-weight="850">
+    <text x="78" y="558">✓ 可解释评分</text><text x="270" y="558">✓ 证据质量</text><text x="452" y="558">✓ 中国需求验证</text><text x="670" y="558">✓ 版权与风险</text><text x="864" y="558">✓ 反方审查</text><text x="1045" y="558">✓ 14天机会记忆</text>
+  </g>
 </g>
 </svg>

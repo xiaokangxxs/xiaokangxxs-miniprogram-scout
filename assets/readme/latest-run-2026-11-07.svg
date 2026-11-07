@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7fbff"/><stop offset=".58" stop-color="#eaf5ff"/><stop offset="1" stop-color="#eaf9f0"/></linearGradient>
+  <filter id="s"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#245a95" flood-opacity=".12"/></filter>
+</defs>
+<rect width="1280" height="760" rx="30" fill="url(#bg)"/>
+<g font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect x="48" y="42" width="8" height="52" rx="4" fill="#2581ed"/>
+  <text x="76" y="78" fill="#0d2343" font-size="34" font-weight="900">Latest run preview · 2026-11-07</text>
+  <text x="76" y="108" fill="#6d7e94" font-size="16">v1.5.0 · 14-day Rolling Pool + fresh web signals · scores are estimates, not market facts</text>
+
+  <g filter="url(#s)">
+    <rect x="48" y="144" width="370" height="438" rx="24" fill="#fff"/>
+    <rect x="455" y="144" width="370" height="438" rx="24" fill="#fff"/>
+    <rect x="862" y="144" width="370" height="438" rx="24" fill="#fff"/>
+  </g>
+
+  <text x="76" y="188" fill="#1267e8" font-size="22" font-weight="900">Top Mini Programs</text>
+  <g>
+    <circle cx="88" cy="244" r="22" fill="#1780ea"/><text x="88" y="251" text-anchor="middle" fill="#fff" font-size="17" font-weight="900">1</text>
+    <text x="126" y="238" fill="#142a47" font-size="19" font-weight="850">整机值不值</text><text x="126" y="265" fill="#6a7b90" font-size="14">购买决策强 · HN 热度持续</text>
+    <rect x="340" y="224" width="54" height="32" rx="16" fill="#e7f2ff"/><text x="367" y="246" text-anchor="middle" fill="#1267e8" font-size="16" font-weight="900">91</text>
+
+    <circle cx="88" cy="330" r="22" fill="#1780ea"/><text x="88" y="337" text-anchor="middle" fill="#fff" font-size="17" font-weight="900">2</text>
+    <text x="126" y="324" fill="#142a47" font-size="19" font-weight="850">房源照片 AI 美化</text><text x="126" y="351" fill="#6a7b90" font-size="14">成熟付费验证 · 微信工作流天然</text>
+    <rect x="340" y="310" width="54" height="32" rx="16" fill="#e7f2ff"/><text x="367" y="332" text-anchor="middle" fill="#1267e8" font-size="16" font-weight="900">89</text>
+
+    <circle cx="88" cy="416" r="22" fill="#1780ea"/><text x="88" y="423" text-anchor="middle" fill="#fff" font-size="17" font-weight="900">3</text>
+    <text x="126" y="410" fill="#142a47" font-size="19" font-weight="850">网站 / 代码安全快检</text><text x="126" y="437" fill="#6a7b90" font-size="14">安全体检信号持续 · POC 较轻</text>
+    <rect x="340" y="396" width="54" height="32" rx="16" fill="#e7f2ff"/><text x="367" y="418" text-anchor="middle" fill="#1267e8" font-size="16" font-weight="900">87</text>
+  </g>
+
+  <text x="483" y="188" fill="#168440" font-size="22" font-weight="900">Top Mini Games</text>
+  <g>
+    <circle cx="495" cy="244" r="22" fill="#1a9a45"/><text x="495" y="251" text-anchor="middle" fill="#fff" font-size="17" font-weight="900">1</text>
+    <text x="533" y="238" fill="#142a47" font-size="19" font-weight="850">反套路陷阱闯关</text><text x="533" y="265" fill="#6a7b90" font-size="14">Level Devil · Poki Trending #1</text>
+    <rect x="747" y="224" width="54" height="32" rx="16" fill="#e8f7ed"/><text x="774" y="246" text-anchor="middle" fill="#168440" font-size="16" font-weight="900">92</text>
+
+    <circle cx="495" cy="330" r="22" fill="#1a9a45"/><text x="495" y="337" text-anchor="middle" fill="#fff" font-size="17" font-weight="900">2</text>
+    <text x="533" y="324" fill="#142a47" font-size="19" font-weight="850">食堂高峰经营</text><text x="533" y="351" fill="#6a7b90" font-size="14">Canteen Rush · 11/06 更新 · 单手</text>
+    <rect x="747" y="310" width="54" height="32" rx="16" fill="#e8f7ed"/><text x="774" y="332" text-anchor="middle" fill="#168440" font-size="16" font-weight="900">91</text>
+
+    <circle cx="495" cy="416" r="22" fill="#1a9a45"/><text x="495" y="423" text-anchor="middle" fill="#fff" font-size="17" font-weight="900">3</text>
+    <text x="533" y="410" fill="#142a47" font-size="19" font-weight="850">一键换道极限跑酷</text><text x="533" y="437" fill="#6a7b90" font-size="14">Tap Road 2 · 单键 · 排行榜天然</text>
+    <rect x="747" y="396" width="54" height="32" rx="16" fill="#e8f7ed"/><text x="774" y="418" text-anchor="middle" fill="#168440" font-size="16" font-weight="900">90</text>
+  </g>
+
+  <text x="890" y="188" fill="#1267e8" font-size="22" font-weight="900">Cross-category Best Bets</text>
+  <g font-size="17" font-weight="800" fill="#18304f">
+    <rect x="890" y="218" width="314" height="52" rx="15" fill="#eef6ff"/><text x="912" y="250">① 反套路陷阱闯关 · 92</text>
+    <rect x="890" y="282" width="314" height="52" rx="15" fill="#f1f5ff"/><text x="912" y="314">② 整机值不值 · 91</text>
+    <rect x="890" y="346" width="314" height="52" rx="15" fill="#eefaf3"/><text x="912" y="378">③ 食堂高峰经营 · 91</text>
+    <rect x="890" y="410" width="314" height="52" rx="15" fill="#eefaf3"/><text x="912" y="442">④ 一键换道极限跑酷 · 90</text>
+    <rect x="890" y="474" width="314" height="52" rx="15" fill="#fff6e8"/><text x="912" y="506">⑤ 房源照片 AI 美化 · 89</text>
+  </g>
+
+  <rect x="48" y="618" width="1184" height="84" rx="22" fill="#fff" stroke="#cfe2f7"/>
+  <g font-size="13.5" font-weight="800" fill="#173354">
+    <rect x="72" y="640" width="160" height="38" rx="12" fill="#eef6ff"/><text x="93" y="664">Score Breakdown</text>
+    <rect x="246" y="640" width="160" height="38" rx="12" fill="#eef6ff"/><text x="268" y="664">Evidence Quality</text>
+    <rect x="420" y="640" width="160" height="38" rx="12" fill="#eefaf3"/><text x="450" y="664">China Demand</text>
+    <rect x="594" y="640" width="160" height="38" rx="12" fill="#fff6e8"/><text x="623" y="664">Rights &amp; Risk</text>
+    <rect x="768" y="640" width="188" height="38" rx="12" fill="#f5efff"/><text x="792" y="664">Contrarian Review</text>
+    <rect x="970" y="640" width="180" height="38" rx="12" fill="#eefaf3"/><text x="1001" y="664">Validation OS</text>
+  </g>
+  <text x="640" y="730" text-anchor="middle" fill="#6d7e94" font-size="14">Rolling Pool: NEW · RETAINED · HEATING · COOLING · DROPPED</text>
+</g>
+</svg>

@@ -1,24 +1,1309 @@
 {
   "schema_version": "1.0.0",
   "skill_version": "1.5.0",
-  "updated_at": null,
-  "updated_by": null,
-  "status": "EMPTY_INITIAL_STATE",
+  "updated_at": "2026-11-07T09:45:00+08:00",
+  "updated_by": "2026-11-07 v1.5 Scout Run",
+  "status": "ACTIVE",
   "privacy": "PUBLIC_MARKET_SIGNALS_ONLY",
   "mini_program": {
-    "fresh": [],
-    "rolling": [],
-    "champions": []
+    "fresh": [
+      {
+        "opportunity_id": "pc-value-check",
+        "name": "整机值不值 / PC 配置估价",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 91,
+        "readiness_score": 58,
+        "confidence_score": 88,
+        "heat_status": "HEATING",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 89
+          }
+        ],
+        "latest_change_reason": "Fresh 2026-11-07 evidence / rank improvement"
+      },
+      {
+        "opportunity_id": "real-estate-photo-ai",
+        "name": "房源照片 AI 美化",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 89,
+        "readiness_score": 82,
+        "confidence_score": 90,
+        "heat_status": "STABLE",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 90
+          }
+        ],
+        "latest_change_reason": "Retained from previous run"
+      },
+      {
+        "opportunity_id": "site-code-security-check",
+        "name": "网站 / 代码安全快检",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 87,
+        "readiness_score": 74,
+        "confidence_score": 82,
+        "heat_status": "HEATING",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 83
+          }
+        ],
+        "latest_change_reason": "Fresh 2026-11-07 evidence / rank improvement"
+      },
+      {
+        "opportunity_id": "video-to-text-summary",
+        "name": "视频链接转文字 + 字幕 + 摘要",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 85,
+        "readiness_score": 72,
+        "confidence_score": 84,
+        "heat_status": "HEATING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Fresh 2026-11-07 evidence / rank improvement"
+      },
+      {
+        "opportunity_id": "domain-ssl-reminder",
+        "name": "域名 / SSL 到期管家",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 85,
+        "readiness_score": 93,
+        "confidence_score": 89,
+        "heat_status": "STABLE",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 86
+          }
+        ],
+        "latest_change_reason": "Retained from previous run"
+      },
+      {
+        "opportunity_id": "spreadsheet-data-story",
+        "name": "表格 → 经营报告 / Data Story",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 82,
+        "readiness_score": 80,
+        "confidence_score": 82,
+        "heat_status": "HEATING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Fresh 2026-11-07 evidence / rank improvement"
+      },
+      {
+        "opportunity_id": "receipt-aa-split",
+        "name": "拍小票 / 聚餐 AA 助手",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 81,
+        "readiness_score": 88,
+        "confidence_score": 78,
+        "heat_status": "STABLE",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 82
+          }
+        ],
+        "latest_change_reason": "Retained from previous run"
+      },
+      {
+        "opportunity_id": "ai-seo-visibility-check",
+        "name": "AI / SEO 可见性体检",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 80,
+        "readiness_score": 64,
+        "confidence_score": 79,
+        "heat_status": "HEATING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Fresh 2026-11-07 evidence / rank improvement"
+      },
+      {
+        "opportunity_id": "scam-screenshot-check",
+        "name": "诈骗截图核验",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 80,
+        "readiness_score": 65,
+        "confidence_score": 73,
+        "heat_status": "STABLE",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 82
+          }
+        ],
+        "latest_change_reason": "Retained from previous run"
+      },
+      {
+        "opportunity_id": "ai-quota-reset-reminder",
+        "name": "AI 额度 / 重置提醒",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 72,
+        "readiness_score": 82,
+        "confidence_score": 63,
+        "heat_status": "HEATING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Fresh 2026-11-07 evidence / rank improvement"
+      }
+    ],
+    "rolling": [
+      {
+        "opportunity_id": "pc-value-check",
+        "name": "整机值不值 / PC 配置估价",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 91,
+        "readiness_score": 58,
+        "confidence_score": 88,
+        "heat_status": "HEATING",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 89
+          }
+        ],
+        "latest_change_reason": "Fresh 2026-11-07 evidence / rank improvement"
+      },
+      {
+        "opportunity_id": "real-estate-photo-ai",
+        "name": "房源照片 AI 美化",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 89,
+        "readiness_score": 82,
+        "confidence_score": 90,
+        "heat_status": "STABLE",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 90
+          }
+        ],
+        "latest_change_reason": "Retained from previous run"
+      },
+      {
+        "opportunity_id": "site-code-security-check",
+        "name": "网站 / 代码安全快检",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 87,
+        "readiness_score": 74,
+        "confidence_score": 82,
+        "heat_status": "HEATING",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 83
+          }
+        ],
+        "latest_change_reason": "Fresh 2026-11-07 evidence / rank improvement"
+      },
+      {
+        "opportunity_id": "video-to-text-summary",
+        "name": "视频链接转文字 + 字幕 + 摘要",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 85,
+        "readiness_score": 72,
+        "confidence_score": 84,
+        "heat_status": "HEATING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Fresh 2026-11-07 evidence / rank improvement"
+      },
+      {
+        "opportunity_id": "domain-ssl-reminder",
+        "name": "域名 / SSL 到期管家",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 85,
+        "readiness_score": 93,
+        "confidence_score": 89,
+        "heat_status": "STABLE",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 86
+          }
+        ],
+        "latest_change_reason": "Retained from previous run"
+      },
+      {
+        "opportunity_id": "spreadsheet-data-story",
+        "name": "表格 → 经营报告 / Data Story",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 82,
+        "readiness_score": 80,
+        "confidence_score": 82,
+        "heat_status": "HEATING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Fresh 2026-11-07 evidence / rank improvement"
+      },
+      {
+        "opportunity_id": "receipt-aa-split",
+        "name": "拍小票 / 聚餐 AA 助手",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 81,
+        "readiness_score": 88,
+        "confidence_score": 78,
+        "heat_status": "STABLE",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 82
+          }
+        ],
+        "latest_change_reason": "Retained from previous run"
+      },
+      {
+        "opportunity_id": "ai-seo-visibility-check",
+        "name": "AI / SEO 可见性体检",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 80,
+        "readiness_score": 64,
+        "confidence_score": 79,
+        "heat_status": "HEATING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Fresh 2026-11-07 evidence / rank improvement"
+      },
+      {
+        "opportunity_id": "scam-screenshot-check",
+        "name": "诈骗截图核验",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 80,
+        "readiness_score": 65,
+        "confidence_score": 73,
+        "heat_status": "STABLE",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 82
+          }
+        ],
+        "latest_change_reason": "Retained from previous run"
+      },
+      {
+        "opportunity_id": "ai-quota-reset-reminder",
+        "name": "AI 额度 / 重置提醒",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 72,
+        "readiness_score": 82,
+        "confidence_score": 63,
+        "heat_status": "HEATING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Fresh 2026-11-07 evidence / rank improvement"
+      },
+      {
+        "opportunity_id": "renovation-repair-quote",
+        "name": "装修 / 维修报价估算",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-06T09:00:00+08:00",
+        "opportunity_score": 80,
+        "readiness_score": 55,
+        "confidence_score": 68,
+        "heat_status": "COOLING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Out of current Top10; retained in 14-day pool"
+      },
+      {
+        "opportunity_id": "trading-card-price-radar",
+        "name": "卡牌价格雷达",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-06T09:00:00+08:00",
+        "opportunity_score": 79,
+        "readiness_score": 58,
+        "confidence_score": 78,
+        "heat_status": "COOLING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Out of current Top10; retained in 14-day pool"
+      },
+      {
+        "opportunity_id": "optometry-record-reminder",
+        "name": "验光档案 + 复购提醒",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-06T09:00:00+08:00",
+        "opportunity_score": 77,
+        "readiness_score": 75,
+        "confidence_score": 85,
+        "heat_status": "COOLING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Out of current Top10; retained in 14-day pool"
+      },
+      {
+        "opportunity_id": "web-change-radar",
+        "name": "网页变化雷达",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-06T09:00:00+08:00",
+        "opportunity_score": 74,
+        "readiness_score": 68,
+        "confidence_score": 79,
+        "heat_status": "COOLING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Out of current Top10; retained in 14-day pool"
+      }
+    ],
+    "champions": [
+      {
+        "opportunity_id": "pc-value-check",
+        "name": "整机值不值 / PC 配置估价",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 91,
+        "readiness_score": 58,
+        "confidence_score": 88,
+        "heat_status": "HEATING",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 89
+          }
+        ],
+        "latest_change_reason": "Fresh 2026-11-07 evidence / rank improvement"
+      },
+      {
+        "opportunity_id": "real-estate-photo-ai",
+        "name": "房源照片 AI 美化",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 89,
+        "readiness_score": 82,
+        "confidence_score": 90,
+        "heat_status": "STABLE",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 90
+          }
+        ],
+        "latest_change_reason": "Retained from previous run"
+      },
+      {
+        "opportunity_id": "site-code-security-check",
+        "name": "网站 / 代码安全快检",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 87,
+        "readiness_score": 74,
+        "confidence_score": 82,
+        "heat_status": "HEATING",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 83
+          }
+        ],
+        "latest_change_reason": "Fresh 2026-11-07 evidence / rank improvement"
+      },
+      {
+        "opportunity_id": "domain-ssl-reminder",
+        "name": "域名 / SSL 到期管家",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 85,
+        "readiness_score": 93,
+        "confidence_score": 89,
+        "heat_status": "STABLE",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 86
+          }
+        ],
+        "latest_change_reason": "Retained from previous run"
+      },
+      {
+        "opportunity_id": "video-to-text-summary",
+        "name": "视频链接转文字 + 字幕 + 摘要",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 85,
+        "readiness_score": 72,
+        "confidence_score": 84,
+        "heat_status": "HEATING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Fresh 2026-11-07 evidence / rank improvement"
+      },
+      {
+        "opportunity_id": "spreadsheet-data-story",
+        "name": "表格 → 经营报告 / Data Story",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 82,
+        "readiness_score": 80,
+        "confidence_score": 82,
+        "heat_status": "HEATING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Fresh 2026-11-07 evidence / rank improvement"
+      },
+      {
+        "opportunity_id": "receipt-aa-split",
+        "name": "拍小票 / 聚餐 AA 助手",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 81,
+        "readiness_score": 88,
+        "confidence_score": 78,
+        "heat_status": "STABLE",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 82
+          }
+        ],
+        "latest_change_reason": "Retained from previous run"
+      },
+      {
+        "opportunity_id": "ai-seo-visibility-check",
+        "name": "AI / SEO 可见性体检",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 80,
+        "readiness_score": 64,
+        "confidence_score": 79,
+        "heat_status": "HEATING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Fresh 2026-11-07 evidence / rank improvement"
+      },
+      {
+        "opportunity_id": "scam-screenshot-check",
+        "name": "诈骗截图核验",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 80,
+        "readiness_score": 65,
+        "confidence_score": 73,
+        "heat_status": "STABLE",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 82
+          }
+        ],
+        "latest_change_reason": "Retained from previous run"
+      },
+      {
+        "opportunity_id": "renovation-repair-quote",
+        "name": "装修 / 维修报价估算",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-06T09:00:00+08:00",
+        "opportunity_score": 80,
+        "readiness_score": 55,
+        "confidence_score": 68,
+        "heat_status": "COOLING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Out of current Top10; retained in 14-day pool"
+      },
+      {
+        "opportunity_id": "trading-card-price-radar",
+        "name": "卡牌价格雷达",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-06T09:00:00+08:00",
+        "opportunity_score": 79,
+        "readiness_score": 58,
+        "confidence_score": 78,
+        "heat_status": "COOLING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Out of current Top10; retained in 14-day pool"
+      },
+      {
+        "opportunity_id": "optometry-record-reminder",
+        "name": "验光档案 + 复购提醒",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-06T09:00:00+08:00",
+        "opportunity_score": 77,
+        "readiness_score": 75,
+        "confidence_score": 85,
+        "heat_status": "COOLING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Out of current Top10; retained in 14-day pool"
+      },
+      {
+        "opportunity_id": "web-change-radar",
+        "name": "网页变化雷达",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-06T09:00:00+08:00",
+        "opportunity_score": 74,
+        "readiness_score": 68,
+        "confidence_score": 79,
+        "heat_status": "COOLING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Out of current Top10; retained in 14-day pool"
+      },
+      {
+        "opportunity_id": "ai-quota-reset-reminder",
+        "name": "AI 额度 / 重置提醒",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 72,
+        "readiness_score": 82,
+        "confidence_score": 63,
+        "heat_status": "HEATING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Fresh 2026-11-07 evidence / rank improvement"
+      }
+    ]
   },
   "mini_game": {
-    "fresh": [],
-    "rolling": [],
-    "champions": []
+    "fresh": [
+      {
+        "opportunity_id": "trap-twist-platformer",
+        "name": "反套路陷阱闯关",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 92,
+        "readiness_score": 86,
+        "confidence_score": 93,
+        "heat_status": "STABLE",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 91
+          }
+        ],
+        "latest_change_reason": "Retained / re-ranked"
+      },
+      {
+        "opportunity_id": "canteen-rush-management",
+        "name": "食堂高峰经营",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 91,
+        "readiness_score": 84,
+        "confidence_score": 90,
+        "heat_status": "HEATING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Fresh 2026-11-07 signal"
+      },
+      {
+        "opportunity_id": "one-tap-lane-runner",
+        "name": "一键换道极限跑酷",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 90,
+        "readiness_score": 92,
+        "confidence_score": 80,
+        "heat_status": "HEATING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Fresh 2026-11-07 signal"
+      },
+      {
+        "opportunity_id": "one-path-roguelite",
+        "name": "一条路 Roguelite 自动战斗",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 89,
+        "readiness_score": 87,
+        "confidence_score": 88,
+        "heat_status": "HEATING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Fresh 2026-11-07 signal"
+      },
+      {
+        "opportunity_id": "satisfying-cleaning-idle",
+        "name": "削皮 / 清理爽感 Idle",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 88,
+        "readiness_score": 85,
+        "confidence_score": 84,
+        "heat_status": "HEATING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Fresh 2026-11-07 signal"
+      },
+      {
+        "opportunity_id": "scratch-collection-incremental",
+        "name": "刮擦收集增量（去博彩化）",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 87,
+        "readiness_score": 72,
+        "confidence_score": 93,
+        "heat_status": "COOLING",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 87
+          }
+        ],
+        "latest_change_reason": "Retained / re-ranked"
+      },
+      {
+        "opportunity_id": "physics-demolition",
+        "name": "物理拆塔炮击",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 87,
+        "readiness_score": 83,
+        "confidence_score": 77,
+        "heat_status": "STABLE",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 86
+          }
+        ],
+        "latest_change_reason": "Retained / re-ranked"
+      },
+      {
+        "opportunity_id": "magnetic-scrap-collect",
+        "name": "磁吸废品收集",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 85,
+        "readiness_score": 90,
+        "confidence_score": 75,
+        "heat_status": "STABLE",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 84
+          }
+        ],
+        "latest_change_reason": "Retained / re-ranked"
+      },
+      {
+        "opportunity_id": "internet-cafe-tycoon",
+        "name": "网吧经营模拟",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 84,
+        "readiness_score": 78,
+        "confidence_score": 86,
+        "heat_status": "STABLE",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 84
+          }
+        ],
+        "latest_change_reason": "Retained / re-ranked"
+      },
+      {
+        "opportunity_id": "physics-balance-driving",
+        "name": "物理平衡驾驶",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 83,
+        "readiness_score": 86,
+        "confidence_score": 88,
+        "heat_status": "STABLE",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 83
+          }
+        ],
+        "latest_change_reason": "Retained / re-ranked"
+      }
+    ],
+    "rolling": [
+      {
+        "opportunity_id": "trap-twist-platformer",
+        "name": "反套路陷阱闯关",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 92,
+        "readiness_score": 86,
+        "confidence_score": 93,
+        "heat_status": "STABLE",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 91
+          }
+        ],
+        "latest_change_reason": "Retained / re-ranked"
+      },
+      {
+        "opportunity_id": "canteen-rush-management",
+        "name": "食堂高峰经营",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 91,
+        "readiness_score": 84,
+        "confidence_score": 90,
+        "heat_status": "HEATING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Fresh 2026-11-07 signal"
+      },
+      {
+        "opportunity_id": "one-tap-lane-runner",
+        "name": "一键换道极限跑酷",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 90,
+        "readiness_score": 92,
+        "confidence_score": 80,
+        "heat_status": "HEATING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Fresh 2026-11-07 signal"
+      },
+      {
+        "opportunity_id": "one-path-roguelite",
+        "name": "一条路 Roguelite 自动战斗",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 89,
+        "readiness_score": 87,
+        "confidence_score": 88,
+        "heat_status": "HEATING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Fresh 2026-11-07 signal"
+      },
+      {
+        "opportunity_id": "satisfying-cleaning-idle",
+        "name": "削皮 / 清理爽感 Idle",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 88,
+        "readiness_score": 85,
+        "confidence_score": 84,
+        "heat_status": "HEATING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Fresh 2026-11-07 signal"
+      },
+      {
+        "opportunity_id": "scratch-collection-incremental",
+        "name": "刮擦收集增量（去博彩化）",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 87,
+        "readiness_score": 72,
+        "confidence_score": 93,
+        "heat_status": "COOLING",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 87
+          }
+        ],
+        "latest_change_reason": "Retained / re-ranked"
+      },
+      {
+        "opportunity_id": "physics-demolition",
+        "name": "物理拆塔炮击",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 87,
+        "readiness_score": 83,
+        "confidence_score": 77,
+        "heat_status": "STABLE",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 86
+          }
+        ],
+        "latest_change_reason": "Retained / re-ranked"
+      },
+      {
+        "opportunity_id": "magnetic-scrap-collect",
+        "name": "磁吸废品收集",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 85,
+        "readiness_score": 90,
+        "confidence_score": 75,
+        "heat_status": "STABLE",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 84
+          }
+        ],
+        "latest_change_reason": "Retained / re-ranked"
+      },
+      {
+        "opportunity_id": "internet-cafe-tycoon",
+        "name": "网吧经营模拟",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 84,
+        "readiness_score": 78,
+        "confidence_score": 86,
+        "heat_status": "STABLE",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 84
+          }
+        ],
+        "latest_change_reason": "Retained / re-ranked"
+      },
+      {
+        "opportunity_id": "physics-balance-driving",
+        "name": "物理平衡驾驶",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 83,
+        "readiness_score": 86,
+        "confidence_score": 88,
+        "heat_status": "STABLE",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 83
+          }
+        ],
+        "latest_change_reason": "Retained / re-ranked"
+      },
+      {
+        "opportunity_id": "root-growth",
+        "name": "指尖扎根成长",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-06T09:00:00+08:00",
+        "opportunity_score": 84,
+        "readiness_score": 88,
+        "confidence_score": 82,
+        "heat_status": "COOLING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Freshness weakened; retained in 14-day pool"
+      },
+      {
+        "opportunity_id": "absurd-infinite-growth",
+        "name": "荒诞无限成长",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-06T09:00:00+08:00",
+        "opportunity_score": 83,
+        "readiness_score": 90,
+        "confidence_score": 76,
+        "heat_status": "COOLING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Freshness weakened; retained in 14-day pool"
+      },
+      {
+        "opportunity_id": "bunker-idle",
+        "name": "地下工厂 Idle",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-06T09:00:00+08:00",
+        "opportunity_score": 81,
+        "readiness_score": 78,
+        "confidence_score": 86,
+        "heat_status": "COOLING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Freshness weakened; retained in 14-day pool"
+      },
+      {
+        "opportunity_id": "infinite-mining",
+        "name": "无限挖矿增量",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-06T09:00:00+08:00",
+        "opportunity_score": 80,
+        "readiness_score": 74,
+        "confidence_score": 68,
+        "heat_status": "COOLING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Freshness weakened; retained in 14-day pool"
+      }
+    ],
+    "champions": [
+      {
+        "opportunity_id": "trap-twist-platformer",
+        "name": "反套路陷阱闯关",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 92,
+        "readiness_score": 86,
+        "confidence_score": 93,
+        "heat_status": "STABLE",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 91
+          }
+        ],
+        "latest_change_reason": "Retained / re-ranked"
+      },
+      {
+        "opportunity_id": "canteen-rush-management",
+        "name": "食堂高峰经营",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 91,
+        "readiness_score": 84,
+        "confidence_score": 90,
+        "heat_status": "HEATING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Fresh 2026-11-07 signal"
+      },
+      {
+        "opportunity_id": "one-tap-lane-runner",
+        "name": "一键换道极限跑酷",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 90,
+        "readiness_score": 92,
+        "confidence_score": 80,
+        "heat_status": "HEATING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Fresh 2026-11-07 signal"
+      },
+      {
+        "opportunity_id": "one-path-roguelite",
+        "name": "一条路 Roguelite 自动战斗",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 89,
+        "readiness_score": 87,
+        "confidence_score": 88,
+        "heat_status": "HEATING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Fresh 2026-11-07 signal"
+      },
+      {
+        "opportunity_id": "satisfying-cleaning-idle",
+        "name": "削皮 / 清理爽感 Idle",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 88,
+        "readiness_score": 85,
+        "confidence_score": 84,
+        "heat_status": "HEATING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Fresh 2026-11-07 signal"
+      },
+      {
+        "opportunity_id": "scratch-collection-incremental",
+        "name": "刮擦收集增量（去博彩化）",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 87,
+        "readiness_score": 72,
+        "confidence_score": 93,
+        "heat_status": "COOLING",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 87
+          }
+        ],
+        "latest_change_reason": "Retained / re-ranked"
+      },
+      {
+        "opportunity_id": "physics-demolition",
+        "name": "物理拆塔炮击",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 87,
+        "readiness_score": 83,
+        "confidence_score": 77,
+        "heat_status": "STABLE",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 86
+          }
+        ],
+        "latest_change_reason": "Retained / re-ranked"
+      },
+      {
+        "opportunity_id": "magnetic-scrap-collect",
+        "name": "磁吸废品收集",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 85,
+        "readiness_score": 90,
+        "confidence_score": 75,
+        "heat_status": "STABLE",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 84
+          }
+        ],
+        "latest_change_reason": "Retained / re-ranked"
+      },
+      {
+        "opportunity_id": "internet-cafe-tycoon",
+        "name": "网吧经营模拟",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 84,
+        "readiness_score": 78,
+        "confidence_score": 86,
+        "heat_status": "STABLE",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 84
+          }
+        ],
+        "latest_change_reason": "Retained / re-ranked"
+      },
+      {
+        "opportunity_id": "root-growth",
+        "name": "指尖扎根成长",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-06T09:00:00+08:00",
+        "opportunity_score": 84,
+        "readiness_score": 88,
+        "confidence_score": 82,
+        "heat_status": "COOLING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Freshness weakened; retained in 14-day pool"
+      },
+      {
+        "opportunity_id": "physics-balance-driving",
+        "name": "物理平衡驾驶",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "opportunity_score": 83,
+        "readiness_score": 86,
+        "confidence_score": 88,
+        "heat_status": "STABLE",
+        "sources": [],
+        "score_history": [
+          {
+            "at": "2026-11-06T09:00:00+08:00",
+            "opportunity_score": 83
+          }
+        ],
+        "latest_change_reason": "Retained / re-ranked"
+      },
+      {
+        "opportunity_id": "absurd-infinite-growth",
+        "name": "荒诞无限成长",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-06T09:00:00+08:00",
+        "opportunity_score": 83,
+        "readiness_score": 90,
+        "confidence_score": 76,
+        "heat_status": "COOLING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Freshness weakened; retained in 14-day pool"
+      },
+      {
+        "opportunity_id": "bunker-idle",
+        "name": "地下工厂 Idle",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-06T09:00:00+08:00",
+        "opportunity_score": 81,
+        "readiness_score": 78,
+        "confidence_score": 86,
+        "heat_status": "COOLING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Freshness weakened; retained in 14-day pool"
+      },
+      {
+        "opportunity_id": "infinite-mining",
+        "name": "无限挖矿增量",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-06T09:00:00+08:00",
+        "opportunity_score": 80,
+        "readiness_score": 74,
+        "confidence_score": 68,
+        "heat_status": "COOLING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Freshness weakened; retained in 14-day pool"
+      }
+    ]
   },
-  "history": [],
+  "history": [
+    {
+      "at": "2026-11-07T09:45:00+08:00",
+      "mini_program_champions": [
+        "pc-value-check",
+        "real-estate-photo-ai",
+        "site-code-security-check",
+        "domain-ssl-reminder",
+        "video-to-text-summary",
+        "spreadsheet-data-story",
+        "receipt-aa-split",
+        "ai-seo-visibility-check",
+        "scam-screenshot-check",
+        "renovation-repair-quote",
+        "trading-card-price-radar",
+        "optometry-record-reminder",
+        "web-change-radar",
+        "ai-quota-reset-reminder"
+      ],
+      "mini_game_champions": [
+        "trap-twist-platformer",
+        "canteen-rush-management",
+        "one-tap-lane-runner",
+        "one-path-roguelite",
+        "satisfying-cleaning-idle",
+        "scratch-collection-incremental",
+        "physics-demolition",
+        "magnetic-scrap-collect",
+        "internet-cafe-tycoon",
+        "root-growth",
+        "physics-balance-driving",
+        "absurd-infinite-growth",
+        "bunker-idle",
+        "infinite-mining"
+      ]
+    }
+  ],
   "notes": [
-    "This file stores public market opportunity state only.",
-    "Never store user data, private exports, tokens, cookies or secrets here.",
-    "Scheduled/public scout runs may update this file after validating the schema."
+    "Initialized from the 2026-11-06 published snapshot plus the 2026-11-07 v1.5 run.",
+    "Public market signals only; no user-private data or secrets."
   ]
 }
