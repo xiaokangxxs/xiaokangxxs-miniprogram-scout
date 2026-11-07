@@ -6,7 +6,7 @@
 
 > **从全球新品与游戏机制里，找出真正值得做的微信小程序 / 微信小游戏机会。**
 
-[![Version](https://img.shields.io/badge/version-1.3.2-blue.svg)](VERSION)
+[![Version](https://img.shields.io/badge/version-1.3.3-blue.svg)](VERSION)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Agent-Agnostic](https://img.shields.io/badge/Agent-Agnostic-blueviolet.svg)](docs/INSTALL.md)
 [![WeChat](https://img.shields.io/badge/WeChat-Mini%20Program%20%2B%20Mini%20Game-07C160.svg)](SKILL.md)
@@ -108,6 +108,46 @@ Skill 应该给你的不是“今天有什么新品”，而是：
 | 微信可上线性检查 | 类目、资质、备案、隐私、支付、通知、广告、游戏规则、性能、IP |
 | 需求转化 | Top 10 榜单 + Top 3 Mini PRD + Best Bets |
 | 快速验证设计 | 第一批 1000 用户、Time-to-Signal、Kill Criteria |
+
+---
+
+## WorkBuddy 专家团
+
+除了单 Skill 形态，仓库现在还提供一套 **WorkBuddy 多 Agent 专家团**：
+
+👉 [进入 workbuddy/ 专家团目录](workbuddy/README.md)
+
+专家团不是 7 个重复人设，而是把完整流程拆成：
+
+```text
+凌策 / Atlas        团长：调度、冲突裁决、最终榜单
+闻新 / Nova         全球新品侦察
+弈野 / Pixel        游戏机制侦察
+知需 / Mira         中国需求分析
+程策 / Mini         微信小程序策略
+游策 / Arc          微信小游戏玩法设计
+守界 / Gate         微信合规与证据审计
+```
+
+默认全量流程：
+
+```text
+产品发现 ─┐
+          ├→ 中国需求 → 小程序/小游戏双引擎 → 合规审计 → 团长裁决
+玩法发现 ─┘
+```
+
+构建可上传 WorkBuddy 的 ZIP：
+
+```bash
+npm run sync:workbuddy
+npm run validate:workbuddy
+npm run build:workbuddy
+```
+
+输出：`dist/wechat-opportunity-scout-team-workbuddy.zip`。
+
+WorkBuddy 专家团共享根目录同一套 Scout Skill；CI 会检查专家团副本是否与主 Skill 漂移。
 
 ---
 
@@ -568,6 +608,7 @@ xiaokangxxs-miniprogram-scout/
 ├── docs/
 ├── evals/
 ├── scripts/
+├── workbuddy/              # WorkBuddy 专家团源码与共享 Skill
 └── .github/
 ```
 
@@ -588,6 +629,7 @@ xiaokangxxs-miniprogram-scout/
 ## 文档入口
 
 - 📦 [安装与 Agent 兼容](docs/INSTALL.md)
+- 👥 [WorkBuddy 专家团](workbuddy/README.md)
 - 🧠 [架构与工作流](docs/ARCHITECTURE.md)
 - 📊 [最新 Scout Run](docs/LATEST_RUN.md)
 - 🧪 [脱敏示例报告](docs/EXAMPLE_REPORT.md)
@@ -608,6 +650,9 @@ Skill 本身主要是 Markdown 规则；真正的网络请求由你正在使用�
 
 ```text
 scripts/validate-skill.mjs
+scripts/validate-workbuddy-team.mjs
+scripts/generate-workbuddy-avatars.mjs
+scripts/build-workbuddy-package.mjs
 scripts/secret-scan.mjs
 ```
 
