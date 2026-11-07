@@ -1,5 +1,25 @@
 # Changelog
 
+## 1.4.0 — 2026-11-07
+
+### From Discovery to Productization
+
+- Added User Seed Mode for requirements, GitHub repositories, product links, feedback and files.
+- Added JTBD Extraction before scoring user-provided solutions.
+- Added Product Reframe with KEEP / REFRAME / SPLIT / REJECT verdicts.
+- Added Multi-Concept Generation to create 3–5 materially different product concepts before routing.
+- Added Master Prompt V3.5.
+- Extended output schema with seed provenance, problem model, JTBD, reframe and concepts.
+- Updated Product Form Router to operate after productization.
+- Added regression cases for User Seed, KEEP, SPLIT and anti-fake-gamification behavior.
+- Updated WorkBuddy lead orchestration for User Seed productization.
+- Updated README/architecture/report template and v1.4 visual assets.
+
+### Behavior
+
+- Mini Program and Mini Game scoring weights remain unchanged from v1.3.
+- Global discovery / Rolling Pool behavior remains available.
+
 ## 1.3.3 — 2026-11-07
 
 ### WorkBuddy expert team

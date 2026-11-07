@@ -4,16 +4,16 @@ The current GitHub connector can edit repository files but cannot update the rep
 
 ## Description
 
-English recommendation:
+Recommended English:
 
 ```text
-Agent Skill for discovering global product/game signals and converting the best China-feasible opportunities into WeChat Mini Programs and Mini Games.
+Agent Skill for scouting global signals or productizing your own ideas into evidence-based WeChat Mini Program and Mini Game opportunities.
 ```
 
 Short Chinese alternative:
 
 ```text
-全球产品/游戏机会侦察 Skill：筛选并转化为可落地的微信小程序与微信小游戏需求。
+微信产品机会决策 Skill：全球侦察 + 用户需求产品化 + 小程序/小游戏双引擎评估。
 ```
 
 ## Website
@@ -29,11 +29,12 @@ agent-skill
 wechat-miniprogram
 wechat-minigame
 product-discovery
+product-strategy
+jtbd
+idea-validation
 product-hunt
 hacker-news
 market-research
-indie-hacker
-product-management
 china
 ai-agent
 skills
@@ -41,27 +42,26 @@ skills
 
 ## Social preview
 
-Recommended visual:
+v1.4 recommended visual:
 
 - repository name: `xiaokangxxs-miniprogram-scout`
-- subtitle: `Global signals → WeChat opportunities`
-- three-stage diagram:
-  `Discover → Score → Convert`
-- small labels:
-  `Mini Program` · `Mini Game` · `Evidence First`
+- headline: `From Discovery to Productization`
+- flow: `Signals / User Seed → JTBD → Reframe → Concepts → WeChat`
+- small labels: `Mini Program` · `Mini Game` · `Evidence First`
 
-Avoid putting API keys, real daily ranking results, or third-party logos in the social preview.
+Source asset:
+
+`assets/readme/social-preview-v1.4.svg`
+
+GitHub Social Preview upload normally needs a raster image. Export this SVG to a 1280×640 PNG/JPG before manual upload.
+
+Avoid API keys, real daily ranking results or third-party logos.
 
 ## Features to enable
 
 Recommended:
-
 - Issues: ON
 - Actions: ON
 - Discussions: optional
 - Wiki: OFF unless documentation grows beyond `docs/`
 - Sponsorships: optional
-
-## Security
-
-If GitHub Private Vulnerability Reporting becomes useful for this repository, enable it in repository security settings and update `SECURITY.md` with the private reporting path.

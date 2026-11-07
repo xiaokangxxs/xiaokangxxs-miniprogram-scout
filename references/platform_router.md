@@ -1,8 +1,20 @@
 # Product Form Router
 
-Version: 1.3.0
+Version: 1.4.0
 
-Before scoring, decide what the opportunity actually is.
+Product Form Router runs on an **opportunity/concept**, not blindly on raw user wording.
+
+For GLOBAL_DISCOVERY:
+
+```text
+source signals → cluster/JTBD theme → router
+```
+
+For USER_SEED:
+
+```text
+user seed → JTBD → Reframe → concepts → router
+```
 
 Possible routes:
 
@@ -13,7 +25,7 @@ Possible routes:
 - `DESKTOP`
 - `REJECT`
 
-Do not force every overseas product into a Mini Program.
+Do not force every idea into WeChat just because the user mentioned WeChat.
 
 ## Route to WeChat Mini Program when
 
@@ -21,32 +33,22 @@ The primary value is completing a task/service:
 
 - user has a concrete problem or search query;
 - short sessions / use-and-go;
-- scan/share/chat/search/offline QR creates lower friction;
+- scan/share/chat/search/offline QR lowers friction;
 - forms, OCR, image processing, calculators, reminders, lightweight workflows, booking, records, utilities;
 - cloud/server can perform heavy background work.
-
-Typical growth engine:
-
-- WeChat Search
-- group/chat sharing
-- QR/offline entry
-- public account/private-domain traffic
-- repeat task trigger
 
 ## Route to WeChat Mini Game when
 
 The primary value is play:
 
-- the product is fun/challenge/competition first;
+- fun/challenge/competition first;
 - a mechanic can be understood in seconds;
 - replayability, mastery or progression matters;
-- sessions can repeat;
-- social competition/share/revival/ranking is natural;
-- ads / compliant virtual payment can fit the experience.
+- sessions repeat;
+- social competition/share/ranking is natural;
+- ads / compliant virtual payment can fit.
 
 Gamification does not automatically make a utility a Mini Game.
-
-Do not label a game as a utility merely to bypass game-category requirements.
 
 ## Route away from WeChat when
 
@@ -57,7 +59,17 @@ Prefer Web/App/Desktop if the core experience requires:
 - high-performance 3D/assets unsuitable for target WeChat constraints;
 - unsupported OS/device permissions;
 - platform/payment/content requirements that make WeChat a poor distribution channel;
-- business value exists but WeChat contributes no real acquisition or UX advantage.
+- business value exists but WeChat adds no meaningful acquisition or UX advantage.
+
+## Reframe interaction
+
+If the user's original idea says "做个小程序", but the best concept routes to Web/App/Desktop:
+
+- keep the JTBD;
+- reject the forced WeChat form;
+- explain the mismatch.
+
+If a seed contains both utility and play jobs, split them before routing.
 
 ## Router output
 

@@ -1,8 +1,8 @@
 {
   "name": "wechat-opportunity-scout-team",
   "expertType": "team",
-  "version": "1.0.0",
-  "description": "A multi-agent team that turns global product and game signals into evidence-based WeChat Mini Program and Mini Game opportunities.",
+  "version": "1.1.0",
+  "description": "A multi-agent team that scouts global signals or productizes user-provided ideas into evidence-based WeChat Mini Program and Mini Game opportunities.",
   "author": {
     "name": "xiaokangxxs",
     "email": "xiaokangxxs@users.noreply.github.com"
@@ -52,8 +52,8 @@
     "en": "WeChat Opportunity Scout Team"
   },
   "displayDescription": {
-    "zh": "从全球新品与游戏机制中筛选高价值机会，协作评估需求、热度、开发成本与微信上线可行性，并输出验证方案。",
-    "en": "A specialist team that discovers global product and game signals, evaluates China demand and WeChat readiness, then converts the best opportunities into testable plans."
+    "zh": "既能侦察全球新品与游戏机制，也能把用户给定需求/GitHub/竞品素材提炼为 JTBD、重构产品定义、生成多方案并协作评估微信机会。",
+    "en": "A specialist team that scouts global signals or productizes user-provided ideas through JTBD extraction, reframing, multi-concept generation and WeChat opportunity evaluation."
   },
   "avatar": "avatars/team.png",
   "categoryId": "01-ProductDesign",
@@ -82,8 +82,8 @@
       "en": "Scan today's global product and game signals, merge the last 14 days, and give me Mini Program Top 10, Mini Game Top 10 and Best Bets."
     },
     {
-      "zh": "分析这个海外产品或游戏是否适合转成微信小程序或小游戏，并给出最快验证方案。",
-      "en": "Analyze whether this overseas product or game should become a WeChat Mini Program or Mini Game and give me the fastest validation plan."
+      "zh": "我给你一段需求、几个 GitHub 或竞品链接，先提取 JTBD 和重构产品定义，再生成 3–5 个小程序/小游戏候选并告诉我最值得做哪个。",
+      "en": "I will give you a requirement, repositories or competitor links. Extract the JTBD, reframe the product, generate 3–5 concepts and recommend the strongest WeChat opportunity."
     },
     {
       "zh": "只看3天内能验证的机会，优先小众、刚需/强乐趣、最新、最火、最好开发。",

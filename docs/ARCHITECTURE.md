@@ -1,6 +1,6 @@
 # Architecture
 
-Version: 1.3.1
+Version: 1.4.0
 
 The repository is an **instruction Skill**, not a hosted SaaS backend. Network activity is performed by the host Agent/tooling according to the rules in `SKILL.md`.
 
@@ -8,97 +8,92 @@ The repository is an **instruction Skill**, not a hosted SaaS backend. Network a
 
 ```mermaid
 flowchart TD
-    A[Global product & game sources] --> B[Fresh discovery 24–72h]
-    B --> C[14-day Rolling Pools]
-    C --> D[Normalize & deduplicate]
-    D --> E[Product Form Router]
+    A1[Global product & game sources] --> B[Input Router]
+    A2[User idea / GitHub / links / feedback / files] --> B
 
-    E -->|Task / utility| F[Mini Program opportunity engine]
-    E -->|Play / challenge| G[Mini Game opportunity engine]
-    E -->|Wrong fit| H[Web / App / Desktop / Reject]
+    B -->|GLOBAL_DISCOVERY| C[Fresh discovery + Rolling Pools]
+    B -->|USER_SEED| D[Seed normalization + provenance]
 
-    F --> I[Opportunity Score]
-    G --> J[Game Opportunity Score]
+    C --> E[Cluster into opportunity themes]
+    D --> F[JTBD Extraction]
+    F --> G[Product Reframe]
+    G --> H[3–5 Product Concepts]
 
-    I --> K[Readiness + Confidence]
-    J --> K
+    E --> I[Product Form Router]
+    H --> I
 
-    K --> L[WeChat official-policy checks]
-    L --> M[Top 10 Mini Programs]
-    L --> N[Top 10 Mini Games]
-    M --> O[Cross-category Best Bets]
+    I -->|Task / utility| J[Mini Program opportunity engine]
+    I -->|Play / challenge| K[Mini Game opportunity engine]
+    I -->|Wrong fit| L[Web / App / Desktop / Reject]
+
+    J --> M[Opportunity Score]
+    K --> N[Game Opportunity Score]
+    M --> O[Readiness + Confidence]
     N --> O
-    O --> P[Mini PRD / validation plan]
+    O --> P[WeChat policy checks]
+    P --> Q[Recommendation / boards]
+    Q --> R[P0 + validation + Kill Criteria]
 ```
 
 ## Core layers
 
-### 1. Discovery layer
+### 1. Input layer
+Defined by `references/user_seed_mode.md`.
 
+Two entry paths:
+- GLOBAL_DISCOVERY
+- USER_SEED
+
+### 2. Discovery layer
 Defined by `references/source_registry.md`.
 
-Separates product/utility sources from game/mechanic sources.
+### 3. Productization layer
+Defined by:
+- `references/jtbd_extraction.md`
+- `references/product_reframe.md`
+- `references/multi_concept_generation.md`
 
-### 2. Rolling-memory layer
+This layer prevents premature solution lock-in.
 
+### 4. Rolling-memory layer
 Defined by `references/rolling_candidate_pool.md`.
 
-Freshness matters, but yesterday's strong opportunity is not removed just because today has more launches.
+Used primarily for GLOBAL_DISCOVERY.
 
-### 3. Product Form Router
-
+### 5. Product Form Router
 Defined by `references/platform_router.md`.
 
-This is a major guardrail: not every global product should become a WeChat Mini Program.
+The router receives opportunity themes or productized concepts, not blindly the raw user wording.
 
-### 4. Opportunity engines
-
+### 6. Opportunity engines
 Defined by `references/scoring_model.md`.
 
-Mini Program and Mini Game scoring are intentionally different.
+v1.4.0 keeps the v1.3 Mini Program and Mini Game weights unchanged.
 
-### 5. Evidence layer
-
+### 7. Evidence layer
 Defined by `references/evidence_rules.md`.
 
-Observed / Proxy / Estimate / Unknown prevents launch metrics from being mistaken for revenue or market truth.
+Observed / Proxy / Estimate / Unknown remain mandatory.
 
-### 6. WeChat readiness layer
-
+### 8. WeChat readiness layer
 Defined by:
-
 - `references/china_feasibility_gate.md`
 - `references/wechat_official_constraints.md`
 
-Opportunity quality and implementation readiness are separate concepts.
-
-### 7. Requirement-conversion layer
-
+### 9. Requirement-conversion layer
 Defined by `references/output_schema.md` and `assets/report_template.md`.
-
-Outputs separate opportunity boards and PRD-ready concepts.
-
-## Repository layout
-
-```text
-SKILL.md                       # main runtime contract
-UNIVERSAL_SINGLE_FILE.md       # single-file fallback
-references/                    # scoring, routing, evidence, policy rules
-assets/                        # report/config templates
-docs/                          # human-facing documentation
-evals/                         # regression/evaluation cases
-scripts/                       # local repository validation only
-test-prompts.json              # portable prompt-level smoke tests
-```
 
 ## Design principle
 
-The Skill separates five questions that are often incorrectly merged:
+The Skill separates questions that are often incorrectly merged:
 
-1. Is this new?
-2. Is this hot?
-3. Is this worth building?
-4. Is this easy to validate/build?
-5. Is this actually launchable on WeChat?
+1. What problem/job is actually present?
+2. Is the user's original product definition correct?
+3. What other product concepts can solve the same job?
+4. What product form fits?
+5. Is this worth building?
+6. Is it hot/new?
+7. Is it easy to validate?
+8. Is it launchable on WeChat?
 
-A good opportunity can score differently on every axis.
+A strong answer is allowed to reject the user's original solution while preserving the underlying opportunity.

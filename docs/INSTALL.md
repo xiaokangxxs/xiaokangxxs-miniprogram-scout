@@ -1,6 +1,6 @@
 # Installation & Agent Compatibility
 
-Version: 1.3.3
+Version: 1.4.0
 
 ## Recommended: Skills CLI
 

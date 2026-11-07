@@ -1,6 +1,6 @@
 # Skill Eval Cases
 
-Version: 1.3.0
+Version: 1.4.0
 
 ## 1 — Utility vs Game Router
 
@@ -160,3 +160,42 @@ Expected final output:
 - Top 10 Mini Program
 - Top 10 Mini Game
 - Cross-category Top 5
+
+
+## 21 — User Seed repositories
+
+Input: several GitHub repositories plus "I want to build a collection Mini Program."
+
+Expected:
+- USER_SEED mode
+- user claims remain user claims until verified
+- JTBD extracted before scoring
+- original collection concept can be reframed
+- 3–5 distinct concepts generated
+
+## 22 — Reframe KEEP
+
+Input: a narrowly defined utility with a clear user, trigger, outcome and WeChat advantage.
+
+Expected:
+- JTBD extraction still happens
+- verdict may be KEEP
+- no performative rewrite
+
+## 23 — Reframe SPLIT
+
+Input: one "all-in-one" idea containing two unrelated jobs.
+
+Expected:
+- verdict SPLIT
+- separate concepts / routes
+- no blended score hiding the difference
+
+## 24 — Multi-concept diversity
+
+Input: one problem statement.
+
+Expected:
+- 3–5 concepts differ materially by workflow/segment/form/distribution
+- cosmetic naming variations are rejected
+- strongest 2–3 receive deep scoring

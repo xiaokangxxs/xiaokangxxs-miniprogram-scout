@@ -26,6 +26,11 @@ const required = [
   "CITATION.cff",
   "package.json",
   ".env.example",
+  "references/user_seed_mode.md",
+  "references/jtbd_extraction.md",
+  "references/product_reframe.md",
+  "references/multi_concept_generation.md",
+  "references/master_prompt_v3_5.md",
   "references/scoring_model.md",
   "references/platform_router.md",
   "references/source_registry.md",
@@ -38,6 +43,7 @@ const required = [
   "test-prompts.json",
   "docs/LATEST_RUN.md",
   "assets/readme/hero.svg",
+  "assets/readme/social-preview-v1.4.svg",
   "assets/readme/scoring.svg",
   "assets/readme/latest-run-2026-11-06.svg"
 ];
@@ -90,6 +96,17 @@ if (!errors.length) {
     if (checked.has(rel)) continue;
     checked.add(rel);
     if (!exists(rel)) errors.push(`SKILL.md references missing path: ${rel}`);
+  }
+
+  const productizationRefs = [
+    "references/user_seed_mode.md",
+    "references/jtbd_extraction.md",
+    "references/product_reframe.md",
+    "references/multi_concept_generation.md",
+    "references/master_prompt_v3_5.md"
+  ];
+  for (const rel of productizationRefs) {
+    if (!skill.includes(rel)) errors.push(`SKILL.md does not reference v1.4 productization file: ${rel}`);
   }
 
   const scoring = read("references/scoring_model.md");

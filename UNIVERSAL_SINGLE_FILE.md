@@ -1,15 +1,79 @@
 # xiaokangxxs-miniprogram-scout — Universal Instruction
 
-Version: **1.3.3**
+Version: **1.4.0**
 
 ## Goal
 
-Scout both:
+Discover **or derive**:
 
 - WeChat Mini Program opportunities
 - WeChat Mini Game opportunities
 
-First route product form. Do not use one score model for both.
+Two entry modes:
+
+- GLOBAL_DISCOVERY
+- USER_SEED
+
+Do not use one score model for Mini Programs and Mini Games.
+
+## USER_SEED productization
+
+When the user supplies an idea, requirement, repositories, links, feedback or files:
+
+1. normalize the seed and provenance;
+2. extract the underlying JTBD/problem;
+3. compare the original solution against the JTBD;
+4. return KEEP / REFRAME / SPLIT / REJECT;
+5. generate 3–5 materially different concepts;
+6. route each serious concept;
+7. score the strongest 2–3;
+8. recommend one concept with P0, validation and Kill Criteria.
+
+Do not force a global scan before understanding a useful seed.
+
+Do not create cosmetic concept variants.
+
+## JTBD
+
+Extract:
+
+- target user
+- trigger
+- struggling moment
+- desired outcome
+- current workaround
+- cost of inaction
+- frequency / urgency
+- constraints
+
+Describe the outcome, not the implementation.
+
+## Product Reframe
+
+The Skill may explicitly say:
+
+> This problem is worth solving, but the current product definition is weak.
+
+Verdict:
+
+- KEEP
+- REFRAME
+- SPLIT
+- REJECT
+
+## Product Form Router
+
+Route to:
+
+- WECHAT_MINIPROGRAM
+- WECHAT_MINIGAME
+- WEB_APP
+- NATIVE_APP
+- DESKTOP
+- REJECT
+
+Mini Program = task/service.
+Mini Game = play/fun/challenge.
 
 ## Mini Program model
 
@@ -38,6 +102,19 @@ Score 100:
 - Buildability 10
 - Competition gap 5
 
+## Evidence
+
+Use:
+
+- Observed
+- Proxy
+- Estimate
+- Unknown
+
+User claims are not automatically Observed.
+
+Never fabricate search volume, ASO, revenue, downloads, retention, player counts, platform eligibility.
+
 ## Trend
 
 Heat is momentum, not one snapshot.
@@ -46,15 +123,8 @@ Prefer:
 - rank velocity
 - player/review/comment growth
 - cross-source convergence
-- multiple similar products/mechanics appearing
+- multiple similar products/mechanics
 - sustained attention
-
-## Freshness
-
-Track:
-- launch freshness
-- mechanic freshness
-- China/WeChat freshness
 
 ## Buildability
 
@@ -90,7 +160,7 @@ Mini Program:
 
 Mini Game:
 - game category
-- game qualification/publication requirements
+- qualification/publication requirements
 - ads eligibility
 - virtual payment
 - content/IP
@@ -103,22 +173,9 @@ Do not hard-code stale limits.
 
 Separate from Opportunity.
 
-Mini Program readiness:
-data/API, WeChat capability, compliance, platform dependency, implementation.
-
-Mini Game readiness:
-qualification/publication, ads/payment, performance, content/IP/review, implementation/assets/live ops.
-
-## Confidence
-
-Use Observed / Proxy / Estimate / Unknown.
-
-Never fabricate:
-search volume, ASO, revenue, downloads, retention, player counts, platform eligibility.
-
 ## Rolling pools
 
-Maintain separate 14-day pools:
+GLOBAL_DISCOVERY maintains separate rolling pools:
 
 - Mini Program Champion Board
 - Mini Game Champion Board
@@ -137,7 +194,7 @@ For each serious candidate ask:
 6. IP/clone risk?
 7. Current WeChat review blocker?
 
-## Default output
+## Default output — GLOBAL_DISCOVERY
 
 1. Source status
 2. Top 10 Mini Programs
@@ -145,3 +202,16 @@ For each serious candidate ask:
 4. Cross-category Top 5 Best Bets
 5. Policy blockers
 6. Validation queue
+
+## Default output — USER_SEED
+
+1. Seed interpretation
+2. JTBD
+3. Original idea verdict
+4. 3–5 concepts
+5. Route for each
+6. Scored shortlist
+7. Recommended concept
+8. P0
+9. Fastest validation
+10. Blockers / Kill Criteria
