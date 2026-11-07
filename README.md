@@ -646,6 +646,18 @@ Skill 会把：
 - Prototype 计划；
 - 游戏官方规则阻塞项。
 
+### v1.5 额外交付
+
+Top 3 / 最终推荐额外包含：
+
+- 完整 Score Breakdown；
+- Evidence Quality；
+- China Demand Confidence / 验证查询；
+- Rights & Risk；
+- Bear Case / Fatal Assumption；
+- Validation OS 实验；
+- 日报 NEW / RETAINED / HEATING / COOLING / DROPPED。
+
 ### Cross-category Top 5 Best Bets
 
 回答：
@@ -715,6 +727,7 @@ npm run check
 
 ```bash
 npm run validate
+npm run validate:pool
 npm run scan:secrets
 ```
 
@@ -746,6 +759,12 @@ xiaokangxxs-miniprogram-scout/
 │   ├── multi_concept_generation.md
 │   ├── platform_router.md
 │   ├── scoring_model.md
+│   ├── score_explainability.md
+│   ├── evidence_quality_matrix.md
+│   ├── china_demand_validator.md
+│   ├── rights_and_risk_gate.md
+│   ├── contrarian_reviewer.md
+│   ├── validation_os.md
 │   ├── rolling_candidate_pool.md
 │   ├── source_registry.md
 │   ├── evidence_rules.md
@@ -753,6 +772,9 @@ xiaokangxxs-miniprogram-scout/
 │   ├── wechat_official_constraints.md
 │   └── output_schema.md
 ├── assets/
+├── data/
+│   ├── rolling_pool.json
+│   └── rolling_pool.schema.json
 ├── docs/
 ├── evals/
 ├── scripts/
@@ -802,6 +824,7 @@ scripts/validate-skill.mjs
 scripts/validate-workbuddy-team.mjs
 scripts/generate-workbuddy-avatars.mjs
 scripts/build-workbuddy-package.mjs
+scripts/rolling-pool.mjs
 scripts/secret-scan.mjs
 ```
 
