@@ -16,11 +16,16 @@ Use this before publishing a new version.
 ## Skill consistency
 
 - [ ] Main workflow still matches referenced files
+- [ ] User Seed Mode is documented and tested
+- [ ] JTBD Extraction is documented and tested
+- [ ] Product Reframe KEEP/REFRAME/SPLIT/REJECT is documented and tested
+- [ ] Multi-concept generation produces materially different concepts
 - [ ] Mini Program score totals 100
 - [ ] Mini Game score totals 100
 - [ ] Router outputs align with output schema
 - [ ] Eval cases cover changed behavior
 - [ ] Single-file fallback reflects material logic changes
+- [ ] README hero/social-preview source reflects the current productization flow
 
 ## WorkBuddy expert team
 
