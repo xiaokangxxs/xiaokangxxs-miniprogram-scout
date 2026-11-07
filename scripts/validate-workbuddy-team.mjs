@@ -30,7 +30,7 @@ if(!errors.length){
   if(settings.agent!==plugin.agentName) errors.push("settings.agent != agentName");
   if(plugin.quickPrompts?.length!==3) errors.push("quickPrompts must contain 3 items");
   if(plugin.tags?.length!==3) errors.push("tags must contain 3 items");
-  if(plugin.members?.length!==7) errors.push("members must contain 1 lead + 6 members");
+  if(plugin.members?.length!==8) errors.push("members must contain 1 lead + 7 members");
 
   const ids=new Set();
   for(const rel of plugin.agents||[]){
