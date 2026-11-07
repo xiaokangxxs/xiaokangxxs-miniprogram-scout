@@ -4,12 +4,12 @@ title: "xiaokangxxs-miniprogram-scout"
 type: software
 authors:
   - family-names: "xiaokangxxs"
-version: 1.4.0
+version: 1.5.0
 date-released: 2026-11-07
 license: MIT
 repository-code: "https://github.com/xiaokangxxs/xiaokangxxs-miniprogram-scout"
 url: "https://github.com/xiaokangxxs/xiaokangxxs-miniprogram-scout"
-abstract: "An agent-agnostic Skill for scouting global signals or productizing user-provided ideas into evidence-based WeChat Mini Program and Mini Game opportunities."
+abstract: "An agent-agnostic WeChat opportunity decision Skill with discovery/productization, explainable scoring, evidence quality, rights/risk checks, red-team review, validation experiments and persistent trend memory."
 keywords:
   - agent-skill
   - wechat-miniprogram
@@ -18,3 +18,6 @@ keywords:
   - market-research
   - product-strategy
   - jtbd
+  - evidence-based
+  - red-team
+  - validation
