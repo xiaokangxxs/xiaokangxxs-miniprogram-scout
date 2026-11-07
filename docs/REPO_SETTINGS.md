@@ -39,11 +39,13 @@ skills
 
 ## Social Preview
 
-Use the v1.5 raster preview generated from the preferred blue/white glossy layout.
+Use the final v1.5 blue/white glossy Social Preview prepared for manual upload. The README source image has been redesigned with safe margins so no content is clipped.
 
 Repository source asset:
 
 `assets/readme/social-preview-v1.5.svg`
+
+Manual upload file prepared outside the repository: `social-preview-v1.5-final.png` (1280×640).
 
 Recommended upload:
 - 1280×640
