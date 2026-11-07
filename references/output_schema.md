@@ -1,6 +1,6 @@
 # Canonical Data and Report Schema
 
-Version: 1.4.0
+Version: 1.5.0
 
 ## Input context
 
@@ -15,8 +15,6 @@ input_context:
 ```
 
 ## User Seed productization
-
-When `mode=USER_SEED`:
 
 ```yaml
 problem:
@@ -53,118 +51,208 @@ concepts:
     why_distinct: "..."
 ```
 
-## Opportunity theme
+## Opportunity
 
 ```yaml
-opportunity_id: "..."
-opportunity_name: "..."
-supporting_products: []
-first_seen_at: "ISO-8601"
-last_seen_at: "ISO-8601"
-freshness_status: fresh|rolling|champion|user_seed
-product_form:
-  primary: WECHAT_MINIPROGRAM|WECHAT_MINIGAME|WEB_APP|NATIVE_APP|DESKTOP|REJECT
-  alternatives: []
-  reason: "..."
+opportunity:
+  opportunity_id: "stable-id"
+  name: "..."
+  product_form: WECHAT_MINIPROGRAM|WECHAT_MINIGAME|WEB_APP|NATIVE_APP|DESKTOP|REJECT
+  first_seen_at: "ISO-8601"
+  last_seen_at: "ISO-8601"
+  freshness_status: fresh|rolling|champion|user_seed
 ```
 
-## Common signals
+## Score explainability
 
 ```yaml
-signals:
-  freshness:
-    launch_age_days: null
-    china_market_novelty: HIGH|MEDIUM|LOW|UNKNOWN
-  heat:
-    momentum: HIGH|MEDIUM|LOW|UNKNOWN
+score_breakdown:
+  model: MINI_PROGRAM|MINI_GAME
+  components:
+    - key: "..."
+      score: 0
+      max_score: 0
+      evidence: []
+      assumptions: []
+      why_not_higher: "..."
+  raw_score: 0-100
+  gates_applied: []
+  final_opportunity_score: 0-100
+```
+
+## Evidence quality
+
+```yaml
+evidence_summary:
+  strongest_evidence: []
+  weakest_assumptions: []
+  conflicts: []
+  missing_evidence: []
+  overall_quality: HIGH|MEDIUM|LOW
+
+evidence_item:
+  claim: "..."
+  source: "..."
+  type: OBSERVED|PROXY|ESTIMATE|UNKNOWN|USER_CLAIM|USER_PROVIDED
+  quality:
+    reliability: HIGH|MEDIUM|LOW|UNKNOWN
+    freshness: HIGH|MEDIUM|LOW|UNKNOWN
+    independence: HIGH|MEDIUM|LOW|UNKNOWN
+    relevance: HIGH|MEDIUM|LOW|UNKNOWN
+    directness: HIGH|MEDIUM|LOW|UNKNOWN
+```
+
+## China demand
+
+```yaml
+china_demand:
+  search_demand:
+    status: OBSERVED|HYPOTHESIS|UNKNOWN
+    queries: []
     evidence: []
-  buildability:
-    prototype_effort: "..."
-    asset_burden: LOW|MEDIUM|HIGH
-    backend_burden: LOW|MEDIUM|HIGH
-    ops_burden: LOW|MEDIUM|HIGH
+  content_demand:
+    status: OBSERVED|PROXY|UNKNOWN
+    evidence: []
+  paid_service_demand:
+    status: OBSERVED|PROXY|UNKNOWN
+    evidence: []
+  workaround_demand:
+    status: OBSERVED|PROXY|UNKNOWN
+    evidence: []
+  community_demand:
+    status: OBSERVED|PROXY|UNKNOWN
+    evidence: []
+  confidence: HIGH|MEDIUM|LOW|UNKNOWN
+  next_validation_actions: []
 ```
 
-## Mini Program assessment
+## Rights & Risk
 
 ```yaml
-mini_program:
-  opportunity_score: 0-100
-  search:
-    core_keywords: []
-    market_search_frequency: HIGH|MEDIUM|LOW|UNKNOWN
-    user_trigger_frequency: HIGH|MEDIUM|LOW
-    search_intent_strength: HIGH|MEDIUM|LOW
-    keyword_data_status: OBSERVED|HYPOTHESIS|UNKNOWN
-  rigid_need:
-    severity: HIGH|MEDIUM|LOW
-    cost_of_inaction: "..."
-  niche:
-    target_segment: "..."
-    wedge: "..."
-  distribution_loop:
-    primary: SEARCH|SHARE|QR|PRIVATE_DOMAIN|WORKFLOW|OTHER
-    first_1000_users_hypothesis: "..."
+rights_risk_gate:
+  status: GREEN|YELLOW|RED|BLOCKED
+  dependencies:
+    - source: "..."
+      license: "..."
+      commercial_use: ALLOWED|RESTRICTED|UNKNOWN
+      redistribution: ALLOWED|RESTRICTED|UNKNOWN
+      modification: ALLOWED|RESTRICTED|UNKNOWN
+      rag_allowed: ALLOWED|RESTRICTED|UNKNOWN
+      embedding_allowed: ALLOWED|RESTRICTED|UNKNOWN
+      attribution_required: true|false|unknown
+      permission_required: true|false|unknown
+  risk_items:
+    - domain: HEALTH|FINANCE|LEGAL|MINORS|UGC|PRIVACY|PAYMENT|ADVERTISING|THIRD_PARTY_API|PLATFORM_REVIEW|CONTENT_RIGHTS
+      level: LOW|MEDIUM|HIGH|BLOCKED
+      reason: "..."
+      mitigation: "..."
 ```
 
-## Mini Game assessment
+## Readiness / Confidence
 
 ```yaml
-mini_game:
-  opportunity_score: 0-100
-  hook:
-    mechanic: "..."
-    seconds_to_understand: null
-  retention:
-    replay_loop: "..."
-    progression_loop: "..."
-  social_loop:
-    ranking: true|false
-    group_play: true|false
-    shareable_moment: "..."
-  monetization:
-    model: IAA|IAP|HYBRID|UNKNOWN
-    rewarded_video_fit: HIGH|MEDIUM|LOW
-  prototype_test:
-    target_session_count: null
-    target_replay_rate: null
-```
-
-## Platform readiness
-
-```yaml
-readiness_score: 0-100
-wechat_policy:
-  category_status: VERIFIED|VERIFY_OFFICIAL|BLOCKED
-  qualification_status: VERIFIED|VERIFY_OFFICIAL|BLOCKED
-  privacy_status: GREEN|YELLOW|RED
-  payment_status: GREEN|VERIFY_OFFICIAL|BLOCKED|NOT_NEEDED
-  notification_status: GREEN|VERIFY_OFFICIAL|NOT_NEEDED
-  ads_status: GREEN|VERIFY_OFFICIAL|BLOCKED|NOT_NEEDED
-  performance_status: GREEN|VERIFY_POC|BLOCKED
-  review_risk: LOW|MEDIUM|HIGH
+readiness:
+  score: 0-100
   blockers: []
-confidence_score: 0-100
-confidence_label: High|Medium|Low
-recommendation: "..."
+  component_notes: []
+
+confidence:
+  score: 0-100
+  label: High|Medium|Low
+  strongest_support: []
+  weakest_assumptions: []
 ```
 
-## Default final report — GLOBAL_DISCOVERY
+## Contrarian review
 
-- Top 10 Mini Program Opportunities
-- Top 10 Mini Game Opportunities
-- Cross-category Top 5 Best Bets
+```yaml
+contrarian_review:
+  bull_case: "..."
+  bear_case: []
+  replacement_risk: HIGH|MEDIUM|LOW
+  fatal_assumption: "..."
+  fatal_assumption_test: "..."
+  verdict_after_red_team: KEEP|DOWNRANK|VALIDATE_FIRST|REJECT
+  score_change:
+    opportunity_delta: 0
+    readiness_delta: 0
+    confidence_delta: 0
+    reason: "..."
+```
 
-## Default final report — USER_SEED
+## Validation OS
 
-- seed interpretation/provenance
-- problem model / JTBD
-- original idea verdict
+```yaml
+validation_experiment:
+  experiment_id: "..."
+  opportunity_id: "..."
+  hypothesis: "..."
+  riskiest_assumption: "..."
+  method: "..."
+  target_segment: "..."
+  sample_target: "..."
+  metric: "..."
+  success_threshold: "..."
+  kill_threshold: "..."
+  result:
+    status: NOT_RUN|RUNNING|PASS|FAIL|MIXED
+    observed_value: null
+    notes: ""
+  decision: CONTINUE|PIVOT|STOP|UNKNOWN
+  learning: ""
+```
+
+## Rolling Pool
+
+Canonical persistent state:
+
+`data/rolling_pool.json`
+
+```yaml
+rolling_state:
+  persistence: ACTIVE|DEGRADED
+  mini_program:
+    fresh: []
+    rolling: []
+    champions: []
+  mini_game:
+    fresh: []
+    rolling: []
+    champions: []
+  champion_movement:
+    new: []
+    retained: []
+    heating: []
+    cooling: []
+    dropped: []
+```
+
+## Default report — GLOBAL_DISCOVERY
+
+- Source Status
+- Rolling Pool Status
+- Top 10 Mini Program
+- Top 10 Mini Game
+- Cross-category Top 5
+- Top 3 Score Breakdown
+- Top 3 Contrarian Review
+- China Demand Queue
+- Rights / WeChat blockers
+- Validation experiments
+- Champion movement
+
+## Default report — USER_SEED
+
+- Seed interpretation/provenance
+- JTBD
+- Reframe
 - 3–5 concepts
-- route for each concept
-- scored shortlist
-- recommended concept
+- Route
+- Scored shortlist with breakdown
+- China Demand
+- Rights & Risk
+- Contrarian Review
+- Recommended concept
 - P0
-- fastest validation
-- blockers
+- Validation experiment
 - Kill Criteria
