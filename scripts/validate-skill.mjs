@@ -26,6 +26,16 @@ const required = [
   "CITATION.cff",
   "package.json",
   ".env.example",
+  "references/score_explainability.md",
+  "references/evidence_quality_matrix.md",
+  "references/contrarian_reviewer.md",
+  "references/rights_and_risk_gate.md",
+  "references/china_demand_validator.md",
+  "references/validation_os.md",
+  "references/master_prompt_v3_6.md",
+  "data/rolling_pool.json",
+  "data/rolling_pool.schema.json",
+  "scripts/rolling-pool.mjs",
   "references/user_seed_mode.md",
   "references/jtbd_extraction.md",
   "references/product_reframe.md",
@@ -43,7 +53,7 @@ const required = [
   "test-prompts.json",
   "docs/LATEST_RUN.md",
   "assets/readme/hero.svg",
-  "assets/readme/social-preview-v1.4.svg",
+  "assets/readme/social-preview-v1.5.svg",
   "assets/readme/scoring.svg",
   "assets/readme/latest-run-2026-11-06.svg"
 ];
@@ -108,6 +118,23 @@ if (!errors.length) {
   for (const rel of productizationRefs) {
     if (!skill.includes(rel)) errors.push(`SKILL.md does not reference v1.4 productization file: ${rel}`);
   }
+
+  const v15Refs = [
+    "references/score_explainability.md",
+    "references/evidence_quality_matrix.md",
+    "references/contrarian_reviewer.md",
+    "references/rights_and_risk_gate.md",
+    "references/china_demand_validator.md",
+    "references/validation_os.md",
+    "references/master_prompt_v3_6.md"
+  ];
+  for (const rel of v15Refs) {
+    if (!skill.includes(rel)) errors.push(`SKILL.md does not reference v1.5 trust/validation file: ${rel}`);
+  }
+
+  const pool = JSON.parse(read("data/rolling_pool.json"));
+  if (pool.privacy !== "PUBLIC_MARKET_SIGNALS_ONLY") errors.push("rolling pool privacy boundary missing.");
+  if (pool.skill_version !== version) errors.push(`rolling pool skill_version ${pool.skill_version} != VERSION ${version}.`);
 
   const scoring = read("references/scoring_model.md");
   if (!scoring.includes("WeChat Mini Program Opportunity Score")) {
