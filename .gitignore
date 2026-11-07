@@ -36,3 +36,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+
+# WorkBuddy generated avatars
+workbuddy/avatars/*.png
+!workbuddy/avatars/README.md
