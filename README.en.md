@@ -4,9 +4,9 @@
 
 # xiaokangxxs-miniprogram-scout
 
-> **Global product & game signals → WeChat opportunity intelligence**
+> **Global signals or your own idea / repositories / feedback → WeChat opportunity intelligence**
 
-[![Version](https://img.shields.io/badge/version-1.3.3-blue.svg)](VERSION)
+[![Version](https://img.shields.io/badge/version-1.4.0-blue.svg)](VERSION)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Agent Skill](https://img.shields.io/badge/Agent-Skill-blueviolet.svg)](SKILL.md)
 [![WeChat](https://img.shields.io/badge/WeChat-Mini%20Program%20%2B%20Mini%20Game-07C160.svg)](README.md)
@@ -59,6 +59,34 @@ It does **not** blindly translate Product Hunt launches. It combines multi-sourc
 | Rolling opportunity pool | 14-day pool + champion board, so good ideas do not disappear tomorrow |
 | WeChat readiness | Category, qualification, privacy, payment, notifications, ads, game publication, performance |
 | Requirement conversion | Top 10 boards + Top 3 Mini PRDs + Cross-category Best Bets |
+
+## v1.4 · From discovery to productization
+
+The Skill can now start from **your own seed material**, not only public discovery sources.
+
+```text
+idea / requirement / GitHub repos / competitor links / feedback / files
+→ User Seed
+→ JTBD Extraction
+→ Product Reframe
+→ 3–5 Concepts
+→ Product Form Router
+→ Mini Program / Mini Game scoring
+→ P0 + validation + Kill Criteria
+```
+
+The model is explicitly allowed to say:
+
+> The underlying problem is worth solving, but your current product definition is weak.
+
+New references:
+
+- [User Seed Mode](references/user_seed_mode.md)
+- [JTBD Extraction](references/jtbd_extraction.md)
+- [Product Reframe](references/product_reframe.md)
+- [Multi-Concept Generation](references/multi_concept_generation.md)
+
+---
 
 ## WorkBuddy expert team
 
