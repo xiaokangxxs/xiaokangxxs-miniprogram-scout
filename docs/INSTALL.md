@@ -1,6 +1,6 @@
 # Installation & Agent Compatibility
 
-Version: 1.3.2
+Version: 1.3.3
 
 ## Recommended: Skills CLI
 
@@ -96,6 +96,39 @@ The Skill can still score and convert opportunities if the user provides:
 
 The Agent must disclose that fresh discovery was not performed.
 
+## WorkBuddy expert team
+
+This repository also ships a WorkBuddy expert-team source package under:
+
+```text
+workbuddy/
+```
+
+The team contains one lead and six specialist agents and shares the same Scout Skill.
+
+Before packaging:
+
+```bash
+npm run sync:workbuddy
+npm run validate:workbuddy
+```
+
+Generate avatars and a WorkBuddy-ready ZIP:
+
+```bash
+npm run build:workbuddy
+```
+
+Output:
+
+```text
+dist/wechat-opportunity-scout-team-workbuddy.zip
+```
+
+The build step always copies the current root Skill/references into the package, so the distributable ZIP uses the repository's current `VERSION`.
+
+The raw `workbuddy/` directory is the maintainable source package. For WorkBuddy import/upload, prefer the generated ZIP.
+
 ## Credentials
 
 Prefer the host Agent's Secret Store.
@@ -136,6 +169,7 @@ If your machine has an older Node version and you do not want to upgrade, use th
 
 ```bash
 npm run validate
+npm run validate:workbuddy
 npm run scan:secrets
 npm run check
 ```
