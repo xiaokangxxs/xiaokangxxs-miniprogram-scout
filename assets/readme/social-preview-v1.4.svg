@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.55" stop-color="#0d2440"/><stop offset="1" stop-color="#0a3a35"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#58a6ff"/><stop offset="0.5" stop-color="#c084fc"/><stop offset="1" stop-color="#3ddc97"/>
+    </linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="10" stdDeviation="16" flood-opacity=".28"/></filter>
+  </defs>
+  <rect width="1280" height="640" rx="0" fill="url(#bg)"/>
+  <circle cx="1150" cy="70" r="160" fill="#2f81f7" opacity=".11"/><circle cx="80" cy="590" r="190" fill="#2ea043" opacity=".10"/>
+  <text x="64" y="78" fill="#fff" font-size="36" font-weight="700" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">From Discovery to Productization</text>
+  <text x="64" y="116" fill="#9fb3c8" font-size="20" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">全球信号，或者你直接给需求 / GitHub / 竞品 → 找到真正值得做的微信产品。</text>
+  <g filter="url(#shadow)">
+    <rect x="64" y="174" width="250" height="300" rx="22" fill="#0f1f33" stroke="#2b4565"/>
+    <rect x="363" y="174" width="250" height="300" rx="22" fill="#0f1f33" stroke="#2b4565"/>
+    <rect x="662" y="174" width="250" height="300" rx="22" fill="#0f1f33" stroke="#2b4565"/>
+    <rect x="961" y="174" width="255" height="300" rx="22" fill="#0f1f33" stroke="#2b4565"/>
+  </g>
+  <text x="90" y="218" fill="#58a6ff" font-size="16" font-weight="700" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">01 · INPUT</text>
+  <text x="90" y="258" fill="#fff" font-size="25" font-weight="700" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">两种入口</text>
+  <text x="90" y="300" fill="#b7c6d8" font-size="17" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">全球新品 / 游戏机制</text>
+  <text x="90" y="334" fill="#b7c6d8" font-size="17" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">用户需求 / GitHub</text>
+  <text x="90" y="368" fill="#b7c6d8" font-size="17" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">竞品 / 反馈 / 文件</text>
+  <text x="389" y="218" fill="#c084fc" font-size="16" font-weight="700" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">02 · UNDERSTAND</text>
+  <text x="389" y="258" fill="#fff" font-size="25" font-weight="700" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">JTBD 提取</text>
+  <text x="389" y="300" fill="#b7c6d8" font-size="17" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">谁 · 什么时候 · 为什么卡</text>
+  <text x="389" y="334" fill="#b7c6d8" font-size="17" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">当前替代方案</text>
+  <text x="389" y="368" fill="#b7c6d8" font-size="17" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">真正想得到的结果</text>
+  <text x="688" y="218" fill="#f59e0b" font-size="16" font-weight="700" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">03 · PRODUCTIZE</text>
+  <text x="688" y="258" fill="#fff" font-size="25" font-weight="700" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">重构 + 多方案</text>
+  <text x="688" y="300" fill="#b7c6d8" font-size="17" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">KEEP / REFRAME</text>
+  <text x="688" y="334" fill="#b7c6d8" font-size="17" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">SPLIT / REJECT</text>
+  <text x="688" y="368" fill="#b7c6d8" font-size="17" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">生成 3–5 个 Concepts</text>
+  <text x="987" y="218" fill="#3ddc97" font-size="16" font-weight="700" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">04 · DECIDE</text>
+  <text x="987" y="258" fill="#fff" font-size="25" font-weight="700" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">路由 + 双引擎</text>
+  <text x="987" y="300" fill="#b7c6d8" font-size="17" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">小程序：搜索 · 刚需 · 小众</text>
+  <text x="987" y="334" fill="#b7c6d8" font-size="17" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">小游戏：Hook · 复玩 · 社交</text>
+  <text x="987" y="368" fill="#b7c6d8" font-size="17" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">P0 · 验证 · Kill Criteria</text>
+  <path d="M324 320 H348" stroke="url(#line)" stroke-width="5" stroke-linecap="round"/><path d="M340 311 l16 9 -16 9" fill="#58a6ff"/>
+  <path d="M623 320 H647" stroke="url(#line)" stroke-width="5" stroke-linecap="round"/><path d="M639 311 l16 9 -16 9" fill="#c084fc"/>
+  <path d="M922 320 H946" stroke="url(#line)" stroke-width="5" stroke-linecap="round"/><path d="M938 311 l16 9 -16 9" fill="#3ddc97"/>
+  <rect x="64" y="515" width="1152" height="62" rx="18" fill="#fff" opacity=".06"/>
+  <text x="640" y="542" text-anchor="middle" fill="#dce7f2" font-size="17" font-weight="600" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">User Seed · JTBD · Product Reframe · 3–5 Concepts · Mini Program / Mini Game 双引擎</text>
+  <text x="640" y="566" text-anchor="middle" fill="#9fb3c8" font-size="15" font-family="system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">Observed / Proxy / Estimate / Unknown · Opportunity ≠ Readiness · WeChat official rules win</text>
+</svg>
