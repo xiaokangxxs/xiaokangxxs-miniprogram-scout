@@ -64,3 +64,30 @@ Read `CONTRIBUTING.md`. A source contribution should state:
 - fields used
 - fallback behavior
 - how it affects evidence confidence
+
+
+## Can I give the Skill my own product idea, GitHub repositories or requirements?
+
+Yes. v1.4 adds **User Seed Mode**.
+
+The Skill can start from your material, extract the JTBD, challenge the original product definition, generate 3–5 product concepts, then route and score them.
+
+It does not require a global Product Hunt-style scan first.
+
+## Will the Skill always rewrite my idea?
+
+No.
+
+Product Reframe returns one of:
+- KEEP
+- REFRAME
+- SPLIT
+- REJECT
+
+If the original concept already expresses the JTBD well, it should use KEEP.
+
+## Does v1.4 change the Mini Program / Mini Game scoring weights?
+
+No.
+
+v1.4 adds a productization layer **before** the existing Product Form Router and dual scoring engines.
