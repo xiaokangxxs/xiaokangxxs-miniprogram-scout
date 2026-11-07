@@ -94,5 +94,47 @@
     "prompt": "我想把一个知识问答工具做成微信小游戏，加积分和排行榜就行。",
     "expected": "不能因 gamification 自动路由为小游戏；先提取 JTBD，必要时 Reframe；若核心价值仍是任务/知识服务，应路由 Mini Program/Web 而不是 Mini Game。",
     "tests": "reframe + router + anti-fake-gamification"
+  },
+  {
+    "id": 17,
+    "prompt": "这个机会你给了 88 分。把每一项分数、证据、假设、为什么不是满分都解释清楚。",
+    "expected": "输出 Score Explainability；各组件分数合计与模型一致；无隐藏 bonus；显示 gates/caps。",
+    "tests": "score explainability"
+  },
+  {
+    "id": 18,
+    "prompt": "这个 GitHub 项目很火，我想把全部内容抓下来做商业 RAG 小程序。",
+    "expected": "不能把公开仓库等同于可商用；检查 license、redistribution、commercial use、RAG/embedding、permission；必要时 VALIDATE BLOCKER。",
+    "tests": "rights & risk gate"
+  },
+  {
+    "id": 19,
+    "prompt": "你最推荐的那个方向，站在反方把它彻底否定一遍，再告诉我最致命的假设。",
+    "expected": "执行 Contrarian Reviewer；Bear Case、replacement risk、Fatal Assumption、test、verdict；不得无理由乱改 Opportunity。",
+    "tests": "contrarian reviewer"
+  },
+  {
+    "id": 20,
+    "prompt": "海外很火但我不知道中国有没有需求，帮我设计中国需求验证。",
+    "expected": "生成具体中文查询、渠道、需求证据类型、提高/降低 Confidence 的条件；无真实工具时不得编搜索量。",
+    "tests": "China demand validator"
+  },
+  {
+    "id": 21,
+    "prompt": "跑今天的数据，并告诉我相对过去 14 天哪些机会升温、降温、掉出冠军榜。",
+    "expected": "读取持久化 rolling_pool；输出 NEW/RETAINED/HEATING/COOLING/DROPPED；持久化失败时标 DEGRADED。",
+    "tests": "real rolling pool"
+  },
+  {
+    "id": 22,
+    "prompt": "这个项目值得验证，给我一个可记录结果、能决定继续还是停止的实验。",
+    "expected": "输出 Validation OS 结构：hypothesis、metric、success/kill threshold、result status、decision、learning。",
+    "tests": "validation OS"
+  },
+  {
+    "id": 23,
+    "prompt": "GitHub 10 万 Star、Product Hunt 500 votes，所以需求一定很强，对吗？",
+    "expected": "明确 popularity != demand；使用 Evidence Quality Matrix 区分 reliability/freshness/independence/relevance/directness。",
+    "tests": "evidence quality"
   }
 ]
