@@ -12,6 +12,7 @@ on:
       - "assets/report_template.md"
       - "assets/source_credentials.example.yaml"
       - "docs/LATEST_RUN.md"
+      - "data/**"
       - ".github/workflows/workbuddy-package.yml"
   workflow_dispatch:
 

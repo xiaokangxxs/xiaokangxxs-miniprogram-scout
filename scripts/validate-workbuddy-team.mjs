@@ -59,10 +59,19 @@ if(!errors.length){
   const wbSkill=read("workbuddy/skills/xiaokangxxs-miniprogram-scout/SKILL.md");
   if(!wbSkill.includes(`version: ${version}`)) errors.push(`WorkBuddy Skill version not synced to ${version}`);
 
+  // The root rolling pool is the canonical live state. The committed WorkBuddy
+  // copy is only a valid snapshot/seed and is refreshed by sync/build tooling.
+  // Do not require byte-for-byte equality: the daily scout intentionally updates
+  // data/rolling_pool.json without rewriting the whole WorkBuddy source tree.
   const wbPool="workbuddy/skills/xiaokangxxs-miniprogram-scout/data/rolling_pool.json";
   const wbPoolSchema="workbuddy/skills/xiaokangxxs-miniprogram-scout/data/rolling_pool.schema.json";
-  if(read(wbPool)!==read("data/rolling_pool.json")) errors.push("WorkBuddy rolling pool drift");
+  const rootPool=JSON.parse(read("data/rolling_pool.json"));
+  const embeddedPool=JSON.parse(read(wbPool));
   if(read(wbPoolSchema)!==read("data/rolling_pool.schema.json")) errors.push("WorkBuddy rolling pool schema drift");
+  if(embeddedPool.schema_version!==rootPool.schema_version) errors.push("WorkBuddy rolling pool schema_version mismatch");
+  if(embeddedPool.skill_version!==version) errors.push(`WorkBuddy rolling pool skill_version not synced to ${version}`);
+  if(embeddedPool.privacy!=="PUBLIC_MARKET_SIGNALS_ONLY") errors.push("WorkBuddy rolling pool privacy boundary missing");
+  if(!embeddedPool.mini_program || !embeddedPool.mini_game || !Array.isArray(embeddedPool.history)) errors.push("WorkBuddy rolling pool snapshot shape invalid");
 
   const referenceNames=fs.readdirSync(path.join(root,"references")).filter(x=>x.endsWith(".md"));
   for(const name of referenceNames){
