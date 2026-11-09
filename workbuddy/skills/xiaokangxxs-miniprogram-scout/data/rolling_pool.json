@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
   "skill_version": "1.5.0",
-  "updated_at": "2026-11-07T09:45:00+08:00",
-  "updated_by": "2026-11-07 v1.5 Scout Run",
+  "updated_at": "2026-11-09T09:00:00+08:00",
+  "updated_by": "2026-11-09 GLOBAL_DISCOVERY v1.5.0",
   "status": "ACTIVE",
   "privacy": "PUBLIC_MARKET_SIGNALS_ONLY",
   "mini_program": {
@@ -12,57 +12,114 @@
         "name": "整机值不值 / PC 配置估价",
         "product_form": "WECHAT_MINIPROGRAM",
         "first_seen_at": "2026-11-06T09:00:00+08:00",
-        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-09T09:00:00+08:00",
         "opportunity_score": 91,
         "readiness_score": 58,
         "confidence_score": 88,
         "heat_status": "HEATING",
-        "sources": [],
+        "sources": [
+          {
+            "url": "https://news.ycombinator.com/show",
+            "summary": "2026-11-09 Show HN: Build a PC in 3D in the Browser; related PC workflow signal (not proof of valuation demand)",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-09T09:00:00+08:00"
+          }
+        ],
         "score_history": [
           {
             "at": "2026-11-06T09:00:00+08:00",
             "opportunity_score": 89
+          },
+          {
+            "at": "2026-11-09T09:00:00+08:00",
+            "opportunity_score": 91
           }
         ],
-        "latest_change_reason": "Fresh 2026-11-07 evidence / rank improvement"
+        "latest_change_reason": "2026-11-09 current public source corroboration; popularity proxy not China demand"
       },
       {
         "opportunity_id": "real-estate-photo-ai",
         "name": "房源照片 AI 美化",
         "product_form": "WECHAT_MINIPROGRAM",
         "first_seen_at": "2026-11-06T09:00:00+08:00",
-        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-09T09:00:00+08:00",
         "opportunity_score": 89,
         "readiness_score": 82,
         "confidence_score": 90,
-        "heat_status": "STABLE",
-        "sources": [],
+        "heat_status": "HEATING",
+        "sources": [
+          {
+            "url": "https://betalist.com/",
+            "summary": "BetaList Chezz — homes and agents discovery",
+            "observed_at": "2026-11-08T08:57:56+08:00",
+            "evidence_type": "PROXY"
+          },
+          {
+            "url": "https://betalist.com/",
+            "summary": "2026-11-08 BetaList PicForge / AI Image Editor product-photo enhancement adjacent theme, not direct real estate demand",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-09T09:00:00+08:00"
+          }
+        ],
         "score_history": [
           {
             "at": "2026-11-06T09:00:00+08:00",
             "opportunity_score": 90
+          },
+          {
+            "at": "2026-11-08T08:57:56+08:00",
+            "opportunity_score": 89,
+            "readiness_score": 82,
+            "confidence_score": 90
+          },
+          {
+            "at": "2026-11-09T09:00:00+08:00",
+            "opportunity_score": 89
           }
         ],
-        "latest_change_reason": "Retained from previous run"
+        "latest_change_reason": "2026-11-09 current public source corroboration; popularity proxy not China demand"
       },
       {
         "opportunity_id": "site-code-security-check",
         "name": "网站 / 代码安全快检",
         "product_form": "WECHAT_MINIPROGRAM",
         "first_seen_at": "2026-11-06T09:00:00+08:00",
-        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-09T09:00:00+08:00",
         "opportunity_score": 87,
         "readiness_score": 74,
         "confidence_score": 82,
         "heat_status": "HEATING",
-        "sources": [],
+        "sources": [
+          {
+            "url": "https://betalist.com/",
+            "summary": "BetaList FreeDAST — live site security grading",
+            "observed_at": "2026-11-08T08:57:56+08:00",
+            "evidence_type": "PROXY"
+          },
+          {
+            "url": "https://news.ycombinator.com/show",
+            "summary": "2026-11-09 Show HN SafeScript and GitHub repository hardening; security tooling theme proxy",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-09T09:00:00+08:00"
+          }
+        ],
         "score_history": [
           {
             "at": "2026-11-06T09:00:00+08:00",
             "opportunity_score": 83
+          },
+          {
+            "at": "2026-11-08T08:57:56+08:00",
+            "opportunity_score": 87,
+            "readiness_score": 74,
+            "confidence_score": 82
+          },
+          {
+            "at": "2026-11-09T09:00:00+08:00",
+            "opportunity_score": 87
           }
         ],
-        "latest_change_reason": "Fresh 2026-11-07 evidence / rank improvement"
+        "latest_change_reason": "2026-11-09 current public source corroboration; popularity proxy not China demand"
       },
       {
         "opportunity_id": "video-to-text-summary",
@@ -176,6 +233,104 @@
         "sources": [],
         "score_history": [],
         "latest_change_reason": "Fresh 2026-11-07 evidence / rank improvement"
+      },
+      {
+        "opportunity_id": "renovation-repair-quote",
+        "name": "装修 / 维修报价估算",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-06T09:00:00+08:00",
+        "opportunity_score": 80,
+        "readiness_score": 55,
+        "confidence_score": 68,
+        "heat_status": "COOLING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Out of current Top10; retained in 14-day pool"
+      },
+      {
+        "opportunity_id": "trading-card-price-radar",
+        "name": "卡牌价格雷达",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-06T09:00:00+08:00",
+        "opportunity_score": 79,
+        "readiness_score": 58,
+        "confidence_score": 78,
+        "heat_status": "COOLING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Out of current Top10; retained in 14-day pool"
+      },
+      {
+        "opportunity_id": "optometry-record-reminder",
+        "name": "验光档案 + 复购提醒",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-06T09:00:00+08:00",
+        "opportunity_score": 77,
+        "readiness_score": 75,
+        "confidence_score": 85,
+        "heat_status": "COOLING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Out of current Top10; retained in 14-day pool"
+      },
+      {
+        "opportunity_id": "web-change-radar",
+        "name": "网页变化雷达",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-06T09:00:00+08:00",
+        "opportunity_score": 74,
+        "readiness_score": 68,
+        "confidence_score": 79,
+        "heat_status": "COOLING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Out of current Top10; retained in 14-day pool"
+      },
+      {
+        "opportunity_id": "social-sales-lead-radar",
+        "name": "社媒购买意向线索雷达",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-08T08:57:56+08:00",
+        "last_seen_at": "2026-11-08T08:57:56+08:00",
+        "opportunity_score": 74,
+        "readiness_score": 57,
+        "confidence_score": 54,
+        "heat_status": "HEATING",
+        "sources": [
+          {
+            "url": "https://betalist.com/",
+            "summary": "Revenue Scout listed as trending; only popularity proxy",
+            "observed_at": "2026-11-08T08:57:56+08:00",
+            "evidence_type": "PROXY"
+          }
+        ],
+        "score_history": [],
+        "latest_change_reason": "NEW; BetaList trending proxy; privacy/API and China demand unverified"
+      },
+      {
+        "opportunity_id": "merchant-review-proof-collector",
+        "name": "新店真实测评收集与回访",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-09T09:00:00+08:00",
+        "last_seen_at": "2026-11-09T09:00:00+08:00",
+        "opportunity_score": 77,
+        "readiness_score": 72,
+        "confidence_score": 53,
+        "heat_status": "HEATING",
+        "sources": [
+          {
+            "url": "https://betalist.com/",
+            "summary": "2026-11-08 BetaList Avitime verified tester reviews for new online shops; proxy only",
+            "observed_at": "2026-11-09T09:00:00+08:00",
+            "evidence_type": "PROXY"
+          }
+        ],
+        "score_history": [],
+        "latest_change_reason": "NEW: BetaList adjacent product; Chinese demand unverified"
       }
     ],
     "rolling": [
@@ -184,57 +339,114 @@
         "name": "整机值不值 / PC 配置估价",
         "product_form": "WECHAT_MINIPROGRAM",
         "first_seen_at": "2026-11-06T09:00:00+08:00",
-        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-09T09:00:00+08:00",
         "opportunity_score": 91,
         "readiness_score": 58,
         "confidence_score": 88,
         "heat_status": "HEATING",
-        "sources": [],
+        "sources": [
+          {
+            "url": "https://news.ycombinator.com/show",
+            "summary": "2026-11-09 Show HN: Build a PC in 3D in the Browser; related PC workflow signal (not proof of valuation demand)",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-09T09:00:00+08:00"
+          }
+        ],
         "score_history": [
           {
             "at": "2026-11-06T09:00:00+08:00",
             "opportunity_score": 89
+          },
+          {
+            "at": "2026-11-09T09:00:00+08:00",
+            "opportunity_score": 91
           }
         ],
-        "latest_change_reason": "Fresh 2026-11-07 evidence / rank improvement"
+        "latest_change_reason": "2026-11-09 current public source corroboration; popularity proxy not China demand"
       },
       {
         "opportunity_id": "real-estate-photo-ai",
         "name": "房源照片 AI 美化",
         "product_form": "WECHAT_MINIPROGRAM",
         "first_seen_at": "2026-11-06T09:00:00+08:00",
-        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-09T09:00:00+08:00",
         "opportunity_score": 89,
         "readiness_score": 82,
         "confidence_score": 90,
-        "heat_status": "STABLE",
-        "sources": [],
+        "heat_status": "HEATING",
+        "sources": [
+          {
+            "url": "https://betalist.com/",
+            "summary": "BetaList Chezz — homes and agents discovery",
+            "observed_at": "2026-11-08T08:57:56+08:00",
+            "evidence_type": "PROXY"
+          },
+          {
+            "url": "https://betalist.com/",
+            "summary": "2026-11-08 BetaList PicForge / AI Image Editor product-photo enhancement adjacent theme, not direct real estate demand",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-09T09:00:00+08:00"
+          }
+        ],
         "score_history": [
           {
             "at": "2026-11-06T09:00:00+08:00",
             "opportunity_score": 90
+          },
+          {
+            "at": "2026-11-08T08:57:56+08:00",
+            "opportunity_score": 89,
+            "readiness_score": 82,
+            "confidence_score": 90
+          },
+          {
+            "at": "2026-11-09T09:00:00+08:00",
+            "opportunity_score": 89
           }
         ],
-        "latest_change_reason": "Retained from previous run"
+        "latest_change_reason": "2026-11-09 current public source corroboration; popularity proxy not China demand"
       },
       {
         "opportunity_id": "site-code-security-check",
         "name": "网站 / 代码安全快检",
         "product_form": "WECHAT_MINIPROGRAM",
         "first_seen_at": "2026-11-06T09:00:00+08:00",
-        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-09T09:00:00+08:00",
         "opportunity_score": 87,
         "readiness_score": 74,
         "confidence_score": 82,
         "heat_status": "HEATING",
-        "sources": [],
+        "sources": [
+          {
+            "url": "https://betalist.com/",
+            "summary": "BetaList FreeDAST — live site security grading",
+            "observed_at": "2026-11-08T08:57:56+08:00",
+            "evidence_type": "PROXY"
+          },
+          {
+            "url": "https://news.ycombinator.com/show",
+            "summary": "2026-11-09 Show HN SafeScript and GitHub repository hardening; security tooling theme proxy",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-09T09:00:00+08:00"
+          }
+        ],
         "score_history": [
           {
             "at": "2026-11-06T09:00:00+08:00",
             "opportunity_score": 83
+          },
+          {
+            "at": "2026-11-08T08:57:56+08:00",
+            "opportunity_score": 87,
+            "readiness_score": 74,
+            "confidence_score": 82
+          },
+          {
+            "at": "2026-11-09T09:00:00+08:00",
+            "opportunity_score": 87
           }
         ],
-        "latest_change_reason": "Fresh 2026-11-07 evidence / rank improvement"
+        "latest_change_reason": "2026-11-09 current public source corroboration; popularity proxy not China demand"
       },
       {
         "opportunity_id": "video-to-text-summary",
@@ -404,6 +616,48 @@
         "sources": [],
         "score_history": [],
         "latest_change_reason": "Out of current Top10; retained in 14-day pool"
+      },
+      {
+        "opportunity_id": "social-sales-lead-radar",
+        "name": "社媒购买意向线索雷达",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-08T08:57:56+08:00",
+        "last_seen_at": "2026-11-08T08:57:56+08:00",
+        "opportunity_score": 74,
+        "readiness_score": 57,
+        "confidence_score": 54,
+        "heat_status": "HEATING",
+        "sources": [
+          {
+            "url": "https://betalist.com/",
+            "summary": "Revenue Scout listed as trending; only popularity proxy",
+            "observed_at": "2026-11-08T08:57:56+08:00",
+            "evidence_type": "PROXY"
+          }
+        ],
+        "score_history": [],
+        "latest_change_reason": "NEW; BetaList trending proxy; privacy/API and China demand unverified"
+      },
+      {
+        "opportunity_id": "merchant-review-proof-collector",
+        "name": "新店真实测评收集与回访",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-09T09:00:00+08:00",
+        "last_seen_at": "2026-11-09T09:00:00+08:00",
+        "opportunity_score": 77,
+        "readiness_score": 72,
+        "confidence_score": 53,
+        "heat_status": "HEATING",
+        "sources": [
+          {
+            "url": "https://betalist.com/",
+            "summary": "2026-11-08 BetaList Avitime verified tester reviews for new online shops; proxy only",
+            "observed_at": "2026-11-09T09:00:00+08:00",
+            "evidence_type": "PROXY"
+          }
+        ],
+        "score_history": [],
+        "latest_change_reason": "NEW: BetaList adjacent product; Chinese demand unverified"
       }
     ],
     "champions": [
@@ -412,57 +666,114 @@
         "name": "整机值不值 / PC 配置估价",
         "product_form": "WECHAT_MINIPROGRAM",
         "first_seen_at": "2026-11-06T09:00:00+08:00",
-        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-09T09:00:00+08:00",
         "opportunity_score": 91,
         "readiness_score": 58,
         "confidence_score": 88,
         "heat_status": "HEATING",
-        "sources": [],
+        "sources": [
+          {
+            "url": "https://news.ycombinator.com/show",
+            "summary": "2026-11-09 Show HN: Build a PC in 3D in the Browser; related PC workflow signal (not proof of valuation demand)",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-09T09:00:00+08:00"
+          }
+        ],
         "score_history": [
           {
             "at": "2026-11-06T09:00:00+08:00",
             "opportunity_score": 89
+          },
+          {
+            "at": "2026-11-09T09:00:00+08:00",
+            "opportunity_score": 91
           }
         ],
-        "latest_change_reason": "Fresh 2026-11-07 evidence / rank improvement"
+        "latest_change_reason": "2026-11-09 current public source corroboration; popularity proxy not China demand"
       },
       {
         "opportunity_id": "real-estate-photo-ai",
         "name": "房源照片 AI 美化",
         "product_form": "WECHAT_MINIPROGRAM",
         "first_seen_at": "2026-11-06T09:00:00+08:00",
-        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-09T09:00:00+08:00",
         "opportunity_score": 89,
         "readiness_score": 82,
         "confidence_score": 90,
-        "heat_status": "STABLE",
-        "sources": [],
+        "heat_status": "HEATING",
+        "sources": [
+          {
+            "url": "https://betalist.com/",
+            "summary": "BetaList Chezz — homes and agents discovery",
+            "observed_at": "2026-11-08T08:57:56+08:00",
+            "evidence_type": "PROXY"
+          },
+          {
+            "url": "https://betalist.com/",
+            "summary": "2026-11-08 BetaList PicForge / AI Image Editor product-photo enhancement adjacent theme, not direct real estate demand",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-09T09:00:00+08:00"
+          }
+        ],
         "score_history": [
           {
             "at": "2026-11-06T09:00:00+08:00",
             "opportunity_score": 90
+          },
+          {
+            "at": "2026-11-08T08:57:56+08:00",
+            "opportunity_score": 89,
+            "readiness_score": 82,
+            "confidence_score": 90
+          },
+          {
+            "at": "2026-11-09T09:00:00+08:00",
+            "opportunity_score": 89
           }
         ],
-        "latest_change_reason": "Retained from previous run"
+        "latest_change_reason": "2026-11-09 current public source corroboration; popularity proxy not China demand"
       },
       {
         "opportunity_id": "site-code-security-check",
         "name": "网站 / 代码安全快检",
         "product_form": "WECHAT_MINIPROGRAM",
         "first_seen_at": "2026-11-06T09:00:00+08:00",
-        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-09T09:00:00+08:00",
         "opportunity_score": 87,
         "readiness_score": 74,
         "confidence_score": 82,
         "heat_status": "HEATING",
-        "sources": [],
+        "sources": [
+          {
+            "url": "https://betalist.com/",
+            "summary": "BetaList FreeDAST — live site security grading",
+            "observed_at": "2026-11-08T08:57:56+08:00",
+            "evidence_type": "PROXY"
+          },
+          {
+            "url": "https://news.ycombinator.com/show",
+            "summary": "2026-11-09 Show HN SafeScript and GitHub repository hardening; security tooling theme proxy",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-09T09:00:00+08:00"
+          }
+        ],
         "score_history": [
           {
             "at": "2026-11-06T09:00:00+08:00",
             "opportunity_score": 83
+          },
+          {
+            "at": "2026-11-08T08:57:56+08:00",
+            "opportunity_score": 87,
+            "readiness_score": 74,
+            "confidence_score": 82
+          },
+          {
+            "at": "2026-11-09T09:00:00+08:00",
+            "opportunity_score": 87
           }
         ],
-        "latest_change_reason": "Fresh 2026-11-07 evidence / rank improvement"
+        "latest_change_reason": "2026-11-09 current public source corroboration; popularity proxy not China demand"
       },
       {
         "opportunity_id": "domain-ssl-reminder",
@@ -606,6 +917,27 @@
         "latest_change_reason": "Out of current Top10; retained in 14-day pool"
       },
       {
+        "opportunity_id": "merchant-review-proof-collector",
+        "name": "新店真实测评收集与回访",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-09T09:00:00+08:00",
+        "last_seen_at": "2026-11-09T09:00:00+08:00",
+        "opportunity_score": 77,
+        "readiness_score": 72,
+        "confidence_score": 53,
+        "heat_status": "HEATING",
+        "sources": [
+          {
+            "url": "https://betalist.com/",
+            "summary": "2026-11-08 BetaList Avitime verified tester reviews for new online shops; proxy only",
+            "observed_at": "2026-11-09T09:00:00+08:00",
+            "evidence_type": "PROXY"
+          }
+        ],
+        "score_history": [],
+        "latest_change_reason": "NEW: BetaList adjacent product; Chinese demand unverified"
+      },
+      {
         "opportunity_id": "web-change-radar",
         "name": "网页变化雷达",
         "product_form": "WECHAT_MINIPROGRAM",
@@ -618,6 +950,27 @@
         "sources": [],
         "score_history": [],
         "latest_change_reason": "Out of current Top10; retained in 14-day pool"
+      },
+      {
+        "opportunity_id": "social-sales-lead-radar",
+        "name": "社媒购买意向线索雷达",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-08T08:57:56+08:00",
+        "last_seen_at": "2026-11-08T08:57:56+08:00",
+        "opportunity_score": 74,
+        "readiness_score": 57,
+        "confidence_score": 54,
+        "heat_status": "HEATING",
+        "sources": [
+          {
+            "url": "https://betalist.com/",
+            "summary": "Revenue Scout listed as trending; only popularity proxy",
+            "observed_at": "2026-11-08T08:57:56+08:00",
+            "evidence_type": "PROXY"
+          }
+        ],
+        "score_history": [],
+        "latest_change_reason": "NEW; BetaList trending proxy; privacy/API and China demand unverified"
       },
       {
         "opportunity_id": "ai-quota-reset-reminder",
@@ -642,19 +995,42 @@
         "name": "反套路陷阱闯关",
         "product_form": "WECHAT_MINIGAME",
         "first_seen_at": "2026-11-06T09:00:00+08:00",
-        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-09T09:00:00+08:00",
         "opportunity_score": 92,
         "readiness_score": 86,
         "confidence_score": 93,
-        "heat_status": "STABLE",
-        "sources": [],
+        "heat_status": "HEATING",
+        "sources": [
+          {
+            "url": "https://poki.com/",
+            "summary": "Poki Popular this week includes Level Devil",
+            "observed_at": "2026-11-08T08:57:56+08:00",
+            "evidence_type": "PROXY"
+          },
+          {
+            "url": "https://poki.com/",
+            "summary": "2026-11-09 Poki Popular this week includes Level Devil; current ranking proxy",
+            "evidence_type": "OBSERVED",
+            "observed_at": "2026-11-09T09:00:00+08:00"
+          }
+        ],
         "score_history": [
           {
             "at": "2026-11-06T09:00:00+08:00",
             "opportunity_score": 91
+          },
+          {
+            "at": "2026-11-08T08:57:56+08:00",
+            "opportunity_score": 92,
+            "readiness_score": 86,
+            "confidence_score": 93
+          },
+          {
+            "at": "2026-11-09T09:00:00+08:00",
+            "opportunity_score": 92
           }
         ],
-        "latest_change_reason": "Retained / re-ranked"
+        "latest_change_reason": "2026-11-09 current public source corroboration; popularity proxy not China demand"
       },
       {
         "opportunity_id": "canteen-rush-management",
@@ -717,19 +1093,42 @@
         "name": "刮擦收集增量（去博彩化）",
         "product_form": "WECHAT_MINIGAME",
         "first_seen_at": "2026-11-06T09:00:00+08:00",
-        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-09T09:00:00+08:00",
         "opportunity_score": 87,
         "readiness_score": 72,
         "confidence_score": 93,
-        "heat_status": "COOLING",
-        "sources": [],
+        "heat_status": "HEATING",
+        "sources": [
+          {
+            "url": "https://itch.io/games/new-and-popular",
+            "summary": "itch.io New & Popular includes Scritchy Scratchy",
+            "observed_at": "2026-11-08T08:57:56+08:00",
+            "evidence_type": "PROXY"
+          },
+          {
+            "url": "https://itch.io/games/new-and-popular",
+            "summary": "2026-11-09 itch.io New & Popular lists Scritchy Scratchy; not necessarily a new launch",
+            "evidence_type": "OBSERVED",
+            "observed_at": "2026-11-09T09:00:00+08:00"
+          }
+        ],
         "score_history": [
           {
             "at": "2026-11-06T09:00:00+08:00",
             "opportunity_score": 87
+          },
+          {
+            "at": "2026-11-08T08:57:56+08:00",
+            "opportunity_score": 87,
+            "readiness_score": 72,
+            "confidence_score": 93
+          },
+          {
+            "at": "2026-11-09T09:00:00+08:00",
+            "opportunity_score": 87
           }
         ],
-        "latest_change_reason": "Retained / re-ranked"
+        "latest_change_reason": "2026-11-09 current public source corroboration; popularity proxy not China demand"
       },
       {
         "opportunity_id": "physics-demolition",
@@ -793,19 +1192,140 @@
         "name": "物理平衡驾驶",
         "product_form": "WECHAT_MINIGAME",
         "first_seen_at": "2026-11-06T09:00:00+08:00",
-        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-09T09:00:00+08:00",
         "opportunity_score": 83,
         "readiness_score": 86,
         "confidence_score": 88,
-        "heat_status": "STABLE",
-        "sources": [],
+        "heat_status": "HEATING",
+        "sources": [
+          {
+            "url": "https://poki.com/",
+            "summary": "Poki Popular this week includes Drive Mad",
+            "observed_at": "2026-11-08T08:57:56+08:00",
+            "evidence_type": "PROXY"
+          },
+          {
+            "url": "https://poki.com/",
+            "summary": "2026-11-09 Poki Popular this week includes Drive Mad; current ranking proxy",
+            "evidence_type": "OBSERVED",
+            "observed_at": "2026-11-09T09:00:00+08:00"
+          }
+        ],
         "score_history": [
           {
             "at": "2026-11-06T09:00:00+08:00",
             "opportunity_score": 83
+          },
+          {
+            "at": "2026-11-08T08:57:56+08:00",
+            "opportunity_score": 83,
+            "readiness_score": 86,
+            "confidence_score": 88
+          },
+          {
+            "at": "2026-11-09T09:00:00+08:00",
+            "opportunity_score": 83
           }
         ],
-        "latest_change_reason": "Retained / re-ranked"
+        "latest_change_reason": "2026-11-09 current public source corroboration; popularity proxy not China demand"
+      },
+      {
+        "opportunity_id": "root-growth",
+        "name": "指尖扎根成长",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-06T09:00:00+08:00",
+        "opportunity_score": 84,
+        "readiness_score": 88,
+        "confidence_score": 82,
+        "heat_status": "COOLING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Freshness weakened; retained in 14-day pool"
+      },
+      {
+        "opportunity_id": "absurd-infinite-growth",
+        "name": "荒诞无限成长",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-06T09:00:00+08:00",
+        "opportunity_score": 83,
+        "readiness_score": 90,
+        "confidence_score": 76,
+        "heat_status": "COOLING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Freshness weakened; retained in 14-day pool"
+      },
+      {
+        "opportunity_id": "bunker-idle",
+        "name": "地下工厂 Idle",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-06T09:00:00+08:00",
+        "opportunity_score": 81,
+        "readiness_score": 78,
+        "confidence_score": 86,
+        "heat_status": "COOLING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Freshness weakened; retained in 14-day pool"
+      },
+      {
+        "opportunity_id": "infinite-mining",
+        "name": "无限挖矿增量",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-06T09:00:00+08:00",
+        "last_seen_at": "2026-11-06T09:00:00+08:00",
+        "opportunity_score": 80,
+        "readiness_score": 74,
+        "confidence_score": 68,
+        "heat_status": "COOLING",
+        "sources": [],
+        "score_history": [],
+        "latest_change_reason": "Freshness weakened; retained in 14-day pool"
+      },
+      {
+        "opportunity_id": "daily-timeline-puzzle",
+        "name": "每日时间线排序挑战",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-08T08:57:56+08:00",
+        "last_seen_at": "2026-11-08T08:57:56+08:00",
+        "opportunity_score": 78,
+        "readiness_score": 88,
+        "confidence_score": 66,
+        "heat_status": "HEATING",
+        "sources": [
+          {
+            "url": "https://www.crazygames.com/game/daily-timeline",
+            "summary": "HTML5 daily 20-puzzle mechanic; product released April 2026, not new today",
+            "observed_at": "2026-11-08T08:57:56+08:00",
+            "evidence_type": "PROXY"
+          }
+        ],
+        "score_history": [],
+        "latest_change_reason": "NEW candidate; existing game mechanic discovered today, not a new release"
+      },
+      {
+        "opportunity_id": "stamp-timing-arcade",
+        "name": "限时盖章精准流水线",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-09T09:00:00+08:00",
+        "last_seen_at": "2026-11-09T09:00:00+08:00",
+        "opportunity_score": 79,
+        "readiness_score": 89,
+        "confidence_score": 55,
+        "heat_status": "HEATING",
+        "sources": [
+          {
+            "url": "https://store.steampowered.com/explore/upcoming/",
+            "summary": "2026-11-08 Steam Rubber Stamp Legend, casual arcade time management; Steam PC listing is a portability proxy",
+            "observed_at": "2026-11-09T09:00:00+08:00",
+            "evidence_type": "PROXY"
+          }
+        ],
+        "score_history": [],
+        "latest_change_reason": "NEW: Steam 2026-11-08 product signal; untested WeChat fun loop"
       }
     ],
     "rolling": [
@@ -814,19 +1334,42 @@
         "name": "反套路陷阱闯关",
         "product_form": "WECHAT_MINIGAME",
         "first_seen_at": "2026-11-06T09:00:00+08:00",
-        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-09T09:00:00+08:00",
         "opportunity_score": 92,
         "readiness_score": 86,
         "confidence_score": 93,
-        "heat_status": "STABLE",
-        "sources": [],
+        "heat_status": "HEATING",
+        "sources": [
+          {
+            "url": "https://poki.com/",
+            "summary": "Poki Popular this week includes Level Devil",
+            "observed_at": "2026-11-08T08:57:56+08:00",
+            "evidence_type": "PROXY"
+          },
+          {
+            "url": "https://poki.com/",
+            "summary": "2026-11-09 Poki Popular this week includes Level Devil; current ranking proxy",
+            "evidence_type": "OBSERVED",
+            "observed_at": "2026-11-09T09:00:00+08:00"
+          }
+        ],
         "score_history": [
           {
             "at": "2026-11-06T09:00:00+08:00",
             "opportunity_score": 91
+          },
+          {
+            "at": "2026-11-08T08:57:56+08:00",
+            "opportunity_score": 92,
+            "readiness_score": 86,
+            "confidence_score": 93
+          },
+          {
+            "at": "2026-11-09T09:00:00+08:00",
+            "opportunity_score": 92
           }
         ],
-        "latest_change_reason": "Retained / re-ranked"
+        "latest_change_reason": "2026-11-09 current public source corroboration; popularity proxy not China demand"
       },
       {
         "opportunity_id": "canteen-rush-management",
@@ -889,19 +1432,42 @@
         "name": "刮擦收集增量（去博彩化）",
         "product_form": "WECHAT_MINIGAME",
         "first_seen_at": "2026-11-06T09:00:00+08:00",
-        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-09T09:00:00+08:00",
         "opportunity_score": 87,
         "readiness_score": 72,
         "confidence_score": 93,
-        "heat_status": "COOLING",
-        "sources": [],
+        "heat_status": "HEATING",
+        "sources": [
+          {
+            "url": "https://itch.io/games/new-and-popular",
+            "summary": "itch.io New & Popular includes Scritchy Scratchy",
+            "observed_at": "2026-11-08T08:57:56+08:00",
+            "evidence_type": "PROXY"
+          },
+          {
+            "url": "https://itch.io/games/new-and-popular",
+            "summary": "2026-11-09 itch.io New & Popular lists Scritchy Scratchy; not necessarily a new launch",
+            "evidence_type": "OBSERVED",
+            "observed_at": "2026-11-09T09:00:00+08:00"
+          }
+        ],
         "score_history": [
           {
             "at": "2026-11-06T09:00:00+08:00",
             "opportunity_score": 87
+          },
+          {
+            "at": "2026-11-08T08:57:56+08:00",
+            "opportunity_score": 87,
+            "readiness_score": 72,
+            "confidence_score": 93
+          },
+          {
+            "at": "2026-11-09T09:00:00+08:00",
+            "opportunity_score": 87
           }
         ],
-        "latest_change_reason": "Retained / re-ranked"
+        "latest_change_reason": "2026-11-09 current public source corroboration; popularity proxy not China demand"
       },
       {
         "opportunity_id": "physics-demolition",
@@ -965,19 +1531,42 @@
         "name": "物理平衡驾驶",
         "product_form": "WECHAT_MINIGAME",
         "first_seen_at": "2026-11-06T09:00:00+08:00",
-        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-09T09:00:00+08:00",
         "opportunity_score": 83,
         "readiness_score": 86,
         "confidence_score": 88,
-        "heat_status": "STABLE",
-        "sources": [],
+        "heat_status": "HEATING",
+        "sources": [
+          {
+            "url": "https://poki.com/",
+            "summary": "Poki Popular this week includes Drive Mad",
+            "observed_at": "2026-11-08T08:57:56+08:00",
+            "evidence_type": "PROXY"
+          },
+          {
+            "url": "https://poki.com/",
+            "summary": "2026-11-09 Poki Popular this week includes Drive Mad; current ranking proxy",
+            "evidence_type": "OBSERVED",
+            "observed_at": "2026-11-09T09:00:00+08:00"
+          }
+        ],
         "score_history": [
           {
             "at": "2026-11-06T09:00:00+08:00",
             "opportunity_score": 83
+          },
+          {
+            "at": "2026-11-08T08:57:56+08:00",
+            "opportunity_score": 83,
+            "readiness_score": 86,
+            "confidence_score": 88
+          },
+          {
+            "at": "2026-11-09T09:00:00+08:00",
+            "opportunity_score": 83
           }
         ],
-        "latest_change_reason": "Retained / re-ranked"
+        "latest_change_reason": "2026-11-09 current public source corroboration; popularity proxy not China demand"
       },
       {
         "opportunity_id": "root-growth",
@@ -1034,6 +1623,48 @@
         "sources": [],
         "score_history": [],
         "latest_change_reason": "Freshness weakened; retained in 14-day pool"
+      },
+      {
+        "opportunity_id": "daily-timeline-puzzle",
+        "name": "每日时间线排序挑战",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-08T08:57:56+08:00",
+        "last_seen_at": "2026-11-08T08:57:56+08:00",
+        "opportunity_score": 78,
+        "readiness_score": 88,
+        "confidence_score": 66,
+        "heat_status": "HEATING",
+        "sources": [
+          {
+            "url": "https://www.crazygames.com/game/daily-timeline",
+            "summary": "HTML5 daily 20-puzzle mechanic; product released April 2026, not new today",
+            "observed_at": "2026-11-08T08:57:56+08:00",
+            "evidence_type": "PROXY"
+          }
+        ],
+        "score_history": [],
+        "latest_change_reason": "NEW candidate; existing game mechanic discovered today, not a new release"
+      },
+      {
+        "opportunity_id": "stamp-timing-arcade",
+        "name": "限时盖章精准流水线",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-09T09:00:00+08:00",
+        "last_seen_at": "2026-11-09T09:00:00+08:00",
+        "opportunity_score": 79,
+        "readiness_score": 89,
+        "confidence_score": 55,
+        "heat_status": "HEATING",
+        "sources": [
+          {
+            "url": "https://store.steampowered.com/explore/upcoming/",
+            "summary": "2026-11-08 Steam Rubber Stamp Legend, casual arcade time management; Steam PC listing is a portability proxy",
+            "observed_at": "2026-11-09T09:00:00+08:00",
+            "evidence_type": "PROXY"
+          }
+        ],
+        "score_history": [],
+        "latest_change_reason": "NEW: Steam 2026-11-08 product signal; untested WeChat fun loop"
       }
     ],
     "champions": [
@@ -1042,19 +1673,42 @@
         "name": "反套路陷阱闯关",
         "product_form": "WECHAT_MINIGAME",
         "first_seen_at": "2026-11-06T09:00:00+08:00",
-        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-09T09:00:00+08:00",
         "opportunity_score": 92,
         "readiness_score": 86,
         "confidence_score": 93,
-        "heat_status": "STABLE",
-        "sources": [],
+        "heat_status": "HEATING",
+        "sources": [
+          {
+            "url": "https://poki.com/",
+            "summary": "Poki Popular this week includes Level Devil",
+            "observed_at": "2026-11-08T08:57:56+08:00",
+            "evidence_type": "PROXY"
+          },
+          {
+            "url": "https://poki.com/",
+            "summary": "2026-11-09 Poki Popular this week includes Level Devil; current ranking proxy",
+            "evidence_type": "OBSERVED",
+            "observed_at": "2026-11-09T09:00:00+08:00"
+          }
+        ],
         "score_history": [
           {
             "at": "2026-11-06T09:00:00+08:00",
             "opportunity_score": 91
+          },
+          {
+            "at": "2026-11-08T08:57:56+08:00",
+            "opportunity_score": 92,
+            "readiness_score": 86,
+            "confidence_score": 93
+          },
+          {
+            "at": "2026-11-09T09:00:00+08:00",
+            "opportunity_score": 92
           }
         ],
-        "latest_change_reason": "Retained / re-ranked"
+        "latest_change_reason": "2026-11-09 current public source corroboration; popularity proxy not China demand"
       },
       {
         "opportunity_id": "canteen-rush-management",
@@ -1117,19 +1771,42 @@
         "name": "刮擦收集增量（去博彩化）",
         "product_form": "WECHAT_MINIGAME",
         "first_seen_at": "2026-11-06T09:00:00+08:00",
-        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-09T09:00:00+08:00",
         "opportunity_score": 87,
         "readiness_score": 72,
         "confidence_score": 93,
-        "heat_status": "COOLING",
-        "sources": [],
+        "heat_status": "HEATING",
+        "sources": [
+          {
+            "url": "https://itch.io/games/new-and-popular",
+            "summary": "itch.io New & Popular includes Scritchy Scratchy",
+            "observed_at": "2026-11-08T08:57:56+08:00",
+            "evidence_type": "PROXY"
+          },
+          {
+            "url": "https://itch.io/games/new-and-popular",
+            "summary": "2026-11-09 itch.io New & Popular lists Scritchy Scratchy; not necessarily a new launch",
+            "evidence_type": "OBSERVED",
+            "observed_at": "2026-11-09T09:00:00+08:00"
+          }
+        ],
         "score_history": [
           {
             "at": "2026-11-06T09:00:00+08:00",
             "opportunity_score": 87
+          },
+          {
+            "at": "2026-11-08T08:57:56+08:00",
+            "opportunity_score": 87,
+            "readiness_score": 72,
+            "confidence_score": 93
+          },
+          {
+            "at": "2026-11-09T09:00:00+08:00",
+            "opportunity_score": 87
           }
         ],
-        "latest_change_reason": "Retained / re-ranked"
+        "latest_change_reason": "2026-11-09 current public source corroboration; popularity proxy not China demand"
       },
       {
         "opportunity_id": "physics-demolition",
@@ -1207,19 +1884,42 @@
         "name": "物理平衡驾驶",
         "product_form": "WECHAT_MINIGAME",
         "first_seen_at": "2026-11-06T09:00:00+08:00",
-        "last_seen_at": "2026-11-07T09:45:00+08:00",
+        "last_seen_at": "2026-11-09T09:00:00+08:00",
         "opportunity_score": 83,
         "readiness_score": 86,
         "confidence_score": 88,
-        "heat_status": "STABLE",
-        "sources": [],
+        "heat_status": "HEATING",
+        "sources": [
+          {
+            "url": "https://poki.com/",
+            "summary": "Poki Popular this week includes Drive Mad",
+            "observed_at": "2026-11-08T08:57:56+08:00",
+            "evidence_type": "PROXY"
+          },
+          {
+            "url": "https://poki.com/",
+            "summary": "2026-11-09 Poki Popular this week includes Drive Mad; current ranking proxy",
+            "evidence_type": "OBSERVED",
+            "observed_at": "2026-11-09T09:00:00+08:00"
+          }
+        ],
         "score_history": [
           {
             "at": "2026-11-06T09:00:00+08:00",
             "opportunity_score": 83
+          },
+          {
+            "at": "2026-11-08T08:57:56+08:00",
+            "opportunity_score": 83,
+            "readiness_score": 86,
+            "confidence_score": 88
+          },
+          {
+            "at": "2026-11-09T09:00:00+08:00",
+            "opportunity_score": 83
           }
         ],
-        "latest_change_reason": "Retained / re-ranked"
+        "latest_change_reason": "2026-11-09 current public source corroboration; popularity proxy not China demand"
       },
       {
         "opportunity_id": "absurd-infinite-growth",
@@ -1262,6 +1962,48 @@
         "sources": [],
         "score_history": [],
         "latest_change_reason": "Freshness weakened; retained in 14-day pool"
+      },
+      {
+        "opportunity_id": "stamp-timing-arcade",
+        "name": "限时盖章精准流水线",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-09T09:00:00+08:00",
+        "last_seen_at": "2026-11-09T09:00:00+08:00",
+        "opportunity_score": 79,
+        "readiness_score": 89,
+        "confidence_score": 55,
+        "heat_status": "HEATING",
+        "sources": [
+          {
+            "url": "https://store.steampowered.com/explore/upcoming/",
+            "summary": "2026-11-08 Steam Rubber Stamp Legend, casual arcade time management; Steam PC listing is a portability proxy",
+            "observed_at": "2026-11-09T09:00:00+08:00",
+            "evidence_type": "PROXY"
+          }
+        ],
+        "score_history": [],
+        "latest_change_reason": "NEW: Steam 2026-11-08 product signal; untested WeChat fun loop"
+      },
+      {
+        "opportunity_id": "daily-timeline-puzzle",
+        "name": "每日时间线排序挑战",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-08T08:57:56+08:00",
+        "last_seen_at": "2026-11-08T08:57:56+08:00",
+        "opportunity_score": 78,
+        "readiness_score": 88,
+        "confidence_score": 66,
+        "heat_status": "HEATING",
+        "sources": [
+          {
+            "url": "https://www.crazygames.com/game/daily-timeline",
+            "summary": "HTML5 daily 20-puzzle mechanic; product released April 2026, not new today",
+            "observed_at": "2026-11-08T08:57:56+08:00",
+            "evidence_type": "PROXY"
+          }
+        ],
+        "score_history": [],
+        "latest_change_reason": "NEW candidate; existing game mechanic discovered today, not a new release"
       }
     ]
   },
@@ -1300,10 +2042,88 @@
         "bunker-idle",
         "infinite-mining"
       ]
+    },
+    {
+      "at": "2026-11-08T08:57:56+08:00",
+      "mini_program_champions": [
+        "pc-value-check",
+        "real-estate-photo-ai",
+        "site-code-security-check",
+        "domain-ssl-reminder",
+        "video-to-text-summary",
+        "spreadsheet-data-story",
+        "receipt-aa-split",
+        "ai-seo-visibility-check",
+        "scam-screenshot-check",
+        "renovation-repair-quote",
+        "trading-card-price-radar",
+        "optometry-record-reminder",
+        "web-change-radar",
+        "social-sales-lead-radar",
+        "ai-quota-reset-reminder"
+      ],
+      "mini_game_champions": [
+        "trap-twist-platformer",
+        "canteen-rush-management",
+        "one-tap-lane-runner",
+        "one-path-roguelite",
+        "satisfying-cleaning-idle",
+        "scratch-collection-incremental",
+        "physics-demolition",
+        "magnetic-scrap-collect",
+        "internet-cafe-tycoon",
+        "root-growth",
+        "physics-balance-driving",
+        "absurd-infinite-growth",
+        "bunker-idle",
+        "infinite-mining",
+        "daily-timeline-puzzle"
+      ]
+    },
+    {
+      "at": "2026-11-09T09:00:00+08:00",
+      "mini_program_champions": [
+        "pc-value-check",
+        "real-estate-photo-ai",
+        "site-code-security-check",
+        "domain-ssl-reminder",
+        "video-to-text-summary",
+        "spreadsheet-data-story",
+        "receipt-aa-split",
+        "ai-seo-visibility-check",
+        "scam-screenshot-check",
+        "renovation-repair-quote",
+        "trading-card-price-radar",
+        "optometry-record-reminder",
+        "merchant-review-proof-collector",
+        "web-change-radar",
+        "social-sales-lead-radar",
+        "ai-quota-reset-reminder"
+      ],
+      "mini_game_champions": [
+        "trap-twist-platformer",
+        "canteen-rush-management",
+        "one-tap-lane-runner",
+        "one-path-roguelite",
+        "satisfying-cleaning-idle",
+        "scratch-collection-incremental",
+        "physics-demolition",
+        "magnetic-scrap-collect",
+        "internet-cafe-tycoon",
+        "root-growth",
+        "physics-balance-driving",
+        "absurd-infinite-growth",
+        "bunker-idle",
+        "infinite-mining",
+        "stamp-timing-arcade",
+        "daily-timeline-puzzle"
+      ]
     }
   ],
   "notes": [
     "Initialized from the 2026-11-06 published snapshot plus the 2026-11-07 v1.5 run.",
-    "Public market signals only; no user-private data or secrets."
+    "Public market signals only; no user-private data or secrets.",
+    "2026-11-08: official Product Hunt API inaccessible from execution environment; public web fallback daily page contained no posts at check time; no fabricated Product Hunt counts.",
+    "2026-11-09: Product Hunt official GraphQL not accessed because authenticated HTTP transport unavailable; public leaderboard showed no posts at observation time; no token persisted."
   ]
 }
