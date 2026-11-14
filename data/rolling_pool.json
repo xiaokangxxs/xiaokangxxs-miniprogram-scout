@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
   "skill_version": "1.5.0",
-  "updated_at": "2026-11-13T09:03:29+08:00",
-  "updated_by": "GLOBAL_DISCOVERY",
+  "updated_at": "2026-11-14T08:56:29+08:00",
+  "updated_by": "daily-global-discovery",
   "status": "OK",
   "privacy": "PUBLIC_MARKET_SIGNALS_ONLY",
   "mini_program": {
@@ -1121,11 +1121,11 @@
         "name": "反套路陷阱闯关",
         "product_form": "WECHAT_MINIGAME",
         "first_seen_at": "2026-11-06T09:00:00+08:00",
-        "last_seen_at": "2026-11-13T09:03:29+08:00",
+        "last_seen_at": "2026-11-14T08:56:29+08:00",
         "opportunity_score": 92,
         "readiness_score": 86,
-        "confidence_score": 88,
-        "heat_status": "STABLE",
+        "confidence_score": 77,
+        "heat_status": "HEATING",
         "sources": [
           {
             "url": "https://poki.com/",
@@ -1162,6 +1162,12 @@
             "url": "https://poki.com/",
             "observed_at": "2026-11-13T09:03:29+08:00",
             "summary": "Poki popular this week on 2026-11-13 includes Level Devil"
+          },
+          {
+            "url": "https://poki.com/en/g/level-devil",
+            "summary": "Poki Level Devil game page lists November 2026 latest update; does not prove WeChat demand",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-14T08:56:29+08:00"
           }
         ],
         "score_history": [
@@ -1196,9 +1202,15 @@
             "opportunity_score": 92,
             "readiness_score": 86,
             "confidence_score": 88
+          },
+          {
+            "at": "2026-11-14T08:56:29+08:00",
+            "opportunity_score": 92,
+            "readiness_score": 86,
+            "confidence_score": 77
           }
         ],
-        "latest_change_reason": "Poki popular this week on 2026-11-13 includes Level Devil"
+        "latest_change_reason": "New November 2026 update signal; China retention remains unverified"
       },
       {
         "opportunity_id": "micro-territory-strategy",
@@ -1451,6 +1463,90 @@
           }
         ],
         "latest_change_reason": "CrazyGames Unmatched Ego 2 updated 2026-11-12; desktop-only, mobile transfer unproven"
+      },
+      {
+        "opportunity_id": "ragdoll-downhill-race",
+        "name": "单指下坡布偶竞速",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-14T08:56:29+08:00",
+        "last_seen_at": "2026-11-14T08:56:29+08:00",
+        "opportunity_score": 82,
+        "readiness_score": 81,
+        "confidence_score": 54,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "url": "https://www.crazygames.com/game/ragdoll-racing-extreme-downhill",
+            "summary": "CrazyGames November 2026 Ragdoll Racing release, desktop-only listing; mechanic is a proxy, not China demand",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-14T08:56:29+08:00"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-14T08:56:29+08:00",
+            "opportunity_score": 82,
+            "readiness_score": 81,
+            "confidence_score": 54
+          }
+        ],
+        "latest_change_reason": "CrazyGames November 2026 Ragdoll Racing release, desktop-only listing; mechanic is a proxy, not China demand"
+      },
+      {
+        "opportunity_id": "mahjong-four-slot-match",
+        "name": "麻将四槽消除",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-14T08:56:29+08:00",
+        "last_seen_at": "2026-11-14T08:56:29+08:00",
+        "opportunity_score": 81,
+        "readiness_score": 87,
+        "confidence_score": 58,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "url": "https://www.crazygames.com/game/mahjong-tap---tile-sort-solitaire",
+            "summary": "CrazyGames Mahjong Tap last updated Nov 13 2026, mobile portrait and four-slot tray",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-14T08:56:29+08:00"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-14T08:56:29+08:00",
+            "opportunity_score": 81,
+            "readiness_score": 87,
+            "confidence_score": 58
+          }
+        ],
+        "latest_change_reason": "CrazyGames Mahjong Tap last updated Nov 13 2026, mobile portrait and four-slot tray"
+      },
+      {
+        "opportunity_id": "dice-hoarder-sort",
+        "name": "骰子囤积整理",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-14T08:56:29+08:00",
+        "last_seen_at": "2026-11-14T08:56:29+08:00",
+        "opportunity_score": 77,
+        "readiness_score": 81,
+        "confidence_score": 48,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "url": "https://store.steampowered.com/explore/upcoming/store.html",
+            "summary": "Steam Nov 13 2026 listing Dice Hoarder, listing not proof of player popularity",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-14T08:56:29+08:00"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-14T08:56:29+08:00",
+            "opportunity_score": 77,
+            "readiness_score": 81,
+            "confidence_score": 48
+          }
+        ],
+        "latest_change_reason": "Steam Nov 13 2026 listing Dice Hoarder, listing not proof of player popularity"
       }
     ],
     "rolling": [
@@ -1459,11 +1555,11 @@
         "name": "反套路陷阱闯关",
         "product_form": "WECHAT_MINIGAME",
         "first_seen_at": "2026-11-06T09:00:00+08:00",
-        "last_seen_at": "2026-11-13T09:03:29+08:00",
+        "last_seen_at": "2026-11-14T08:56:29+08:00",
         "opportunity_score": 92,
         "readiness_score": 86,
-        "confidence_score": 88,
-        "heat_status": "STABLE",
+        "confidence_score": 77,
+        "heat_status": "HEATING",
         "sources": [
           {
             "url": "https://poki.com/",
@@ -1500,6 +1596,12 @@
             "url": "https://poki.com/",
             "observed_at": "2026-11-13T09:03:29+08:00",
             "summary": "Poki popular this week on 2026-11-13 includes Level Devil"
+          },
+          {
+            "url": "https://poki.com/en/g/level-devil",
+            "summary": "Poki Level Devil game page lists November 2026 latest update; does not prove WeChat demand",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-14T08:56:29+08:00"
           }
         ],
         "score_history": [
@@ -1534,9 +1636,15 @@
             "opportunity_score": 92,
             "readiness_score": 86,
             "confidence_score": 88
+          },
+          {
+            "at": "2026-11-14T08:56:29+08:00",
+            "opportunity_score": 92,
+            "readiness_score": 86,
+            "confidence_score": 77
           }
         ],
-        "latest_change_reason": "Poki popular this week on 2026-11-13 includes Level Devil"
+        "latest_change_reason": "New November 2026 update signal; China retention remains unverified"
       },
       {
         "opportunity_id": "canteen-rush-management",
@@ -2098,6 +2206,90 @@
           }
         ],
         "latest_change_reason": "CrazyGames Unmatched Ego 2 updated 2026-11-12; desktop-only, mobile transfer unproven"
+      },
+      {
+        "opportunity_id": "ragdoll-downhill-race",
+        "name": "单指下坡布偶竞速",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-14T08:56:29+08:00",
+        "last_seen_at": "2026-11-14T08:56:29+08:00",
+        "opportunity_score": 82,
+        "readiness_score": 81,
+        "confidence_score": 54,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "url": "https://www.crazygames.com/game/ragdoll-racing-extreme-downhill",
+            "summary": "CrazyGames November 2026 Ragdoll Racing release, desktop-only listing; mechanic is a proxy, not China demand",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-14T08:56:29+08:00"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-14T08:56:29+08:00",
+            "opportunity_score": 82,
+            "readiness_score": 81,
+            "confidence_score": 54
+          }
+        ],
+        "latest_change_reason": "CrazyGames November 2026 Ragdoll Racing release, desktop-only listing; mechanic is a proxy, not China demand"
+      },
+      {
+        "opportunity_id": "mahjong-four-slot-match",
+        "name": "麻将四槽消除",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-14T08:56:29+08:00",
+        "last_seen_at": "2026-11-14T08:56:29+08:00",
+        "opportunity_score": 81,
+        "readiness_score": 87,
+        "confidence_score": 58,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "url": "https://www.crazygames.com/game/mahjong-tap---tile-sort-solitaire",
+            "summary": "CrazyGames Mahjong Tap last updated Nov 13 2026, mobile portrait and four-slot tray",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-14T08:56:29+08:00"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-14T08:56:29+08:00",
+            "opportunity_score": 81,
+            "readiness_score": 87,
+            "confidence_score": 58
+          }
+        ],
+        "latest_change_reason": "CrazyGames Mahjong Tap last updated Nov 13 2026, mobile portrait and four-slot tray"
+      },
+      {
+        "opportunity_id": "dice-hoarder-sort",
+        "name": "骰子囤积整理",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-14T08:56:29+08:00",
+        "last_seen_at": "2026-11-14T08:56:29+08:00",
+        "opportunity_score": 77,
+        "readiness_score": 81,
+        "confidence_score": 48,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "url": "https://store.steampowered.com/explore/upcoming/store.html",
+            "summary": "Steam Nov 13 2026 listing Dice Hoarder, listing not proof of player popularity",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-14T08:56:29+08:00"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-14T08:56:29+08:00",
+            "opportunity_score": 77,
+            "readiness_score": 81,
+            "confidence_score": 48
+          }
+        ],
+        "latest_change_reason": "Steam Nov 13 2026 listing Dice Hoarder, listing not proof of player popularity"
       }
     ],
     "champions": [
@@ -2106,11 +2298,11 @@
         "name": "反套路陷阱闯关",
         "product_form": "WECHAT_MINIGAME",
         "first_seen_at": "2026-11-06T09:00:00+08:00",
-        "last_seen_at": "2026-11-13T09:03:29+08:00",
+        "last_seen_at": "2026-11-14T08:56:29+08:00",
         "opportunity_score": 92,
         "readiness_score": 86,
-        "confidence_score": 88,
-        "heat_status": "STABLE",
+        "confidence_score": 77,
+        "heat_status": "HEATING",
         "sources": [
           {
             "url": "https://poki.com/",
@@ -2147,6 +2339,12 @@
             "url": "https://poki.com/",
             "observed_at": "2026-11-13T09:03:29+08:00",
             "summary": "Poki popular this week on 2026-11-13 includes Level Devil"
+          },
+          {
+            "url": "https://poki.com/en/g/level-devil",
+            "summary": "Poki Level Devil game page lists November 2026 latest update; does not prove WeChat demand",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-14T08:56:29+08:00"
           }
         ],
         "score_history": [
@@ -2181,9 +2379,15 @@
             "opportunity_score": 92,
             "readiness_score": 86,
             "confidence_score": 88
+          },
+          {
+            "at": "2026-11-14T08:56:29+08:00",
+            "opportunity_score": 92,
+            "readiness_score": 86,
+            "confidence_score": 77
           }
         ],
-        "latest_change_reason": "Poki popular this week on 2026-11-13 includes Level Devil"
+        "latest_change_reason": "New November 2026 update signal; China retention remains unverified"
       },
       {
         "opportunity_id": "micro-territory-strategy",
@@ -2382,6 +2586,62 @@
         "latest_change_reason": "NEW 2026-11-11 public source; demand and WeChat conversion unverified"
       },
       {
+        "opportunity_id": "ragdoll-downhill-race",
+        "name": "单指下坡布偶竞速",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-14T08:56:29+08:00",
+        "last_seen_at": "2026-11-14T08:56:29+08:00",
+        "opportunity_score": 82,
+        "readiness_score": 81,
+        "confidence_score": 54,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "url": "https://www.crazygames.com/game/ragdoll-racing-extreme-downhill",
+            "summary": "CrazyGames November 2026 Ragdoll Racing release, desktop-only listing; mechanic is a proxy, not China demand",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-14T08:56:29+08:00"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-14T08:56:29+08:00",
+            "opportunity_score": 82,
+            "readiness_score": 81,
+            "confidence_score": 54
+          }
+        ],
+        "latest_change_reason": "CrazyGames November 2026 Ragdoll Racing release, desktop-only listing; mechanic is a proxy, not China demand"
+      },
+      {
+        "opportunity_id": "mahjong-four-slot-match",
+        "name": "麻将四槽消除",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-14T08:56:29+08:00",
+        "last_seen_at": "2026-11-14T08:56:29+08:00",
+        "opportunity_score": 81,
+        "readiness_score": 87,
+        "confidence_score": 58,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "url": "https://www.crazygames.com/game/mahjong-tap---tile-sort-solitaire",
+            "summary": "CrazyGames Mahjong Tap last updated Nov 13 2026, mobile portrait and four-slot tray",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-14T08:56:29+08:00"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-14T08:56:29+08:00",
+            "opportunity_score": 81,
+            "readiness_score": 87,
+            "confidence_score": 58
+          }
+        ],
+        "latest_change_reason": "CrazyGames Mahjong Tap last updated Nov 13 2026, mobile portrait and four-slot tray"
+      },
+      {
         "opportunity_id": "one-screen-territory-diplomacy",
         "name": "单屏领地联盟策略",
         "product_form": "WECHAT_MINIGAME",
@@ -2436,6 +2696,34 @@
           }
         ],
         "latest_change_reason": "CrazyGames Unmatched Ego 2 updated 2026-11-12; desktop-only, mobile transfer unproven"
+      },
+      {
+        "opportunity_id": "dice-hoarder-sort",
+        "name": "骰子囤积整理",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-14T08:56:29+08:00",
+        "last_seen_at": "2026-11-14T08:56:29+08:00",
+        "opportunity_score": 77,
+        "readiness_score": 81,
+        "confidence_score": 48,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "url": "https://store.steampowered.com/explore/upcoming/store.html",
+            "summary": "Steam Nov 13 2026 listing Dice Hoarder, listing not proof of player popularity",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-14T08:56:29+08:00"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-14T08:56:29+08:00",
+            "opportunity_score": 77,
+            "readiness_score": 81,
+            "confidence_score": 48
+          }
+        ],
+        "latest_change_reason": "Steam Nov 13 2026 listing Dice Hoarder, listing not proof of player popularity"
       }
     ]
   },
@@ -2663,6 +2951,11 @@
         "one-screen-territory-diplomacy",
         "micro-football-three-v-three"
       ]
+    },
+    {
+      "at": "2026-11-14T08:56:29+08:00",
+      "kind": "GLOBAL_DISCOVERY",
+      "summary": "2026-11-14 public signal merge: Level Devil updated Nov 2026; CrazyGames Ragdoll Racing and Mahjong Tap; Steam Dice Hoarder listing. No private material."
     }
   ],
   "notes": [
