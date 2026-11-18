@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
   "skill_version": "1.5.0",
-  "updated_at": "2026-11-17T09:04:18+08:00",
-  "updated_by": "daily-global-discovery",
+  "updated_at": "2026-11-18T09:04:44+08:00",
+  "updated_by": "daily_global_discovery",
   "status": "OK",
   "privacy": "PUBLIC_MARKET_SIGNALS_ONLY",
   "mini_program": {
@@ -35,34 +35,6 @@
           }
         ],
         "latest_change_reason": "BetaList 2026-11-17 editor pick Spool; phone call hold time assistant; China telecom capability unverified"
-      },
-      {
-        "opportunity_id": "ai-agent-site-readiness",
-        "name": "网站 AI Agent 可访问性自检",
-        "product_form": "WECHAT_MINIPROGRAM",
-        "first_seen_at": "2026-11-15T09:00:39+08:00",
-        "last_seen_at": "2026-11-15T09:00:39+08:00",
-        "opportunity_score": 76,
-        "readiness_score": 73,
-        "confidence_score": 55,
-        "heat_status": "UNKNOWN",
-        "sources": [
-          {
-            "url": "https://betalist.com/",
-            "summary": "BetaList 2026-11-14 AI-Primed; public listing; demand unverified",
-            "evidence_type": "PROXY",
-            "observed_at": "2026-11-15T09:00:39+08:00"
-          }
-        ],
-        "score_history": [
-          {
-            "at": "2026-11-15T09:00:39+08:00",
-            "opportunity_score": 76,
-            "readiness_score": 73,
-            "confidence_score": 55
-          }
-        ],
-        "latest_change_reason": "NEW: public 2026-11-14/15 signal; no direct China demand evidence"
       },
       {
         "opportunity_id": "interactive-demo-guide",
@@ -181,32 +153,60 @@
         "latest_change_reason": "BetaList 2026-11-15 PropOS property client file concept; China applicability unknown"
       },
       {
-        "opportunity_id": "voice-interview-practice",
-        "name": "语音面试与口语模拟训练",
+        "opportunity_id": "spreadsheet-to-miniapp",
+        "name": "表格即轻应用",
         "product_form": "WECHAT_MINIPROGRAM",
-        "first_seen_at": "2026-11-15T09:00:39+08:00",
-        "last_seen_at": "2026-11-15T09:00:39+08:00",
-        "opportunity_score": 73,
-        "readiness_score": 70,
+        "first_seen_at": "2026-11-18T09:04:44+08:00",
+        "last_seen_at": "2026-11-18T09:04:44+08:00",
+        "opportunity_score": 74,
+        "readiness_score": 68,
         "confidence_score": 54,
         "heat_status": "UNKNOWN",
         "sources": [
           {
-            "url": "https://betalist.com/",
-            "summary": "BetaList 2026-11-14 Consermo AI; public listing; Chinese demand unknown",
+            "url": "https://news.ycombinator.com/show",
+            "summary": "Show HN Your Spreadsheet Is Your Database visible 2026-11-18; China demand unknown",
             "evidence_type": "PROXY",
-            "observed_at": "2026-11-15T09:00:39+08:00"
+            "observed_at": "2026-11-18T09:04:44+08:00"
           }
         ],
         "score_history": [
           {
-            "at": "2026-11-15T09:00:39+08:00",
-            "opportunity_score": 73,
-            "readiness_score": 70,
+            "at": "2026-11-18T09:04:44+08:00",
+            "opportunity_score": 74,
+            "readiness_score": 68,
             "confidence_score": 54
           }
         ],
-        "latest_change_reason": "NEW: public 2026-11-14/15 signal; no direct China demand evidence"
+        "latest_change_reason": "Show HN Your Spreadsheet Is Your Database visible 2026-11-18; China demand unknown"
+      },
+      {
+        "opportunity_id": "coupon-code-verification",
+        "name": "购物优惠码与过期验证",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-18T09:04:44+08:00",
+        "last_seen_at": "2026-11-18T09:04:44+08:00",
+        "opportunity_score": 73,
+        "readiness_score": 67,
+        "confidence_score": 48,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "url": "https://betalist.com/",
+            "summary": "BetaList 2026-11-18 New today SecretPass; coupon validation rights unknown",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-18T09:04:44+08:00"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-18T09:04:44+08:00",
+            "opportunity_score": 73,
+            "readiness_score": 67,
+            "confidence_score": 48
+          }
+        ],
+        "latest_change_reason": "BetaList 2026-11-18 New today SecretPass; coupon validation rights unknown"
       },
       {
         "opportunity_id": "verified-remote-job-alert",
@@ -972,6 +972,34 @@
         "latest_change_reason": "NEW; BetaList trending proxy; privacy/API and China demand unverified"
       },
       {
+        "opportunity_id": "spreadsheet-to-miniapp",
+        "name": "表格即轻应用",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-18T09:04:44+08:00",
+        "last_seen_at": "2026-11-18T09:04:44+08:00",
+        "opportunity_score": 74,
+        "readiness_score": 68,
+        "confidence_score": 54,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "url": "https://news.ycombinator.com/show",
+            "summary": "Show HN Your Spreadsheet Is Your Database visible 2026-11-18; China demand unknown",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-18T09:04:44+08:00"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-18T09:04:44+08:00",
+            "opportunity_score": 74,
+            "readiness_score": 68,
+            "confidence_score": 54
+          }
+        ],
+        "latest_change_reason": "Show HN Your Spreadsheet Is Your Database visible 2026-11-18; China demand unknown"
+      },
+      {
         "opportunity_id": "device-usage-audit",
         "name": "设备使用痕迹与安全自查",
         "product_form": "WECHAT_MINIPROGRAM",
@@ -1026,6 +1054,34 @@
           }
         ],
         "latest_change_reason": "NEW: public 2026-11-14/15 signal; no direct China demand evidence"
+      },
+      {
+        "opportunity_id": "coupon-code-verification",
+        "name": "购物优惠码与过期验证",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-18T09:04:44+08:00",
+        "last_seen_at": "2026-11-18T09:04:44+08:00",
+        "opportunity_score": 73,
+        "readiness_score": 67,
+        "confidence_score": 48,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "url": "https://betalist.com/",
+            "summary": "BetaList 2026-11-18 New today SecretPass; coupon validation rights unknown",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-18T09:04:44+08:00"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-18T09:04:44+08:00",
+            "opportunity_score": 73,
+            "readiness_score": 67,
+            "confidence_score": 48
+          }
+        ],
+        "latest_change_reason": "BetaList 2026-11-18 New today SecretPass; coupon validation rights unknown"
       },
       {
         "opportunity_id": "ai-quota-reset-reminder",
@@ -1128,34 +1184,6 @@
           }
         ],
         "latest_change_reason": "BetaList 2026-11-17 editor pick Spool; phone call hold time assistant; China telecom capability unverified"
-      },
-      {
-        "opportunity_id": "ai-agent-site-readiness",
-        "name": "网站 AI Agent 可访问性自检",
-        "product_form": "WECHAT_MINIPROGRAM",
-        "first_seen_at": "2026-11-15T09:00:39+08:00",
-        "last_seen_at": "2026-11-15T09:00:39+08:00",
-        "opportunity_score": 76,
-        "readiness_score": 73,
-        "confidence_score": 55,
-        "heat_status": "UNKNOWN",
-        "sources": [
-          {
-            "url": "https://betalist.com/",
-            "summary": "BetaList 2026-11-14 AI-Primed; public listing; demand unverified",
-            "evidence_type": "PROXY",
-            "observed_at": "2026-11-15T09:00:39+08:00"
-          }
-        ],
-        "score_history": [
-          {
-            "at": "2026-11-15T09:00:39+08:00",
-            "opportunity_score": 76,
-            "readiness_score": 73,
-            "confidence_score": 55
-          }
-        ],
-        "latest_change_reason": "NEW: public 2026-11-14/15 signal; no direct China demand evidence"
       },
       {
         "opportunity_id": "interactive-demo-guide",
@@ -1274,32 +1302,60 @@
         "latest_change_reason": "BetaList 2026-11-15 PropOS property client file concept; China applicability unknown"
       },
       {
-        "opportunity_id": "voice-interview-practice",
-        "name": "语音面试与口语模拟训练",
+        "opportunity_id": "spreadsheet-to-miniapp",
+        "name": "表格即轻应用",
         "product_form": "WECHAT_MINIPROGRAM",
-        "first_seen_at": "2026-11-15T09:00:39+08:00",
-        "last_seen_at": "2026-11-15T09:00:39+08:00",
-        "opportunity_score": 73,
-        "readiness_score": 70,
+        "first_seen_at": "2026-11-18T09:04:44+08:00",
+        "last_seen_at": "2026-11-18T09:04:44+08:00",
+        "opportunity_score": 74,
+        "readiness_score": 68,
         "confidence_score": 54,
         "heat_status": "UNKNOWN",
         "sources": [
           {
-            "url": "https://betalist.com/",
-            "summary": "BetaList 2026-11-14 Consermo AI; public listing; Chinese demand unknown",
+            "url": "https://news.ycombinator.com/show",
+            "summary": "Show HN Your Spreadsheet Is Your Database visible 2026-11-18; China demand unknown",
             "evidence_type": "PROXY",
-            "observed_at": "2026-11-15T09:00:39+08:00"
+            "observed_at": "2026-11-18T09:04:44+08:00"
           }
         ],
         "score_history": [
           {
-            "at": "2026-11-15T09:00:39+08:00",
-            "opportunity_score": 73,
-            "readiness_score": 70,
+            "at": "2026-11-18T09:04:44+08:00",
+            "opportunity_score": 74,
+            "readiness_score": 68,
             "confidence_score": 54
           }
         ],
-        "latest_change_reason": "NEW: public 2026-11-14/15 signal; no direct China demand evidence"
+        "latest_change_reason": "Show HN Your Spreadsheet Is Your Database visible 2026-11-18; China demand unknown"
+      },
+      {
+        "opportunity_id": "coupon-code-verification",
+        "name": "购物优惠码与过期验证",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-18T09:04:44+08:00",
+        "last_seen_at": "2026-11-18T09:04:44+08:00",
+        "opportunity_score": 73,
+        "readiness_score": 67,
+        "confidence_score": 48,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "url": "https://betalist.com/",
+            "summary": "BetaList 2026-11-18 New today SecretPass; coupon validation rights unknown",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-18T09:04:44+08:00"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-18T09:04:44+08:00",
+            "opportunity_score": 73,
+            "readiness_score": 67,
+            "confidence_score": 48
+          }
+        ],
+        "latest_change_reason": "BetaList 2026-11-18 New today SecretPass; coupon validation rights unknown"
       },
       {
         "opportunity_id": "verified-remote-job-alert",
@@ -1339,7 +1395,7 @@
         "name": "反套路陷阱闯关",
         "product_form": "WECHAT_MINIGAME",
         "first_seen_at": "2026-11-06T09:00:00+08:00",
-        "last_seen_at": "2026-11-17T09:04:18+08:00",
+        "last_seen_at": "2026-11-18T09:04:44+08:00",
         "opportunity_score": 92,
         "readiness_score": 86,
         "confidence_score": 77,
@@ -1400,6 +1456,12 @@
             "observed_at": "2026-11-17T09:04:18+08:00",
             "summary": "Poki popular this week still lists Level Devil on 2026-11-17; popularity proxy, not China retention",
             "evidence_type": "PROXY"
+          },
+          {
+            "url": "https://poki.com/en/g/level-devil",
+            "summary": "Poki game page states November 2026 update; not China retention evidence",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-18T09:04:44+08:00"
           }
         ],
         "score_history": [
@@ -1443,6 +1505,12 @@
           },
           {
             "at": "2026-11-17T09:04:18+08:00",
+            "opportunity_score": 92,
+            "readiness_score": 86,
+            "confidence_score": 77
+          },
+          {
+            "at": "2026-11-18T09:04:44+08:00",
             "opportunity_score": 92,
             "readiness_score": 86,
             "confidence_score": 77
@@ -1559,6 +1627,34 @@
         "latest_change_reason": "Poki weekly popular list includes Drive Mad on 2026-11-16; not a new release"
       },
       {
+        "opportunity_id": "cargo-packing-depot",
+        "name": "单屏货车装箱经营",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-18T09:04:44+08:00",
+        "last_seen_at": "2026-11-18T09:04:44+08:00",
+        "opportunity_score": 80,
+        "readiness_score": 85,
+        "confidence_score": 50,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "url": "https://itch.io/games/new-and-popular/free/genre-puzzle/tag-idle",
+            "summary": "itch.io New & Popular Load Up Cargo Depot observed 2026-11-18; release date unknown",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-18T09:04:44+08:00"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-18T09:04:44+08:00",
+            "opportunity_score": 80,
+            "readiness_score": 85,
+            "confidence_score": 50
+          }
+        ],
+        "latest_change_reason": "itch.io New & Popular Load Up Cargo Depot observed 2026-11-18; release date unknown"
+      },
+      {
         "opportunity_id": "tiny-chef-roguelite",
         "name": "微型料理 Roguelite",
         "product_form": "WECHAT_MINIGAME",
@@ -1617,32 +1713,60 @@
         "latest_change_reason": "Show HN 2026-11-17 geography compass city guessing game; 3 points observed, mechanism only"
       },
       {
-        "opportunity_id": "terminal-idle-factory",
-        "name": "终端风格微型工厂放置",
+        "opportunity_id": "one-screen-moving-floor-puzzle",
+        "name": "一屏工厂移动地面解谜",
         "product_form": "WECHAT_MINIGAME",
-        "first_seen_at": "2026-11-15T09:00:39+08:00",
-        "last_seen_at": "2026-11-15T09:00:39+08:00",
-        "opportunity_score": 76,
-        "readiness_score": 84,
-        "confidence_score": 59,
+        "first_seen_at": "2026-11-18T09:04:44+08:00",
+        "last_seen_at": "2026-11-18T09:04:44+08:00",
+        "opportunity_score": 79,
+        "readiness_score": 83,
+        "confidence_score": 48,
         "heat_status": "UNKNOWN",
         "sources": [
           {
-            "url": "https://news.ycombinator.com/show",
-            "summary": "Show HN 2026-11-15 terminal-native idle factory game; mechanism proxy, not WeChat demand",
+            "url": "https://itch.io/games/new-and-popular/free/genre-puzzle/tag-idle",
+            "summary": "itch.io New & Popular One Square observed 2026-11-18; release date unknown",
             "evidence_type": "PROXY",
-            "observed_at": "2026-11-15T09:00:39+08:00"
+            "observed_at": "2026-11-18T09:04:44+08:00"
           }
         ],
         "score_history": [
           {
-            "at": "2026-11-15T09:00:39+08:00",
-            "opportunity_score": 76,
-            "readiness_score": 84,
-            "confidence_score": 59
+            "at": "2026-11-18T09:04:44+08:00",
+            "opportunity_score": 79,
+            "readiness_score": 83,
+            "confidence_score": 48
           }
         ],
-        "latest_change_reason": "NEW: public 2026-11-14/15 signal; no direct China demand evidence"
+        "latest_change_reason": "itch.io New & Popular One Square observed 2026-11-18; release date unknown"
+      },
+      {
+        "opportunity_id": "kart-arena-quick-battle",
+        "name": "多人卡丁车竞技",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-18T09:04:44+08:00",
+        "last_seen_at": "2026-11-18T09:04:44+08:00",
+        "opportunity_score": 79,
+        "readiness_score": 55,
+        "confidence_score": 60,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "url": "https://poki.com/en/g/smash-karts",
+            "summary": "Poki Smash Karts updated November 2026; online multiplayer expensive",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-18T09:04:44+08:00"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-18T09:04:44+08:00",
+            "opportunity_score": 79,
+            "readiness_score": 55,
+            "confidence_score": 60
+          }
+        ],
+        "latest_change_reason": "Poki Smash Karts updated November 2026; online multiplayer expensive"
       }
     ],
     "rolling": [
@@ -1651,7 +1775,7 @@
         "name": "反套路陷阱闯关",
         "product_form": "WECHAT_MINIGAME",
         "first_seen_at": "2026-11-06T09:00:00+08:00",
-        "last_seen_at": "2026-11-17T09:04:18+08:00",
+        "last_seen_at": "2026-11-18T09:04:44+08:00",
         "opportunity_score": 92,
         "readiness_score": 86,
         "confidence_score": 77,
@@ -1712,6 +1836,12 @@
             "observed_at": "2026-11-17T09:04:18+08:00",
             "summary": "Poki popular this week still lists Level Devil on 2026-11-17; popularity proxy, not China retention",
             "evidence_type": "PROXY"
+          },
+          {
+            "url": "https://poki.com/en/g/level-devil",
+            "summary": "Poki game page states November 2026 update; not China retention evidence",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-18T09:04:44+08:00"
           }
         ],
         "score_history": [
@@ -1755,6 +1885,12 @@
           },
           {
             "at": "2026-11-17T09:04:18+08:00",
+            "opportunity_score": 92,
+            "readiness_score": 86,
+            "confidence_score": 77
+          },
+          {
+            "at": "2026-11-18T09:04:44+08:00",
             "opportunity_score": 92,
             "readiness_score": 86,
             "confidence_score": 77
@@ -2318,6 +2454,34 @@
         "latest_change_reason": "Freshness weakened; retained in 14-day pool"
       },
       {
+        "opportunity_id": "cargo-packing-depot",
+        "name": "单屏货车装箱经营",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-18T09:04:44+08:00",
+        "last_seen_at": "2026-11-18T09:04:44+08:00",
+        "opportunity_score": 80,
+        "readiness_score": 85,
+        "confidence_score": 50,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "url": "https://itch.io/games/new-and-popular/free/genre-puzzle/tag-idle",
+            "summary": "itch.io New & Popular Load Up Cargo Depot observed 2026-11-18; release date unknown",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-18T09:04:44+08:00"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-18T09:04:44+08:00",
+            "opportunity_score": 80,
+            "readiness_score": 85,
+            "confidence_score": 50
+          }
+        ],
+        "latest_change_reason": "itch.io New & Popular Load Up Cargo Depot observed 2026-11-18; release date unknown"
+      },
+      {
         "opportunity_id": "one-screen-territory-diplomacy",
         "name": "单屏领地联盟策略",
         "product_form": "WECHAT_MINIGAME",
@@ -2423,6 +2587,62 @@
           }
         ],
         "latest_change_reason": "Show HN 2026-11-17 geography compass city guessing game; 3 points observed, mechanism only"
+      },
+      {
+        "opportunity_id": "one-screen-moving-floor-puzzle",
+        "name": "一屏工厂移动地面解谜",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-18T09:04:44+08:00",
+        "last_seen_at": "2026-11-18T09:04:44+08:00",
+        "opportunity_score": 79,
+        "readiness_score": 83,
+        "confidence_score": 48,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "url": "https://itch.io/games/new-and-popular/free/genre-puzzle/tag-idle",
+            "summary": "itch.io New & Popular One Square observed 2026-11-18; release date unknown",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-18T09:04:44+08:00"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-18T09:04:44+08:00",
+            "opportunity_score": 79,
+            "readiness_score": 83,
+            "confidence_score": 48
+          }
+        ],
+        "latest_change_reason": "itch.io New & Popular One Square observed 2026-11-18; release date unknown"
+      },
+      {
+        "opportunity_id": "kart-arena-quick-battle",
+        "name": "多人卡丁车竞技",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-18T09:04:44+08:00",
+        "last_seen_at": "2026-11-18T09:04:44+08:00",
+        "opportunity_score": 79,
+        "readiness_score": 55,
+        "confidence_score": 60,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "url": "https://poki.com/en/g/smash-karts",
+            "summary": "Poki Smash Karts updated November 2026; online multiplayer expensive",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-18T09:04:44+08:00"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-18T09:04:44+08:00",
+            "opportunity_score": 79,
+            "readiness_score": 55,
+            "confidence_score": 60
+          }
+        ],
+        "latest_change_reason": "Poki Smash Karts updated November 2026; online multiplayer expensive"
       },
       {
         "opportunity_id": "daily-timeline-puzzle",
@@ -2536,7 +2756,7 @@
         "name": "反套路陷阱闯关",
         "product_form": "WECHAT_MINIGAME",
         "first_seen_at": "2026-11-06T09:00:00+08:00",
-        "last_seen_at": "2026-11-17T09:04:18+08:00",
+        "last_seen_at": "2026-11-18T09:04:44+08:00",
         "opportunity_score": 92,
         "readiness_score": 86,
         "confidence_score": 77,
@@ -2597,6 +2817,12 @@
             "observed_at": "2026-11-17T09:04:18+08:00",
             "summary": "Poki popular this week still lists Level Devil on 2026-11-17; popularity proxy, not China retention",
             "evidence_type": "PROXY"
+          },
+          {
+            "url": "https://poki.com/en/g/level-devil",
+            "summary": "Poki game page states November 2026 update; not China retention evidence",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-18T09:04:44+08:00"
           }
         ],
         "score_history": [
@@ -2640,6 +2866,12 @@
           },
           {
             "at": "2026-11-17T09:04:18+08:00",
+            "opportunity_score": 92,
+            "readiness_score": 86,
+            "confidence_score": 77
+          },
+          {
+            "at": "2026-11-18T09:04:44+08:00",
             "opportunity_score": 92,
             "readiness_score": 86,
             "confidence_score": 77
@@ -2756,6 +2988,34 @@
         "latest_change_reason": "Poki weekly popular list includes Drive Mad on 2026-11-16; not a new release"
       },
       {
+        "opportunity_id": "cargo-packing-depot",
+        "name": "单屏货车装箱经营",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-18T09:04:44+08:00",
+        "last_seen_at": "2026-11-18T09:04:44+08:00",
+        "opportunity_score": 80,
+        "readiness_score": 85,
+        "confidence_score": 50,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "url": "https://itch.io/games/new-and-popular/free/genre-puzzle/tag-idle",
+            "summary": "itch.io New & Popular Load Up Cargo Depot observed 2026-11-18; release date unknown",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-18T09:04:44+08:00"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-18T09:04:44+08:00",
+            "opportunity_score": 80,
+            "readiness_score": 85,
+            "confidence_score": 50
+          }
+        ],
+        "latest_change_reason": "itch.io New & Popular Load Up Cargo Depot observed 2026-11-18; release date unknown"
+      },
+      {
         "opportunity_id": "tiny-chef-roguelite",
         "name": "微型料理 Roguelite",
         "product_form": "WECHAT_MINIGAME",
@@ -2814,32 +3074,60 @@
         "latest_change_reason": "Show HN 2026-11-17 geography compass city guessing game; 3 points observed, mechanism only"
       },
       {
-        "opportunity_id": "terminal-idle-factory",
-        "name": "终端风格微型工厂放置",
+        "opportunity_id": "one-screen-moving-floor-puzzle",
+        "name": "一屏工厂移动地面解谜",
         "product_form": "WECHAT_MINIGAME",
-        "first_seen_at": "2026-11-15T09:00:39+08:00",
-        "last_seen_at": "2026-11-15T09:00:39+08:00",
-        "opportunity_score": 76,
-        "readiness_score": 84,
-        "confidence_score": 59,
+        "first_seen_at": "2026-11-18T09:04:44+08:00",
+        "last_seen_at": "2026-11-18T09:04:44+08:00",
+        "opportunity_score": 79,
+        "readiness_score": 83,
+        "confidence_score": 48,
         "heat_status": "UNKNOWN",
         "sources": [
           {
-            "url": "https://news.ycombinator.com/show",
-            "summary": "Show HN 2026-11-15 terminal-native idle factory game; mechanism proxy, not WeChat demand",
+            "url": "https://itch.io/games/new-and-popular/free/genre-puzzle/tag-idle",
+            "summary": "itch.io New & Popular One Square observed 2026-11-18; release date unknown",
             "evidence_type": "PROXY",
-            "observed_at": "2026-11-15T09:00:39+08:00"
+            "observed_at": "2026-11-18T09:04:44+08:00"
           }
         ],
         "score_history": [
           {
-            "at": "2026-11-15T09:00:39+08:00",
-            "opportunity_score": 76,
-            "readiness_score": 84,
-            "confidence_score": 59
+            "at": "2026-11-18T09:04:44+08:00",
+            "opportunity_score": 79,
+            "readiness_score": 83,
+            "confidence_score": 48
           }
         ],
-        "latest_change_reason": "NEW: public 2026-11-14/15 signal; no direct China demand evidence"
+        "latest_change_reason": "itch.io New & Popular One Square observed 2026-11-18; release date unknown"
+      },
+      {
+        "opportunity_id": "kart-arena-quick-battle",
+        "name": "多人卡丁车竞技",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-18T09:04:44+08:00",
+        "last_seen_at": "2026-11-18T09:04:44+08:00",
+        "opportunity_score": 79,
+        "readiness_score": 55,
+        "confidence_score": 60,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "url": "https://poki.com/en/g/smash-karts",
+            "summary": "Poki Smash Karts updated November 2026; online multiplayer expensive",
+            "evidence_type": "PROXY",
+            "observed_at": "2026-11-18T09:04:44+08:00"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-18T09:04:44+08:00",
+            "opportunity_score": 79,
+            "readiness_score": 55,
+            "confidence_score": 60
+          }
+        ],
+        "latest_change_reason": "Poki Smash Karts updated November 2026; online multiplayer expensive"
       }
     ]
   },
@@ -3087,6 +3375,12 @@
       "at": "2026-11-17T09:04:18+08:00",
       "kind": "GLOBAL_DISCOVERY",
       "summary": "2026-11-17 BetaList Spool and boosted Outshot, Show HN compass geography game, Poki Level Devil continuing; Product Hunt official API unavailable; public-only signals."
+    },
+    {
+      "at": "2026-11-18T09:04:44+08:00",
+      "summary": "Nov 18 fresh discovery: SecretPass, spreadsheet-as-database, One Square, Cargo Depot, Smash Karts; Level Devil refreshed",
+      "mini_program_fresh": 8,
+      "mini_game_fresh": 8
     }
   ],
   "notes": [
