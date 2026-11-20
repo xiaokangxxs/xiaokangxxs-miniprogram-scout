@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
   "skill_version": "1.5.0",
-  "updated_at": "2026-11-19T09:04:11+08:00",
-  "updated_by": "daily_global_discovery",
+  "updated_at": "2026-11-20T08:55:34+08:00",
+  "updated_by": "GLOBAL_DISCOVERY",
   "status": "OK",
   "privacy": "PUBLIC_MARKET_SIGNALS_ONLY",
   "mini_program": {
@@ -95,6 +95,35 @@
         "latest_change_reason": "Show HN ExitPath open-source exits from Slack Notion Microsoft 365; rights and API access unverified"
       },
       {
+        "opportunity_id": "browser-offline-file-tools",
+        "name": "离线文件处理工具箱",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-20T08:55:34+08:00",
+        "last_seen_at": "2026-11-20T08:55:34+08:00",
+        "opportunity_score": 75,
+        "readiness_score": 78,
+        "confidence_score": 53,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "source": "public_web",
+            "url": "https://news.ycombinator.com/show",
+            "observed_at": "2026-11-20T08:55:34+08:00",
+            "summary": "Show HN Tools4U 54 browser file tools; current show list; privacy/local-processing proxy",
+            "evidence_type": "PROXY"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-20T08:55:34+08:00",
+            "opportunity_score": 75,
+            "readiness_score": 78,
+            "confidence_score": 53
+          }
+        ],
+        "latest_change_reason": "Show HN Tools4U 54 browser file tools; current show list; privacy/local-processing proxy"
+      },
+      {
         "opportunity_id": "spreadsheet-to-miniapp",
         "name": "表格即轻应用",
         "product_form": "WECHAT_MINIPROGRAM",
@@ -152,6 +181,35 @@
         "latest_change_reason": "Indie Hackers discussion about AI coding bills; demand anecdote not representative"
       },
       {
+        "opportunity_id": "browser-ondevice-transcription",
+        "name": "端侧离线语音转写",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-20T08:55:34+08:00",
+        "last_seen_at": "2026-11-20T08:55:34+08:00",
+        "opportunity_score": 74,
+        "readiness_score": 63,
+        "confidence_score": 52,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "source": "public_web",
+            "url": "https://news.ycombinator.com/show",
+            "observed_at": "2026-11-20T08:55:34+08:00",
+            "summary": "Show HN 15MB browser/device transcription model; performance and Chinese accuracy unverified",
+            "evidence_type": "PROXY"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-20T08:55:34+08:00",
+            "opportunity_score": 74,
+            "readiness_score": 63,
+            "confidence_score": 52
+          }
+        ],
+        "latest_change_reason": "Show HN 15MB browser/device transcription model; performance and Chinese accuracy unverified"
+      },
+      {
         "opportunity_id": "coupon-code-verification",
         "name": "购物优惠码与过期验证",
         "product_form": "WECHAT_MINIPROGRAM",
@@ -178,6 +236,35 @@
           }
         ],
         "latest_change_reason": "BetaList 2026-11-18 New today SecretPass; coupon validation rights unknown"
+      },
+      {
+        "opportunity_id": "plain-language-data-insights",
+        "name": "自然语言数据洞察快报",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-20T08:55:34+08:00",
+        "last_seen_at": "2026-11-20T08:55:34+08:00",
+        "opportunity_score": 73,
+        "readiness_score": 68,
+        "confidence_score": 49,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "source": "public_web",
+            "url": "https://betalist.com/",
+            "observed_at": "2026-11-20T08:55:34+08:00",
+            "summary": "BetaList 2026-11-20 QuantumLayers editor pick; data-to-insight launch, not China demand",
+            "evidence_type": "PROXY"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-20T08:55:34+08:00",
+            "opportunity_score": 73,
+            "readiness_score": 68,
+            "confidence_score": 49
+          }
+        ],
+        "latest_change_reason": "BetaList 2026-11-20 QuantumLayers editor pick; data-to-insight launch, not China demand"
       },
       {
         "opportunity_id": "voice-context-note",
@@ -1211,6 +1298,93 @@
           }
         ],
         "latest_change_reason": "Indie Hackers discussion about AI coding bills; demand anecdote not representative"
+      },
+      {
+        "opportunity_id": "plain-language-data-insights",
+        "name": "自然语言数据洞察快报",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-20T08:55:34+08:00",
+        "last_seen_at": "2026-11-20T08:55:34+08:00",
+        "opportunity_score": 73,
+        "readiness_score": 68,
+        "confidence_score": 49,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "source": "public_web",
+            "url": "https://betalist.com/",
+            "observed_at": "2026-11-20T08:55:34+08:00",
+            "summary": "BetaList 2026-11-20 QuantumLayers editor pick; data-to-insight launch, not China demand",
+            "evidence_type": "PROXY"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-20T08:55:34+08:00",
+            "opportunity_score": 73,
+            "readiness_score": 68,
+            "confidence_score": 49
+          }
+        ],
+        "latest_change_reason": "BetaList 2026-11-20 QuantumLayers editor pick; data-to-insight launch, not China demand"
+      },
+      {
+        "opportunity_id": "browser-offline-file-tools",
+        "name": "离线文件处理工具箱",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-20T08:55:34+08:00",
+        "last_seen_at": "2026-11-20T08:55:34+08:00",
+        "opportunity_score": 75,
+        "readiness_score": 78,
+        "confidence_score": 53,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "source": "public_web",
+            "url": "https://news.ycombinator.com/show",
+            "observed_at": "2026-11-20T08:55:34+08:00",
+            "summary": "Show HN Tools4U 54 browser file tools; current show list; privacy/local-processing proxy",
+            "evidence_type": "PROXY"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-20T08:55:34+08:00",
+            "opportunity_score": 75,
+            "readiness_score": 78,
+            "confidence_score": 53
+          }
+        ],
+        "latest_change_reason": "Show HN Tools4U 54 browser file tools; current show list; privacy/local-processing proxy"
+      },
+      {
+        "opportunity_id": "browser-ondevice-transcription",
+        "name": "端侧离线语音转写",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-20T08:55:34+08:00",
+        "last_seen_at": "2026-11-20T08:55:34+08:00",
+        "opportunity_score": 74,
+        "readiness_score": 63,
+        "confidence_score": 52,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "source": "public_web",
+            "url": "https://news.ycombinator.com/show",
+            "observed_at": "2026-11-20T08:55:34+08:00",
+            "summary": "Show HN 15MB browser/device transcription model; performance and Chinese accuracy unverified",
+            "evidence_type": "PROXY"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-20T08:55:34+08:00",
+            "opportunity_score": 74,
+            "readiness_score": 63,
+            "confidence_score": 52
+          }
+        ],
+        "latest_change_reason": "Show HN 15MB browser/device transcription model; performance and Chinese accuracy unverified"
       }
     ],
     "champions": [
@@ -1302,6 +1476,35 @@
         "latest_change_reason": "Show HN ExitPath open-source exits from Slack Notion Microsoft 365; rights and API access unverified"
       },
       {
+        "opportunity_id": "browser-offline-file-tools",
+        "name": "离线文件处理工具箱",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-20T08:55:34+08:00",
+        "last_seen_at": "2026-11-20T08:55:34+08:00",
+        "opportunity_score": 75,
+        "readiness_score": 78,
+        "confidence_score": 53,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "source": "public_web",
+            "url": "https://news.ycombinator.com/show",
+            "observed_at": "2026-11-20T08:55:34+08:00",
+            "summary": "Show HN Tools4U 54 browser file tools; current show list; privacy/local-processing proxy",
+            "evidence_type": "PROXY"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-20T08:55:34+08:00",
+            "opportunity_score": 75,
+            "readiness_score": 78,
+            "confidence_score": 53
+          }
+        ],
+        "latest_change_reason": "Show HN Tools4U 54 browser file tools; current show list; privacy/local-processing proxy"
+      },
+      {
         "opportunity_id": "spreadsheet-to-miniapp",
         "name": "表格即轻应用",
         "product_form": "WECHAT_MINIPROGRAM",
@@ -1359,6 +1562,35 @@
         "latest_change_reason": "Indie Hackers discussion about AI coding bills; demand anecdote not representative"
       },
       {
+        "opportunity_id": "browser-ondevice-transcription",
+        "name": "端侧离线语音转写",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-20T08:55:34+08:00",
+        "last_seen_at": "2026-11-20T08:55:34+08:00",
+        "opportunity_score": 74,
+        "readiness_score": 63,
+        "confidence_score": 52,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "source": "public_web",
+            "url": "https://news.ycombinator.com/show",
+            "observed_at": "2026-11-20T08:55:34+08:00",
+            "summary": "Show HN 15MB browser/device transcription model; performance and Chinese accuracy unverified",
+            "evidence_type": "PROXY"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-20T08:55:34+08:00",
+            "opportunity_score": 74,
+            "readiness_score": 63,
+            "confidence_score": 52
+          }
+        ],
+        "latest_change_reason": "Show HN 15MB browser/device transcription model; performance and Chinese accuracy unverified"
+      },
+      {
         "opportunity_id": "coupon-code-verification",
         "name": "购物优惠码与过期验证",
         "product_form": "WECHAT_MINIPROGRAM",
@@ -1385,6 +1617,35 @@
           }
         ],
         "latest_change_reason": "BetaList 2026-11-18 New today SecretPass; coupon validation rights unknown"
+      },
+      {
+        "opportunity_id": "plain-language-data-insights",
+        "name": "自然语言数据洞察快报",
+        "product_form": "WECHAT_MINIPROGRAM",
+        "first_seen_at": "2026-11-20T08:55:34+08:00",
+        "last_seen_at": "2026-11-20T08:55:34+08:00",
+        "opportunity_score": 73,
+        "readiness_score": 68,
+        "confidence_score": 49,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "source": "public_web",
+            "url": "https://betalist.com/",
+            "observed_at": "2026-11-20T08:55:34+08:00",
+            "summary": "BetaList 2026-11-20 QuantumLayers editor pick; data-to-insight launch, not China demand",
+            "evidence_type": "PROXY"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-20T08:55:34+08:00",
+            "opportunity_score": 73,
+            "readiness_score": 68,
+            "confidence_score": 49
+          }
+        ],
+        "latest_change_reason": "BetaList 2026-11-20 QuantumLayers editor pick; data-to-insight launch, not China demand"
       },
       {
         "opportunity_id": "voice-context-note",
@@ -1424,11 +1685,11 @@
         "name": "反套路陷阱闯关",
         "product_form": "WECHAT_MINIGAME",
         "first_seen_at": "2026-11-06T09:00:00+08:00",
-        "last_seen_at": "2026-11-18T09:04:44+08:00",
+        "last_seen_at": "2026-11-20T08:55:34+08:00",
         "opportunity_score": 92,
         "readiness_score": 86,
         "confidence_score": 77,
-        "heat_status": "HEATING",
+        "heat_status": "STABLE",
         "sources": [
           {
             "url": "https://poki.com/",
@@ -1491,6 +1752,13 @@
             "summary": "Poki game page states November 2026 update; not China retention evidence",
             "evidence_type": "PROXY",
             "observed_at": "2026-11-18T09:04:44+08:00"
+          },
+          {
+            "source": "public_web",
+            "url": "https://poki.com/",
+            "observed_at": "2026-11-20T08:55:34+08:00",
+            "summary": "Poki Popular this week still lists Level Devil; continuing popularity proxy, not China retention",
+            "evidence_type": "PROXY"
           }
         ],
         "score_history": [
@@ -1543,9 +1811,44 @@
             "opportunity_score": 92,
             "readiness_score": 86,
             "confidence_score": 77
+          },
+          {
+            "at": "2026-11-20T08:55:34+08:00",
+            "opportunity_score": 92,
+            "readiness_score": 86,
+            "confidence_score": 77
           }
         ],
         "latest_change_reason": "Poki popular this week still lists Level Devil on 2026-11-17; popularity proxy, not China retention"
+      },
+      {
+        "opportunity_id": "hexa-arrow-color-tray",
+        "name": "六角箭头出盘收纳",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-20T08:55:34+08:00",
+        "last_seen_at": "2026-11-20T08:55:34+08:00",
+        "opportunity_score": 83,
+        "readiness_score": 80,
+        "confidence_score": 63,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "source": "public_web",
+            "url": "https://www.crazygames.com/game/hexa-arrow-jam",
+            "observed_at": "2026-11-20T08:55:34+08:00",
+            "summary": "CrazyGames Hexa Arrow Jam Nov 17 update; mobile HTML5, directional clearing and 3-slot color boxes",
+            "evidence_type": "PROXY"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-20T08:55:34+08:00",
+            "opportunity_score": 83,
+            "readiness_score": 80,
+            "confidence_score": 63
+          }
+        ],
+        "latest_change_reason": "CrazyGames Hexa Arrow Jam Nov 17 update; mobile HTML5, directional clearing and 3-slot color boxes"
       },
       {
         "opportunity_id": "cargo-packing-depot",
@@ -1690,6 +1993,35 @@
         "latest_change_reason": "Show HN Type Fighter 2 with visible comments; short typing combat mechanic proxy"
       },
       {
+        "opportunity_id": "element-ragdoll-ringout",
+        "name": "元素布偶擂台击落",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-20T08:55:34+08:00",
+        "last_seen_at": "2026-11-20T08:55:34+08:00",
+        "opportunity_score": 78,
+        "readiness_score": 65,
+        "confidence_score": 55,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "source": "public_web",
+            "url": "https://www.crazygames.com/game/element-rag",
+            "observed_at": "2026-11-20T08:55:34+08:00",
+            "summary": "CrazyGames Element Rag updated Nov 13, mobile browser physics ring-out, controls complex",
+            "evidence_type": "PROXY"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-20T08:55:34+08:00",
+            "opportunity_score": 78,
+            "readiness_score": 65,
+            "confidence_score": 55
+          }
+        ],
+        "latest_change_reason": "CrazyGames Element Rag updated Nov 13, mobile browser physics ring-out, controls complex"
+      },
+      {
         "opportunity_id": "pinball-deck-roguelite",
         "name": "弹珠卡组肉鸽",
         "product_form": "WECHAT_MINIGAME",
@@ -1754,11 +2086,11 @@
         "name": "反套路陷阱闯关",
         "product_form": "WECHAT_MINIGAME",
         "first_seen_at": "2026-11-06T09:00:00+08:00",
-        "last_seen_at": "2026-11-18T09:04:44+08:00",
+        "last_seen_at": "2026-11-20T08:55:34+08:00",
         "opportunity_score": 92,
         "readiness_score": 86,
         "confidence_score": 77,
-        "heat_status": "HEATING",
+        "heat_status": "STABLE",
         "sources": [
           {
             "url": "https://poki.com/",
@@ -1821,6 +2153,13 @@
             "summary": "Poki game page states November 2026 update; not China retention evidence",
             "evidence_type": "PROXY",
             "observed_at": "2026-11-18T09:04:44+08:00"
+          },
+          {
+            "source": "public_web",
+            "url": "https://poki.com/",
+            "observed_at": "2026-11-20T08:55:34+08:00",
+            "summary": "Poki Popular this week still lists Level Devil; continuing popularity proxy, not China retention",
+            "evidence_type": "PROXY"
           }
         ],
         "score_history": [
@@ -1870,6 +2209,12 @@
           },
           {
             "at": "2026-11-18T09:04:44+08:00",
+            "opportunity_score": 92,
+            "readiness_score": 86,
+            "confidence_score": 77
+          },
+          {
+            "at": "2026-11-20T08:55:34+08:00",
             "opportunity_score": 92,
             "readiness_score": 86,
             "confidence_score": 77
@@ -2814,6 +3159,64 @@
           }
         ],
         "latest_change_reason": "Poki SatisBox sorting and cleanup mechanic, existing older game; proxy only"
+      },
+      {
+        "opportunity_id": "hexa-arrow-color-tray",
+        "name": "六角箭头出盘收纳",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-20T08:55:34+08:00",
+        "last_seen_at": "2026-11-20T08:55:34+08:00",
+        "opportunity_score": 83,
+        "readiness_score": 80,
+        "confidence_score": 63,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "source": "public_web",
+            "url": "https://www.crazygames.com/game/hexa-arrow-jam",
+            "observed_at": "2026-11-20T08:55:34+08:00",
+            "summary": "CrazyGames Hexa Arrow Jam Nov 17 update; mobile HTML5, directional clearing and 3-slot color boxes",
+            "evidence_type": "PROXY"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-20T08:55:34+08:00",
+            "opportunity_score": 83,
+            "readiness_score": 80,
+            "confidence_score": 63
+          }
+        ],
+        "latest_change_reason": "CrazyGames Hexa Arrow Jam Nov 17 update; mobile HTML5, directional clearing and 3-slot color boxes"
+      },
+      {
+        "opportunity_id": "element-ragdoll-ringout",
+        "name": "元素布偶擂台击落",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-20T08:55:34+08:00",
+        "last_seen_at": "2026-11-20T08:55:34+08:00",
+        "opportunity_score": 78,
+        "readiness_score": 65,
+        "confidence_score": 55,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "source": "public_web",
+            "url": "https://www.crazygames.com/game/element-rag",
+            "observed_at": "2026-11-20T08:55:34+08:00",
+            "summary": "CrazyGames Element Rag updated Nov 13, mobile browser physics ring-out, controls complex",
+            "evidence_type": "PROXY"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-20T08:55:34+08:00",
+            "opportunity_score": 78,
+            "readiness_score": 65,
+            "confidence_score": 55
+          }
+        ],
+        "latest_change_reason": "CrazyGames Element Rag updated Nov 13, mobile browser physics ring-out, controls complex"
       }
     ],
     "champions": [
@@ -2822,11 +3225,11 @@
         "name": "反套路陷阱闯关",
         "product_form": "WECHAT_MINIGAME",
         "first_seen_at": "2026-11-06T09:00:00+08:00",
-        "last_seen_at": "2026-11-18T09:04:44+08:00",
+        "last_seen_at": "2026-11-20T08:55:34+08:00",
         "opportunity_score": 92,
         "readiness_score": 86,
         "confidence_score": 77,
-        "heat_status": "HEATING",
+        "heat_status": "STABLE",
         "sources": [
           {
             "url": "https://poki.com/",
@@ -2889,6 +3292,13 @@
             "summary": "Poki game page states November 2026 update; not China retention evidence",
             "evidence_type": "PROXY",
             "observed_at": "2026-11-18T09:04:44+08:00"
+          },
+          {
+            "source": "public_web",
+            "url": "https://poki.com/",
+            "observed_at": "2026-11-20T08:55:34+08:00",
+            "summary": "Poki Popular this week still lists Level Devil; continuing popularity proxy, not China retention",
+            "evidence_type": "PROXY"
           }
         ],
         "score_history": [
@@ -2941,9 +3351,44 @@
             "opportunity_score": 92,
             "readiness_score": 86,
             "confidence_score": 77
+          },
+          {
+            "at": "2026-11-20T08:55:34+08:00",
+            "opportunity_score": 92,
+            "readiness_score": 86,
+            "confidence_score": 77
           }
         ],
         "latest_change_reason": "Poki popular this week still lists Level Devil on 2026-11-17; popularity proxy, not China retention"
+      },
+      {
+        "opportunity_id": "hexa-arrow-color-tray",
+        "name": "六角箭头出盘收纳",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-20T08:55:34+08:00",
+        "last_seen_at": "2026-11-20T08:55:34+08:00",
+        "opportunity_score": 83,
+        "readiness_score": 80,
+        "confidence_score": 63,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "source": "public_web",
+            "url": "https://www.crazygames.com/game/hexa-arrow-jam",
+            "observed_at": "2026-11-20T08:55:34+08:00",
+            "summary": "CrazyGames Hexa Arrow Jam Nov 17 update; mobile HTML5, directional clearing and 3-slot color boxes",
+            "evidence_type": "PROXY"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-20T08:55:34+08:00",
+            "opportunity_score": 83,
+            "readiness_score": 80,
+            "confidence_score": 63
+          }
+        ],
+        "latest_change_reason": "CrazyGames Hexa Arrow Jam Nov 17 update; mobile HTML5, directional clearing and 3-slot color boxes"
       },
       {
         "opportunity_id": "cargo-packing-depot",
@@ -3086,6 +3531,35 @@
           }
         ],
         "latest_change_reason": "Show HN Type Fighter 2 with visible comments; short typing combat mechanic proxy"
+      },
+      {
+        "opportunity_id": "element-ragdoll-ringout",
+        "name": "元素布偶擂台击落",
+        "product_form": "WECHAT_MINIGAME",
+        "first_seen_at": "2026-11-20T08:55:34+08:00",
+        "last_seen_at": "2026-11-20T08:55:34+08:00",
+        "opportunity_score": 78,
+        "readiness_score": 65,
+        "confidence_score": 55,
+        "heat_status": "UNKNOWN",
+        "sources": [
+          {
+            "source": "public_web",
+            "url": "https://www.crazygames.com/game/element-rag",
+            "observed_at": "2026-11-20T08:55:34+08:00",
+            "summary": "CrazyGames Element Rag updated Nov 13, mobile browser physics ring-out, controls complex",
+            "evidence_type": "PROXY"
+          }
+        ],
+        "score_history": [
+          {
+            "at": "2026-11-20T08:55:34+08:00",
+            "opportunity_score": 78,
+            "readiness_score": 65,
+            "confidence_score": 55
+          }
+        ],
+        "latest_change_reason": "CrazyGames Element Rag updated Nov 13, mobile browser physics ring-out, controls complex"
       },
       {
         "opportunity_id": "pinball-deck-roguelite",
@@ -3404,6 +3878,13 @@
       "summary": "Nov 19 BetaList Snovi, Show HN ExitPath/Type Fighter 2, Indie Hackers AI coding costs, itch.io Cult of PiN; Poki SatisBox existing proxy. Product Hunt official API inaccessible; no verified API launch data.",
       "mini_program_fresh": 7,
       "mini_game_fresh": 8
+    },
+    {
+      "at": "2026-11-20T08:55:34+08:00",
+      "kind": "GLOBAL_DISCOVERY",
+      "summary": "Nov 20 BetaList QuantumLayers, Show HN Tools4U/on-device transcription; CrazyGames Hexa Arrow Jam/Element Rag; Poki Level Devil refreshed. Product Hunt API transport failed, public page fallback.",
+      "mini_program_fresh": 10,
+      "mini_game_fresh": 10
     }
   ],
   "notes": [
