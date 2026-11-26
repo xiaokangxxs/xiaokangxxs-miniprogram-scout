@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 
 const root = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const poolPath = path.join(root, "data", "rolling_pool.json");
+const HEAT = new Set(JSON.parse(fs.readFileSync(path.join(root, "data", "rolling_pool.schema.json"), "utf8")).$defs.candidate.properties.heat_status.enum);
 const version = fs.readFileSync(path.join(root, "VERSION"), "utf8").trim();
 
 function fail(msg){ console.error("❌ "+msg); process.exit(1); }
@@ -17,6 +18,7 @@ function assertCandidate(c, form){
   for(const k of ["opportunity_score","readiness_score","confidence_score"]){
     if(typeof c[k]!=="number" || c[k]<0 || c[k]>100) fail(`${c.opportunity_id} invalid ${k}`);
   }
+  if(c.heat_status !== undefined && !HEAT.has(c.heat_status)) fail(`candidate ${c.opportunity_id} invalid heat_status: ${c.heat_status}`);
   if(isoMs(c.first_seen_at)===null || isoMs(c.last_seen_at)===null) fail(`${c.opportunity_id} invalid date`);
 }
 function validate(pool){
@@ -43,7 +45,7 @@ function mergeForm(existing, incoming, form, now){
   const old = dedupeLatest([
     ...(existing.fresh||[]),...(existing.rolling||[]),...(existing.champions||[])
   ]);
-  const map=new Map(old.map(c=>[c.opportunity_id, structuredClone(c)]));
+  const map=new Map(old.map(c=>[c.opportunity_id, {...structuredClone(c), ...(c.heat_status==="NEW" ? {heat_status:"UNKNOWN"} : {})}]));
   for(const raw of incoming.filter(x=>x.product_form===form)){
     assertCandidate(raw,form);
     const prev=map.get(raw.opportunity_id);
@@ -65,9 +67,9 @@ function mergeForm(existing, incoming, form, now){
   }
   const DAY=86400000;
   const all=[...map.values()];
-  const rolling=all.filter(c=> now-Date.parse(c.last_seen_at) <= 14*DAY);
+  const rolling=all.filter(c=>{ const age=now-Date.parse(c.last_seen_at); return age>=0 && age<=14*DAY; });
   const fresh=rolling.filter(c=> now-Date.parse(c.last_seen_at) <= 72*3600000);
-  const champions=[...rolling].sort((a,b)=>
+  const champions=[...fresh].sort((a,b)=>
     b.opportunity_score-a.opportunity_score ||
     b.confidence_score-a.confidence_score ||
     b.readiness_score-a.readiness_score
@@ -102,8 +104,14 @@ function main(){
       mini_game_champions:next.mini_game.champions.map(x=>x.opportunity_id)
     }
   ].slice(-30);
-  fs.writeFileSync(poolPath,JSON.stringify(next,null,2)+"\n");
   validate(next);
+  const temporaryPath=poolPath+"."+process.pid+".tmp";
+  try {
+    fs.writeFileSync(temporaryPath,JSON.stringify(next,null,2)+"\n",{flag:"wx"});
+    fs.renameSync(temporaryPath,poolPath);
+  } finally {
+    if(fs.existsSync(temporaryPath)) fs.unlinkSync(temporaryPath);
+  }
   console.log(`✅ Merged ${candidates.length} candidates into ${poolPath}`);
 }
 main();

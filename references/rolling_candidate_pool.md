@@ -49,12 +49,12 @@ Maintain two parallel opportunity pools.
 ### Mini Program Pool
 - Fresh: last seen within 72h
 - Rolling: last seen within 14 days
-- Champion Board: Top 20 from Rolling
+- Champion Board: Top 20 active candidates from Fresh (older candidates stay in Rolling, not on the active board)
 
 ### Mini Game Pool
 - Fresh: last seen within 72h
 - Rolling: last seen within 14 days
-- Champion Board: Top 20 from Rolling
+- Champion Board: Top 20 active candidates from Fresh (older candidates stay in Rolling, not on the active board)
 
 ## Candidate identity
 
@@ -99,9 +99,9 @@ A daily run should:
 4. merge current scores/evidence;
 5. prune Rolling items not seen for >14 days;
 6. recompute Fresh <=72h;
-7. recompute Top20 Champion Board;
+7. recompute Top20 Champion Board from Fresh;
 8. append a history snapshot;
-9. write the updated state back only after validation.
+9. write the updated state back only after validation. The merge helper validates before replacing its local state and treats legacy `heat_status: NEW` as `UNKNOWN`; `NEW` remains a report movement label. Validate the complete payload against the JSON Schema before publishing.
 
 Local helper:
 
